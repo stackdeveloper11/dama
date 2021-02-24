@@ -205,3 +205,38 @@ C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\o
 C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.csproj.CopyComplete
 C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.dll
 C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.pdb
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\akset.helper.dll.config
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\akset.helper.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\akset.helper.pdb
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\EntityFramework.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.Owin.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Owin.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.Helpers.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.Mvc.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.Razor.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.WebPages.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\EntityFramework.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.Owin.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.Helpers.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.Mvc.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.Razor.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.WebPages.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\USER\Source\Repos\dama\akset.helper\bin\Debug\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\obj\Debug\akset.helper.csprojAssemblyReference.cache
+C:\Users\USER\Source\Repos\dama\akset.helper\obj\Debug\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\USER\Source\Repos\dama\akset.helper\obj\Debug\akset.helper.csproj.CopyComplete
+C:\Users\USER\Source\Repos\dama\akset.helper\obj\Debug\akset.helper.dll
+C:\Users\USER\Source\Repos\dama\akset.helper\obj\Debug\akset.helper.pdb
