@@ -1,0 +1,224 @@
+﻿
+@{
+    ViewBag.Title = "Hesabim";
+    Layout = "~/Areas/Satici/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h4 class="pl-4">Hesabımı Yönet</h4>
+</div>
+
+<div class="row mt-4 mb-4">
+    <div class="col-12">
+        <div class="card panel-card pl-3">
+            <div class="card-title pt-3">
+                <h4>Temem Bilgi</h4>
+                <hr>
+            </div>
+            <div class="card-body">
+                <form action="#">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label fw-500" for="#">Adınız<span class="required">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-new" name="#" placeholder="Adınız">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label fw-500" for="#">Telefonunuz<span class="required">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-new" name="#" placeholder="Telefonunuz">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label fw-500" for="#">Fotoğraf</label>
+                        <div class="col-sm-10">
+                            <div class="input-group mb-3">
+                                <button class="btn input-group-button" data-target="1">Fotoğraf</button>
+                                <input type="file" class="form-control form-new " data="file1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label fw-500" for="#">Şifreniz<span class="required">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-new" name="#" placeholder="Şifre">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label fw-500" for="#">Şifreyi Onayla<span class="required">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control form-new" name="#" placeholder="Şifreyi Onayla">
+                        </div>
+                    </div>
+                    <div class="form-group-row pr-5">
+                        <div class="col-2 float-right text-right">
+                            <button class="btn btn-orange">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4 mb-4">
+    <div class="col-12">
+        <div class="card panel-card pl-3">
+            <div class="card-title pt-3">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <span><h4 class="d-inline">Adres</h4></span>
+                    </div>
+                    <div class="col-md-8 col-sm-12 text-right">
+                        <span class="pr-5"><button class="btn btn-orange" data-toggle="modal" data-target="#addressModal">Yeni Adres Ekle</button></span>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <th>Adres</th>
+                        <th>Ülke</th>
+                        <th>Şehir</th>
+                        <th>İlçe</th>
+                        <th></th>
+                        <th>Seçenekler</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Argıncık Alsancak Mh. Elibol Emre Apt.</td>
+                                <td>Türkiye</td>
+                                <td>Kayseri</td>
+                                <td>Kocasinan</td>
+                                <td><button class="btn btn-orange">Varsayılan Yap</button></td>
+                                <td>
+                                    <a class="btn btn-circle-icon bg-soft-blue" href="#" title="Düzenle">
+                                        <i class="las la-edit"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-circle-icon bg-soft-red" title="Sil">
+                                        <i class="las la-trash"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4 mb-4">
+    <div class="col-12">
+        <div class="card panel-card pl-3">
+            <div class="card-title pt-3">
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <span><h4 class="d-inline">Ödeme Ayarı</h4></span>
+                    </div>
+                    <div class="col-md-8 col-sm-12 text-right">
+                        <span class="pr-5"><button class="btn btn-orange" data-toggle="modal" data-target="#addressModal">Yeni Adres Ekle</button></span>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label fw-500" for="#">Nakit Ödeme</label>
+                    <div class="col-sm-10">
+                        <div class="custom-control custom-switch custom-switch-md">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                            <label class="custom-control-label" for="customSwitch1"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label fw-500" for="#">Banka Ödemesi</label>
+                    <div class="col-sm-10">
+                        <div class="custom-control custom-switch custom-switch-md">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label fw-500" for="#">Banka Adı</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-new" name="#" placeholder="Banka Adı">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label fw-500" for="#">Banka Hesap Adı</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-new" name="#" placeholder="Banka Hesap Adı">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label fw-500" for="#">Iban Numarası</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control form-new" name="#" placeholder="Iban Numarası">
+                    </div>
+                </div>
+                <div class="form-group-row pr-5">
+                    <div class="col-2 float-right text-right">
+                        <button class="btn btn-orange">Kaydet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="addressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Yeni Adres Ekleyin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-5">
+                <form action="#">
+                    <div class="form-group row">
+                        <label class="form-label fw-500">Adres</label>
+                        <textarea class="form-control textarea"></textarea>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label fw-500">Ülke</label>
+                        <select class="form-control form-new">
+                            <option value="tr">Türkiye</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label fw-500">Şehir</label>
+                        <input class="form-control form-new" placeholder="Şehir">
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label fw-500">İlçe</label>
+                        <input class="form-control form-new" placeholder="İlçe">
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label fw-500">Posta Kodu</label>
+                        <input class="form-control form-new" placeholder="Posta Kodunuz">
+                    </div>
+                    <div class="form-group row">
+                        <label class="form-label fw-500">Telefon</label>
+                        <input class="form-control form-new " placeholder="+90">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-orange">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

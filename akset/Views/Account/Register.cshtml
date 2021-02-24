@@ -1,0 +1,186 @@
+﻿@using akset.data.ViewModel
+@model RegisterViewModel
+@{
+    ViewBag.Title = "Yeni Üyelik";
+
+
+}
+
+<style>
+    .wrapper {
+        margin-top: 80px;
+        margin-bottom: 20px;
+    }
+
+    .form-signin {
+        max-width: 520px;
+        padding: 30px 38px 66px;
+        margin: 0 auto;
+        background-color: #eee;
+        border: 3px dotted rgba(0,0,0,0.1);
+    }
+
+    .form-signin-heading {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        margin-bottom: 0px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    input[type="password"] {
+        margin-bottom: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .colorgraph {
+        height: 7px;
+        border-top: 0;
+        background: #c4e17f;
+        border-radius: 5px;
+        background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+        background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+        background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+        background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    }
+
+    .facebook {
+        text-decoration: none;
+        display: inline-block;
+        color: #fff;
+        width: 100%;
+        padding: 16px 2%;
+        text-align: center;
+        background: url(/img/fb.png) no-repeat left 10px center;
+        background-color: #3b5998;
+        border: 1px solid #385693;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .fas {
+        position: absolute;
+        z-index: 9999;
+        top: 7px;
+        right: 6px;
+        color: #a79999;
+    }
+
+    .select2-hidden-accessible {
+        display: none;
+    }
+</style>
+<script>
+    function yokl() {
+        if ($('input[type=checkbox]').prop('checked')) {
+            $(".strartik").click();
+        }
+        else{
+            alert("Üyelik Sözleşmesini İşaretlemediniz!");
+        }
+    }
+  
+</script>
+<script src="~/js/phonemask.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#Phone').mask('(0000) 000 0000', { placeholder: "(0544) 444 4444" });
+    });
+</script>
+<div class="container" data-bxyield="content" data-bxarea="">
+    <div data-bxarea="content__area_645">
+        <div class="panel panel-default ucus-bilgileri" data-bxarea="content__area_647">
+            <div class="panel-heading">
+             
+            </div>
+            <div class="panel-body ddff" style="padding-top:15px">
+                <div class="col-xs-12">
+                    <form action="/uye-ol" method="POST" id="login-form" class="no-ajaxy smart-form client-form form-signin" style="padding: 15px;margin-top:15px;margin-bottom:15px">
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                        <div class="col-xs-12">
+                           <h4 class="text-center">Yeni Kayıt</h4>
+                           <hr />
+                            <div class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-12 control-label" for="Ad" style="text-align:left !important;">Adınız</label>
+                                    <div class="col-12">
+                                        @Html.TextBoxFor(m => m.Ad, new { @class = "form-control", @placeholder = "" })
+                                        @Html.ValidationMessageFor(m => m.Ad, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-12 control-label" for="Soyad" style="text-align:left !important;">Soyadınız</label>
+                                    <div class="col-12">
+                                        @Html.TextBoxFor(m => m.Soyad, new { @class = "form-control", @placeholder = "" })
+                                        @Html.ValidationMessageFor(m => m.Soyad, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-12 control-label" for="Phone" style="text-align:left !important;">Cep Telefon</label>
+                                    <div class="col-12">
+                                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group d-none">
+                                    @Html.LabelFor(m => m.Email, new { @class = "col-12 control-label", @style = "text-align:left !important;" })
+                                    <div class="col-12">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "",@Value = string.Concat(new Random().Next(10,99), new Random().Next(100, 999), new Random().Next(1000, 9999),"@site.com") })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Password, new { @class = "col-12 control-label", @style = "text-align:left !important;" })
+                                    <div class="col-12">
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "" })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-12 control-label", @style = "text-align:left !important;" })
+                                    <div class="col-12">
+                                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "" })
+                                        @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group text-right">
+                                    <div class="col-12">
+                                        <div class="checkbox" style="font-size: 14px;">
+                                            <input type="checkbox" id="newTermsOfUse" class="MemberShipPolicy" name="uyelikKosullari"><a href="/home/terms" target="_blank">Üyelik Sözleşmesini Okudum. Kabul Ediyorum.</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-right">
+                                    <div class="col-12">
+                                        <div class="btn btn-success" onclick="yokl()">Kayıt Oluştur</div>
+                                        <input type="submit" class="btn btn-success strartik d-none" value="Подписаться" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center" style="margin-top: 20px;">
+                            <div class="btn-group">
+                                <button class="btn btn-primary" onclick="location.href = '/Account/Login'" type="button">Giriş Yap</button>
+                                <button class="btn btn-info" onclick="location.href = '/sifremi-unttum'" type="button">Şifremi Unuttum</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

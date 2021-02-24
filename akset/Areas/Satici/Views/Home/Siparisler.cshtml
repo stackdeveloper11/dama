@@ -1,0 +1,268 @@
+﻿
+@{
+    ViewBag.Title = "Siparisler";
+    Layout = "~/Areas/Satici/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h4 class="pl-4">Siparişler</h4>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card panel-card">
+            <div class="card-title">
+                <div class="col-12 p-3">
+                    <div class="col-lg-3 col-md-12 panel-card-title mb-2">
+                        <h5>Tüm Siparişler</h5>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 mb-2">
+                        <select name="" id="" class="form-control form-new">
+                            <option>Ödeme Durumunu</option>
+                            <option value="#">Ödenmiş</option>
+                            <option value="#">Ödenmemiş</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 mb-2">
+                        <select name="" id="" class="form-control form-new">
+                            <option>Teslim Durumu</option>
+                            <option value="#">Bekliyor</option>
+                            <option value="#">Onaylanmış</option>
+                            <option value="#">Teslimatta</option>
+                            <option value="#">Teslim Edildi</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 mb-2">
+                        <input type="text" value="" placeholder="Sipariş Kodu Gir ve Enter'a bas" class="form-control new-input" />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <th>#</th>
+                        <th>Sipariş Kodu</th>
+                        <th>Ürün Adedi</th>
+                        <th>Müşteri</th>
+                        <th>Tutar</th>
+                        <th>Teslimat Durumu</th>
+                        <th>Ödeme Durumu</th>
+                        <th>Seçenekler</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#</td>
+                                <td>123456</td>
+                                <td>15</td>
+                                <td>Test</td>
+                                <td>750</td>
+                                <td>Bekliyor</td>
+                                <td>Ödendi</td>
+                                <td>
+                                    <a class="btn btn-circle-icon bg-soft-blue" data-toggle="modal" data-target="#exampleModal" href="#" title="Düzenle">
+                                        <i class="las la-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title strong-600 heading-5"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body px-3 pt-3">
+
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="card panel-card">
+                            <div class="card-title">
+                                <div class="row gutters-5 pt-5 text-center steps">
+                                    <div class="col  active ">
+                                        <div class="icon">
+                                            <i class="las la-file-invoice"></i>
+                                        </div>
+                                        <div class="title fs-12">Sipariş verildi</div>
+                                    </div>
+                                    <div class="col ">
+                                        <div class="icon">
+                                            <i class="las la-newspaper"></i>
+                                        </div>
+                                        <div class="title fs-12">Onaylanmış</div>
+                                    </div>
+                                    <div class="col ">
+                                        <div class="icon">
+                                            <i class="las la-truck"></i>
+                                        </div>
+                                        <div class="title fs-12">Teslimatta</div>
+                                    </div>
+                                    <div class="col ">
+                                        <div class="icon">
+                                            <i class="las la-clipboard-check"></i>
+                                        </div>
+                                        <div class="title fs-12">Teslim edildi</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row justify-content-center">
+
+
+                                    <div class="col-lg-6 text-center">
+                                        <label for="" class="form-label">Teslim Durumu</label>
+                                        <select name="" id="" class="form-control form-new">
+                                            <option class="form-control form-new">Bekliyor</option>
+                                            <option class="form-control form-new">Onaylanmış</option>
+                                            <option class="form-control form-new">Teslimatta</option>
+                                            <option class="form-control form-new">Teslim Edildi</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row pl-5 mb-3">
+                                    <span><strong>Sipariş Özeti</strong></span>
+                                </div>
+                                <div class="row pl-5 pr-5">
+                                    <div class="col-lg-6">
+                                        <table class="table">
+                                            <tr>
+                                                <td>Sipariş Kodu</td>
+                                                <td>1234567879</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Müşteri</td>
+                                                <td>Necmettin Ceviz</td>
+                                            </tr>
+                                            <tr>
+                                                <td>E-posta Adresi</td>
+                                                <td>test@test.com</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Teslimat Adresi</td>
+                                                <td>Argıncık Alsancak Mh.6204.Cd Kayseri Kocasinan</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <table class="table no-border">
+                                            <tr>
+                                                <td>Sipariş Tarihi</td>
+                                                <td>12.02.2020</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sipariş Durumu</td>
+                                                <td>Bekliyor</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Toplam Sipariş Miktarı</td>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ödeme Şekli</td>
+                                                <td>Kredi Kartı</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row pl-5 pr-5  mb-3">
+                                    <div class="col-12">
+                                        <span><strong>Sipariş Detayları</strong></span>
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless w-100">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-muted">#</th>
+                                                        <th class="text-muted">Ürün</th>
+                                                        <th class="text-muted">Ürün Resmi</th>
+                                                        <th class="text-muted">Varyasyon</th>
+                                                        <th class="text-muted">Miktar</th>
+                                                        <th class="text-muted">Teslimat Tipi</th>
+                                                        <th class="text-muted">Fiyat</th>
+                                                        <th class="text-muted">İade</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>
+                                                            Urun Adı
+
+                                                        </td>
+                                                        <td> <img src="https://esosyete.com/public/uploads/products/thumbnail/7lXzmWvfBuN8cEOFFZiBEov9buQIn9zoYbIsufiR.jpeg" alt="" width="60px" height="60px"></td>
+                                                        <td>
+                                                            55
+                                                        </td>
+                                                        <td>
+                                                            10
+                                                        </td>
+                                                        <td>
+                                                            Adrese Teslim
+                                                        </td>
+                                                        <td>12.55</td>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <span><strong>Sipariş Miktarı</strong></span>
+                                        <table class="table table-borderless">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="w-50 fw-600">Ara toplam</th>
+                                                    <td class="text-right">
+                                                        <span class="strong-600">100</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="w-50 fw-600">Kargo</th>
+                                                    <td class="text-right">
+                                                        <span class="text-italic">Kargo</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="w-50 fw-600">Kupon</th>
+                                                    <td class="text-right">
+                                                        <span class="text-italic">No Coupon</span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="w-50 fw-600">Toplam</td>
+                                                    <td class="text-right">
+                                                        <strong>
+                                                            <span>
+                                                                250.00
+                                                            </span>
+                                                        </strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

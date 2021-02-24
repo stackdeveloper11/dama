@@ -1,0 +1,172 @@
+﻿@model akset.data.User
+<style>
+    @@media screen and (max-width: 991px) {
+        .logopng {
+            margin-left: -40px !important;
+        }
+    }
+</style>
+    <style>
+        .kkk li{
+            border-bottom:2px solid #eee;
+            margin-bottom:5px;
+            padding-bottom:5px;
+        }
+        .kkk li a{
+            color:black !important;
+        }
+        .ddff {
+          background-color: #fff;
+          border: 1px solid #eaeaea;
+          padding:20px;
+       }
+    </style>
+<script src="https://unpkg.com/gijgo@1.9.11/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.11/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<script>
+    $(document).ready(function () {
+         
+        $('#datepicker').datepicker({
+            uiLibrary: 'bootstrap4',
+            format: 'dd.mm.yyyy'
+        });
+
+    });
+</script>
+<div class="col-12">
+   <div class="row">
+       <div class="col-md-2 col-xs-12">
+           <h4>Hesabım</h4>
+           <ul class="list-unstyled kkk">
+               <li>
+                   <a href="/myaccounts">
+                     <strong>Hesabım</strong>
+                   </a>
+               </li>
+               <li>
+                   <a href="/myorders">
+                       Siparişlerim
+                   </a>
+               </li>
+               <li>
+                   <a href="/myaddress">
+                       Adres Bilgileri
+                   </a>
+               </li>
+           </ul>
+       </div>
+       <div class="col-md-10 col-xs-12">
+           <div class="ddff">
+               <h5 style="margin-bottom:15px"><strong>Hesabım</strong></h5>
+               <div class="row">
+                   <div class="col-md-6 col-xs-12" style="border-right: 1px solid #ddd;">
+                       <h6><strong>Bilgilerim</strong></h6>
+                       <form action="/home/profil" method="post">
+                           @Html.AntiForgeryToken()
+                           <div class="form-group">
+                               <label for="ad">İsim*</label>
+                               <input type="text" class="form-control" id="ad" name="ad" placeholder="Ad" value="@Model.Ad">
+                           </div>
+                           <div class="form-group">
+                               <label for="soyad">Soyisim*</label>
+                               <input type="text" class="form-control" id="soyad" name="soyad" placeholder="Soyad" value="@Model.Soyad">
+                           </div>
+                           <div class="form-group">
+                               <label for="phn">Telefon*</label>
+                               <input type="text" class="form-control" id="phn" name="phn" placeholder="Phone" value="@Model.PhoneNumber">
+                           </div>
+                           <div class="form-group">
+                               <label for="bbb">Doğum Tarihi</label>
+                               <input type="text" class="form-control" id="datepicker" name="birthday" value="@string.Concat(Model.DogumTarihi!=null?Convert.ToDateTime(Model.DogumTarihi).ToString("dd.MM.yyyy"):"")">
+                           </div>
+                           <div class="form-group">
+                               <label style="display:block">Cinsiyet</label>
+                               <div class="btn-group btn-group-justified" data-toggle="buttons">
+                                   @if (Model.cinsiyet == "Female")
+                                   {
+                                    <label class="btn btn-secondary active">
+                                        <input type="radio" name="gender" value="Female" required="" checked="checked"> <i class="fa fa-female"></i> Female
+                                    </label>
+                                   }
+                                   else
+                                   {
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="gender" value="Female" required=""> <i class="fa fa-female"></i> Female
+                                    </label>
+                                   }
+                                   @if (Model.cinsiyet == "Male")
+                                   {
+                                      <label class="btn btn-secondary active">
+                                          <input type="radio" name="gender" value="Male" required="" checked="checked"> <i class="fa fa-male"></i> Male
+                                      </label>
+                                   }
+                                   else
+                                   {
+                                    <label class="btn btn-secondary">
+                                        <input type="radio" name="gender" value="Male" required=""> <i class="fa fa-male"></i> Male
+                                    </label>
+                                   }
+                               </div>
+                           </div>
+                           <input id="bsl" type="hidden" name="gender" value="@Model.cinsiyet" />
+                           <div class="form-group text-right">
+                               <div onclick="yoll()" class="btn btn-outline-dark">OK</div>
+                               <button type="submit" id="yol" class="btn btn-outline-dark d-none">OK</button>
+                           </div>
+                       </form>
+                   </div>
+                    <script>
+                        function yoll()
+                        {
+                            if ($("#ad").val() == "")
+                            {
+                                alert("AD BELİTMELİSİNİZ!...");
+                            }
+                            else if ($("#soyad").val() == "")
+                            {
+                                alert("SOYAD BELİTMELİSİNİZ!...");
+                            }
+                            else
+                            {
+                                $("#yol").click();
+                            }
+                        }
+
+                        function yoll2()
+                        {
+                            if ($("#ysif").val() != $("#ysift").val()) {
+                                alert("AYNI ŞİFRE BELİRTMELİSİNİZ!...");
+                            }
+                            else if ($("#ysif").val() == "" || $("#ysift").val() == "")
+                            {
+                                alert("ŞİFRE BELİRTMELİSİNİZ!...");
+                            }
+                            else
+                            {
+                                $("#yol2").click();
+                            }
+                        }
+                   </script>
+                   <div class="col-md-6 col-xs-12">
+                       <h6><strong>Мой пароль</strong></h6>
+                       <form action="/home/sifretekrar" method="post">
+                           @Html.AntiForgeryToken()
+                           <div class="form-group">
+                               <label for="ysif">Yeni Şifre*</label>
+                               <input type="password" class="form-control" id="ysif" name="ysfr" placeholder="">
+                           </div>
+                           <div class="form-group">
+                               <label for="ysift">Yeni Şifre Tekrar*</label>
+                               <input type="password" class="form-control" id="ysift"  name="ytsfr" placeholder="">
+                           </div>
+                           <div class="form-group text-right">
+                               <div onclick="yoll2()" class="btn btn-outline-dark">OK</div>
+                               <button type="submit" id="yol2" class="btn btn-outline-dark d-none">OK</button>
+                           </div>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>

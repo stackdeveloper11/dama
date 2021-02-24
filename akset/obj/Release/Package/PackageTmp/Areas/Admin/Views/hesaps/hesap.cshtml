@@ -1,0 +1,156 @@
+﻿@model IEnumerable<akset.data.hesap>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Hesap
+                <span>
+                    >
+                    Hesap Listesi
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/hesaps/create" class="btn btn-success">Yeni Hesap Ekle</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-commenting-o"></i> </span>
+                        <h2>Hesap Listesi</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <div class="table-responsive">
+                                <table id="dt_basic" class="table table-hover table-striped table-condensed">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                Adı
+                                            </th>
+                                            <th>
+                                                Filitre Adı
+                                            </th>
+                                            <th>
+                                                Özellik Adı
+                                            </th>
+                                            <th>
+                                               Adet
+                                            </th>
+                                            <th>
+                                             Kaç Lira
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                        <tr>
+                                            <td>
+                                             @aksetDB.Create().uruns.Where(a=>a.Id==item.urunId).FirstOrDefault().urunadi
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.filitre.adi)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.ozellik.adi)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.adet)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.kaclira)
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/hesaps/Edit/@item.Id">Düzenle</a> | <a href="/Admin/hesaps/Delete/@item.Id">Sil</a>
+                                            </td>
+                                        </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    <script>
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+        })
+
+    </script>
+}

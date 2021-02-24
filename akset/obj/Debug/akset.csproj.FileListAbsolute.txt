@@ -1,0 +1,1418 @@
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\csc.exe
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\System.Collections.Immutable.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\vbc.exe
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\VBCSCompiler.exe
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\roslyn\VBCSCompiler.exe.config
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\akset.dll.config
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\akset.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\akset.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\akset.data.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Microsoft.Web.Infrastructure.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Newtonsoft.Json.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Net.Http.Formatting.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Helpers.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Http.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Http.WebHost.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Mvc.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Razor.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Webpages.Deployment.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Webpages.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Webpages.Razor.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\EntityFramework.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\akset.data.pdb
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Razor.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Webpages.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Webpages.Deployment.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Webpages.Razor.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Helpers.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Mvc.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Newtonsoft.Json.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Net.Http.Formatting.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Http.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\System.Web.Http.WebHost.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\EntityFramework.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\obj\Debug\akset.csprojResolveAssemblyReference.cache
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\obj\Debug\akset.dll
+c:\users\administrator\documents\visual studio 2015\Projects\akset\akset\obj\Debug\akset.pdb
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\csc.exe.config
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\csc.rsp
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\csi.exe
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\csi.exe.config
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\csi.rsp
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\Microsoft.Win32.Primitives.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.AppContext.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Console.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Diagnostics.Process.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Diagnostics.StackTrace.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.IO.Compression.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.IO.FileSystem.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.IO.FileSystem.Primitives.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.IO.Pipes.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Security.AccessControl.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Security.Claims.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Security.Cryptography.Encoding.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Security.Cryptography.Primitives.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Security.Principal.Windows.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Threading.Thread.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.ValueTuple.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Xml.ReaderWriter.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Xml.XmlDocument.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Xml.XPath.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\System.Xml.XPath.XDocument.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\vbc.exe.config
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\roslyn\vbc.rsp
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\EntityFramework.SqlServer.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\EntityFramework.SqlServer.xml
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Security.Cookies.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Security.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Security.OAuth.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Owin.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.xml
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Security.xml
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Security.Cookies.xml
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.Owin.Security.OAuth.xml
+c:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\akset.helper.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.Auth.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\System.Net.Http.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\WebGrease.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\akset.helper.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.Auth.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.Core.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\System.Web.Optimization.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\akset\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\akset.dll.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\akset.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\akset.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\csc.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\csc.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\csc.rsp
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\csi.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\csi.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\csi.rsp
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.AppContext.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Console.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.IO.Compression.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Security.Claims.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.ValueTuple.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\vbc.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\vbc.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\vbc.rsp
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\akset.data.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\akset.helper.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\EntityFramework.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.Auth.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Owin.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Net.Http.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Http.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Razor.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Webpages.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Webpages.Razor.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\WebGrease.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\akset.data.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\akset.helper.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\EntityFramework.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.Auth.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Google.Apis.Core.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Optimization.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Razor.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Webpages.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Webpages.Razor.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Http.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\obj\Debug\akset.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\obj\Debug\akset.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\obj\Debug\akset.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\StackExchange.Redis.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\StackExchange.Redis.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\GuigleAPI.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\MessagePack.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.ValueTuple.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\MessagePack.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\DotNetZip.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\RedisSessionProvider.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\DotNetZip.xml
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\ZeroFormatter.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\bilet\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\akset.dll.config
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\akset.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\akset.pdb
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\csc.exe
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\csc.exe.config
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\csc.rsp
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\csi.exe
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\csi.exe.config
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\csi.rsp
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.AppContext.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Console.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.IO.Compression.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Security.Claims.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.ValueTuple.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\vbc.exe
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\vbc.exe.config
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\vbc.rsp
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\akset.data.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\akset.helper.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\DotNetZip.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.Auth.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.Core.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\GuigleAPI.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\MessagePack.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Web.RedisOutputCacheProvider.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Web.RedisSessionStateProvider.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Owin.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\RedisSessionProvider.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\StackExchange.Redis.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Buffers.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.IO.Pipelines.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Memory.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Net.Http.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Numerics.Vectors.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Threading.Channels.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.ValueTuple.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Webpages.Deployment.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Webpages.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Webpages.Razor.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\WebGrease.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\ZeroFormatter.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\akset.data.pdb
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\akset.helper.pdb
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\DotNetZip.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.Auth.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Google.Apis.Core.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\MessagePack.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Web.RedisOutputCacheProvider.pdb
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Microsoft.Web.RedisSessionStateProvider.pdb
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\StackExchange.Redis.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Buffers.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.IO.Pipelines.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Memory.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Numerics.Vectors.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Threading.Channels.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Optimization.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Webpages.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Webpages.Deployment.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Webpages.Razor.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\obj\Debug\akset.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\obj\Debug\akset.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\obj\Debug\akset.pdb
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\WebDriver.dll
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\WebDriver.xml
+C:\Users\Administrator\Desktop\bilet 4.7.3\akset\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\akset.dll.config
+C:\Users\Administrator\Desktop\trendyol\akset\bin\akset.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\akset.pdb
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\csc.exe
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\csc.exe.config
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\csc.rsp
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\csi.exe
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\csi.exe.config
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\csi.rsp
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.AppContext.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Console.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.IO.Compression.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Security.Claims.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.ValueTuple.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\vbc.exe
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\vbc.exe.config
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\vbc.rsp
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\Administrator\Desktop\trendyol\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Administrator\Desktop\trendyol\akset\bin\akset.data.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\akset.helper.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\DotNetZip.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.Auth.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.Core.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\GuigleAPI.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\MessagePack.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Web.RedisOutputCacheProvider.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Web.RedisSessionStateProvider.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Owin.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\RedisSessionProvider.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\StackExchange.Redis.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Buffers.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.IO.Pipelines.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Memory.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Net.Http.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Numerics.Vectors.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Threading.Channels.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.ValueTuple.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\WebDriver.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\WebGrease.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\ZeroFormatter.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Administrator\Desktop\trendyol\akset\bin\akset.data.pdb
+C:\Users\Administrator\Desktop\trendyol\akset\bin\akset.helper.pdb
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Administrator\Desktop\trendyol\akset\bin\DotNetZip.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.Auth.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Google.Apis.Core.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\MessagePack.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Web.RedisOutputCacheProvider.pdb
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Web.RedisSessionStateProvider.pdb
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\StackExchange.Redis.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Buffers.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.IO.Pipelines.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Memory.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Numerics.Vectors.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Threading.Channels.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Optimization.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\WebDriver.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Administrator\Desktop\trendyol\akset\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Administrator\Desktop\trendyol\akset\obj\Debug\akset.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\trendyol\akset\obj\Debug\akset.dll
+C:\Users\Administrator\Desktop\trendyol\akset\obj\Debug\akset.pdb
+C:\Users\Administrator\Desktop\trendyol\akset\bin\Newtonsoft.Json.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\obj\Debug\akset.csprojAssemblyReference.cache
+C:\Users\Stack Developer\Desktop\damasutra\akset\obj\Debug\akset.csproj.CoreCompileInputs.cache
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.dll.config
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\csc.exe
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\csc.exe.config
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\csc.rsp
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\csi.exe
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\csi.exe.config
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\csi.rsp
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.AppContext.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Console.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.IO.Compression.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Security.Claims.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Threading.Thread.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.ValueTuple.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\vbc.exe
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\vbc.exe.config
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\vbc.rsp
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.data.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.helper.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Antlr3.Runtime.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\DotNetZip.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\EntityFramework.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.Auth.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.Core.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\GuigleAPI.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\MessagePack.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Web.RedisOutputCacheProvider.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Web.RedisSessionStateProvider.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Newtonsoft.Json.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\StackExchange.Redis.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Buffers.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.IO.Pipelines.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Memory.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Numerics.Vectors.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Threading.Channels.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Helpers.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Http.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Mvc.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Optimization.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Razor.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.WebPages.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.WebPages.Razor.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\WebDriver.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\WebGrease.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\ZeroFormatter.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.data.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.data.dll.config
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.helper.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\akset.helper.dll.config
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\DotNetZip.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\EntityFramework.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.Auth.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Google.Apis.Core.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\MessagePack.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Web.RedisOutputCacheProvider.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Web.RedisSessionStateProvider.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Newtonsoft.Json.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Newtonsoft.Json.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\StackExchange.Redis.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Buffers.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.IO.Pipelines.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Memory.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Numerics.Vectors.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Threading.Channels.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Helpers.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Mvc.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Optimization.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Razor.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.WebPages.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.WebPages.Razor.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\WebDriver.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Http.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\obj\Debug\akset.csproj.CopyComplete
+C:\Users\Stack Developer\Desktop\damasutra\akset\obj\Debug\akset.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\obj\Debug\akset.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\FFmpeg.NET.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset\bin\Javi.FFmpeg.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.dll.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\csc.exe
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\csc.exe.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\csc.rsp
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\csi.exe
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\csi.exe.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\csi.rsp
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.AppContext.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Console.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.IO.Compression.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.IO.Pipes.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Security.Claims.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Threading.Thread.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.ValueTuple.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Xml.XPath.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\vbc.exe
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\vbc.exe.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\vbc.rsp
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.data.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.helper.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Antlr3.Runtime.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\DotNetZip.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\EntityFramework.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\FFmpeg.NET.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.Auth.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.Core.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\GuigleAPI.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Javi.FFmpeg.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\MessagePack.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Web.RedisOutputCacheProvider.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Web.RedisSessionStateProvider.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Newtonsoft.Json.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Owin.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\StackExchange.Redis.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Buffers.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.IO.Pipelines.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Memory.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Numerics.Vectors.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Threading.Channels.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Helpers.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Http.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Mvc.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Optimization.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Razor.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.WebPages.Deployment.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.WebPages.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.WebPages.Razor.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\WebDriver.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\WebGrease.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\ZeroFormatter.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.data.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.data.dll.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.helper.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\akset.helper.dll.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Antlr3.Runtime.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\DotNetZip.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\EntityFramework.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.Auth.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Google.Apis.Core.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\MessagePack.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Web.RedisOutputCacheProvider.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Web.RedisSessionStateProvider.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Newtonsoft.Json.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Newtonsoft.Json.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\StackExchange.Redis.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Buffers.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.IO.Pipelines.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Memory.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Numerics.Vectors.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Threading.Channels.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Helpers.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Mvc.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Optimization.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Razor.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.WebPages.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.WebPages.Deployment.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.WebPages.Razor.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\WebDriver.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Http.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\bin\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\obj\Debug\akset.csprojAssemblyReference.cache
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\obj\Debug\akset.csproj.CoreCompileInputs.cache
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\obj\Debug\akset.csproj.CopyComplete
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\obj\Debug\akset.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset\obj\Debug\akset.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\csc.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\csc.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\csc.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\csi.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\csi.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\csi.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Buffers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Memory.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\vbc.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\vbc.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\vbc.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.data.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Antlr3.Runtime.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\DotNetZip.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\FFmpeg.NET.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Auth.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\GuigleAPI.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Javi.FFmpeg.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\MessagePack.Annotations.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\MessagePack.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Web.RedisOutputCacheProvider.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Web.RedisSessionStateProvider.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Newtonsoft.Json.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\StackExchange.Redis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Buffers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Collections.Immutable.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.IO.Pipelines.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Memory.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Numerics.Vectors.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Threading.Channels.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.ValueTuple.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Helpers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Http.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Mvc.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Optimization.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.WebPages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.WebPages.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\WebDriver.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\WebGrease.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\ZeroFormatter.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.data.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.data.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\akset.helper.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\DotNetZip.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\DotNetZip.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Analytics.v3.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.AnalyticsReporting.v4.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Auth.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Auth.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Core.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Google.Apis.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\MessagePack.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\MessagePack.Annotations.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Web.RedisOutputCacheProvider.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Web.RedisSessionStateProvider.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Newtonsoft.Json.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\StackExchange.Redis.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Buffers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Collections.Immutable.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.IO.Pipelines.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Memory.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Numerics.Vectors.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Threading.Channels.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.ValueTuple.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Helpers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Http.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Mvc.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Optimization.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.WebPages.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\System.Web.WebPages.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\WebDriver.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\bin\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\obj\Debug\akset.csproj.CoreCompileInputs.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\obj\Debug\akset.csproj.CopyComplete
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\obj\Debug\akset.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\obj\Debug\akset.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset\obj\Debug\akset.csprojAssemblyReference.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\csc.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\csc.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\csc.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\csi.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\csi.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\csi.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Buffers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Memory.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\vbc.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\vbc.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\vbc.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.data.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Antlr3.Runtime.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\DotNetZip.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\FFmpeg.NET.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Auth.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\GuigleAPI.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Javi.FFmpeg.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\MessagePack.Annotations.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\MessagePack.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Web.RedisOutputCacheProvider.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Web.RedisSessionStateProvider.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Newtonsoft.Json.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\StackExchange.Redis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Buffers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Collections.Immutable.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.IO.Pipelines.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Memory.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Numerics.Vectors.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Threading.Channels.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.ValueTuple.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Helpers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Http.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Mvc.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Optimization.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.WebPages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.WebPages.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\WebDriver.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\WebGrease.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\ZeroFormatter.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.data.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.data.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\akset.helper.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\DotNetZip.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\DotNetZip.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Analytics.v3.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.AnalyticsReporting.v4.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Auth.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Auth.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Core.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Google.Apis.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\MessagePack.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\MessagePack.Annotations.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Web.RedisOutputCacheProvider.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Web.RedisSessionStateProvider.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Newtonsoft.Json.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\StackExchange.Redis.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Buffers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Collections.Immutable.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.IO.Pipelines.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Memory.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Numerics.Vectors.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Threading.Channels.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.ValueTuple.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Helpers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Http.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Mvc.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Optimization.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.WebPages.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\System.Web.WebPages.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\WebDriver.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\bin\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\obj\Debug\akset.csprojAssemblyReference.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\obj\Debug\akset.csproj.CoreCompileInputs.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\obj\Debug\akset.csproj.CopyComplete
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\obj\Debug\akset.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset\obj\Debug\akset.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\csc.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\csc.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\csc.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\csi.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\csi.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\csi.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Buffers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Memory.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Numerics.Vectors.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\vbc.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\vbc.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\vbc.rsp
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\VBCSCompiler.exe
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.data.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Antlr3.Runtime.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\DotNetZip.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\EntityFramework.SqlServer.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\FFmpeg.NET.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Analytics.v3.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.AnalyticsReporting.v4.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Auth.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Auth.PlatformServices.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.PlatformServices.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\GuigleAPI.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Javi.FFmpeg.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\MessagePack.Annotations.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\MessagePack.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Web.RedisOutputCacheProvider.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Web.RedisSessionStateProvider.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Newtonsoft.Json.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Pipelines.Sockets.Unofficial.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\StackExchange.Redis.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Buffers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Collections.Immutable.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Diagnostics.PerformanceCounter.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.IO.Pipelines.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Memory.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Net.Http.Formatting.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Numerics.Vectors.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Threading.Channels.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.ValueTuple.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Helpers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Http.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Http.WebHost.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Mvc.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Optimization.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.WebPages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.WebPages.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\WebDriver.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\WebGrease.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\ZeroFormatter.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\ZeroFormatter.Interfaces.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.data.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.data.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\akset.helper.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Antlr3.Runtime.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\DotNetZip.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\DotNetZip.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\EntityFramework.SqlServer.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Analytics.v3.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Analytics.v3.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.AnalyticsReporting.v4.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.AnalyticsReporting.v4.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Auth.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Auth.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Core.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Google.Apis.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\MessagePack.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\MessagePack.Annotations.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.OutputCache.OutputCacheModuleAsync.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.AspNet.SessionState.SessionStateModule.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Web.RedisOutputCacheProvider.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Web.RedisSessionStateProvider.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Newtonsoft.Json.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Pipelines.Sockets.Unofficial.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\StackExchange.Redis.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Buffers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Collections.Immutable.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Diagnostics.PerformanceCounter.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.IO.Pipelines.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Memory.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Net.Http.Formatting.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Numerics.Vectors.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Threading.Channels.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.ValueTuple.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Helpers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Http.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Http.WebHost.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Mvc.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Optimization.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.WebPages.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\System.Web.WebPages.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\WebDriver.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\bin\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\obj\Debug\akset.csprojAssemblyReference.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\obj\Debug\akset.csproj.CoreCompileInputs.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\obj\Debug\akset.csproj.CopyComplete
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\obj\Debug\akset.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset\obj\Debug\akset.pdb

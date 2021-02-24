@@ -1,0 +1,131 @@
+﻿@model IEnumerable<akset.data.AttributeKategori>
+@using System.Data.Entity
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@section pagespecific{
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+        })
+
+    </script>
+}
+
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Kategori-Öznitelik Listesi </h2>
+                    </header>
+                    <div>
+                        <style>
+                        </style>
+                        <div class="widget-body" style="padding: 10px;">
+                            <div style="width: 100%;text-align: right;margin-bottom: 10px;">
+                                <a href="/Admin/AttributeKategoris/Create" class="btn btn-success btn-sm">Kategoriye Öznitelik Ekle &rarr;</a>
+                            </div>
+                            <table id="dt_basic" class="table table-hover table-condensed table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Kategori Adı
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Attribute.Name)
+                                        </th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                    @foreach (int item in Model.Select(a => a.KategoriId).Distinct())
+                                    {
+                                        int yy = 0;
+                                        var fff = aksetDB.Create().Kategoris.Include(a => a.parent).Include(a => a.parent.parent).Where(a => a.Id == item).FirstOrDefault();
+                                        <tr>
+                                            <td>
+                                                @if (fff.parent != null && fff.parent.parent != null)
+                                                {
+                                                    <div>@fff.parent.parent.adi > @fff.parent.adi > @fff.adi</div>
+                                                }
+                                                @if (fff.parent != null && fff.parent.parent == null)
+                                                {
+                                                    <div>@fff.parent.adi > @fff.adi</div>
+                                                }
+                                                @if (fff.parent==null)
+                                                {
+                                                    <div>@fff.adi</div>
+                                                }
+                                            </td>
+                                            <td>
+                                                <ul class="list-inline listx">
+                                                    @foreach (var itemi in aksetDB.Create().AttributeKategoris.Where(a => a.KategoriId == item).ToList())
+                                                    {
+                                                        yy++;
+                                                        <li>@aksetDB.Create().Attributes.Where(a => a.Id == itemi.AttributeId).FirstOrDefault().Name</li>
+                                                        if (aksetDB.Create().AttributeKategoris.Where(a => a.KategoriId == item).ToList().Count != yy)
+                                                        {
+                                                            <li>|</li>
+                                                        }
+
+                                                    }
+                                                </ul>
+                                            </td>
+                                            <td>
+                                                <a href="/admin/AttributeKategoris/edit/@item">Düzenle</a>
+                                                <a href="/admin/AttributeKategoris/Delete/@item" onclick="return confirm('Silmek İstediğinize Emin misiniz?');">Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,80 @@
+﻿@model akset.data.Makale
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Makale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.icerik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.goruntuleme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.goruntuleme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aktif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aktif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resim)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

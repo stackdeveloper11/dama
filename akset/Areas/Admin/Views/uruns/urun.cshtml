@@ -1,0 +1,115 @@
+﻿@model ICollection<akset.data.urun>
+@{
+    ViewBag.Title = "urun";
+    int say = 0;
+}
+
+
+<div id="content">
+
+
+
+
+    <section id="widget-grid" class="" style="padding:0">
+
+        <!-- row -->
+        <div class="row">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Ürünler </h2>
+
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            <p>
+                                <a href="/Admin/uruns/wizardurum" class="btn btn-success btn-xs">Yeni Ürün Ekle &rarr;</a>
+                            </p>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dt_basic">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                          
+                                            <th>Ürün Adı</th>
+                                            <th>Fiyat</th>
+                                            <th>Yorum</th>
+                                            <th>Ürün Detayı</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            say++;
+                                            <tr>
+                                                <td>
+                                                    @say
+                                                </td>
+                                        
+                                                <td>
+                                                    @item.urunadi
+                                                </td>
+                                                <td>
+                                                    @item.fiyat
+                                                </td>
+                                                <td>
+                                                    @item.yorums.Count()
+                                                </td>
+                                                <td>
+                       @item.tarih.ToString("dd/MM/yyyy") <a href="/@string.Concat(akset.helper.Genel.URLFriendly(item.urunbaslik), "-", "urunid", "-", item.Id)" target="_blank">Ürünü Görüntüle</a>
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/uruns/wizardurumedit/@item.Id" class="btn btn-primary btn-xs">Düzenle</a>
+                                                    <a href="/admin/uruns/delete/@item.Id" onclick="return confirm('Silmek İstediğinize Emin misiniz?')" class="btn btn-danger btn-xs">Sil</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+@section pagespecific{
+    <script>
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                "t" +
+                "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+                "order": [[ 0, "desc" ]],
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+        })
+    </script>
+}

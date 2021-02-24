@@ -1,0 +1,217 @@
+﻿@model List<akset.data.urun>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.15.0/lazyload.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var myLazyLoad = new LazyLoad();
+        myLazyLoad.update();
+    });
+</script>
+
+<ul class="list-inline">
+    <li class="list-inline-item" style="font-size:14px">
+        <i class="fa fa-home"></i>
+    </li>
+    <li class="list-inline-item">
+        <img src="~/img/breadcrumb-right-arrow.png" />
+    </li>
+    <li class="list-inline-item" style="font-size:14px">
+        @ViewContext.RouteData.Values["ara"].ToString()
+    </li>
+</ul>
+<style>
+    @@media screen and (max-width: 991px) {
+        .logopng {
+            margin-left: -40px !important;
+        }
+    }
+</style>
+<style>
+    .ddff {
+        height: 64px;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        line-height: 64px;
+        font-size: 22px;
+    }
+
+    .ddff2 {
+        background-color: #fff;
+        color: #414040;
+        font-size: 12px;
+        height: 48px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 102;
+        border: 1px solid #eaeaea;
+        border-top: 0;
+    }
+
+    .cargo-stamp-box {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+        width: 72px;
+        min-height: 29px;
+        z-index: 5;
+    }
+
+        .cargo-stamp-box .rush-delivery-green, .karg {
+            width: 72px;
+            height: 18px;
+            margin-bottom: 5px;
+            background-color: #3ec461;
+            padding: 5px 0;
+        }
+
+        .cargo-stamp-box span {
+            display: block;
+            font-size: 11px;
+            color: #fff;
+            line-height: 10px;
+            text-align: center;
+        }
+
+    .favorite {
+        position: absolute;
+        right: 16px;
+        top: 9px;
+        width: 36px;
+        height: 36px;
+        z-index: 1;
+    }
+
+        .favorite i {
+            float: left;
+            width: 43px;
+            height: 43px;
+            background: url(/img/favorite-heart.svg) no-repeat;
+        }
+
+
+    .lisst li {
+        margin-bottom: 9px;
+        overflow: hidden;
+    }
+
+    .list-inline-item img:hover {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0) scale(1,1);
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        transform: scale(1.04);
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        -ms-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    .product-info-container .brand {
+        font-size: 14px;
+        color: #333;
+        height: 18px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .product-info-container .name {
+        position: relative;
+        display: block;
+        line-height: normal;
+        font-size: 13px;
+        color: #666;
+        margin-top: 2px;
+        text-align: left;
+    }
+
+    .product-info-container .price-container {
+        height: 31px;
+        margin-top: -2px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        text-align: left;
+    }
+
+        .product-info-container .price-container .market-price {
+            height: 22px;
+            font-size: 15px;
+            line-height: normal;
+            color: #878787;
+            text-decoration: line-through;
+            margin-right: 5px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .product-info-container .price-container .sale-price {
+            height: 30px;
+            text-align: left;
+            line-height: 30px;
+            font-size: 18px;
+            color: #f27a1a;
+            display: inline-block;
+        }
+
+    .product-info-container {
+        float: left;
+        background-color: hsla(0,0%,100%,.9);
+        position: relative;
+        padding: 10px 10px 5px;
+    }
+</style>
+<div class="col-12 ddff">
+    поиск: @Html.Raw(ViewContext.RouteData.Values["ara"].ToString())
+</div>
+<script>
+    $(document).on('click', '.dropdown-menu', function (e) {
+        e.stopPropagation();
+    });
+</script>
+
+
+<div class="col-12" style="padding: 15px 0 0 0;">
+    <ul class="list-inline lisst" style="text-align: center;">
+        @foreach (var item in Model)
+        {
+            <li class="list-inline-item" style="position: relative;width:253px;border: 1px solid #eaeaea !important;">
+                <div class="favorite" onclick="addfavor()">
+                    <i class="icon icon-favorite-heart"></i>
+                </div>
+                <a href="/product/@item.Id/@akset.helper.Genel.URLFriendly(item.urunadi)">
+                    <div style="overflow:hidden;width:253px;height:218px">
+                        <img src="~/urunresimleri/@string.Concat(item.resim,".jpg")" alt="" style="width:253px" />
+                    </div>
+
+                    <div class="cargo-stamp-box">
+                        <div class="rush-delivery-green">
+                            <span>быстрая</span>
+                            <span class="karg">доставка</span>
+                        </div>
+                    </div>
+                    <div class="product-info-container" style="width:100%">
+                        <div class="info-box" style="text-align:left">
+                            <div class="brand" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">@item.urunadi</div>
+                            <div class="name">@item.urunbaslik</div>
+                            <div class="price-container" style="float:right">
+                                <div class="market-price" style="line-height:30px">@string.Concat(Convert.ToDecimal(item.fiyat) * 2) <img src="~/img/ruble.jpg" alt="" style="width: 10px;display: inline;" /></div>
+                                <div class="sale-price" style="font-weight: bolder;">@item.fiyat <img src="~/img/ruble.jpg" alt="" style="width: 10px;display: inline;" /></div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <div class="addcart my-cart-btn" data-id="@item.Id" data-name="@item.urunadi" data-summary="@item.urunbaslik" data-image="/urunresimleri/@string.Concat(item.resim,".jpg")" data-price="@item.fiyat" data-quantity="1" title="@item.urunbaslik">
+                    <i class="fa fa-shopping-cart"></i> Добавить в корзину
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+
+
+

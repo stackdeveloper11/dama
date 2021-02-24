@@ -1,0 +1,936 @@
+﻿@model List<akset.data.Vitrinler>
+@{
+    ViewBag.Title = "Selmahanim.com";
+    int i = 0;
+    aksetDB db = new aksetDB();
+}
+
+@*<script src="~/js/jquery.countdown.min.js"></script>*@
+
+<script>
+    $(document).ready(function () {
+        $('[data-countdown]').each(function () {
+            $(this).countdown($(this).attr("data-countdown"), function (event) {
+                if (event.strftime("%D")=="00") {
+                    $(this).html('<i class="fa fa-clock-o"></i> Bitiş Zamanı: ' + event.strftime('%H:%M:%S'));
+                }
+                else {
+                    $(this).html('<i class="fa fa-clock-o"></i> Bitiş Zamanı: ' + event.strftime('%D Gün %H:%M:%S'));
+                }
+            });
+        });
+    });
+</script>
+<style>
+    .vitrin li {
+        background: #faf9f9;
+        overflow: hidden;
+        margin-bottom: 18px;
+        position: relative;
+        padding: 10px;
+        padding-bottom: 0px;
+        padding-top: 0;
+    }
+
+        .vitrin li a {
+            display: block;
+            text-decoration: none;
+        }
+
+            .vitrin li a img {
+                -webkit-transition: all 1s ease;
+                -moz-transition: all 1s ease;
+                -o-transition: all 1s ease;
+                -ms-transition: all 1s ease;
+                transition: all 1s ease;
+            }
+
+                .vitrin li a img:hover {
+                    opacity: 0.8;
+                    -webkit-transition: all 0.3s ease-in-out;
+                    -moz-transition: all 0.3s ease-in-out;
+                    -o-transition: all 0.3s ease-in-out;
+                    -ms-transition: all 0.3s ease-in-out;
+                    transition: all 0.3s ease-in-out;
+                    -webkit-backface-visibility: hidden;
+                    -webkit-transform: translateZ(0) scale(1,1);
+                    -webkit-transform: scale(1.02);
+                    -ms-transform: translateZ(0) scale(1,1);
+                    -ms-transform: scale(1.02);
+                    -o-transform: scale(1.02);
+                    -moz-transform: scale(1.015);
+                    transform: scale(1.015);
+                    -webkit-transition: all 1s ease;
+                    -moz-transition: all 1s ease;
+                    -o-transition: all 1s ease;
+                    -ms-transition: all 1s ease;
+                    transition: all 1s ease;
+                }
+
+            .vitrin li a div span {
+                font-size: 0.9rem !important;
+            }
+
+    @@media screen and (max-width:768px) {
+        .vitrin li a div span {
+            font-size: 13px !important;
+        }
+
+        .vitrin li a div .yazisi {
+            margin-top: 3px;
+        }
+
+        .vitrin li a {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .vitrin li {
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+    }
+</style>
+<style>
+    @@media screen and (min-width: 768px) and (max-width: 1024px) {
+        .ddfw {
+            width: 50% !important;
+        }
+
+        .hghg {
+            width: 50% !important;
+        }
+
+        .vitrin li a {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .ffff {
+            padding: 30px;
+        }
+    }
+
+    @@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        .ddfw {
+            width: 33% !important;
+        }
+
+        .hghg {
+            width: 50% !important;
+        }
+    }
+
+    @@media screen and (max-width: 768px) and (orientation:portrait) {
+        .ddfw {
+            width: 100% !important;
+        }
+
+        .hghg {
+            width: 100% !important;
+        }
+
+        .vitrin li a {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .ffff {
+            padding: 15px;
+        }
+
+        .ProductListnext:before, .ProductListprev:before {
+            font-size: 45px;
+        }
+    }
+
+    @@media screen and (max-width: 768px) and (orientation:landscape) {
+        .ddfw {
+            width: 50% !important;
+        }
+
+        .hghg {
+            width: 50% !important;
+        }
+
+        .vitrin li a {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .ffff {
+            padding: 15px;
+        }
+    }
+
+    .ddff {
+        height: 64px;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        line-height: 64px;
+        font-size: 22px;
+    }
+
+    .ddff2 {
+        background-color: #fff;
+        color: #414040;
+        font-size: 12px;
+        height: 48px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 102;
+        border: 1px solid #eaeaea;
+        border-top: 0;
+    }
+
+    .cargo-stamp-box {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+        width: 72px;
+        min-height: 29px;
+        z-index: 5;
+    }
+
+        .cargo-stamp-box .rush-delivery-green, .karg {
+            width: 72px;
+            height: 18px;
+            margin-bottom: 5px;
+            background-color: #3ec461;
+            padding: 5px 0;
+        }
+
+        .cargo-stamp-box span {
+            display: block;
+            font-size: 11px;
+            color: #fff;
+            line-height: 10px;
+            text-align: center;
+        }
+
+    .favorite {
+        position: absolute;
+        right: 16px;
+        top: 9px;
+        width: 36px;
+        height: 36px;
+        z-index: 1;
+    }
+
+        .favorite i {
+            float: left;
+            width: 43px;
+            height: 43px;
+            background: url(/img/favorite-heart.svg) no-repeat;
+        }
+
+ 
+
+    .lisst li {
+        margin-bottom: 9px;
+        overflow: hidden;
+    }
+
+    .hepy img:hover {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0) scale(1,1);
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        transform: scale(1.04);
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        -ms-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    .product-info-container .brand {
+        font-size: 14px;
+        color: #333;
+        height: 18px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .product-info-container .name {
+        position: relative;
+        display: block;
+        line-height: normal;
+        font-size: 13px;
+        color: #666;
+        margin-top: 2px;
+        text-align: left;
+    }
+
+    .product-info-container .price-container {
+        height: 31px;
+        margin-top: -2px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        text-align: left;
+    }
+
+        .product-info-container .price-container .market-price {
+            height: 22px;
+            font-size: 15px;
+            line-height: normal;
+            color: #878787;
+            text-decoration: line-through;
+            margin-right: 5px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .product-info-container .price-container .sale-price {
+            height: 30px;
+            text-align: left;
+            line-height: 30px;
+            font-size: 18px;
+            color: #f27a1a;
+            display: inline-block;
+        }
+
+    .product-info-container {
+        float: left;
+        background-color: hsla(0,0%,100%,.9);
+        position: relative;
+        padding: 10px 10px 5px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row row-eq-height" style="margin-top: 20px;">
+        @section scr{
+            <link href="~/css/owl.css" rel="stylesheet" />
+            <script src="~/js/owl.js"></script>
+            <style>
+                .ProductListprev, .ProductListnext {
+                    display: inline-block;
+                    z-index: 9;
+                    font-size: 0;
+                    text-align: center;
+                    top: 0;
+                    margin: 0;
+                    opacity: 1 !important;
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    border: 0;
+                    background-color: transparent;
+                    border-radius: 0;
+                }
+
+                .ProductListprev {
+                    left: 0;
+                }
+
+                .ProductListprev, .ProductListnext {
+                    font-size: 0;
+                    width: 25px;
+                    height: 58px;
+                    border: 0;
+                    top: 0;
+                    margin: auto;
+                    bottom: 0;
+                    border-radius: 100%;
+                    background: transparent;
+                    position: absolute;
+                    display: inline-block;
+                    cursor: pointer;
+                    text-align: center;
+                    -webkit-transition: all .3s ease;
+                    -moz-transition: all .3s ease;
+                    transition: all .3s ease;
+                }
+
+                .ProductListnext {
+                    right: 15px;
+                }
+
+                .ProductListprev {
+                    left: 0;
+                }
+
+                    .ProductListprev:before {
+                        content: '\2039';
+                        font-family: linearicons-free;
+                        font-size: 90px;
+                        line-height: 40px;
+                        color: #fff;
+                    }
+
+                .ProductListnext:before {
+                    content: '\203A';
+                    font-family: linearicons-free;
+                    font-size: 90px;
+                    line-height: 40px;
+                    color: #fff;
+                }
+
+                .owl-dots .owl-dot span {
+                    position: relative;
+                    width: 8px;
+                    height: 8px;
+                    box-shadow: none;
+                    font-size: 0;
+                    text-indent: 0;
+                    background: #fff;
+                    border: 1px solid #000000;
+                    border-radius: 0;
+                    display: block;
+                    cursor: default;
+                }
+
+                .owl-dots .owl-dot {
+                    margin: 0 !important;
+                    cursor: pointer;
+                    display: inline-block;
+                    zoom: 1;
+                }
+
+                    .owl-dots .owl-dot span {
+                        position: relative;
+                        width: 8px;
+                        height: 8px;
+                        box-shadow: none;
+                        font-size: 0;
+                        text-indent: 0;
+                        background: #fff;
+                        border: 1px solid #000000;
+                        border-radius: 0 !important;
+                        display: block;
+                        cursor: default;
+                        content: "\00BB";
+                    }
+
+                .owl-dots {
+                    margin-top: -38px;
+                }
+
+                .owl-dot.active span {
+                    background: black !important;
+                }
+
+                .owl-dot span {
+                    background: white !important;
+                }
+            </style>
+            <script>
+            jQuery(document).ready(function($) {
+              $('.owl-carousel').owlCarousel({
+                  nav: true,
+                  dots: true,
+                  autoplay: true,
+                  slideSpeed: 300,
+                  paginationSpeed: 400,
+                  singleItem: true,
+                  items: 1,
+
+                  autoplayTimeout: 4000,
+                  navClass: ['ProductListprev', 'ProductListnext'],
+                  autoplaySpeed: 800,
+                  autoplayHoverPause: true,
+                  navRewind: true,
+
+
+                lazyLoad: true,
+                lazyLoadEager: 1,
+                loop: true,
+                margin: 10,
+                loop: true,
+                nav: true,
+
+              });
+            });
+            </script>
+        }
+        <div class="col-xs-12 col-md-9" style="padding:0">
+            <div class="owl-carousel owl-theme">
+                @foreach (var item in db.Sliders.OrderBy(a => a.sirasi).ToList())
+                {//https://placehold.it/900x368&text=4
+                    <a href="@item.adresi" title="@item.baslik" @string.Concat(item.aktif ? "target=_blank" : "")>
+                        <img class="owl-lazy" data-src="/slaytresimleri/@string.Concat(item.Id,item.aciklama,"?id=",item.cacheno)" alt="@item.baslik">
+                    </a>
+                }
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-3 d-none d-md-block" style="padding:0">
+            <ul class="list-unstyled vitrin" style="margin:0;">
+                @foreach (var item in aksetDB.Create().sagtarafs.ToList())
+                {
+                    string adres = string.IsNullOrEmpty(item.adres) ? "" : "https://" + item.adres.Replace("http://", "").Replace("https://", "");
+                    <li style="margin-bottom:15px">
+                        <a href="@adres" target="_blank" title="@item.baslik">
+                            <img src="~/SagResimleri/@item.resim" alt="@item.baslik" class="img-fluid" />
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row mmenux" style="margin-top: 20px; padding: 0;border-bottom:1px solid black;border-top:1px solid black">
+    <div class="col-6" style="padding:0;position:relative">
+        <ul class="list-unstyled lss">
+            @foreach (var item in db.supmenus.Where(a => a.yeri == "sol").OrderBy(a => a.sira).ToList())
+            {
+                <li>
+                    @if (string.IsNullOrEmpty(item.link))
+                    {
+                        <a href="#3" style="color:black"  onclick="acmns(@item.Id)"><span>»</span> @item.adi</a>
+
+                        @*<div class="modal fade" id="exampleModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="padding: 3px;border: 0;">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true" style="font-size:30px">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        @foreach (var itemi in db.Kategoris.Where(a => a.adi.ToLower().Trim() == item.adi.ToLower().Trim()).OrderBy(a => a.sira))
+                                        {
+                                            <h4>
+                                                <img class="d-sm-none lazy" data-src="/KategoriResimleri/@itemi.resim" alt="@itemi.adi" style="border-radius:100%;width:60px;height:60px" src="/KategoriResimleri/@itemi.resim" data-loaded="true"> @itemi.adi
+                                            </h4>
+                                                          <ul id="accordion-@itemi.Id" class="list-unstyled">
+                                                                @foreach (var itemx in aksetDB.Create().Kategoris.Where(a => a.parentId == itemi.Id).OrderBy(a => a.sira))
+                                                                {
+                                                                    <li>
+                                                                        <a href="#33" data-toggle="collapse" data-target="#collapseOne-@itemx.Id" aria-expanded="true" aria-controls="collapseOne-@itemx.Id">
+                                                                            @itemx.adi <i class="fa fa-chevron-down pull-right"></i>
+                                                                        </a>
+                                                                        <div id="collapseOne-@itemx.Id" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-@itemi.Id">
+                                                                            <ul class="list-unstyled">
+                                                                                @foreach (var itex in aksetDB.Create().Kategoris.Where(a => a.parentId == itemx.Id).OrderBy(a => a.sira))
+                                                                                {
+                                                                                    <li>
+                                                                                        <a href="@akset.helper.Genel.URLFriendly(itex.adi)">
+                                                                                            @itex.adi
+                                                                                        </a>
+                                                                                    </li>
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </li>
+                                                                }
+                                                          </ul>
+                                        }
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    }
+                    else
+                    {
+                        <a href="@item.link" style="color:black"><span>»</span> @item.adi</a>
+                    }
+                </li>
+            }
+        </ul>
+        @foreach (var item in db.supmenus.Where(a => a.yeri == "sol").OrderBy(a => a.sira).ToList())
+        {
+            int ustmenid = db.ustmenus.Where(a => a.ustmenuadi == item.adi).FirstOrDefault().Id;
+            var ustalti = db.ustunaltis.Where(a => a.ustmenuId == ustmenid).ToList();
+            int ff = db.Kategoris.Where(a => a.adi.ToLower().Trim() == item.adi.ToLower().Trim()).FirstOrDefault() != null ? db.Kategoris.Where(a => a.adi.ToLower().Trim() == item.adi.ToLower().Trim()).FirstOrDefault().Id : 0;
+             <div id="mobilmenu2-@item.Id" class="mobilmenut menures" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100%;background: white;height: 100%;z-index:-1;padding-top: 82px; overflow: auto;padding-bottom: 82px;">
+                <h4 class="text-left bslxc2" style="background: #ebeff2;padding: 22px 20px;font-size: 17px;position: absolute;top: 0px;right: 0;left: 0;width: 100%;margin: 0;">
+                    @item.adi
+                    <span class="pull-right gapah" style="cursor:pointer"><i class="far fa-times" style="font-weight: 300 !important;font-size:22px"></i></span>
+                </h4>
+
+              
+              @foreach (var itemih in ustalti.OrderBy(a => a.sira))
+              {
+                <h3 href="#e" style="color: black;font-size: 18px;text-align:center">
+                    <img src="/MenuResimleri/@itemih.resimi" alt="@itemih.ustunaltiadi" style="display: block;width: 80px;height: 80px; border-radius: 100%;border: 1px solid white;margin: 0 auto;margin-bottom: 6px;"> @itemih.ustunaltiadi
+                </h3>
+                <ul class="list-unstyled lii" style="padding: 0 10px;">
+                    @if (string.IsNullOrEmpty(itemih.katler))
+                    {
+                        foreach (var itemi in db.Kategoris.Where(a => a.parentId == itemih.Id).OrderBy(a => a.sira))
+                        {
+                            <li style="border-bottom: 1px solid #eee; padding: 10px;">
+                                @if (string.IsNullOrEmpty(itemi.link))
+                            {
+                                    <a href="@akset.helper.Genel.URLFriendly(itemi.baslik)" style="color:black">
+                                        @*<img src="~/KategoriResimleri/@itemi.resim" alt="@itemi.baslik" style="display: inline-block;width: 70px;height: 70px;border-radius: 100%;border: 1px solid white;margin-right: 10px;" />*@ <i class="@itemi.faikon.Replace("_","-")"></i> @itemi.adi
+                                    </a>
+                                }
+                                else
+                                {
+                                    <a href="@itemi.link" style="color:black">
+                                        @*<img src="~/KategoriResimleri/@itemi.resim" alt="" />*@ <i class="@itemi.faikon.Replace("_","-")"></i> @itemi.adi
+                                    </a>
+                                }
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        List<Kategori> kayit = new List<Kategori>();
+                        int iii = 0;
+                        foreach (var itemk in itemih.katler.Split(','))
+                        {
+                            iii++;
+                            int itemf = 0;
+                            string ikn = "fa fa-angle-right";
+                            if (itemk.Contains("-"))
+                            {
+                                itemf = Convert.ToInt32(itemk.Split('-')[0]);
+                                ikn = itemk.Split('-')[1];
+                            }
+                            else
+                            {
+                                itemf = Convert.ToInt32(itemk);
+                            }
+
+                            Kategori kkk = aksetDB.Create().Kategoris.Where(a => a.Id == itemf).FirstOrDefault();
+                            if (kkk != null)
+                            {
+                                kkk.sira = iii;
+                                kkk.faikon = ikn;
+                                kayit.Add(kkk);
+                            }
+
+                        }
+                        if (kayit.FirstOrDefault() != null)
+                        {
+                            int sayi1, sayi2, sonuc, sayac;
+                            sayi1 = kayit.Count();
+                            sayi2 = itemih.kacli;
+                            sonuc = sayi1;
+                            bool drm = false;
+                            if (sayi1 > sayi2 && sayi2 > 0)
+                            {
+                                drm = true;
+                            }
+
+                            foreach (var itemix in kayit)
+                            {
+                                <li style="border-bottom: 1px solid #eee; padding: 10px;">
+                                    @if (string.IsNullOrEmpty(itemix.link))
+                                    {
+                                        <a href="@akset.helper.Genel.URLFriendly(itemix.baslik)" style="color:black">
+                                            @*<img src="~/KategoriResimleri/@itemi.resim" alt="@itemi.baslik" style="display: inline-block;width: 70px;height: 70px;border-radius: 100%;border: 1px solid white;margin-right: 10px;" />*@ <i class="@itemix.faikon.Replace("_","-")"></i> @itemix.adi
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@itemix.link" style="color:black">
+                                            @*<img src="~/KategoriResimleri/@itemi.resim" alt="" />*@ <i class="@itemix.faikon.Replace("_","-")"></i> @itemix.adi
+                                        </a>
+                                    }
+                                </li>
+                            }
+                        }
+                    }
+                  
+                </ul>
+              }
+                <div class="bslxc2" style="position:fixed;bottom:0px;right:0;left:0;width:100%;background: #ebeff2;">
+                    <ul class="ggtthh">
+                        <li><a class="" href="/"><i class="fal fa-home"></i>Anasayfa</a></li>
+                        <li><a href="/"><i class="fal fa-heart"></i> Favorilerim</a></li>
+                        <li><a href="/"><i class="fal fa-shopping-cart"></i>Sepetim</a></li>
+                        <li class="hesabimAs"><a href="/"><i class="fal fa-user"></i><span>Üyelik</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-6" style="padding:0;position:relative">
+        <ul class="list-unstyled lss">
+            @foreach (var item in db.supmenus.Where(a => a.yeri == "sag").OrderBy(a => a.sira).ToList())
+            {
+                <li>
+                    @if (string.IsNullOrEmpty(item.link))
+                    {
+                        <a href="#3" style="color:black" onclick="acmns(@item.Id)"><span>»</span> @item.adi</a>
+                    
+                        @*<div class="modal fade" id="exampleModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="padding: 3px;border: 0;">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="text-decoration:none !important">
+                                            <span aria-hidden="true" style="font-size:30px">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        @foreach (var itemi in db.Kategoris.Where(a => a.adi.ToLower().Trim() == item.adi.ToLower().Trim()).OrderBy(a => a.sira))
+                                        {
+                                            <h4>
+                                                <img class="d-sm-none lazy" data-src="/KategoriResimleri/@itemi.resim" alt="@itemi.adi" style="border-radius:100%;width:60px;height:60px" src="/KategoriResimleri/@itemi.resim" data-loaded="true"> @itemi.adi
+                                            </h4>
+                                                            <ul id="accordion-@itemi.Id" class="list-unstyled">
+                                                                @foreach (var itemx in aksetDB.Create().Kategoris.Where(a => a.parentId == itemi.Id).OrderBy(a => a.sira))
+                                                                {
+                                                                    <li>
+                                                                        <a href="#33" data-toggle="collapse" data-target="#collapseOne-@itemx.Id" aria-expanded="true" aria-controls="collapseOne-@itemx.Id">
+                                                                            @itemx.adi <i class="fa fa-chevron-down pull-right"></i>
+                                                                        </a>
+                                                                        <div id="collapseOne-@itemx.Id" class="collapse" aria-labelledby="headingOne" data-parent="#accordion-@itemi.Id">
+                                                                            <ul class="list-unstyled">
+                                                                                @foreach (var itex in aksetDB.Create().Kategoris.Where(a => a.parentId == itemx.Id).OrderBy(a => a.sira))
+                                                                                {
+                                                                                    <li>
+                                                                                        <a href="@akset.helper.Genel.URLFriendly(itex.adi)">
+                                                                                            @itex.adi
+                                                                                        </a>
+                                                                                    </li>
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </li>
+                                                                }
+                                                            </ul>
+                                        }
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>*@
+                    }
+                    else
+                    {
+                        <a href="@item.link" style="color:black"><span>»</span> @item.adi</a>
+                    }
+                </li>
+            }
+        </ul>
+
+        @foreach (var item in db.supmenus.Where(a => a.yeri == "sag").OrderBy(a => a.sira).ToList())
+        {
+            int ustmenid = db.ustmenus.Where(a => a.ustmenuadi == item.adi).FirstOrDefault().Id;
+            var ustalti = db.ustunaltis.Where(a => a.ustmenuId == ustmenid).ToList();
+            int ff = db.Kategoris.Where(a => a.adi.ToLower().Trim() == item.adi.ToLower().Trim()).FirstOrDefault() != null ? db.Kategoris.Where(a => a.adi.ToLower().Trim() == item.adi.ToLower().Trim()).FirstOrDefault().Id : 0;
+            <div id="mobilmenu2-@item.Id" class="mobilmenut menures" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100%;background: white;height: 100%;z-index:-1;padding-top: 82px; overflow: auto;padding-bottom: 82px;">
+                <h4 class="text-left bslxc2" style="background: #ebeff2;padding: 22px 20px;font-size: 17px;position: absolute;top: 0px;right: 0;left: 0;width: 100%;margin: 0;">
+                    @item.adi
+                    <span class="pull-right gapah" style="cursor:pointer"><i class="far fa-times" style="font-weight: 300 !important;font-size:22px"></i></span>
+                </h4>
+
+
+                @foreach (var itemih in ustalti.OrderBy(a => a.sira))
+                {
+                    <h3 href="#e" style="color: black;font-size: 18px;text-align:center">
+                        <img src="/MenuResimleri/@itemih.resimi" alt="@itemih.ustunaltiadi" style="display: block;width: 80px;height: 80px; border-radius: 100%;border: 1px solid white;margin: 0 auto;margin-bottom: 6px;"> @itemih.ustunaltiadi
+                    </h3>
+                    <ul class="list-unstyled lii" style="padding: 0 10px;">
+                        @if (string.IsNullOrEmpty(itemih.katler))
+                    {
+                        foreach (var itemi in db.Kategoris.Where(a => a.parentId == itemih.Id).OrderBy(a => a.sira))
+                        {
+                                <li style="border-bottom: 1px solid #eee; padding: 10px;">
+                                    @if (string.IsNullOrEmpty(itemi.link))
+                            {
+                                        <a href="@akset.helper.Genel.URLFriendly(itemi.baslik)" style="color:black">
+                                            @*<img src="~/KategoriResimleri/@itemi.resim" alt="@itemi.baslik" style="display: inline-block;width: 70px;height: 70px;border-radius: 100%;border: 1px solid white;margin-right: 10px;" />*@ <i class="@itemi.faikon.Replace("_","-")"></i> @itemi.adi
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="@itemi.link" style="color:black">
+                                            @*<img src="~/KategoriResimleri/@itemi.resim" alt="" />*@ <i class="@itemi.faikon.Replace("_","-")"></i> @itemi.adi
+                                        </a>
+                                    }
+                                </li>
+                            }
+                        }
+                        else
+                        {
+                            List<Kategori> kayit = new List<Kategori>();
+                            int iii = 0;
+                            foreach (var itemk in itemih.katler.Split(','))
+                            {
+                                iii++;
+                                int itemf = 0;
+                                string ikn = "fa fa-angle-right";
+                                if (itemk.Contains("-"))
+                                {
+                                    itemf = Convert.ToInt32(itemk.Split('-')[0]);
+                                    ikn = itemk.Split('-')[1];
+                                }
+                                else
+                                {
+                                    itemf = Convert.ToInt32(itemk);
+                                }
+
+                                Kategori kkk = aksetDB.Create().Kategoris.Where(a => a.Id == itemf).FirstOrDefault();
+                                if (kkk != null)
+                                {
+                                    kkk.sira = iii;
+                                    kkk.faikon = ikn;
+                                    kayit.Add(kkk);
+                                }
+
+                            }
+                            if (kayit.FirstOrDefault() != null)
+                            {
+                                int sayi1, sayi2, sonuc, sayac;
+                                sayi1 = kayit.Count();
+                                sayi2 = itemih.kacli;
+                                sonuc = sayi1;
+                                bool drm = false;
+                                if (sayi1 > sayi2 && sayi2 > 0)
+                                {
+                                    drm = true;
+                                }
+
+                                foreach (var itemix in kayit)
+                                {
+                                    <li style="border-bottom: 1px solid #eee; padding: 10px;">
+                                        @if (string.IsNullOrEmpty(itemix.link))
+                                        {
+                                            <a href="@akset.helper.Genel.URLFriendly(itemix.baslik)" style="color:black">
+                                                @*<img src="~/KategoriResimleri/@itemi.resim" alt="@itemi.baslik" style="display: inline-block;width: 70px;height: 70px;border-radius: 100%;border: 1px solid white;margin-right: 10px;" />*@ <i class="@itemix.faikon.Replace("_","-")"></i> @itemix.adi
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a href="@itemix.link" style="color:black">
+                                                @*<img src="~/KategoriResimleri/@itemi.resim" alt="" />*@ <i class="@itemix.faikon.Replace("_","-")"></i> @itemix.adi
+                                            </a>
+                                        }
+                                    </li>
+                                }
+                            }
+
+                        }
+
+                    </ul>
+                }
+                <div class="bslxc2" style="position:fixed;bottom:0px;right:0;left:0;width:100%;background: #ebeff2;">
+                    <ul class="ggtthh">
+                        <li><a class="" href="/"><i class="fal fa-home"></i>Anasayfa</a></li>
+                        <li><a href="/"><i class="fal fa-heart"></i> Favorilerim</a></li>
+                        <li><a href="/"><i class="fal fa-shopping-cart"></i>Sepetim</a></li>
+                        <li class="hesabimAs"><a href="/"><i class="fal fa-user"></i><span>Üyelik</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        }
+
+
+</div>
+</div>
+
+
+
+<style>
+    .ddff {
+        height: 64px;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        line-height: 64px;
+        font-size: 22px;
+        margin-top: 20px;
+    }
+
+  
+</style>
+
+@if (aksetDB.Create().uruns.Where(a => a.anasayfa == "canlimoda").FirstOrDefault() != null)
+{
+    <div class="row" style="padding: 0 0 0 0;">
+        <div class="col-12 ddff" style="margin-bottom:20px;text-align:center">
+            CANLI MODEL
+        </div>
+        @foreach (var item in aksetDB.Create().uruns.Where(a => a.anasayfa == "canlimoda").ToList())
+        {
+            try
+            {
+                var files = Directory.GetFiles(Server.MapPath("~/urunresimleri/" + item.resim + "/"), "*.mp4");
+                if (files.Length > 0)
+                {
+                    string linli = "";
+                    if (string.IsNullOrEmpty(item.link))
+                    {
+                        linli = string.Concat(akset.helper.Genel.URLFriendly(item.urunbaslik), "-", "urunid", "-", item.Id);
+                    }
+                    else
+                    {
+                        linli = item.link;
+                    }
+
+                    <div class="col-lg-3 col-6" style="padding:5px;">
+                        <div style="width: 100%;position: relative;margin: 0 auto; border: 1px solid #eaeaea !important;">
+                            <div class="favorite" onclick="addfavor()">
+                                <i class="icon icon-favorite-heart"></i>
+                            </div>
+                            <a href="@linli">
+                                <div style="overflow:hidden;width:100%;">
+                                    <video muted autoplay loop>
+                                        <source src="~/urunresimleri/@item.resim/@string.Concat(Path.GetFileName(files[0]))" type="video/mp4" style="width:253px" />
+                                    </video>
+                                </div>
+                                <div class="product-info-container" style="width:100%">
+                                    <div class="info-box" style="text-align:left">
+                                        <div class="brand" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">@item.urunadi</div>
+                                        @*<div class="name">@item.urunbaslik</div>*@
+                                        <div class="price-container" style="float:right">
+                                            @if (string.IsNullOrEmpty(item.eskifiyat))
+                                            {
+                                               
+                                            }
+                                            else
+                                            {
+                                               <div class="market-price" style="line-height:30px">
+                                                   @string.Concat(Convert.ToDecimal(item.fiyat) - Convert.ToDecimal(item.fiyat) * Convert.ToDecimal(item.eskifiyat) / 100) TL
+                                               </div>
+                                            }
+
+                                            <div class="sale-price" style="font-weight: bolder;">@item.fiyat TL</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                }
+            }
+            catch (Exception)
+            {
+
+
+            }
+        }
+
+
+    </div>
+}
+
+<div class="container-fluid">
+    <div class="row">
+        @foreach (var item in Model.OrderBy(a => a.sira))
+        {
+            string adres = string.IsNullOrEmpty(item.adres) ? "" : "https://" + item.adres.Replace("http://", "").Replace("https://", "");
+            if (!string.IsNullOrEmpty(item.kucukresim))
+            {
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 moderns" style="padding:10px">
+                    <a href="@adres" class="hepy" target="_blank" title="@item.baslik">
+                        <img src="~/VitrinResimleri/@string.Concat(item.kucukresim,"?d=",new Random().Next(5,1000))" alt="@item.baslik" style="width:100%" class="img-fluid" />
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 moderns" style="padding:10px">
+                    <a href="@adres" class="hepy" target="_blank" title="@item.baslik">
+                        <img src="~/VitrinResimleri/@string.Concat(item.buyukresim,"?d=",new Random().Next(5,1000))" alt="@item.baslik" style="width:100%" class="img-fluid" />
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>

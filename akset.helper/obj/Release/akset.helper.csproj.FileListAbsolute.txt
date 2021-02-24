@@ -1,0 +1,104 @@
+F:\mydk\E-Ticaret\damasutra\akset.helper\obj\Release\akset.helper.csprojAssemblyReference.cache
+F:\mydk\E-Ticaret\damasutra\akset.helper\obj\Release\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Release\akset.helper.csprojAssemblyReference.cache
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Release\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\akset.helper.dll.config
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\akset.helper.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\akset.helper.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\akset.data.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\EntityFramework.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.Helpers.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.Mvc.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.Razor.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.WebPages.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Google.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Newtonsoft.Json.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\akset.data.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\akset.data.dll.config
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\EntityFramework.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.Helpers.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.Mvc.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.Razor.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.WebPages.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Google.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\Newtonsoft.Json.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Release\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Release\akset.helper.csproj.CopyComplete
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Release\akset.helper.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Release\akset.helper.pdb
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\akset.helper.dll.config
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\akset.helper.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\akset.helper.pdb
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\akset.data.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\EntityFramework.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Owin.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.Helpers.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.Mvc.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.Razor.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.WebPages.Deployment.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.WebPages.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.WebPages.Razor.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Google.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Newtonsoft.Json.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\akset.data.pdb
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\akset.data.dll.config
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\EntityFramework.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.Helpers.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.Mvc.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.Razor.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.WebPages.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.WebPages.Deployment.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\System.Web.WebPages.Razor.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Google.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\Newtonsoft.Json.xml
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\bin\Release\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\obj\Release\akset.helper.csprojAssemblyReference.cache
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\obj\Release\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\obj\Release\akset.helper.csproj.CopyComplete
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\obj\Release\akset.helper.dll
+C:\Users\Stack Developer\Desktop\Yeni klasör\damasutra\akset.helper\obj\Release\akset.helper.pdb

@@ -1,0 +1,64 @@
+﻿@model akset.data.hesap
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>hesap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.filitre.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.filitre.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ozellik.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ozellik.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urun.eskifiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urun.eskifiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kaclira)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kaclira)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

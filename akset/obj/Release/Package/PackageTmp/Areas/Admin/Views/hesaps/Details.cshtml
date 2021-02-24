@@ -1,0 +1,58 @@
+﻿@model akset.data.hesap
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>hesap</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.filitre.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.filitre.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ozellik.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ozellik.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urun.eskifiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urun.eskifiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.kaclira)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kaclira)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

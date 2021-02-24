@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "akset", "akset\akset.csproj", "{815CCB9D-AECB-499B-87DE-EE7C67C9BC01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "akset.data", "akset.data\akset.data.csproj", "{843180C8-A4BD-4362-8FFB-B0F4E825187C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "akset.helper", "akset.helper\akset.helper.csproj", "{744B3418-30FF-4A0F-9361-D543599F02B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{815CCB9D-AECB-499B-87DE-EE7C67C9BC01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{815CCB9D-AECB-499B-87DE-EE7C67C9BC01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{815CCB9D-AECB-499B-87DE-EE7C67C9BC01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{815CCB9D-AECB-499B-87DE-EE7C67C9BC01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843180C8-A4BD-4362-8FFB-B0F4E825187C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843180C8-A4BD-4362-8FFB-B0F4E825187C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843180C8-A4BD-4362-8FFB-B0F4E825187C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843180C8-A4BD-4362-8FFB-B0F4E825187C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{744B3418-30FF-4A0F-9361-D543599F02B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{744B3418-30FF-4A0F-9361-D543599F02B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{744B3418-30FF-4A0F-9361-D543599F02B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{744B3418-30FF-4A0F-9361-D543599F02B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1BEDCFB-08AA-4A9E-87CB-0DD1855A96A3}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/stackdeveloper0014
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = akset.data\\akset.data.csproj
+		SccProjectName1 = akset.data
+		SccLocalPath1 = akset.data
+		SccProjectUniqueName2 = akset.helper\\akset.helper.csproj
+		SccProjectName2 = akset.helper
+		SccLocalPath2 = akset.helper
+		SccProjectUniqueName3 = akset\\akset.csproj
+		SccProjectName3 = akset
+		SccLocalPath3 = akset
+	EndGlobalSection
+EndGlobal

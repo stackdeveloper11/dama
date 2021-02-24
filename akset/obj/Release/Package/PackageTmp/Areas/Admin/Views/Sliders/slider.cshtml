@@ -1,0 +1,179 @@
+﻿@model IEnumerable<akset.data.Slider>
+    @{ 
+        int say = 0;
+    }
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-picture-o fa-fw "></i>
+                Slider
+                <span>
+                    >
+                    Slider Listesi
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/sliders/create" class="btn btn-success">Yeni Slider Ekle</a>
+               
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+        <div class="row">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-picture-o"></i> </span>
+                        <h2>Slider Listesi</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Başlık</th>
+                                            <th>Adres</th>
+                                            <th>Sıra</th>
+                                            <th>Yeni Penceremi</th>
+                                            <th>Resim</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model.OrderBy(a=>a.sirasi))
+                                        {
+                                            say++;
+                                            <tr>
+                                                <td>@say</td>
+                                                <td>
+                                                   @item.baslik
+                                                </td>
+                                                <td>
+                                                  @Html.Raw(string.Concat(string.IsNullOrEmpty(item.adresi)?"Belirtilmemiş":("<a target='_blank' class='btn btn-info btn-xs' title='"+item.adresi+"' href='"+item.adresi+"'>"+"Adrese Git"+"</a>")))
+                                                </td>
+                                                <td>
+                                                 @item.sirasi
+                                                </td>
+                                                <td>
+                                                  @string.Concat(item.aktif ? "Evet" : "Hayır")
+                                                </td>
+                                                <td>
+                                                    <div class="btn btn-success btn-xs" data-toggle="modal" data-target="#myModal1-@item.Id">
+                                                       Resmi Göster
+                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="myModal1-@item.Id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                    <h4 class="modal-title" id="myModalLabel">@item.baslik</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                 <img src="~/SlaytResimleri/@string.Concat(item.Id,item.aciklama,"?d=",item.cacheno)" class="img-responsive"/>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/sliders/edit/@item.Id" class="btn btn-primary btn-xs">Düzenle</a>
+                                                    <a href="/admin/sliders/delete/@item.Id" onclick="return confirm('Silmek İstediğinize Emin misiniz?')" class="btn btn-danger btn-xs">Sil</a>
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- end widget content -->
+
+                    </div>
+                    <!-- end widget div -->
+
+                </div>
+                <!-- end widget -->
+
+
+            </article>
+            <!-- WIDGET END -->
+
+
+        </div>
+
+        <!-- end row -->
+
+
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+
+
+
+
+
+@section pagespecific {
+    <!-- PAGE RELATED PLUGIN(S) -->
+    <script src="/Areas/Admin/scripts/plugin/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript">
+    // DO NOT REMOVE : GLOBAL FUNCTIONS!
+    $(document).ready(function () {
+        CKEDITOR.replace('ckeditor', { height: '380px', startupFocus: true });
+    })
+    function yolla() {
+        var atLeastOneIsChecked = $('input[name="Durumu"]:checked').length > 0;
+        if (atLeastOneIsChecked) {
+            $('input[name="Durum"]').prop('checked', true);
+            $('input[name="Durum"]').val("true");
+        }
+        else {
+            $('input[name="Durum"]').prop('checked', false);
+            $('input[name="Durum"]').val('false');
+        }
+        $("#Icerik").val(escape(CKEDITOR.instances['ckeditor'].getData()));
+        $("#smt").click();
+    }
+    </script>
+}

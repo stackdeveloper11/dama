@@ -1,0 +1,453 @@
+﻿@model IEnumerable<akset.data.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Satici/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table hidden">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand.BrandName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cache)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Barkod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Added_By)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Created_At)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Updated_At)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thumbnail_img)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gallery)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Unit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Featured)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Refundable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MetaDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippingType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShippingCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TodaysDeal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Published)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VideoLink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VideoType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoldCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Delete)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo5)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo6)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cache)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Barkod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Added_By)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Created_At)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Updated_At)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thumbnail_img)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gallery)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Featured)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Refundable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MetaDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShippingCost)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscountType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TodaysDeal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Published)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VideoLink)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VideoType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoldCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Delete)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Photo6)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+<div class="row">
+    <h4 class="pl-4">Ürünler</h4>
+</div>
+
+<div class="row mb-4">
+    <div class="col-lg-4 mx-auto">
+        <a href="#" style="text-decoration:none">
+            <div class="card panel-card p-5">
+                <span class="d-block circle-60 d-flex align-items-center justify-content-center mx-auto">
+                    <i class="las la-plus la-3x text-white"></i>
+                </span>
+                <a href="" class="d-block text-center orange"><h4>Yeni Ürün Ekle</h4></a>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card panel-card">
+            <div class="card-title">
+                <div class="col-12 p-3">
+                    <div class="col-lg-4 col-md-12 panel-card-title float-left">
+                        <h5>Tum Urunler</h5>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-sm-12 float-right">
+                        <input type="text" value="" placeholder="Urun Ara" class="form-control new-input" />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                    <th>#</th>
+                    <th>Ürün Adı</th>
+                    <th>Kategori</th>
+                    <th>Mevcut Adet</th>
+                    <th>Taban fiyat</th>
+                    <th>Yayında Olanlar</th>
+                    <th>Öne çıkarılanlar</th>
+                    <th>Seçenekler</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                    <label class="custom-control-label" for="customSwitch2"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-circle-icon bg-soft-blue" href="#" title="Düzenle">
+                                    <i class="las la-edit"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-sof-green" title="Ürünü Kopyala">
+                                    <i class="las la-copy"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-soft-red" title="Sil">
+                                    <i class="las la-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                    <label class="custom-control-label" for="customSwitch2"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-circle-icon bg-soft-blue" href="#" title="Düzenle">
+                                    <i class="las la-edit"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-sof-green" title="Ürünü Kopyala">
+                                    <i class="las la-copy"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-soft-red" title="Sil">
+                                    <i class="las la-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                    <label class="custom-control-label" for="customSwitch2"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-circle-icon bg-soft-blue" href="#" title="Düzenle">
+                                    <i class="las la-edit"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-sof-green" title="Ürünü Kopyala">
+                                    <i class="las la-copy"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-soft-red" title="Sil">
+                                    <i class="las la-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                    <label class="custom-control-label" for="customSwitch2"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-circle-icon bg-soft-blue" href="#" title="Düzenle">
+                                    <i class="las la-edit"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-sof-green" title="Ürünü Kopyala">
+                                    <i class="las la-copy"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-soft-red" title="Sil">
+                                    <i class="las la-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>Test</td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label" for="customSwitch1"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="custom-control custom-switch custom-switch-md">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                                    <label class="custom-control-label" for="customSwitch2"></label>
+                                </div>
+                            </td>
+                            <td>
+                                <a class="btn btn-circle-icon bg-soft-blue" href="#" title="Düzenle">
+                                    <i class="las la-edit"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-sof-green" title="Ürünü Kopyala">
+                                    <i class="las la-copy"></i>
+                                </a>
+                                <a href="#" class="btn btn-circle-icon bg-soft-red" title="Sil">
+                                    <i class="las la-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <div class="col-12">
+                    <button class="btn btn-circle-soft-primary"><strong><</strong></button>
+                    <button class="btn btn-circle-primary">1</button>
+                    <button class="btn btn-circle-primary">2</button>
+                    <button class="btn btn-circle-primary">3</button>
+                    <button class="btn btn-circle-soft-primary"><strong>></strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

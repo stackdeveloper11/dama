@@ -1,0 +1,67 @@
+﻿
+@model mesaj
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Mesajlar
+                <span>
+                    >
+                    Mesaj Oku
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/mesajs/mesaj" class="btn btn-success">Mesaj Listesi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-amazon"></i> </span>
+                        <h2>@Model.adisoyadi @Model.telno @Model.mail</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <div class="block text-right">@Model.tarih.ToString("dd/MM/yyyy HH:mm")</div>
+                            <p>
+                                @Model.mesaji
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

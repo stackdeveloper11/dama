@@ -1,0 +1,195 @@
+﻿@model akset.data.Slider
+
+
+
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-picture-o fa-fw "></i>
+                Slider
+                <span>
+                    >
+                    Slider Düzenle
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/sliders/slider" class="btn btn-success">Slider Lİstesi</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+        <div class="row">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-picture-o"></i> </span>
+                        <h2>Slider Ekle</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+
+                        </div>
+
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+
+                        @using (Html.BeginForm("Edit", "Sliders", FormMethod.Post, new { enctype = "multipart/form-data", @class = "smart-form" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <div class="widget-body">
+                                <table class="model-state">
+                                    @foreach (var item in ViewContext.ViewData.ModelState)
+                                    {
+                                        if (item.Value.Errors.Any())
+                                        {
+                                            <tr>
+                                                <td><b>@item.Key</b></td>
+                                                <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                                <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+
+                                <style>
+                                    table.model-state {
+                                        border-color: #600;
+                                        border-width: 0 0 1px 1px;
+                                        border-style: solid;
+                                        border-collapse: collapse;
+                                        font-size: .8em;
+                                        font-family: arial;
+                                    }
+
+                                        table.model-state td {
+                                            border-color: #600;
+                                            border-width: 1px 1px 0 0;
+                                            border-style: solid;
+                                            margin: 0;
+                                            padding: .25em .75em;
+                                            background-color: #FFC;
+                                        }
+                                </style>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <fieldset>
+                                    <section>
+                                        <label class="label">Resim</label>
+                                        <label class="">
+                                            <img src="/SlaytResimleri/@string.Concat(Model.Id,Model.aciklama,"?d=",Model.cacheno)" class="img-responsive" style="max-width:400px"/>
+                                        </label>
+                                    </section>
+                                    <section>
+                                        @Html.ValidationMessageFor(model => model.baslik, "", new { @class = "text-danger" })
+                                        <label class="label">Başlık</label>
+                                        <input type="hidden" name="Id" value="@Model.Id" />
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.baslik, new { htmlAttributes = new { @maxlength = "300" } })
+                                        </label>
+                                        <div class="note">
+                                            <strong>Maksimum</strong> 300 Karakter.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Adres</label>
+                                        <label class="input">
+                                            <input type="text" name="adresi" value="@Model.adresi">
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Sıra No</label>
+                                        <label class="input">
+                                            <input type="number" name="sirasi" value="@Model.sirasi">
+                                        </label>
+                                    </section>
+                                    <section class="hidden">
+                                        <label class="label">Açıklama</label>
+                                        <label class="textarea">
+                                            <textarea rows="3" class="custom-scroll" name="aciklama" maxlength="500">@Model.aciklama</textarea>
+                                        </label>
+                                        <div class="note">
+                                            <strong>Maksimum:</strong> 500 Karakter.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Yeni Pencere</label>
+                                        <label class="checkbox">
+                                            <input type="checkbox" name="aktifi" value="@Model.aktif" @string.Concat(Model.aktif?"checked=checked":"")>
+                                            <i></i>Evet(İşaretli)/Hayır(İşaretsiz)
+                                        </label>
+                                    </section>
+                                    <section>
+                                        @Html.ValidationMessage("res", "", new { @class = "text-danger" })
+                                        <label class="label">Resim Ekle</label>
+                                        <div class="input input-file">
+                          <span class="button"><input type="file" id="file" name="file" accept="image/*" onchange="this.parentNode.nextSibling.value = this.value">Resim Seç</span><input type="text" placeholder="Resim Ekle" readonly="">
+                                        </div>
+                                    </section>
+                                    <input type="hidden" name="cacheno" value="@string.Concat(new Random().Next(10,10000),"-",new Random().Next(100,10000))" />
+                                </fieldset>
+                                <footer>
+                                    <div class="btn btn-success" onclick="yolla()">Kaydet</div>
+                                    <input type="submit" id="smt" class="btn btn-success hidden" name="submit" value="Kaydet" />
+                                </footer>
+                            </div>                        
+                            <input type="checkbox" name="aktif" class="hidden" value="@Model.aktif" @string.Concat(Model.aktif? "checked=checked" : "")>
+                        }
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+
+@section pagespecific {
+   <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+<script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Areas/Admin/Scripts/jquery.validate-vsdoc.js"></script>
+    <script type="text/javascript">
+    function yolla() {
+        var atLeastOneIsChecked = $('input[name="aktifi"]:checked').length > 0;
+        if (atLeastOneIsChecked) {
+            $('input[name="aktif"]').prop('checked', true);
+            $('input[name="aktif"]').val("true");
+        }
+        else {
+            $('input[name="aktif"]').prop('checked', false);
+            $('input[name="aktif"]').val('false');
+        }
+    
+        $("#smt").click();
+    }
+    </script>
+}

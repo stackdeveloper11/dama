@@ -1,0 +1,50 @@
+﻿@model akset.data.supmenu
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>supmenu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.parent.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.parent.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sira)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sira)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.link)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

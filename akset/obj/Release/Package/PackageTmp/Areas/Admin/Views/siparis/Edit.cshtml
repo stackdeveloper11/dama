@@ -1,0 +1,102 @@
+﻿@model akset.data.siparis
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<style>
+    .form-control {
+        padding: 0 5px !important;
+        border: 1px solid #ccc !important;
+    }
+
+    button.btn-default {
+        padding: 12px 15px !important;
+        background: #2b72bb !important;
+    }
+</style>
+<style>
+    .select2-container {
+        padding: 0 !important;
+    }
+</style>
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Sipariş Düzenle</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <input type="hidden" name="id" value="@Model.Id" />
+                                 
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="urunozellikleri">Sipariş Edilen Ürün</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("urunler", null, htmlAttributes: new { @class = "form-control" })
+                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="odemesekli">Ödeme Şekli</label>
+                                        <div class="col-md-10">
+                                            <select name="odemesekli" id="odemesekli" required="" tabindex="1" class="form-control">
+                                                <option value="nakit" @string.Concat(Model.odemesekli=="Kapıda Nakit"?"selected=selected":"")>Kapıda Nakit</option>
+                                                <option value="kart" @string.Concat(Model.odemesekli=="Kapıda Nakit"?"":"selected=selected")>Kapıda Kredi Kartı</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                 
+                                    <style>
+                                        #siparisaciklama {
+                                            height: 150px;
+                                        }
+                                    </style>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="urunozellikleri">Sipariş Açıklama</label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" name="siparisaciklama" id="siparisaciklama">@Model.siparisdurumaciklama</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Kaydet" class="btn btn-success" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            <div>
+                                <a href="/Admin/siparis/siparisi" class="btn btn-primary btn-sm">&larr; Sipariş Listesine Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    <script src="~/js/mask.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#tel").mask("(9999)-999-99-99");
+        })
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

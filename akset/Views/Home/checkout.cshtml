@@ -1,0 +1,375 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.15.0/lazyload.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var myLazyLoad = new LazyLoad();
+        myLazyLoad.update();
+    });
+</script>
+<style>
+    .ddff {
+        height: 64px;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        line-height: 64px;
+        font-size: 22px;
+        margin-bottom:20px;
+        padding-right:10px;
+        padding-left:10px;
+    }
+</style>
+
+    <div class="row">
+        <div class="col-xs-12 main__container" style="margin-top:20px">
+            <style>
+                @@media screen and (max-width: 991px) {
+                    .logopng {
+                        margin-left: -40px !important;
+                    }
+                }
+            </style>
+            <style>
+                .product_list_top {
+                    display: inline-block;
+                    width: 100%;
+                    margin-top: 0;
+                    margin-bottom: 15px;
+                }
+
+                @@media (min-width: 1023px) {
+                    .product_breadcrumb {
+                        display: block;
+                        float: left;
+                    }
+                }
+
+                @@media (min-width: 768px) {
+                    .product_breadcrumb {
+                        display: block;
+                        float: left;
+                    }
+
+                    .checkout_login {
+                        text-align: left;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .product_breadcrumb {
+                    padding-left: 0;
+                }
+
+                    .product_breadcrumb li {
+                        list-style-type: none;
+                        float: left;
+                        margin-right: 10px;
+                        color: #b76f3b !important;
+                        font-size: 20px;
+                    }
+
+                .product_founded_number h1 {
+                    color: #89964a;
+                    font-size: 12px;
+                    margin: 0;
+                }
+
+                @@media (min-width: 1023px) {
+                    .product_founded_number {
+                        position: initial;
+                        left: 0;
+                        right: 0;
+                        margin: initial;
+                    }
+                }
+
+                .product_list_top:after {
+                    content: "";
+                    width: 100%;
+                    height: 39px;
+                    background: url(/content/img/floral_seperator.png) no-repeat;
+                    display: block;
+                    margin-top: 35px;
+                }
+
+                .urns .col-md-4 {
+                    margin-bottom: 20px;
+                }
+
+                @@media screen and (max-width:768px) {
+                    .img1 {
+                        width: 100% !important;
+                    }
+                }
+
+                .checkout_login {
+                    border: 1px solid #d53235;
+                    padding: 20px;
+                    width: 100%;
+                    display: inline-block;
+                    font-family: kg_turning_tablesregular,sans-serif;
+                }
+
+                    .checkout_login p {
+                        font-size: 12px !important;
+                        float: left;
+                        margin: 13px 0;
+                        font-weight: bolder;
+                    }
+
+                @@media (min-width: 320px) {
+                    .checkout_login .giris__yap__checkout:hover {
+                        background: #ce3340;
+                    }
+                }
+
+                @@media (min-width: 640px) {
+                    .checkout_login .giris__yap__checkout {
+                        display: initial;
+                        float: right;
+                    }
+                }
+
+
+                @@media (min-width: 320px) {
+                    .checkout_login .giris__yap__checkout {
+                        width: 123px;
+                        height: 33px;
+                        float: right;
+                        margin: 7px 0;
+                        background: #e6404e;
+                        color: #fff;
+                        border: 0;
+                        display: inline-block;
+                        cursor: pointer;
+                        font-size: 11px;
+                        text-align: center;
+                    }
+                }
+            </style>
+        </div>
+        @if (Request.IsAuthenticated)
+        {
+
+        }
+        else
+        {
+            <div class="col-xs-12 d-none">
+                <div class="checkout_login">
+                    <div class="col-xs-12">
+                        @*<p>Daha önce üye olduysanız satın alma işlemini daha hızlı gerçekleştirebilirsiniz.</p>*@
+                        <a href="#" data-toggle="collapse" data-target="#loginToggle" aria-expanded="false" class="collapsed">
+                            <input class="giris__yap__checkout" type="button" value="войти">
+                        </a>
+                    </div>
+                    <div class="col-xs-12">
+                        <div id="loginToggle" class="toggleAccordion collapse" aria-expanded="false" style="height: 0px;">
+                            <div class="login_area_container11__">
+                                <div class="page-body">
+                                    <div class="customer-blocks">
+                                        <div class="returning-wrapper">
+                                            <div class="Login__login_form">
+                                                <form action="/account/login" method="post" novalidate="novalidate" class="form-horizontal">
+                                                    @Html.AntiForgeryToken()
+                                                    <div class="message-error">
+                                                    </div>
+                                                    <div class="inputs">
+                                                        <label for="Email">E-posta:</label>
+                                                        <input autofocus="autofocus" class="email valid form-control" id="Email" name="email" type="text" value="">
+                                                        <span class="field-validation-valid" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                    <div class="inputs">
+                                                        <label for="Password">Şifre:</label>
+                                                        <input class="password valid form-control" id="Password" name="password" type="password">
+                                                        <span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                    <div class="inputs reversed Login__rememberMe">
+                                                        <input id="RememberMe" name="RememberMe" type="checkbox" value="true"><input name="RememberMe" type="hidden" value="false">
+                                                        <label for="RememberMe">Beni Hatırla</label>
+                                                        <span class="forgot-password">
+                                                            <a href="/tr/passwordrecovery">Şifremi Unuttum</a>
+                                                        </span>
+                                                    </div>
+                                                    <div class="login__btns col-xs-12 text-right" style="padding:0">
+                                                        <input class="btn btn-default" type="submit" style="background: #e6404e;color: #fff;" value="GİRİŞ YAP">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                            <div class="col-xs-12">
+
+                            </div>
+        }
+            
+        <div class="col-md-6 col-xs-12">
+            <style>
+                .h4u:after {
+                    content: "";
+                    width: 100%;
+                    height: 2px;
+                    background: url(/Content/img/olive_border.png) no-repeat;
+                    display: block;
+                    margin-top: 10px;
+                }
+
+                #kurr {
+                    border: 1px dotted black;
+                    padding: 5px;
+                    background: #eee;
+                }
+            </style>
+            @if (string.IsNullOrEmpty(ViewBag.Src))
+            {
+                <h3 class="h4u ddff" style="font-size:16px;font-weight:bolder">Adres</h3>
+                                <form action="/home/checkout" method="post">
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        <label for="adi">Adınız</label>
+                                        <input type="text" class="form-control" id="adi" name="adi" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="Soyadınız">Soyadınız</label>
+                                        <input type="text" class="form-control" id="Soyadi" name="soyadi" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">E-Mail</label>
+                                        <input type="text" class="form-control" id="email" name="email" placeholder="">
+                                    </div>
+                                    @*<div class="form-group">
+                                        <label for="kuru"></label>
+                                        <input type="checkbox" class="checkbox" style="float: left;" id="kurumsalmi" onchange="doalert(this)" name="kurumsalmi" /> Kurumsal bir satıştır
+                                    </div>*@
+                                    @*<script>
+                                    function doalert(checkboxElem) {
+                                        if (checkboxElem.checked) {
+                                            $("#kurr").removeClass("hidden");
+                                        } else {
+                                            $("#kurr").addClass("hidden");
+                                        }
+                                    }
+                                    </script>
+                                    <div id="kurr" class="hidden">
+                                        <div class="form-group">
+                                            <label for="firmadi">Firma Adınız (Var ise)</label>
+                                            <input type="text" class="form-control" id="firmadi" name="firmadi" placeholder="Firma Adı Yazınız">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vergidairesi">Vergi Dairesi</label>
+                                            <input type="text" class="form-control" id="vergidairesi" name="vergidairesi" placeholder="Vergi Dairesini Yazınız">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="vergino">Vergi No.</label>
+                                            <input type="text" class="form-control" id="vergino" name="vergino" placeholder="Vergi Numarasını Yazınız">
+                                        </div>
+                                    </div>*@
+
+                                    @*<div class="form-group">
+                                        <label for="sehir">Şehir</label>
+                                        @Html.DropDownList("sehirId", null, htmlAttributes: new { @class = "form-control", @onchange = "semtdoldur3()" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ilce">İlçe</label>
+                                        @Html.DropDownList("ilceId", null, htmlAttributes: new { @class = "form-control", @onchange = "semtdoldur4()" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="mahalle">Mahalle</label>
+                                        @Html.DropDownList("mahalleId", null, htmlAttributes: new { @class = "form-control" })
+                                    </div>*@
+
+                                    <div class="form-group">
+                                        <label for="adres">Adres</label>
+                                        <input type="text" class="form-control" id="adres" name="adres" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postakodu">Posta Kodu</label>
+                                        <input type="text" class="form-control" id="postakodu" name="postakodu" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefon">Telefon</label>
+                                        <input type="text" class="form-control" id="telefon" name="telefon" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="not">Sipariş No</label>
+                                        <textarea class="form-control" id="siparisnotu" name="siparisnotu"></textarea>
+                                    </div>
+                                    <input type="hidden" name="sepet" id="sepet" value="" />
+                                  
+                                    @*<div class="btn btn-success btn-lg" onclick="odemesutla()">ÖDEMEYİ TAMAMLA</div>*@
+                                    <input type="submit" name="b" id="yls" class="d-none" value="kk" />
+                                    <input type="hidden" id="prodlar" name="prodlar" value="" />
+                                </form>
+
+            }
+            <p>
+                @ViewBag.hata
+            </p>
+        </div>
+        <div class="@string.Concat(string.IsNullOrEmpty(ViewBag.Src)?"col-md-6":"") col-xs-12 ekle">
+            <h3 class="h4u ddff" style="font-size:16px;font-weight:bolder">Ürünler</h3>
+            <table class="table table-hover table-responsive" id="ctable"></table>
+            @*@if (!string.IsNullOrEmpty(ViewBag.Src))
+            {
+                <h3 class="h4u ddff" style="font-size:16px;color: #a0885a;font-weight: bolder;">Ödeme Seçenekleri</h3>
+                                <ul class="nav nav-tabs product_detail_tabs" role="tablist" style="border:0">
+                                    <li role="presentation" class="active"><a style="padding: 10px 2px;" href="#urun__detaylari" aria-controls="urun__detaylari" role="tab" data-toggle="tab" aria-expanded="true">Kredi Kartı</a></li>
+                                    <li role="presentation" class="@string.Concat(string.IsNullOrEmpty(ViewBag.Src)?"":"hidden")"><a style="padding: 10px 2px;" href="#yorumlar__" aria-controls="yorumlar__" role="tab" data-toggle="tab" aria-expanded="false">Havale</a></li>
+                                    <li role="presentation" class="@string.Concat(string.IsNullOrEmpty(ViewBag.Src)?"":"hidden")"><a style="padding: 10px 2px;" href="#guvenle__tuketebilirsiniz" aria-controls="guvenle__tuketebilirsiniz" role="tab" data-toggle="tab" aria-expanded="false">Kapıda Ödeme</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane product_bottom_detail active in" id="urun__detaylari">
+                                        <script src="https://www.paytr.com/js/iframeResizer.min.js"></script>
+                                        <iframe visible="true" runat="server" id="paytriframe" frameborder="0" scrolling="no" style="width: 100%;" src="@ViewBag.Src"></iframe>
+                                        <script>iFrameResize({}, '#paytriframe');</script>
+
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="yorumlar__">
+
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane fade" id="guvenle__tuketebilirsiniz">
+
+                                    </div>
+                                </div>
+                               
+            }*@
+            <div class="btn btn-success btn-lg" onclick="sepeti()">Sipariş Ver</div>
+        </div>
+    </div>
+<script>
+    $(document).ready(function () {
+        setTimeout(function () {
+            $(".modal-footer .btn-default").click();
+        },1500);
+    })
+    function odemesutla() {
+        var result = $(prodt).map(function () {
+            return this.id + "-" + this.quantity;
+        }).get();
+
+        $("#prodlar").val(JSON.stringify(result).replace(/\"/g, '').replace(/\,/g, '_').replace(/\[/g, '').replace(/\]/g, ''));
+    }
+    $(document).ready(function() {
+        $(".my-cart-icon").click()
+        setTimeout(function () { $(".close").click(); $("#ctable").html($("#my-cart-table").html()); }, 500);
+        odemesutla();
+    })
+    function sepeti() {
+        var sss = "";
+        $("#ctable tbody tr").each(function (a) {
+            var num = parseInt($(this).find('input').val()) || 0;
+            if (num!=0) {
+                sss += "," + ($(this).find('input').val() + "-" + $(this).attr('data-id'));
+            }
+        })
+        sss = sss.substr(1);
+        console.log(sss);
+        $('#sepet').val(sss);
+        $('#yls').click();
+    }
+</script>

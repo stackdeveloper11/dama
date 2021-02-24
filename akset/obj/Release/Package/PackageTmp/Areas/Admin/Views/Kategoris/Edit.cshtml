@@ -1,0 +1,334 @@
+﻿@model akset.data.Kategori
+
+@section pagespecific{
+
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <script src="~/js/all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#parentId").select2({
+                language: "tr",
+                placeholder: "Kategori Seçiniz"
+            });
+
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+
+
+        });
+        function yolla() {
+
+            $("#bsl").click();
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+        })
+
+    </script>
+}
+<style>
+    .form-control {
+        padding: 0 5px !important;
+        border: 1px solid #ccc !important;
+    }
+
+    button.btn-default {
+        padding: 12px 15px !important;
+        background: #2b72bb !important;
+    }
+</style>
+<style>
+    .select2-container {
+        padding: 0 !important;
+    }
+</style>
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Kategori Ekle </h2>
+
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            <table class="model-state">
+                                @foreach (var item in ViewContext.ViewData.ModelState)
+                                {
+                                    if (item.Value.Errors.Any())
+                                    {
+                                        <tr>
+                                            <td><b>@item.Key</b></td>
+                                            <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                            <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+
+                            <style>
+                                table.model-state {
+                                    border-color: #600;
+                                    border-width: 0 0 1px 1px;
+                                    border-style: solid;
+                                    border-collapse: collapse;
+                                    font-size: .8em;
+                                    font-family: arial;
+                                }
+
+                                    table.model-state td {
+                                        border-color: #600;
+                                        border-width: 1px 1px 0 0;
+                                        border-style: solid;
+                                        margin: 0;
+                                        padding: .25em .75em;
+                                        background-color: #FFC;
+                                    }
+                            </style>
+                            <p>
+                                <a href="/Admin/kategoris/Create" class="btn btn-success btn-sm">Yeni Kategori Ekle &rarr;</a>
+                            </p>
+                            @using (Html.BeginForm("edit", "kategoris", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.Id)
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="parentId">Üst Kategori</label>
+                                        <div class="col-md-10" style="position:relative !important">
+                                            @Html.DropDownList("parentId", null, "", htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.parentId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="link">Link</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.link, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.link, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="adi">Sitedeki Adı</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.adi, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.adi, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="baslik">Kategori Adı</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.baslik, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.baslik, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="etiketler">Kategori Etiketleri</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.etiketler, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.etiketler, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="aciklama">Açıklama</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.aciklama, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.aciklama, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="faikon">İkon</label>
+                                        <div class="col-md-10">
+                                            <div class="btn  btn-default" onclick="$('.ggh').removeClass('hidden');$(this).addClass('hidden')">İkonlar</div>
+                                            <br />
+                                            <div class="hidden ggh">
+                                                <table id="dt_basic" class="table table-hover table-bordered table-striped table-condensed">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                #
+                                                            </th>
+                                                            <th>
+                                                                ikon
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var item in aksetDB.Create().ikonlars)
+                                                        {
+                                                            <tr>
+                                                                <td>@item.Id</td>
+                                                                @if (item.ikon == Model.faikon)
+                                                                {
+                                                                    <td class="sari">
+                                                                        <i class="@item.ikon fa-2x" style="cursor:pointer" onclick="$('#faikon').val('@item.ikon');$('td').removeClass('sari');$(this).parent().addClass('sari')"></i> @item.ikon
+                                                                    </td>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <td>
+                                                                        <i class="@item.ikon fa-2x" style="cursor:pointer" onclick="$('#faikon').val('@item.ikon');$('td').removeClass('sari');$(this).parent().addClass('sari')"></i> @item.ikon
+                                                                    </td>
+                                                                }
+                                                            </tr>
+                                                        }
+
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                           
+                                            @Html.EditorFor(model => model.faikon, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.faikon, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="resim">Resim (260x335)</label>
+                                        <div class="col-md-10">
+                                            <img src="~/KategoriResimleri/@Model.resim" style="width:260px;height:335px" />
+                                            <input type="file" name="resimi" value="" />
+                                            <input type="hidden" name="resim" value="@Model.resim" />
+                                            @Html.ValidationMessageFor(model => model.resim, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="durum">Durum</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="durumu">
+                                                @if (Model.durumu == "Standart")
+                                                {
+                                                    <option value="Standart" selected="selected">Standart</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="Standart">Standart</option>
+                                                }
+
+                                                @if (Model.durumu=="New")
+                                                {
+                                                    <option value="New" selected="selected">New</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="New">New</option>
+                                                }
+
+                                                @if (Model.durumu == "Hot")
+                                                {
+                                                    <option value="Hot" selected="selected">Hot</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="Hot">Hot</option>
+                                                }
+
+                                                @if (Model.durumu == "Popular")
+                                                {
+                                                    <option value="Popular" selected="selected">Popular</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="Popular">Popular</option>
+                                                }
+
+                                                @if (Model.durumu == "Discounted")
+                                                {
+                                                    <option value="Discounted" selected="selected">Discounted</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="Discounted">Discounted</option>
+                                                }
+                                            </select>
+                                          
+                                            @Html.ValidationMessageFor(model => model.durumu, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="icerik">İçerik</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.icerik, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.icerik, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        <label class="control-label col-md-2" for="sira">sira</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.sira, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.sira, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Kaydet" class="btn btn-success btn-sm" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <div>
+                                <a href="/Admin/kategoris/kategori" class="btn btn-primary btn-sm">&larr; Kategori Listesine Dön</a>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </article>
+        </div>
+    </section>
+
+</div>

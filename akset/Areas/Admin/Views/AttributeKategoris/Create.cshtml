@@ -1,0 +1,177 @@
+﻿@model akset.data.AttributeKategori
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section pagespecific{
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        var attributId = "";
+        var attributName = "";
+        $(document).ready(function () {
+            $('#KategoriId').select2().on("select2:selecting", function (e) {
+
+            });
+
+       
+            $('#AttributeId').select2().on("select2:selecting", function (e) {
+                attributId = e.params.args.data.id;
+                attributName = e.params.args.data.text;
+            });
+
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+        })
+        function findValueInArray(value, arr) {
+            var result = "yok";
+            for (var i = 0; i < arr.length; i++) {
+                var name = arr[i].Name;
+                if (name == value) {
+                    result = 'var';
+                    break;
+                }
+            }
+            return result;
+        }
+        var liste = [];
+        var listes = [];
+
+        function ekle() {
+            if (attributName!="") {
+                if (findValueInArray(attributName, liste) == "yok") {
+                    var li = "<li class='an-" + (liste.length + 1) + "' style='margin-bottom:5px'><div class='row'><div class='col-xs-8'>" + (liste.length + 1) + ". " + attributName + "</div><div class='col-xs-4 text-right'><div class='btn btn-xs btn-danger' onclick='sil(\"" + (liste.length + 1) + "\",\"" + attributName + "\")'>Sil</div></div>" + "</div></li>";
+                    liste.push({ "Name": attributName, "Id": attributId });
+                    $(".ddff").append(li);
+                }
+                else {
+                    alert("Daha Önce Eklenmiş");
+                }
+            }
+
+        }
+
+        function yolla() {
+            var lst = "";
+
+            for (var i = 0; i < liste.length; i++) {
+                var name = liste[i].Id;
+                var d = i + 1;
+
+                lst += "," + name;
+            }
+            $("#tagler").val(lst.substr(1));
+            console.log(lst.substr(1));
+            $(".kyt").click();
+        }
+
+        function sil(a, b) {
+            $(".an-" + a).remove();
+            liste = $.grep(liste, function (value) {
+                return value.Name != b;
+            });
+            $(".ddff").html("");
+            var li = "";
+            for (var i = 0; i < liste.length; i++) {
+                var name = liste[i].Name;
+                var d = i + 1;
+                li += "<li class='an-" + d + "' style='margin-bottom:5px'><div class='row'><div class='col-xs-8'>" + d + ". " + name + "</div><div class='col-xs-4 text-right'><div class='btn btn-xs btn-danger' onclick='sil(\"" + d + "\",\"" + name + "\")'>Sil</div></div>" + "</div></li>";
+            }
+            $(".ddff").append(li);
+        }
+    </script>
+}
+
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Kategoriye Öznitelik Ekle</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            <div style="width: 100%;text-align: right;margin-bottom: 10px;">
+                                <a href="/Admin/AttributeKategoris/index" class="btn btn-success btn-sm">Kategori-Öznitelik Listesi &rarr;</a>
+                            </div>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="KategoriId">Kategori</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("KategoriId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.KategoriId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2 col-xs-12" for="AttributeId">Öznitelik</label>
+                                        <div class="col-xs-2">
+                                            @Html.DropDownList("AttributeId", null,"Seçim Yapın", htmlAttributes: new { @class = "form-control",@style="width:100%" })
+                                            @Html.ValidationMessageFor(model => model.AttributeId, "", new { @class = "text-danger" })
+                                            <ul class="list-unstyled ddff" style="margin-top:10px">
+
+                                            </ul>
+                                        </div>
+                                        <div class="col-xs-8" style="padding:0">
+                                            <div class="btn btn-sm btn-success" onclick="ekle()">
+                                                Ekle
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <div></div>
+                                            <input type="hidden" id="tagler" name="tagler" value="" />
+                                            <input type="submit" value="Kaydet" class="btn btn-default kyt hidden" />
+                                            <div class="btn btn-default" onclick="yolla()">Kaydet</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

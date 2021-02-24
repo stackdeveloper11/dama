@@ -1,0 +1,116 @@
+﻿<aside id="left-panel">
+    <!-- User info -->
+    @{ Html.RenderPartial("_CurrentUser"); }
+    <!-- end user info -->
+    <nav>
+        <ul>
+            <li class="top-menu-invisible @Html.RouteIf("uruns", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-pagelines"></i> <span class="menu-item-parent">Ürünler</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("uruns", "active")">
+                        <a href="@Url.Action("urun", "uruns")" title="Ürünler"><span class="menu-item-parent">Ekle/Sil/Düzenle</span></a>
+                    </li>
+                    <li class="@Html.RouteIf("uruns", "active")">
+                        <a href="@Url.Action("wizardurum", "uruns")" title="Ürünler"><span class="menu-item-parent">Ürün Ekle</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@Html.RouteIf("ustmenus", "active")">
+                <a href="@Url.Action("ustmenu", "ustmenus")"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Üst Menu</span></a>
+            </li>
+            <li class="@Html.RouteIf("supmenus", "active")">
+                <a href="@Url.Action("supmenu", "supmenus")"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Cep Menu</span></a>
+            </li>
+            <li class="@Html.RouteIf("siparis", "active")">
+                <a href="@Url.Action("siparisi", "siparis")"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Siparişler</span><span class="badge pull-right inbox-badge margin-right-13">@aksetDB.Create().sipariss.Count()</span></a>
+            </li>
+
+            <li class="@Html.RouteIf("anasayfas", "active")">
+                <a href="@Url.Action("anasayfa", "anasayfas")"><i class="fa fa-lg fa-fw fa-align-justify"></i> <span class="menu-item-parent">Anasayfa Vitrinler</span><span class="badge pull-right inbox-badge margin-right-13">@aksetDB.Create().Vitrinlers.Where(a => a.aktifmi == "Evet").Count()</span></a>
+            </li>
+
+            <li class="@Html.RouteIf("Spots", "active")">
+                <a href="@Url.Action("Spot", "Spots")"><i class="fa fa-lg fa-fw fa-align-justify"></i> <span class="menu-item-parent">Spotlar</span><span class="badge pull-right inbox-badge margin-right-13">@aksetDB.Create().sagtarafs.Where(a => a.aktifmi == "Evet").Count()</span></a>
+            </li>
+            <li class="@Html.RouteIf("Markas", "active")">
+                <a href="@Url.Action("Marka", "Markas")"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Markalar</span><span class="badge pull-right inbox-badge margin-right-13">@aksetDB.Create().Markas.Count()</span></a>
+            </li>
+            <li class="@Html.RouteIf("mesajs", "active")">
+                <a href="@Url.Action("mesaj", "mesajs")"><i class="fa fa-lg fa-fw fa-inbox"></i> <span class="menu-item-parent">Mesajlar</span><span class="badge pull-right inbox-badge margin-right-13">@aksetDB.Create().mesajs.Where(a => a.okundumu == false).Count()</span></a>
+            </li>
+            <li class="top-menu-invisible @Html.RouteIf("sliders", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Slaytlar</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("sliders", "active")">
+                        <a href="@Url.Action("slider", "sliders")" title="Slaytlar"><span class="menu-item-parent">Ekle/Sil/Düzenle</span></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="top-menu-invisible @Html.RouteIf("katefiloes", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Filitreler</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("filitreozellik", "active")">
+                        <a href="@Url.Action("filto", "filitreozellik")" title="Slaytlar"><span class="menu-item-parent">Filitre Ekle/Listele</span></a>
+                    </li>
+                    <li class="@Html.RouteIf("katefiloes", "active")">
+                        <a href="@Url.Action("Index", "katefiloes")" title="Slaytlar"><span class="menu-item-parent">Kategoriye Filitre Ekle</span></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="hidden top-menu-invisible @Html.RouteIf("altdetay", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-list-alt"></i> <span class="menu-item-parent">Detaylar</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("altdetay", "active")">
+                        <a href="@Url.Action("alto", "altdetay")" title="Slaytlar"><span class="menu-item-parent">Detay Ekle/Listele</span></a>
+                    </li>
+                    <li class="@Html.RouteIf("katedetays", "active")">
+                        <a href="@Url.Action("Index", "katedetays")" title="Slaytlar"><span class="menu-item-parent">Kategoriye Detay Ekle</span></a>
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class="top-menu-invisible @Html.RouteIf("sayfas", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-pagelines"></i> <span class="menu-item-parent">Sayfalar</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("sayfas", "active")">
+                        <a href="@Url.Action("sayfa", "sayfas")" title="Sayfalar"><span class="menu-item-parent">Ekle/Sil/Düzenle</span></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="top-menu-invisible @Html.RouteIf("kategoris", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-cubes"></i> <span class="menu-item-parent">Kategoriler</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("kategoris", "active")">
+                        <a href="@Url.Action("kategori", "kategoris")" title="Kategoriler"><span class="menu-item-parent">Ekle/Sil/Düzenle</span></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="top-menu-invisible @Html.RouteIf("makales", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i> <span class="menu-item-parent">Makaleler</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("makales", "active")">
+                        <a href="@Url.Action("makale", "makales")" title="Makaleler"><span class="menu-item-parent">Ekle/Sil/Düzenle</span></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="top-menu-invisible @Html.RouteIf("ayars", "active")">
+                <a href="#"><i class="fa fa-lg fa-fw fa-gears"></i> <span class="menu-item-parent">Site Ayarları</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("ayars", "active")">
+                        <a href="@Url.Action("ayar", "ayars")" title="Ayarlar"><span class="menu-item-parent">Düzenle</span></a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+    <span class="minifyme" data-action="minifyMenu">
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>
+</aside>

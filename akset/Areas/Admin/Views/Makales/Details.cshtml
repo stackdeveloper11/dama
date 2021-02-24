@@ -1,0 +1,74 @@
+﻿@model akset.data.Makale
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Makale</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.baslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.baslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.icerik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.icerik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.goruntuleme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.goruntuleme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.aktif)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aktif)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resim)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

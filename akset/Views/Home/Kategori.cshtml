@@ -1,0 +1,451 @@
+﻿
+@{
+    ViewBag.Title = "Kategori";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row mb-5"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 filter-div shadow-container">
+            <div class="filter-wrap filter-close">
+                <div class="row">
+                    <div class="col pt-2">
+                        <h5 class="fw-600 pt-4 pl-3 d-inline">Filtreler</h5>
+                        <span class="float-right"> <button class="btn filter-close-btn"><i class="las la-times la-2x"></i></button></span>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <div class="row">
+                    <div class="col">
+                        <h5 class="fw-600 p-3">Kategoriler</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item border-0">KADIN</li>
+                            <li class="list-group-item border-0">ERKEK</li>
+                            <li class="list-group-item border-0">COCUK</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <div class="row">
+                    <div class="col pb-5">
+                        <h5 class="fw-600 p-3 mb-2">Fiyat aralığı</h5>
+
+                        <div class="mall-property mt-5 p-3">
+                            <div class="mall-slider-handles" data-start="50.00" data-end="58.90" data-min="50" data-max="78.9" data-target="price" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <div class="row">
+                    <div class="col pb-2">
+                        <div class="p-3">
+                            <div class="filter-toggle" data="close" data-target="size">
+                                <span><h5 class="fw-600 p-3 mb-2 d-inline">Beden</h5></span>
+                                <span class="float-right p-2"><i class="la  la-arrow-down"></i></span>
+                            </div>
+                            <div class="filter-detail pl-3 mt-3 size" style="display:none;">
+                                <label class="label-checkbox">
+                                    S
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="label-checkbox">
+                                    M
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="label-checkbox">
+                                    L
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="label-checkbox">
+                                    XL
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-wrap">
+                <div class="row">
+                    <div class="col pb-2">
+                        <div class="p-3">
+                            <div class="filter-toggle" data="close" data-target="gender">
+                                <span><h5 class="fw-600 p-3 mb-2 d-inline">Cinsiyet</h5></span>
+                                <span class="float-right p-2"><i class="la  la-arrow-down"></i></span>
+                            </div>
+                            <div class="filter-detail pl-3 mt-3 gender" style="display:none;">
+                                <label class="label-checkbox">
+                                    Erkek
+                                    <input type="checkbox" checked="checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="label-checkbox">
+                                    Kadin
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9 product-list-area">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 mb-4">
+                    <h3 class="fw-700 pl-4 title-size d-inline ">Kategori</h3>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="form-group row">
+                        <div class="col-lg-4 col-md-2 col-sm-2 col-xs-2">
+                            <label class="form-label pl-4 pt-2">Sirala</label>
+                        </div>
+                        <div class="col-lg-6 col-md-4 col-sm-4 col-xs-4">
+                            <select class="form-control form-new d-inline">
+                                <option>1</option>
+                                <option>1</option>
+                                <option>1</option>
+                                <option>1</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2 col-md-6 col-sm-6 col-xs-6 filter-icon text-right">
+                            <i class="la la-filter la-2x filter-button"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 product-col">
+                    <div class="card">
+                        <div class="card-body">
+                            <img class="product-img" src="https://www.esosyete.com/public/uploads/products/thumbnail/PfJHw5unIv6kLtZ5EZWZWGMld6zqePF4YIZK81sV.jpeg">
+                        </div>
+                        <div class="card-footer product pb-3">
+                            <div class="col">
+                                <span class="product-span orange">95.00 </span>
+                            </div>
+                            <div class="col">
+                                <div class="rating">
+                                    <i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i><i class="las la-star"></i>
+                                </div>
+                            </div>
+                            <div class="col product-desc">
+                                <a href="https://www.esosyete.com/product/Pijamadunyasi-Angelina-100-pamuk-kadin-pijama-takimi-n6h1k" class="d-block text-reset">Pijamadunyasi Angelina %100 pamuk kadin pijama takimi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

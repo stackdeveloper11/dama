@@ -1,0 +1,231 @@
+﻿@model akset.data.supmenu
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@section pagespecific{
+
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <script src="~/js/all.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#parentId").select2({
+                language: "tr",
+                placeholder: "Menü Seçiniz"
+            });
+
+        })
+    </script>
+    <script>
+        $(document).ready(function () {
+
+
+        });
+        function yolla() {
+
+            $("#bsl").click();
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+        })
+
+    </script>
+}
+<style>
+    #cropContainerModal {
+        width: 260px;
+        height: 335px;
+        position: relative;
+        border: 1px solid #ccc;
+    }
+
+    .form-control {
+        padding: 0 5px !important;
+        border: 1px solid #ccc !important;
+    }
+
+    button.btn-default {
+        padding: 12px 15px !important;
+        background: #2b72bb !important;
+    }
+</style>
+<style>
+    .select2-container {
+        padding: 0 !important;
+    }
+
+    select2-hidden-accessible {
+        display: none;
+    }
+</style>
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Menü Ekle </h2>
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            <table class="model-state">
+                                @foreach (var item in ViewContext.ViewData.ModelState)
+                                {
+                                    if (item.Value.Errors.Any())
+                                    {
+                                        <tr>
+                                            <td><b>@item.Key</b></td>
+                                            <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                            <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+
+                            <style>
+                                table.model-state {
+                                    border-color: #600;
+                                    border-width: 0 0 1px 1px;
+                                    border-style: solid;
+                                    border-collapse: collapse;
+                                    font-size: .8em;
+                                    font-family: arial;
+                                }
+
+                                    table.model-state td {
+                                        border-color: #600;
+                                        border-width: 1px 1px 0 0;
+                                        border-style: solid;
+                                        margin: 0;
+                                        padding: .25em .75em;
+                                        background-color: #FFC;
+                                    }
+                            </style>
+
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+                                 
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.Id)
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="parentId">Üst Menü</label>
+                                        <div class="col-md-10">
+                                            @if (Model.parentId == null)
+                                            {
+                                                @Html.DropDownList("parentId", null,"", htmlAttributes: new { @class = "form-control" })
+                                            }
+                                            else
+                                            {
+                                                @Html.DropDownList("parentId", null, htmlAttributes: new { @class = "form-control" })
+                                            }
+                                         
+                                            @Html.ValidationMessageFor(model => model.parentId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="adi">Menü Adı</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.adi, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.adi, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="yeri">Yeri</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="yeri">
+                                                @if (Model.yeri == "sag")
+                                                {
+                                                    <option value="sag" selected="selected">Sağ</option>
+                                                    <option value="sol">Sol</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="sag">Sağ</option>
+                                                    <option value="sol" selected="selected">Sol</option>
+                                                }
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.yeri, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="sira">Sıra</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.sira, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.sira, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="parentId">Menü Linki</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.link, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.link, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Kaydet" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+                            <div>
+                                <a href="/Admin/supmenus/supmenu" class="btn btn-primary btn-sm">&larr; Menü Listesine Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

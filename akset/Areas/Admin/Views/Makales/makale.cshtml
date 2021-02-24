@@ -1,0 +1,150 @@
+﻿@model ICollection<akset.data.Makale>
+@{ 
+    int say = 0;
+}
+
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Makale
+                <span>
+                    >
+                    Makale Listesi
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/makales/create" class="btn btn-success">Yeni Makale Ekle</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-commenting-o"></i> </span>
+                        <h2>Makale Listesi</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dt_basic">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Başlık</th>
+                                            <th>Durum</th>
+                                            <th>Adres</th>
+                                            <th>Kategori</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            say++;
+                                            <tr>
+                                                <td>
+                                                    @say
+                                                </td>
+                                                <td>
+                                                    @item.baslik
+                                                </td>
+                                                <td>
+                                                    @string.Concat(item.aktif ? "Aktif" : "Pasif")
+                                                </td>
+                                                <td>
+                                                    <a href="@item.url" target="_blank">Makaleyi Görüntüle</a>
+                                                </td>
+                                                <td>
+                                                    @string.Concat(item.Kategori!=null?item.Kategori.adi:"")
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/makales/edit/@item.Id" class="btn btn-primary btn-xs">Düzenle</a>
+                                                    <a href="/admin/makales/delete/@item.Id" onclick="return confirm('Silmek İstediğinize Emin misiniz?')" class="btn btn-danger btn-xs">Sil</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+
+
+
+@section pagespecific {
+    <script>
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+        })
+
+    </script>
+}

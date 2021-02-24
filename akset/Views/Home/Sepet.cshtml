@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "Sepet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="mb-4"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-8 mx-auto">
+            <div class="row steps arrow-divider mt-4">
+                <div class="col active">
+                    <div class="text-center text-orange">
+                        <i class="la-2x mb-2 las la-shopping-cart"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block">1. Sepetim</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <i class="la-2x  mb-2 opacity-50 las la-map"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block opacity-50 text-capitalize">2. Kargo bilgileri</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <i class="la-2x  mb-2 opacity-50 las la-truck"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block opacity-50 text-capitalize">Satın Alınan Ürünler</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <i class="la-2x  mb-2 opacity-50 las la-credit-card"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block opacity-50 text-capitalize">4. Ödeme</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <i class="la-2x  mb-2 opacity-50 las la-check-circle"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block opacity-50 text-capitalize">5. Onay</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="mb-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-xl-10 mx-auto">
+                <div class="shadow-sm bg-white p-3 p-lg-4 rounded text-left">
+                    <div class="mb-4">
+                        <div class="row gutters-5 d-none d-lg-flex border-bottom mb-3 pb-3">
+                            <div class="col-md-5 fw-600">Ürün</div>
+                            <div class="col fw-600">Fiyat</div>
+                            <div class="col fw-600">Miktar</div>
+                            <div class="col fw-600">TOPLAM</div>
+                            <div class="col-auto fw-600">Kaldır</div>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item px-0 px-lg-3">
+                                <div class="row gutters-5">
+                                    <div class="col-lg-5 d-flex">
+                                        <span class="mr-2 ml-0">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" class="cart-img">
+                                        </span>
+                                        <span class="fs-14 opacity-60">Minie Mause  Kapuşonlu Takım - Acikpembe</span>
+                                    </div>
+
+                                    <div class="col-lg col-4 order-1 order-lg-0 my-3 my-lg-0">
+                                        <span class="opacity-60 fs-12 d-block d-lg-none">Fiyat</span>
+                                        <span class="fw-600 fs-16">95.00₺</span>
+                                    </div>
+                                    <div class="col-lg col-6 order-4 order-lg-0">
+                                        <div class="d-flex align-items-center">
+                                            <div class="row no-gutters align-items-center  mr-3">
+                                                <button class="btn btn-circle btn-minus"><i class="las la-minus"></i></button>
+                                            </div>
+                                            <div class="row no-gutters align-items-center ml-3 mr-3">
+                                                <input type="number" class="input-circle product-count" value="5" max="15" readonly>
+                                            </div>
+                                            <div class="row no-gutters align-items-center  mr-3">
+                                                <button class="btn btn-circle btn-plus"><i class="las la-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg col-4 order-3 order-lg-0 my-3 my-lg-0">
+                                        <span class="opacity-60 fs-12 d-block d-lg-none">TOPLAM</span>
+                                        <span class="fw-600 fs-16 text-orange">95.00₺</span>
+                                    </div>
+                                    <div class="col-lg-auto col-6 order-5 order-lg-0 text-right">
+                                        <a href="#" class="btn btn-circle btn-sm btn-soft">
+                                            <i class="las la-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0 px-lg-3">
+                                <div class="row gutters-5">
+                                    <div class="col-lg-5 d-flex">
+                                        <span class="mr-2 ml-0">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" class="cart-img">
+                                        </span>
+                                        <span class="fs-14 opacity-60">Minie Mause  Kapuşonlu Takım - Acikpembe</span>
+                                    </div>
+
+                                    <div class="col-lg col-4 order-1 order-lg-0 my-3 my-lg-0">
+                                        <span class="opacity-60 fs-12 d-block d-lg-none">Fiyat</span>
+                                        <span class="fw-600 fs-16">95.00₺</span>
+                                    </div>
+                                    <div class="col-lg col-6 order-4 order-lg-0">
+                                        <div class="d-flex align-items-center">
+                                            <div class="row no-gutters align-items-center  mr-3">
+                                                <button class="btn btn-circle btn-minus"><i class="las la-minus"></i></button>
+                                            </div>
+                                            <div class="row no-gutters align-items-center ml-3 mr-3">
+                                                <input type="number" class="input-circle product-count" value="5" max="15" readonly>
+                                            </div>
+                                            <div class="row no-gutters align-items-center  mr-3">
+                                                <button class="btn btn-circle btn-plus"><i class="las la-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg col-4 order-3 order-lg-0 my-3 my-lg-0">
+                                        <span class="opacity-60 fs-12 d-block d-lg-none">TOPLAM</span>
+                                        <span class="fw-600 fs-16 text-orange">95.00₺</span>
+                                    </div>
+                                    <div class="col-lg-auto col-6 order-5 order-lg-0 text-right">
+                                        <a href="#" class="btn btn-circle btn-sm btn-soft">
+                                            <i class="las la-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item px-0 px-lg-3">
+                                <div class="row gutters-5">
+                                    <div class="col-lg-5 d-flex">
+                                        <span class="mr-2 ml-0">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" class="cart-img">
+                                        </span>
+                                        <span class="fs-14 opacity-60">Minie Mause  Kapuşonlu Takım - Acikpembe</span>
+                                    </div>
+
+                                    <div class="col-lg col-4 order-1 order-lg-0 my-3 my-lg-0">
+                                        <span class="opacity-60 fs-12 d-block d-lg-none">Fiyat</span>
+                                        <span class="fw-600 fs-16">95.00₺</span>
+                                    </div>
+                                    <div class="col-lg col-6 order-4 order-lg-0">
+                                        <div class="d-flex align-items-center">
+                                            <div class="row no-gutters align-items-center  mr-3">
+                                                <button class="btn btn-circle btn-minus"><i class="las la-minus"></i></button>
+                                            </div>
+                                            <div class="row no-gutters align-items-center ml-3 mr-3">
+                                                <input type="number" class="input-circle product-count" value="5" max="15" readonly>
+                                            </div>
+                                            <div class="row no-gutters align-items-center  mr-3">
+                                                <button class="btn btn-circle btn-plus"><i class="las la-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg col-4 order-3 order-lg-0 my-3 my-lg-0">
+                                        <span class="opacity-60 fs-12 d-block d-lg-none">TOPLAM</span>
+                                        <span class="fw-600 fs-16 text-orange">95.00₺</span>
+                                    </div>
+                                    <div class="col-lg-auto col-6 order-5 order-lg-0 text-right">
+                                        <a href="#" class="btn btn-circle btn-sm btn-soft">
+                                            <i class="las la-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="px-3 py-2 mb-4 border-top d-flex justify-content-between">
+                        <span class="text-muted fs-15">ara toplam</span>
+                        <span class="fw-600 fs-17">95.00₺</span>
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-md-6 text-center text-md-left order-1 order-md-0">
+                            <a href="#" class="btn btn-soft">
+                                <i class="las la-arrow-left"></i>
+                                Mağazaya Dön
+                            </a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-right">
+                            <button class="btn btn-orange fw-600">Gönderime Devam Et</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,205 @@
+﻿@model List<akset.data.ViewModel.trafik>
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int say = 0;
+}		
+
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa-fw fa fa-home"></i>
+                Yönetim
+                <span>
+                    >
+                   Site Trafiği
+                </span>
+            </h1>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        @section pagespecific {
+            
+        <script>
+            $(function () {
+                $(".datepicker").datepicker({
+                    showButtonPanel: true
+                });
+            });
+            (function (factory) {
+                if (typeof define === "function" && define.amd) {
+
+                    // AMD. Register as an anonymous module.
+                    define(["../widgets/datepicker"], factory);
+                } else {
+
+                    // Browser globals
+                    factory(jQuery.datepicker);
+                }
+            }(function (datepicker) {
+
+                datepicker.regional.tr = {
+                    closeText: "Kapat",
+                    prevText: "<",
+                    nextText: ">",
+                    currentText: "Bugün",
+                    monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+                    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+                    monthNamesShort: ["Oca", "Şub", "Mar", "Nis", "May", "Haz",
+                    "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"],
+                    dayNames: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
+                    dayNamesShort: ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
+                    dayNamesMin: ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
+                    weekHeader: "Hf",
+                    dateFormat: "dd.mm.yy",
+                    firstDay: 1,
+                    isRTL: false,
+                    showMonthAfterYear: false,
+                    yearSuffix: ""
+                };
+                datepicker.setDefaults(datepicker.regional.tr);
+
+                return datepicker.regional.tr;
+
+            }));
+            function git() {
+                var bas = $("#bastrh").datepicker("getDate");
+                var bit = $("#bittrh").datepicker("getDate");
+                if (bas != "" && bit != "" && bas!=null && bit !=null) {
+                    if (Date.parse(bas) <= Date.parse(bit)) {
+                        location.href = "/Admin/home/trafik?bas=" + $("#bastrh").val() + "&bit=" + $("#bittrh").val();
+                    } else {
+                        alert("BAŞLANGIÇ TARİHİ BİTİŞ TARİHİNDEN ÖNCE OLMALIDIR!");
+                    }
+                }
+                else {
+                    alert("BAŞLANGIÇ VE BİTİŞ TARİHLERİNİ BELİRTMELİSİNİZ!");
+                }
+            }
+            function bug() {
+                location.href = "/Admin/home/trafik";
+            }
+        </script>
+            
+            }
+  @{ 
+      string bass = "";
+      string bitt = "";
+      if (Request.QueryString["bas"] != null)
+      {
+          bass = Request.QueryString["bas"].ToString();
+      }
+      if (Request.QueryString["bit"] != null)
+      {
+          bitt = Request.QueryString["bit"].ToString();
+      }
+  }
+        <!-- row -->
+        <div class="row">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                
+                <section class="block" style="text-align: center;">
+                    <label class="input state-success" style="position: relative;">
+                        <i class="icon-append fa fa-calendar" style="position: absolute;right: 6px;top: 10px;"></i>
+                        @if (bass != "")
+                        {
+                            <input type="text" name="request" placeholder="Başlangıç Tarihi Belirtiniz" class="datepicker form-control" data-dateformat="dd/mm/yy" id="bastrh" value="@bass">
+                        }
+                        else
+                        {
+                            <input type="text" name="request" placeholder="Başlangıç Tarihi Belirtiniz" class="datepicker form-control" data-dateformat="dd/mm/yy" id="bastrh">
+                        }
+                       
+                    </label>
+                    /
+                    <label class="input state-success" style="position: relative;">
+                        <i class="icon-append fa fa-calendar" style="position: absolute;right: 6px;top: 10px;"></i>
+                        @if (bitt != "")
+                        {
+                            <input type="text" name="request" placeholder="Bitiş Tarihi Belirtiniz" class="datepicker form-control" data-dateformat="dd/mm/yy" id="bittrh" value="@bitt">
+                        }
+                        else
+                        {
+                            <input type="text" name="request" placeholder="Bitiş Tarihi Belirtiniz" class="datepicker form-control" data-dateformat="dd/mm/yy" id="bittrh">
+                        }
+                       
+                    </label>
+                    <div class="btn btn-labeled btn-success" onclick="git()"> <span class="btn-label"><i class="glyphicon glyphicon-calendar"></i></span>Tarih Aralığını Getir</div>
+                    <div class="btn btn-labeled btn-primary" onclick="bug()"> <span class="btn-label"><i class="glyphicon glyphicon-camera"></i></span>Sadece Bugunü Getir </div>
+                </section>
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false"  data-widget-deletebutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+
+                    -->
+                    <header>
+                        <span class="widget-icon" style="    margin-right: 0px;"> <i class="fa fa-table"></i> </span>
+                        <h3 style="    height: 100%;
+    width: auto;
+    display: inline-block;
+    font-size: 14px;
+    position: relative;    margin-left: 10px;
+    float: left;
+    margin: 0;
+    line-height: 34px;
+    font-weight: 400;
+    letter-spacing: 0;">Toplam Sayfa Görüntüleme: @ViewBag.total</h3>
+
+                    </header>
+                    <div>
+                        <div class="jarviswidget-editbox">
+                        </div>
+                        <div class="widget-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Adres</th>
+                                            <th>Sayfa Başlığı</th>
+                                            <th>Tarih</th>
+                                            <th>Hit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @if (Model!=null)
+                                        {
+                                            foreach (var item in Model)
+                                            {
+                                                say++;
+                                                <tr>
+                                                    <td>@say</td>
+                                                    <td><a target="_blank" href="@item.adres">@string.Concat(item.adres.Length > 100 ? item.adres.Substring(0, 100) + "..." : item.adres)</a></td>
+                                                    <td>@item.sayfabasligi</td>
+
+                                                    <td>@string.Concat(item.tarih.ToString() == "0" ? "-" : item.tarih.ToString().Substring(6) + "/" + item.tarih.ToString().Substring(4, 2) + "/" + item.tarih.ToString().Substring(0, 4))</td>
+                                                    <td>@item.hit</td>
+                                                </tr>
+                                            }
+                                        }
+                             
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

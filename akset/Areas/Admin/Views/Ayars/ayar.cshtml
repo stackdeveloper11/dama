@@ -1,0 +1,116 @@
+﻿@model Ayar
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Site Ayarları
+                <span>
+                    >
+                Ayarlar
+                </span>
+            </h1>
+        </div>
+  
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-commenting-o"></i> </span>
+                        <h2>Anasayfa Site Ayarları</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <input type="hidden" name="Id" value="@Model.Id" />
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="adi">Title</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="baslik">Description</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="aciklama">Keywords</label>
+                                        <div class="col-md-10">
+                                            @Html.TextAreaFor(model => model.keywords, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.keywords, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="icerik">Analitiks</label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" cols="20" id="analiticsi" name="analitics" rows="2">@Model.analitics</textarea>
+                                            @Html.TextAreaFor(model => model.analitics,  new { @class = "form-control hidden" })
+                                            @Html.ValidationMessageFor(model => model.analitics, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="icerik">Meta Etiketleri</label>
+                                        <div class="col-md-10">
+                                            <textarea class="form-control" cols="20" id="aramametalari" name="aramametalar" rows="2">@Model.aramametalar</textarea>
+                                            @Html.TextAreaFor(model => model.aramametalar, new { @class = "form-control hidden" })
+                                            @Html.ValidationMessageFor(model => model.aramametalar, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <div class="btn btn-success btn-sm" onclick="yolla()">Kaydet</div>
+                                            <input type="submit" value="Kaydet" id="kyt" class="btn btn-success btn-sm hidden" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    <script src="/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        function yolla() {
+            $(document).ready(function() {
+                $("#aramametalar").val(escape($("#aramametalari").val()));
+                $("#analitics").val(escape($("#analiticsi").val()));
+                $("#kyt").click();
+            })
+        }
+    </script>
+}

@@ -1,0 +1,2008 @@
+﻿@model akset.data.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+<style>
+    td {
+        vertical-align: middle !important;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+    }
+
+    label {
+        margin-bottom: 0px !important;
+    }
+
+    .switch-input {
+        display: none;
+    }
+
+    .switch-label {
+        display: block;
+        width: 48px;
+        height: 24px;
+        text-indent: -150%;
+        clip: rect(0 0 0 0);
+        color: transparent;
+        user-select: none;
+    }
+
+        .switch-label::before,
+        .switch-label::after {
+            content: "";
+            display: block;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .switch-label::before {
+            width: 100%;
+            height: 100%;
+            background-color: #dedede;
+            border-radius: 9999em;
+            -webkit-transition: background-color 0.25s ease;
+            transition: background-color 0.25s ease;
+        }
+
+        .switch-label::after {
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+            -webkit-transition: left 0.25s ease;
+            transition: left 0.25s ease;
+        }
+
+    .switch-input:checked + .switch-label::before {
+        background-color: #89c12d;
+    }
+
+    .switch-input:checked + .switch-label::after {
+        left: 24px;
+    }
+</style>
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Ürünler
+                <span>
+                    >
+                    Yeni Ürün Ekle
+                </span>
+            </h1>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-commenting-o"></i> </span>
+                        <h2>Yeni Ürün Ekle</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <p class="text-right">
+                                <a href="/Admin/products/index" class="btn btn-success btn-xs">Ürünler →</a>
+                            </p>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" value="@DateTime.Now" name="Created_At">
+                                <input type="hidden" value="@DateTime.Now" name="Updated_At">
+                                <table class="model-state">
+                                    @foreach (var item in ViewContext.ViewData.ModelState)
+                                    {
+                                        if (item.Value.Errors.Any())
+                                        {
+                                            <tr>
+                                                <td><b>@item.Key</b></td>
+                                                <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                                <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+
+                                <style>
+                                    table.model-state {
+                                        border-color: #600;
+                                        border-width: 0 0 1px 1px;
+                                        border-style: solid;
+                                        border-collapse: collapse;
+                                        font-size: .8em;
+                                        font-family: arial;
+                                    }
+
+                                        table.model-state td {
+                                            border-color: #600;
+                                            border-width: 1px 1px 0 0;
+                                            border-style: solid;
+                                            margin: 0;
+                                            padding: .25em .75em;
+                                            background-color: #FFC;
+                                        }
+                                </style>
+                                <div class="form-horizontal">
+                                    <h3>Ürün Bilgisi</h3>
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Barkod, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Barkod, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Barkod, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ProductName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ProductName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="Kategoris">Kategori</label>
+                                        <div class="col-md-10">
+                                            <select class="1Inselect" style="width:100%" title="Bir Kategori Seç" data-live-search="true" name="KategoriId">
+                                                <option value="0">Bir Kategori Seçin</option>
+                                                @foreach (var item in aksetDB.Create().Kategoris.Where(a => a.parentId == null).ToList())
+                                                {
+                                                    <option value="@item.Id">@item.adi</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group biralt hidden">
+                                        <label class="control-label col-md-2" for="Kategoris">1. Alt Kategori</label>
+                                        <div class="col-md-10">
+                                            <img src="~/spinner-gif-16.gif" style="width:50px" />
+                                            YÜKLENİYOR
+                                        </div>
+                                    </div>
+
+                                    @for (int i = 0; i < aksetDB.Create().Ayars.FirstOrDefault().KategoriSonLevel - 1; i++)
+                                    {
+                                        <div class="form-group k-@string.Concat(i+2) hidden">
+                                            <label class="control-label col-md-2" for="Kategoris">@string.Concat(i + 1, ".") Alt Kategori</label>
+                                            <div class="col-md-10">
+                                                <select class="@string.Concat(i+2,"Inselect")" style="width:100%" title="Bir Alt Kategori Seç" data-live-search="true" name="AltKategoriId">
+                                                    <option value="0">Bir Alt Kategori Seçin</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <div class="form-group ikialt hidden">
+                                        <label class="control-label col-md-2" for="Kategoris">2. Alt Kategori</label>
+                                        <div class="col-md-10">
+                                            <img src="~/spinner-gif-16.gif" style="width:50px" />
+                                            YÜKLENİYOR
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="BrandId">Marka</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("BrandId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.BrandId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Unit, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Unit, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Unit, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Refundable, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <div class='switch'>
+                                                <input id='Refund' type='checkbox' name="Refund" class='switch-input' />
+                                                <label for='Refund' class='switch-label'>Switch</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <h3>Ürün Görselleri</h3>
+                                    <style>
+                                        #resler li img {
+                                            width: 100%;
+                                        }
+
+                                        #resler li {
+                                            width: 100px;
+                                        }
+
+                                        .img-fit {
+                                            max-height: 100%;
+                                            width: 100%;
+                                            object-fit: cover;
+                                        }
+
+                                        .aiz-file-box {
+                                            position: relative;
+                                            width: 16%;
+                                            display: inline-block;
+                                            margin-right: 3px;
+                                            margin-bottom: 8px;
+                                        }
+
+                                            .aiz-file-box .card-file {
+                                                cursor: pointer;
+                                                overflow: hidden;
+                                                position: absolute;
+                                                top: 0;
+                                                right: 0;
+                                                bottom: 0;
+                                                left: 0;
+                                                opacity: 1;
+                                            }
+
+                                        img {
+                                            vertical-align: middle;
+                                            border-style: none;
+                                        }
+
+                                        .aiz-file-box:before {
+                                            content: "";
+                                            display: block;
+                                            padding-top: 100%;
+                                        }
+
+                                        .aiz-file-box .card-file .card-file-thumb {
+                                            position: absolute;
+                                            width: calc(100% - 16px);
+                                            top: 8px;
+                                            left: 8px;
+                                            height: calc(100% - 55px);
+                                        }
+
+                                        .card-file .card-file-thumb {
+                                            height: 120px;
+                                            background-color: #f5f6fa;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        }
+
+                                        .card-file {
+                                            padding: 8px;
+                                            position: relative;
+                                            border-color: rgb(223, 224, 228);
+                                            transition: all 0.2s ease-in-out;
+                                            margin-bottom: 20px;
+                                        }
+
+                                        .card {
+                                            -webkit-box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+                                            box-shadow: 0 0 13px 0 rgba(82, 63, 105, 0.05);
+                                            background-color: #fff;
+                                            margin-bottom: 0px;
+                                            border-color: #ebedf2;
+                                        }
+
+                                        .card {
+                                            position: relative;
+                                            display: -ms-flexbox;
+                                            display: flex;
+                                            -ms-flex-direction: column;
+                                            flex-direction: column;
+                                            min-width: 0;
+                                            word-wrap: break-word;
+                                            background-color: #fff;
+                                            background-clip: border-box;
+                                            border: 1px solid rgba(0, 0, 0, .125);
+                                            border-radius: .25rem;
+                                        }
+
+                                        .aiz-file-box .card-file .card-body {
+                                            position: absolute;
+                                            width: calc(100% - 16px);
+                                            bottom: 5px;
+                                            left: 8px;
+                                        }
+
+                                        .card-file .card-body {
+                                            padding: 10px 0 0;
+                                        }
+
+                                        .card .card-body {
+                                            padding: 0;
+                                            border-radius: 4px;
+                                        }
+
+                                        .card-body {
+                                            -ms-flex: 1 1 auto;
+                                            flex: 1 1 auto;
+                                            min-height: 1px;
+                                            padding: 1.25rem;
+                                        }
+
+                                        .card-file .card-body h6 {
+                                            font-size: 0.8rem;
+                                            margin-bottom: 0;
+                                        }
+
+                                        .card-file .card-body p {
+                                            margin-bottom: 0;
+                                            font-size: 9px;
+                                            color: #8392a5;
+                                        }
+
+                                        /*        .dropdown.bootstrap-select {
+                                            width: 100% !important;
+                                        }*/
+                                    </style>
+                                    <div class="form-group" style="margin-bottom: 0;">
+                                        <label class="control-label col-md-2" for="Added_By">Ürün Resimleri</label>
+                                        <div class="col-md-10">
+                                            <div onclick="$('#imgInp').click()" class="btn btn-success btn-sm">Resim(ler) Ekle</div>
+                                            <input type="file" class="hidden" id="imgInp" multiple name="name" value="" accept="image/*" />
+                                            <input type="hidden" value="bos" id="rvitrin" name="resimvtrin" />
+                                            <div class="orta" style="max-height:455px;overflow-x: auto;margin-top:30px">
+                                                <div id="resler"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group hidden">
+                                        <label class="control-label col-md-2" for="">Küçük Resim (290x300)</label>
+                                        <div class="col-md-10">
+                                            <div onclick="$('#imgInpK').click()" class="btn btn-success btn-sm">Resim Ekle</div>
+                                            <input type="file" class="hidden" id="imgInpK" name="name" value="" />
+                                            @Html.ValidationMessageFor(model => model.Thumbnail_img, "", new { @class = "text-danger" })
+                                            <div class="resm" style="margin-top:10px"></div>
+                                            <input type="hidden" value="" id="kckrsm" name="kucukresim">
+                                            <ul class="list-unstyled dBilgi hidden">
+                                                <li><span style="width:45px;float:left;font-weight:bolder">Dosya</span>: <span id="nma"></span></li>
+                                                <li><span style="width:45px;float:left;font-weight:bolder">Size</span>: <span id="szi"></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.Thumbnail_img, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Thumbnail_img, new { htmlAttributes = new { @class = "form-control", @Value = new Random().Next(0, 9999999) } })
+                                            @Html.ValidationMessageFor(model => model.Thumbnail_img, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <h3>Ürün Videoları</h3>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.VideoLink, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.VideoLink, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VideoLink, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.VideoType, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.VideoType, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.VideoType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <h3>Ürün Özellikleri</h3>
+                                    <div class="form-group ozlkk">
+                                        <label class="control-label col-md-2" for="">Özellikler</label>
+                                        <div class="col-md-10">
+                                            <select class="selectpickerii" multiple data-live-search="true">
+                                            </select>
+                                            <div id="ozll" class="hidden">
+                                                <img src="~/spinner-gif-16.gif" style="width:50px" />
+                                                YÜKLENİYOR
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="urunozel"></div>
+
+
+                                    <h3>Ürün Varyasyonu</h3>
+                                    <div class="form-group ozlk">
+                                        <label class="control-label col-md-2" for="">Varyasyon Özellikleri</label>
+                                        <div class="col-md-10">
+                                            <select class="selectpickeri" multiple data-live-search="true">
+                                            </select>
+                                            <div id="ozl" class="hidden">
+                                                <img src="~/spinner-gif-16.gif" style="width:50px" />
+                                                YÜKLENİYOR
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="burdax"></div>
+                                    <h3>Ürün Fiyatı + Stok</h3>
+                                    <script>
+                                        function parala(a, b) {
+                                            $("#" + b).val($(a).val().replace(".", "").replace(".", "").replace(".", "").replace(".", "").replace(".", "").replace(".", ""));
+                                        }
+                                    </script>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control parasal uprice" onkeyup="parala(this,'UnitPrice')">
+                                            @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control hidden", @data_val_number = "Birim Fiyat Belirtmelisiniz. Örn: 10.5,100.5,200.73 vs." } })
+                                            @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Discount, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control parasal" onkeyup="parala(this,'Discount')">
+                                            @Html.EditorFor(model => model.Discount, new { htmlAttributes = new { @class = "form-control hidden", @Value = 0 } })
+                                            @Html.ValidationMessageFor(model => model.Discount, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.DiscountType, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <select name="DiscountType" class="form-control">
+                                                <option value="yuzde" selected="selected">Yüzde</option>
+                                                <option value="duz">Düz</option>
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.DiscountType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group quan">
+                                        @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
+                                            @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group varys hidden">
+                                        <label class="control-label col-md-2" for="">Varyantlar</label>
+                                        <div class="col-md-10">
+                                            <table class="table table-hover table-striped table-condensed table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Varyant Başlık</th>
+                                                        <th>Varyant Çeşit</th>
+                                                        <th>Varyant Fiyatı</th>
+                                                        <th>Barkod</th>
+                                                        <th>Miktar</th>
+                                                        <th>Resim</th>
+                                                        <th>#</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="varts">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+                                    <h3>Ürün Açıklama</h3>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control hidden" } })
+                                            <div id="summernote"></div>
+                                            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <h3>Ürün Kargo Maaliyeti</h3>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.ShippingType, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ShippingType" id="inlineRadio1" checked="checked" value="ucretsizkargo">
+                                                <label class="form-check-label" for="inlineRadio1">Ücretsiz Kargo</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="ShippingType" id="inlineRadio2" value="sabitfiyat">
+                                                <label class="form-check-label" for="inlineRadio2">Sabit Fiyat</label>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.ShippingType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group hidden ShippingCost">
+                                        @Html.LabelFor(model => model.ShippingCost, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control parasal" onkeyup="parala(this,'ShippingCost')">
+                                            @Html.EditorFor(model => model.ShippingCost, new { htmlAttributes = new { @class = "form-control hidden", @data_val_number = "Sadece Numara Yazmalısınız", @Value = 0 } })
+                                            @Html.ValidationMessageFor(model => model.ShippingCost, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <h3>SEO Meta Etiketleri</h3>
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.Slug, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Slug, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Slug, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.MetaTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.MetaTitle, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.MetaTitle, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.MetaDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.MetaDescription, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.MetaDescription, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    @using Microsoft.AspNet.Identity
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.Added_By, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Added_By, new { htmlAttributes = new { @class = "form-control", @Value = User.Identity.GetUserId() } })
+                                            @Html.ValidationMessageFor(model => model.Added_By, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.Created_At, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Created_At, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now } })
+                                            @Html.ValidationMessageFor(model => model.Created_At, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.Updated_At, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Updated_At, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now } })
+                                            @Html.ValidationMessageFor(model => model.Updated_At, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <h3>Durumlar</h3>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.TodaysDeal, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <div class='switch'>
+                                                <input id='Todays' type='checkbox' name="Todays" class='switch-input' />
+                                                <label for='Todays' class='switch-label'>Switch</label>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.TodaysDeal, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Published, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <div class='switch'>
+                                                <input id='Publish' type='checkbox' name="Publish" class='switch-input' />
+                                                <label for='Publish' class='switch-label'>Switch</label>
+                                            </div>
+                                            @Html.ValidationMessageFor(model => model.Published, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Featured, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <div class='switch'>
+                                                <input id='Feature' type='checkbox' name="Feature" class='switch-input' />
+                                                <label for='Feature' class='switch-label'>Switch</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control", @Value = 0 } })
+                                            @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        <label class="control-label col-md-2" for="UserId">Ekleyen Kullanıcı</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("UserId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.UserId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10 text-right ">
+                                            <input type="submit" value="Create" class="btn btn-default hidden btnYolla" />
+                                            <div class="btn btn-success kyt" onclick="Yolla()">Kaydet</div>
+                                            <div class="hidden ykl">LÜTFEN BEKLEYİNİZ</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="Refundable" id="Refundable" value="false" />
+                                <input type="hidden" name="TodaysDeal" id="TodaysDeal" value="false" />
+                                <input type="hidden" name="Published" id="Published" value="false" />
+                                <input type="hidden" name="Featured" id="Featured" value="false" />
+                                <input type="hidden" name="Sonlar" id="sonlar" value="bos" />
+                                <input type="hidden" name="Ozellikler" id="ozellikler" value="bos" />
+                                <input type="hidden" name="KategoriIdsi" id="KategoriIdsi" value="0" />
+
+                                <input type="hidden" name="Cache" id="Cache" value="@string.Concat(new Random().Next(0,999999))" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+
+
+@section pagespecific {
+    <script src="/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @*<script>
+        $.validator.methods.number = function (value, element) {
+            return this.optional(element) || /^-?(?:\d+|\d{1,3}(?:\.\d{3})+)?(?:,\d+)?$/.test(value);
+        }
+    </script>*@
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://www.jsviews.com/download/jsrender.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-tr_TR.min.js"></script>
+    <script src="~/content/js/jquery.maskMoney.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>*@
+    <link href="~/content/tagify.css" rel="stylesheet" />
+    <script src="~/content/tagify.min.js"></script>
+    <script src="~/content/js/compressor.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/plugin/summernote/summernote.min.js"></script>
+    <script src="~/Areas/Admin/Content/summernote-tr-TR.js"></script>
+
+    <script id="theTmpl" type="text/x-jsrender">
+        <div class="form-group g-{{:Id}} hidden brdler" data-id="{{:Id}}" data-kim="{{:Attrs}}">
+            <label class="control-label col-md-2" for="{{:Attrs}}-{{:Id}}">{{:Attrs}}</label>
+            <div class="col-md-10">
+                {{if Insertable}}
+                <input name="tags" value="" id="ins-{{:Id}}" class="ins form-control t-{{:Id}}" pattern='^[A-Za-z0-9_üçşÜÇŞĞğİöÖ✲- ]{1,15}$' />
+                {{else}}
+                <select class="selectpicker ss-{{:Id}} g-{{:Id}}" id="sel{{:Id}}" data-id="{{:Id}}" multiple data-live-search="true">
+                    {{for Values}}
+                    <option value="{{:Id}}">{{:Value}}</option>
+                    {{/for}}
+                </select>
+                {{/if}}
+            </div>
+        </div>
+    </script>
+    <script id="theTmpl2" type="text/x-jsrender">
+        <div class="form-group gx-{{:Id}} hidden brdlerx" data-id="{{:Id}}" data-kim="{{:Attrs}}">
+            <label class="control-label col-md-2" for="{{:Attrs}}-{{:Id}}">{{:Attrs}}</label>
+            <div class="col-md-10">
+                {{if Insertable}}
+                <input name="tagss" value="" id="insx-{{:Id}}" class="insx form-control tx-{{:Id}}" pattern='^[A-Za-z0-9_üçşÜÇŞĞğİöÖ✲- ]{1,15}$' />
+                {{else}}
+                <select class="selectpickerd ssx-{{:Id}} gx-{{:Id}}" id="selx{{:Id}}" data-id="{{:Id}}" multiple data-live-search="true">
+                    {{for Values}}
+                    <option value="{{:Id}}">{{:Value}}</option>
+                    {{/for}}
+                </select>
+                {{/if}}
+            </div>
+        </div>
+    </script>
+    <script>
+      
+        function varRead(input, yol) {
+            if (input.files && input.files[0]) {
+                new Compressor(input.files[0], {
+                    quality: 0.85,
+                    success(result) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(result);
+                        reader.onloadend = function () {
+                            base64data = reader.result;
+                            $("#rsmd-" + yol).html("<img src='" + base64data + "' style='width:84px'/>");
+                            //console.log(result);
+                            //$("#nma").html(result.name);
+                            //$("#szi").html((result.size / 1024).toFixed(2) + " KB");
+                            //$(".dBilgi").removeClass("hidden");
+                        }
+                    },
+                    error(err) {
+                        console.log(err.message);
+                    },
+                });
+            }
+        }
+
+        function rsler() {
+            $(".rsmler").change(function () {
+                var dd = ($(this).attr("id").replace("rsm-", ""));
+                varRead(this, dd);
+            });
+        }
+
+        function slugFor() {
+            if ($.trim($("#ProductName").val()) != "") {
+                var yazili = ToSeoUrl($.trim($("#ProductName").val()));
+                $("#Slug").val(yazili);
+            }
+        }
+        function ToSeoUrl(textString) {
+            textString = textString.replace(/ /g, "-");
+            textString = textString.replace(/</g, "");
+            textString = textString.replace(/>/g, "");
+            textString = textString.replace(/"/g, "");
+            textString = textString.replace(/é/g, "");
+            textString = textString.replace(/!/g, "");
+            textString = textString.replace(/’/, "");
+            textString = textString.replace(/£/, "");
+            textString = textString.replace(/^/, "");
+            textString = textString.replace(/#/, "");
+            textString = textString.replace(/$/, "");
+            textString = textString.replace(/\+/g, "");
+            textString = textString.replace(/%/g, "");
+            textString = textString.replace(/½/g, "");
+            textString = textString.replace(/&/g, "");
+            textString = textString.replace(/\//g, "");
+            textString = textString.replace(/{/g, "");
+            textString = textString.replace(/\(/g, "");
+            textString = textString.replace(/\[/g, "");
+            textString = textString.replace(/\)/g, "");
+            textString = textString.replace(/]/g, "");
+            textString = textString.replace(/=/g, "");
+            textString = textString.replace(/}/g, "");
+            textString = textString.replace(/\?/g, "");
+            textString = textString.replace(/\*/g, "");
+            textString = textString.replace(/@@/g, "");
+            textString = textString.replace(/€/g, "");
+            textString = textString.replace(/~/g, "");
+            textString = textString.replace(/æ/g, "");
+            textString = textString.replace(/ß/g, "");
+            textString = textString.replace(/;/g, "");
+            textString = textString.replace(/,/g, "");
+            textString = textString.replace(/`/g, "");
+            textString = textString.replace(/|/g, "");
+            textString = textString.replace(/\./g, "");
+            textString = textString.replace(/:/g, "");
+            textString = textString.replace(/İ/g, "i");
+            textString = textString.replace(/I/g, "i");
+            textString = textString.replace(/ı/g, "i");
+            textString = textString.replace(/ğ/g, "g");
+            textString = textString.replace(/Ğ/g, "g");
+            textString = textString.replace(/ü/g, "u");
+            textString = textString.replace(/Ü/g, "u");
+            textString = textString.replace(/ş/g, "s");
+            textString = textString.replace(/Ş/g, "s");
+            textString = textString.replace(/ö/g, "o");
+            textString = textString.replace(/Ö/g, "o");
+            textString = textString.replace(/ç/g, "c");
+            textString = textString.replace(/Ç/g, "c");
+            textString = textString.replace(/–/g, "-");
+            textString = textString.replace(/—/g, "-");
+            textString = textString.replace(/—-/g, "-");
+            textString = textString.replace(/—-/g, "-");
+            return textString.toLowerCase();
+        }
+        function ayardortlu() {
+            if ($('#Refund').is(':checked')) {
+                $("#Refundable").val(true);
+            }
+            else {
+                $("#Refundable").val(false);
+            }
+            if ($('#Todays').is(':checked')) {
+                $("#TodaysDeal").val(true);
+            }
+            else {
+                $("#TodaysDeal").val(false);
+            }
+            if ($('#Publish').is(':checked')) {
+                $("#Published").val(true);
+            }
+            else {
+                $("#Published").val(false);
+            }
+            if ($('#Feature').is(':checked')) {
+                $("#Featured").val(true);
+            }
+            else {
+                $("#Featured").val(false);
+            }
+        }
+
+        function trlerim() {
+            var sonlar = "";
+            var durum = true;
+            $(".trlerim").each(function () {
+                var iki = "yok";
+                var uc = "yok";
+                var dort = "yok";
+                var bes = "yok";
+                if ($(this).children('td').eq(2).children().val() != "" && $(this).children('td').eq(2).children().val() != null && $(this).children('td').eq(2).children().val() != undefined && $(this).children('td').eq(2).children().val() != "undefined") {
+                    iki = $(this).children('td').eq(2).children().val();
+                }
+                if ($(this).children('td').eq(3).children().val() != "" && $(this).children('td').eq(3).children().val() != null && $(this).children('td').eq(3).children().val() != undefined && $(this).children('td').eq(3).children().val() != "undefined") {
+                    uc = $(this).children('td').eq(3).children().val();
+                }
+                if ($(this).children('td').eq(4).children().val() != "" && $(this).children('td').eq(4).children().val() != null && $(this).children('td').eq(4).children().val() != undefined && $(this).children('td').eq(4).children().val() != "undefined") {
+                    dort = $(this).children('td').eq(4).children().val();
+                }
+                if ($(this).children('td').eq(5).children().eq(2).children("img").attr("src") != "" && $(this).children('td').eq(5).children().eq(2).children("img").attr("src") != null && $(this).children('td').eq(5).children().eq(2).children("img").attr("src") != undefined && $(this).children('td').eq(5).children().eq(2).children("img").attr("src") != "undefined") {
+                    bes = $(this).children('td').eq(5).children().eq(2).children("img").attr("src");
+                }
+                if (iki == "yok") {
+                    Swal.fire('Varyantlardan bir ve/veya bir kaçına Fiyat Belirtmediniz!');
+                    durum = false;
+                }
+                if (dort == "yok") {
+                    Swal.fire('Varyantlardan bir ve/veya bir kaçına Miktar Belirtmediniz!');
+                    durum = false;
+                }
+                sonlar += "_" + $(this).attr("data-slt") + "-" + $(this).attr("data-sltid") + "-" + iki + "-" + uc + "-" + dort+ "-"+bes;
+            })
+            sonlar = sonlar.substring(1);
+            $("#sonlar").val(sonlar);
+            return durum;
+        }
+       
+        function ozellikleri() {
+            var ddd = [];
+            $(".selectpickerd").each(function (a, b) {
+                if ($(b.parentElement.parentElement.parentElement).hasClass("hidden")) {
+
+                }
+                else {
+                    var anaId = $(b.parentElement.parentElement.parentElement).attr("data-id");
+                    if ($(this).val() != null && $(this).val()!="") {
+                        $.each($(this).val(), function (a, b) {
+                                ddd.push(anaId + "-" + b);
+                        })
+                    }
+                }
+            });
+            $("[name=tagss]").each(function (a, b) {
+                if ($(b.parentElement.parentElement).hasClass("hidden")) {
+
+                }
+                else {
+                    if ($(this).val() != null && $(this).val() != "") {
+                        var anaId = $(this).attr("id").replace("insx-", "");
+                        $.each(JSON.parse($(this).val()), function (a, b) {
+                            ddd.push(anaId + "-" + b.value.split('-')[0]);
+                        })
+                    }
+                }
+            })
+            $("#ozellikler").val(ddd.join(","));
+        }
+
+        function Yolla() {
+            $("#Description").val(escape($('#summernote').summernote('code')));
+            ayardortlu();
+            Kategorisi();
+            ozellikleri();
+            if (urunBilgisi() == true && urunGorselleri() == true && urunStokfiyat() == true && urunKargomaliyet() == true && trlerim() == true) {
+                setTimeout(function () {
+                    $(".btnYolla").click();
+                    $(".kyt").addClass("hidden");
+                    $(".ykl").removeClass("hidden");
+                }, 200);
+            }
+        }
+
+
+        $(function () {
+            $(".parasal").maskMoney({ thousands: '.', decimal: ',', allowZero: true,  affixesStay: true, allowNegative: false, precision: 2 });
+         //   $('.parasal').maskMoney({ decimal: ',', allowZero: true, defaultZero: false, precision: 0 });
+          //  $('.parasal').mask("#.##", { reverse: true });
+        })
+
+
+        function urunBilgisi() {
+            if ($.trim($("#ProductName").val()) == null || $.trim($("#ProductName").val()) == "") {
+                $("#ProductName").focus();
+                Swal.fire('Ürün Adı Boş Geçilemez!');
+                return false;
+            }
+            if ($(".2Inselect").val() == "0") {
+                $("#ProductName").focus();
+                Swal.fire('Kategori ve/veya 1. Alt Kategori Seçmediniz!');
+                return false;
+            }
+            if ($("#Unit").val() == "" || $("#Unit").val() == null) {
+                $("#Unit").focus();
+                Swal.fire('Birim Belirlemediniz!');
+                return false;
+            }
+            return true;
+        }
+
+        function urunGorselleri() {
+            //if ($("#resler").html() == "" || $("#resler").html() == null) {
+            //    Swal.fire('Ürün Resimleri Eklemelisiniz!');
+            //    return false;
+            //}
+            //if ($(".resm").html() == "" || $(".resm").html() == null) {
+            //    $(".resm").focus();
+            //    Swal.fire('Ürün Küçük Resmi Eklemelisiniz!');
+            //    return false;
+            //}
+            if ($("#resler").html() == "") {
+                Swal.fire('Ürün Resim(leri) Eklemelisiniz!');
+                return false;
+            }
+            return true;
+        }
+
+        function urunStokfiyat() {
+            if ($("#UnitPrice").val() == "" || $("#UnitPrice").val() == null) {
+                $("#UnitPrice").focus();
+                Swal.fire('Birim Fiyat Belirlemelisiniz!');
+                return false;
+            }
+            return true;
+        }
+
+        function urunKargomaliyet() {
+            if ($('#inlineRadio1').is(':checked') == false && $('#inlineRadio2').is(':checked') == false) {
+                $('#inlineRadio1').focus();
+                Swal.fire('Kargolama Tipi Belirlemelisiniz!');
+                return false;
+            }
+            return true;
+        }
+
+        function radioSabitfiyat() {
+            if ($('#inlineRadio2').is(':checked')) {
+                $(".ShippingCost").removeClass("hidden");
+            }
+            else {
+                $(".ShippingCost").addClass("hidden");
+            }
+
+        }
+
+        $(document).ready(function () {
+            setInterval(radioSabitfiyat, 100);
+        })
+
+        function findValueInArrayee(value, arr) {
+            var result = "yok";
+            for (var i = 0; i < arr.length; i++) {
+                var name = arr[i].id.toLowerCase();
+                if (name == value) {
+                    result = 'var';
+                    break;
+                }
+            }
+            return result;
+        }
+
+        function findValueInArray(value, arr) {
+            var result = "yok";
+            for (var i = 0; i < arr.length; i++) {
+                var name = arr[i].toLowerCase();
+                if (name == value) {
+                    result = 'var';
+                    break;
+                }
+            }
+            return result;
+        }
+
+        function Detector() {
+            var listeo = []
+
+            $('.selectpicker').each(function (key, value) {
+                var lst = $(value).val();
+                if (lst != null) {
+                    $.merge(listeo, lst);
+                }
+            })
+
+            $(".trlerim").each(function (key, value) {
+                var ids = $(value).attr("data-id");
+                var ne = $(value).attr("data-ne");
+                if (ne != "insertable") {
+                    if (findValueInArray(ids, listeo) == "yok") {
+                        $(value).remove();
+                    }
+                }
+            })
+
+            if ($(".trlerim").length > 0) {
+                $(".varys").removeClass("hidden");
+                $(".quan").addClass("hidden");
+            }
+            else {
+                $(".varys").addClass("hidden");
+                $(".quan").removeClass("hidden");
+               // $(".quan").addClass("hidden");
+            }
+        }
+
+        $(document).ready(function () {
+            setInterval(Detector, 1000);
+            setInterval(insler, 1000);
+            $('.selectpickeri').selectpicker();
+            $('.selectpickerii').selectpicker();
+            $('.selectpickerii').change(function () {
+                var lst = [];
+                var selectedItem = $('.selectpickerii').val();
+
+                //$.each(selectedItem, function (a, b) {
+                //    if ($(".gx-" + b).length > 0) {
+                //    }
+                //    else {
+                //        $.ajax({
+                //            url: "/admin/products/GetAttribute/" + b,
+                //            dataType: "json",
+                //            success: function (data) {
+                //                var template2 = $.templates("#theTmpl2");
+                //                var htmlOutput2 = template2.render(data);
+                //                $.when(htmlOutput2).done(function (x) {
+                //                    $("#urunozel").append(htmlOutput2);
+                //                    setTimeout(function () { $(".gx-" + b).removeClass("hidden"); }, 200);
+                //                });
+                //            }
+                //        })
+                //    }
+                //})
+
+                //alert(selectedItem);
+                //if (selectedItem.indexOf(",") != -1) {
+                //    for (var i = 0; i < selectedItem.split(',').length; i++) {
+                //        var ids = selectedItem.split(',')[i];
+                //        lst.push(ids);
+                //    }
+                //}
+                //else {
+                //    var ids = selectedItem;
+                //    lst.push(ids);
+                //}
+                //$(".g-" + ids).removeClass("hidden");
+
+                $(".brdlerx").each(function (index) {
+                    var dd = $(this).attr("data-id");
+                    if (selectedItem == null || selectedItem == "") {
+                        $(".brdlerx").addClass("hidden");
+                    }
+                    else {
+                        if (findValueInArray(dd, selectedItem) == "var") {
+                            $(".gx-" + dd).removeClass("hidden");
+                        }
+                        else {
+                            $(".gx-" + dd).addClass("hidden");
+                        }
+                    }
+                })
+            });
+            $('.selectpickeri').change(function () {
+                var lst = [];
+                var selectedItem = $('.selectpickeri').val();
+
+                if (selectedItem != null) {
+                    //  $(".varys").removeClass("hidden");
+                }
+                else {
+                    //  $(".varys").addClass("hidden");
+                }
+
+                //alert(selectedItem);
+                //if (selectedItem.indexOf(",") != -1) {
+                //    for (var i = 0; i < selectedItem.split(',').length; i++) {
+                //        var ids = selectedItem.split(',')[i];
+                //        lst.push(ids);
+                //    }
+                //}
+                //else {
+                //    var ids = selectedItem;
+                //    lst.push(ids);
+                //}
+                //$(".g-" + ids).removeClass("hidden");
+
+                $(".brdler").each(function (index) {
+                    var dd = $(this).attr("data-id");
+                    if (selectedItem == null || selectedItem == "") {
+                        $(".brdler").addClass("hidden");
+                    }
+                    else {
+                        if (findValueInArray(dd, selectedItem) == "var") {
+                            $(".g-" + dd).removeClass("hidden");
+                        }
+                        else {
+                            $(".g-" + dd).addClass("hidden");
+                        }
+                    }
+
+                })
+            });
+            $('.1Inselect').select2().on("select2:selecting", function (e) {
+                $("#varts").html("");
+                $('.2Inselect').empty();
+                $(".selectpickeri").empty();
+                $(".selectpickerii").empty();
+                $(".selectpickeri").selectpicker("refresh");
+                $(".selectpickerii").selectpicker("refresh");
+                $("#burdax").html("");
+                $("#urunozel").html("");
+                $(".k-2").addClass("hidden");
+                $(".k-3").addClass("hidden");
+                $.ajax({
+                    url: "/admin/products/getSubCategories/" + e.params.args.data.id,
+                    dataType: "json",
+                    beforeSend: function () {
+                        $(".biralt").removeClass("hidden");
+                    },
+                    success: function (data) {
+                        $(".biralt").addClass("hidden");
+                       
+                        if (data.AutoComplateViewModels.length > 0) {
+                            console.log(data);
+                            //var dd = "<option value='0'>Bir Alt Kategori Seçin</option>";
+                            var sonu = [];
+                            sonu.push({ "id": 0, "text": "Bir Alt Kategori Seçiniz" });
+                            $.map(data.AutoComplateViewModels, function (item) {
+                                //  dd += "<option value='" + item.Id + "'>" + item.Value + "</option>";
+                                sonu.push({ "id": item.Id, "text": item.Value });
+                            })
+                            //$(".2Inselect").html(dd);
+                            $(".k-2").removeClass("hidden");
+                            $('.2Inselect').select2({ data: sonu }).on("select2:selecting", function (et) {
+                                $("#varts").html("");
+                                $('.3Inselect').empty();
+                                $(".k-3").addClass("hidden");
+                                $(".selectpickeri").empty();
+                                $(".selectpickerii").empty();
+                                $(".selectpickeri").selectpicker("refresh");
+                                $(".selectpickerii").selectpicker("refresh");
+                                $("#burdax").html("");
+                                $("#urunozel").html("");
+                                ajaxla(et.params.args.data.id, 2);
+                                $.ajax({
+                                    url: "/admin/products/getSubCategories/" + et.params.args.data.id,
+                                    dataType: "json",
+                                    beforeSend: function () {
+                                        $(".ikialt").removeClass("hidden");
+                                    },
+                                    success: function (data) {
+                                        $(".ikialt").addClass("hidden");
+                                        if (data.AutoComplateViewModels.length > 0) {
+                                            var dsonu = [];
+                                            dsonu.push({ "id": 0, "text": "Bir Alt Kategori Seçiniz" });
+                                            $.map(data.AutoComplateViewModels, function (item) {
+                                                dsonu.push({ "id": item.Id, "text": item.Value });
+                                            })
+                                            $(".k-3").removeClass("hidden");
+                                            $("#ozl").removeClass("hidden");
+                                            $('.3Inselect').select2({ data: dsonu }).on("select2:selecting", function (en) {
+                                                ajaxla(en.params.args.data.id, 3);
+                                                $("#ozl").addClass("hidden");
+                                            });
+                                            $("#ozl").addClass("hidden");
+                                        }
+                                        else {
+                                            $(".k-3").addClass("hidden");
+                                        }
+                                        //$.ajax({
+                                        //    url: "/admin/products/GetAttribute/" + et.params.args.data.id,
+                                        //    dataType: "json",
+                                        //    success: function (data) {
+
+                                        //    }
+                                        //})
+                                    }
+                                })
+                            })
+                        }
+                        else {
+                            $(".k-2").addClass("hidden");
+                            $(".k-3").addClass("hidden");
+                        }
+                    }
+                })
+            })
+        })
+
+        var ddd;
+        var ooo;
+
+        function chg(e) {
+
+            //var classi = $.trim([e.path[0].ownerDocument.activeElement][0].offsetParent.className.replace("tagify", "").replace("ins", "").replace("form-control", "").replace("tagify--focus", "")).replace("g-", "");
+            //var kim = $("." + classi).parent().parent().attr("data-kim");
+
+            //if (e != null && e != "") {
+            //    console.log(e.target.value);
+            //        $.each(JSON.parse(e.target.value), function (a, b) {
+            //            if ($("#" + b.value.replace(" ", "") + "-" + classi.replace("t-", "")).length > 0) {
+
+            //            }
+            //            else {
+            //                var tdler = "<tr data-ne='insertable' maydi='" + b.value + "' id='" + b.value.replace(" ", "") + "-" + classi.replace("t-", "") + "' data-id='" + b.value.replace(" ", "") + "-" + classi.replace("t-", "") + "' class='trlerim u-" + classi.replace("t-", "") + " y-" + classi.replace("t-", "") + "-" + kim + "'><td>" + kim + "</td><td>" + b.value + "</td><td><input type='text' class='form-control'/></td><td><input type='text' class='form-control'/></td><td><input type='Number' class='form-control'/></td><td><div class='btn btn-danger btn-sm' onclick='VarySil(\"" + "0" + "\",\"" + "0" + "\",\"" + "SP" + "\")'>Sil</div></td></tr>";
+            //                $("#varts").append(tdler);
+            //            }
+            //        });
+
+            //}
+        }
+        function insler() {
+            if ($(".ins").length > 0) {
+                var lis = [];
+                $("[name='tags']").each(function () {
+                    if ($(this).val().length > 0) {
+                        if ($(this).parent().parent().hasClass("hidden")) {
+
+                        }
+                        else {
+                            var id = $(this).attr("id");
+                            var nid = id.replace("ins-", "");
+                            var did = $(this).parent().parent().attr("data-kim");
+                            var input = document.getElementById(id);
+                            tagify = new Tagify(input);
+                            $.each(JSON.parse(input.value), function (a, b) {
+                                lis.push({ "value": b.value, "id": ToSeoUrl(b.value) + "-" + nid, "kim": did });
+                            })
+                        }
+                    }
+                })
+                console.log(lis);
+                if (lis.length > 0) {
+                    $("[data-ne='insertable']").each(function () {
+
+                        if (findValueInArrayee($(this).attr("maydi"), lis) == "yok") {
+                            $(this).remove();
+                            // console.log("kk");
+                        }
+                    });
+                    $.each(lis, function (a, b) {
+                        if ($("#" + b.value.replace(" ", "") + "-" + b.id.replace("t-", "")).length > 0) {
+
+                        }
+                        else {
+                            var cls = "para-" + b.id.split("-")[2] + "-" + b.id.split("-")[0];
+                            var tdler = "<tr data-ne='insertable' data-slt='" + b.id.split("-")[2] + "' data-sltid='" + b.id.split("-")[0] + "' maydi='" + b.id.replace("t-", "") + "' id='" + b.value.replace(" ", "") + "-" + b.id.replace("t-", "") + "' data-id='" + b.value.replace(" ", "") + "-" + b.id.replace("t-", "") + "' class='trlerim u-" + b.id.replace("t-", "") + " y-" + b.id.replace("t-", "") + "-" + b.kim + "'><td>" + b.kim + "</td><td>" + b.value.split("-")[1] + "</td><td><input type='text' onkeyup='bakayar(this,\"" + cls + "\")' class='form-control buur parasal'/><div class='" + cls + "'></div></td><td><input type='text' class='form-control'/></td><td><input type='number' class='form-control'/></td><td><div class='btn btn-success btn-sm' onclick='$(\"#rsm-" + b.value.replace(" ", "") + "-" + b.id.split("-")[b.id.split("-").length - 1] + "\").click()'>Resim Ekle</div><input type='file' class='hidden rsmler' class='rsmler' id='rsm-" + b.value.replace(" ", "") + "-" + + b.id.split("-")[b.id.split("-").length - 1] + "' accept='image/*'/><div id='rsmd-" + b.value.replace(" ", "") + "-" + b.id.split("-")[b.id.split("-").length - 1] + "'></div><div class='btn btn-danger' onclick='$(\"#rsmd-" + b.value.replace(" ", "") + "-" + b.id.split("-")[b.id.split("-").length - 1]+"\").html(\"\")'>Resim Sil</div></td><td><div class='btn btn-danger btn-sm' onclick='$(\".t-" + b.id.split("-")[b.id.split("-").length - 1] + " > [title=" + b.value + "] > x\").click()'>Sil</div></td></tr>";
+                            $("#varts").append(tdler);
+                          //  $('.parasal').maskMoney({ decimal: ',', allowZero: true, defaultZero: false, precision: 0 });
+                          //  $('.parasal').mask("#.##", { reverse: true });
+                            $(".parasal").maskMoney({ thousands: '.', decimal: ',', allowZero: true, affixesStay: true, allowNegative: false, precision: 2 });
+                            rsler();
+                        }
+                    })
+                }
+                else {
+                    $("[data-ne='insertable']").each(function () {
+                        $(this).remove();
+                    });
+                }
+            }
+        }
+        function bakayar(a,b) {
+            var ddd = $(a).val();
+            var syler = "1234567890.,";
+            var hata = "";
+            for (var i = 0; i < ddd.length; i++) {
+                if (syler.indexOf(ddd[i]) != -1) {
+                  
+                }
+                else {
+                    hata = "var";
+                }
+            }
+            if (hata != "") {
+                $("." + b).html("Hatalı Karakter Bulundu!");
+                $("." + b).addClass("hatalix");
+            }
+            else {
+                $("." + b).html("");
+                $("." + b).removeClass("hatalix");
+            }
+        }
+        function ajaxla(idx, kac) {
+            $("#ozl").removeClass("hidden");
+            $("#ozll").removeClass("hidden");
+            $.ajax({
+                url: "/admin/products/GetAttribute/" + idx,
+                dataType: "json",
+                success: function (data) {
+                    $("#ozl").addClass("hidden");
+                    $("#ozll").addClass("hidden");
+                    if (data != null) {
+                        if ($("#urunozel").html() == "") {
+                            $.each(data, function (index, key) {
+                                $(".selectpickerii").append('<option value="' + key.Id + '">' + key.Attrs + '</option>');
+                                $(".selectpickerii").selectpicker("refresh");
+                            })
+                            var template = $.templates("#theTmpl2");
+                            var htmlOutput = template.render(data);
+                            $.when(htmlOutput).done(function (x) {
+                                $("#urunozel").html(htmlOutput);
+                                $.each(data, function (index, key) {
+                                    if ($("#insx-" + key.Id).length > 0) {
+                                        var input = document.getElementById("insx-" + key.Id);
+                                        var arr = [];
+                                        // console.log(key.Values);
+                                        if (key.Values.length > 0) {
+                                            $.each(key.Values, function (a, b) {
+                                                //  console.log("burda");
+                                                arr.push(b.Id + "-" + b.Value);
+                                            });
+                                            //  console.log(arr);
+                                        }
+                                        tagify = new Tagify(input, {
+                                            placeholder: "Değer Yazın",
+                                            delimiters: ",| ",
+                                            keepInvalidTags: true,
+                                            highlightFirst: true,
+                                            dropdown: {
+                                                enabled: 0,            // show suggestion after 1 typed character
+                                                fuzzySearch: false,    // match only suggestions that starts with the typed characters
+                                                position: 'text',      // position suggestions list next to typed text
+                                                caseSensitive: false,   // allow adding duplicate items if their case is different
+                                            },
+                                            whitelist: arr//["A# .NET", "A# (Axiom)", "A-0 System", "A+"]
+                                        });
+                                        input.addEventListener('change', chg);
+                                        //tagify.on("change", chg);
+                                    }
+                                    $('.ssx-' + key.Id).selectpicker();
+                                })
+                            })
+                        }
+
+                        if ($("#burdax").html() == "") {
+                            $.each(data, function (index, key) {
+                                //console.log(key);
+                                $(".selectpickeri").append('<option value="' + key.Id + '">' + key.Attrs + '</option>');
+                                $(".selectpickeri").selectpicker("refresh");
+                            })
+                            var template = $.templates("#theTmpl");
+                            var htmlOutput = template.render(data);
+                            $.when(htmlOutput).done(function (x) {
+                                $("#burdax").html(htmlOutput);
+                                $.each(data, function (index, key) {
+                                    if ($("#ins-" + key.Id).length > 0) {
+                                        var input = document.getElementById("ins-" + key.Id);
+                                        var arr = [];
+                                        // console.log(key.Values);
+                                        if (key.Values.length > 0) {
+                                            $.each(key.Values, function (a, b) {
+                                                //  console.log("burda");
+                                                arr.push(b.Id + "-" + b.Value);
+                                            });
+                                            //  console.log(arr);
+                                        }
+                                        tagify = new Tagify(input, {
+                                            placeholder: "Değer Yazın",
+                                            delimiters: ",| ",
+                                            keepInvalidTags: true,
+                                            highlightFirst: true,
+                                            dropdown: {
+                                                enabled: 0,            // show suggestion after 1 typed character
+                                                fuzzySearch: false,    // match only suggestions that starts with the typed characters
+                                                position: 'text',      // position suggestions list next to typed text
+                                                caseSensitive: false,   // allow adding duplicate items if their case is different
+                                            },
+                                            whitelist: arr//["A# .NET", "A# (Axiom)", "A-0 System", "A+"]
+                                        });
+                                        input.addEventListener('change', chg);
+                                        //tagify.on("change", chg);
+                                    }
+                                    $('.ss-' + key.Id).selectpicker();
+                                    $('.ss-' + key.Id).change(function (e) {
+                                        if ($(this).val() != null && $(this).val() != "") {
+                                            var flt = $(this).parent().parent().parent().attr("data-kim").replace(" ", "-").replace(" ", "-").replace(" ", "-").replace(" ", "-").replace(" ", "-");
+                                            var slt = $(this).parent().parent().parent().attr("data-id");
+                                            var dddd = $(e.target).attr("id");
+                                            // console.log(dddd);
+                                            var fff = [];
+                                            $("#" + dddd + " > option").each(function () {
+                                                var eddd = { "Name": this.text, "Id": this.value };
+                                                fff.push(eddd);
+                                            });
+                                            $.each($(this).val(), function (index, valx) {
+                                                if ($(".y-" + valx + "-" + flt).length > 0) {
+                                                }
+                                                else {
+                                                    //  console.log(valx);
+                                                    var namee = "";
+                                                    for (var i = 0; i < fff.length; i++) {
+
+                                                        if (fff[i].Id == valx) {
+                                                            namee = fff[i].Name;
+                                                        }
+                                                    }
+                                                    var cls = "para-" + slt + "-" + valx;
+                                                    var tdler = "<tr data-ne='fixed' data-slt='" + slt + "' data-sltid='" + valx + "' data-id='" + valx + "' class='trlerim u-" + valx + " y-" + valx + "-" + flt + "'><td>" + flt + "</td><td>" + namee + "</td><td><input type='text' class='form-control buur parasal' onkeyup='bakayar(this,\"" + cls + "\")'/><div class='" + cls +"'></div></td><td><input type='text'  class='form-control'/></td><td><input type='number' class='form-control'/></td><td><div class='btn btn-success btn-sm' onclick='$(\"#rsm-" + valx + "\").click()'>Resim Ekle</div><input type='file' class='hidden rsmler' id='rsm-" + valx + "' accept='image/*'/><div id='rsmd-" + valx + "'></div><div class='btn btn-danger' onclick='$(\"#rsmd-"+valx+"\").html(\"\")'>Resim Sil</div></td><td><div class='btn btn-danger btn-sm' onclick='VarySil(\"" + slt + "\",\"" + valx + "\",\"" + "SP" + "\")'>Sil</div></td></tr>";
+                                                    $("#varts").append(tdler);
+                                                 //   $('.parasal').maskMoney({ decimal: ',', allowZero: true, defaultZero: false, precision: 0 });
+                                                //    $('.parasal').mask("#.##", { reverse: true });
+                                                    $(".parasal").maskMoney({ thousands: '.', decimal: ',', allowZero: true, affixesStay: true, allowNegative: false, precision: 2 });
+                                                    rsler();
+                                                }
+                                            })
+                                        }
+                                    });
+                                    //$('.ss-1').val("val", [42, 43]);
+                                    //$('.ss-1').selectpicker('refresh')
+                                })
+
+                                // tagify.on('change', chg);
+                                //$('.selectpicker').selectpicker();
+                                //$('.selectpicker').change(function () {
+                                //    alert($('.selectpicker').val());
+                                //});
+                            });
+                        }
+                        else {
+                            var template = $.templates("#theTmpl");
+                            var template2 = $.templates("#theTmpl2");
+                            var grp = [];
+                            var grp2 = [];
+                            $(".brdler").each(function (key, val) {
+                                grp.push($(val).attr("data-id"));
+                            })
+                            $(".brdlerx").each(function (key, val) {
+                                grp2.push($(val).attr("data-id"));
+                            })
+                            $.each(grp, function (key, val) {
+                                data = jQuery.grep(data, function (value) {
+                                    return value.Id != val;
+                                });
+                            })
+                            $.each(grp2, function (key, val) {
+                                data = jQuery.grep(data, function (value) {
+                                    return value.Id != val;
+                                });
+                            })
+                            if (data != null) {
+                                $.each(data, function (index, key) {
+                                    $(".selectpickeri").append('<option value="' + key.Id + '">' + key.Attrs + '</option>');
+                                    $(".selectpickerii").append('<option value="' + key.Id + '">' + key.Attrs + '</option>');
+                                    $(".selectpickeri").selectpicker("refresh");
+                                    $(".selectpickerii").selectpicker("refresh");
+                                })
+                                var htmlOutput = template.render(data);
+                                var htmlOutput2 = template2.render(data);
+                                $.when(htmlOutput2).done(function (x) {
+                                    $("#urunozel").append(htmlOutput2);
+                                    $.each(data, function(index,key) {
+                                        if ($("#insx-" + key.Id).length > 0) {
+                                            var input = document.getElementById("insx-" + key.Id);
+                                            var arr = [];
+
+                                            if (key.Values.length > 0) {
+
+                                                $.each(key.Values, function (a, b) {
+                                                    //console.log("Şurda");
+                                                    arr.push(b.Id + "-" + b.Value);
+                                                });
+
+                                            }
+                                            tagify = new Tagify(input, {
+                                                placeholder: "Değer Yazın",
+                                                highlightFirst: true,
+                                                keepInvalidTags: true,
+                                                delimiters: ",| ",
+                                                enforceWhitelist: false,
+                                                dropdown: {
+                                                    enabled: 0,            // show suggestion after 1 typed character
+                                                    fuzzySearch: false,    // match only suggestions that starts with the typed characters
+                                                    position: 'text',      // position suggestions list next to typed text
+                                                    caseSensitive: false,   // allow adding duplicate items if their case is different
+                                                },
+                                                whitelist: arr// ["A# .NET", "A# (Axiom)", "A-0 System", "A+"]
+                                            });
+                                            input.addEventListener('change', chg);
+                                        }
+                                        $('.ssx-' + key.Id).selectpicker();
+                                    })
+                                })
+                                $.when(htmlOutput).done(function (x) {
+                                    $("#burdax").append(htmlOutput);
+                                    $.each(data, function (index, key) {
+                                        if ($("#ins-" + key.Id).length > 0) {
+                                            var input = document.getElementById("ins-" + key.Id);
+                                            var arr = [];
+
+                                            if (key.Values.length > 0) {
+
+                                                $.each(key.Values, function (a, b) {
+                                                    //console.log("Şurda");
+                                                    arr.push(b.Id + "-" + b.Value);
+                                                });
+
+                                            }
+                                            tagify = new Tagify(input, {
+                                                placeholder: "Değer Yazın",
+                                                highlightFirst: true,
+                                                keepInvalidTags: true,
+                                                delimiters: ",| ",
+                                                enforceWhitelist: false,
+                                                dropdown: {
+                                                    enabled: 0,            // show suggestion after 1 typed character
+                                                    fuzzySearch: false,    // match only suggestions that starts with the typed characters
+                                                    position: 'text',      // position suggestions list next to typed text
+                                                    caseSensitive: false,   // allow adding duplicate items if their case is different
+                                                },
+                                                whitelist: arr// ["A# .NET", "A# (Axiom)", "A-0 System", "A+"]
+                                            });
+                                            input.addEventListener('change', chg);
+                                        }
+                                        $('.ss-' + key.Id).selectpicker();
+                                        $('.ss-' + key.Id).change(function (e) {
+                                            if ($(this).val() != null && $(this).val() != "") {
+                                                var flt = $(this).parent().parent().parent().attr("data-kim").replace(" ", "-").replace(" ", "-").replace(" ", "-").replace(" ", "-").replace(" ", "-");
+                                                var slt = $(this).parent().parent().parent().attr("data-id");
+                                                var dddd = $(e.target).attr("id");
+                                                var fff = [];
+                                                $("#" + dddd + " > option").each(function () {
+                                                    var eddd = { "Name": this.text, "Id": this.value };
+                                                    fff.push(eddd);
+                                                });
+                                                $.each($(this).val(), function (index, valx) {
+                                                    if ($(".y-" + valx + "-" + flt).length > 0) {
+                                                    }
+                                                    else {
+                                                        var namee = "";
+                                                        for (var i = 0; i < fff.length; i++) {
+                                                            //console.log(fff[i].Id + "-" + valx);
+                                                            if (fff[i].Id == valx) {
+                                                                namee = fff[i].Name;
+                                                            }
+                                                        }
+                                                        var cls = "para-"+slt+ "-" +  valx;
+                                                        var tdler = "<tr data-ne='fixed' data-slt='" + slt + "' data-sltid='" + valx + "' data-id='" + valx + "' class='trlerim u-" + valx + " y-" + valx + "-" + flt + "'><td>" + flt + "</td><td>" + namee + "</td><td><input type='text' class='form-control  buur parasal' onkeyup='bakayar(this,\"" + cls + "\")'/><div class='" + cls +"'></div></td><td><input type='text' class='form-control'/></td><td><input type='Number' class='form-control'/></td><td><div class='btn btn-success btn-sm' onclick='$(\"#rsm-" + valx + "\").click()'>Resim Ekle</div><input type='file' class='hidden rsmler' id='rsm-" + valx + "' accept='image/*'/><div id='rsmd-" + valx + "'></div></td><td><div class='btn btn-danger btn-sm' onclick='VarySil(\"" + slt + "\",\"" + valx + "\",\"" + "SP" + "\")'>Sil</div></td></tr>";
+                                                        $("#varts").append(tdler);
+                                                       // $('.parasal').maskMoney({ decimal: ',', allowZero: true, defaultZero: false, precision: 0 });
+                                                      //  $('.parasal').mask("#.##", { reverse: true });
+                                                        $(".parasal").maskMoney({ thousands: '.', decimal: ',', allowZero: true, affixesStay: true, allowNegative: false, precision: 2 });
+                                                        rsler();
+                                                    }
+                                                })
+                                            }
+                                        });
+                                        //$('.ss-1').val("val", [42, 43]);
+                                        //$('.ss-1').selectpicker('refresh')
+                                    })
+                                });
+                            }
+                        }
+                    }
+                }
+            })
+            $("#ozl").addClass("hidden");
+            $("#ozll").addClass("hidden");
+        }
+        function Kategorisi() {
+            if ($(".3Inselect ").val() != 0) {
+                $("#KategoriIdsi").val($(".3Inselect ").val()+"-"+"3");
+            }
+            else {
+                $("#KategoriIdsi").val($(".2Inselect ").val()+"-"+"2");
+            }
+        }
+        function VarySil(slt, value, kim) {
+            if (kim == "SP") {
+                var liste = $("#sel" + slt).val();
+                liste = jQuery.grep(liste, function (valu) {
+                    return valu != value;
+                });
+                $('#sel' + slt).val(liste);
+                $('#sel' + slt).selectpicker("refresh");
+                $(".u-" + value).remove();
+            }
+            if (kim == "INS") {
+
+            }
+            if ($(".trlerim").length > 0) {
+
+            }
+            else {
+                $(".varys").addClass("hidden");
+                $(".quan").removeClass("hidden");
+               // $(".quan").addClass("hidden");
+            }
+        }
+        var say = 0;
+        function Kategori(a) {
+            $('.' + a + '1Inselect').select2().on("change", function (e) {
+                say++;
+                $.ajax({
+                    url: "/admin/products/getSubCategories/" + e.val,
+                    dataType: "json",
+                    beforeSend: function () {
+
+                    },
+                    success: function (data) {
+                        if (data.AutoComplateViewModels.length > 0) {
+                            var dd = "<option value='0'>Bir Alt Kategori Seçin</option>";
+                            $.map(data.AutoComplateViewModels, function (item) {
+                                dd += "<option value='" + item.Id + "'>" + item.Value + "</option>";
+                            })
+                            var ss = $(".select2-hidden-accessible").length;
+                            var rrtt = "<div class='form-group bunlar f-" + say + " " + data.Id + "'>" +
+                                "<label class='control-label col-md-2' for='" + a + "KategoriId'>" + ss + ". Alt Kategori</label>" +
+                                "<div class='col-md-10'>" +
+                                "<select class='" + a + say + "1Inselect' style='width:100%' title='Bir Alt Kategori Seç' name='" + a + "KategoriId'>" +
+                                dd +
+                                "</select>" +
+                                "</div>" +
+                                "</div>";
+                            $("#bura").append(rrtt);
+                            Kategori(a + say);
+                        }
+                        if (data.Id.indexOf(" ") != -1) {
+                            //   console.log(data.Id);
+                            for (var i = 0; i < data.Id.split(" ").length; i++) {
+
+                            }
+                            $(".bunlar").each(function (index, element) {
+                                //  console.log(element);
+                            });
+                        }
+                        else {
+                            //   console.log("qq");
+                            $(".bunlar").each(function (index, element) {
+                                //  console.log(element);
+                            });
+                        }
+                    }
+                });
+            });
+        }
+
+
+
+
+
+
+
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.min.css">
+    <style>
+        .aBorder {
+            border: 5px solid red;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function sendFile(file, el) {
+            var form_data = new FormData();
+            form_data.append('file', file);
+            $.ajax({
+                data: form_data,
+                type: "POST",
+                url: "/Admin/Products/attachment_upload",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (url) {
+                    $(el).summernote('editor.insertImage', "/UrunAciklamaResimleri/" + url);
+                }
+            });
+        }
+        //function birimle() {
+        //    if ($(".buur").length>0) {
+        //        $(".buur").each(function () {
+        //            $(this).val($("#UnitPrice").val());
+        //        })
+        //    }
+        //}
+        $(document).ready(function () {
+            setInterval(slugFor, 100);
+            $(".uprice").keyup(function () {
+                if ($.trim($(this).val()) != null) {
+                    $(".buur").each(function (a) {
+                        $(this).val($(".uprice").val());
+                    })
+                }
+            })
+            $('#summernote').summernote({
+                callbacks: {
+                    // Clear all formatting of the pasted text
+                    onPaste: function (e) {
+                        var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                        e.preventDefault();
+                        setTimeout(function () {
+                            document.execCommand('insertText', false, bufferText);
+                        }, 10);
+                    },
+                    onImageUpload: function (files, editor, welEditable) {
+                        for (var i = files.length - 1; i >= 0; i--) {
+                            sendFile(files[i], this);
+                        }
+                    }
+                },
+                minHeight: 300,
+                maxHeight: null,
+                focus: true,
+                lang: 'tr-TR',
+                toolbar: [
+                    ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height', 'fullscreen', 'undo', 'redo', 'picture']]
+                ]
+            });
+            //$("#summernote").summernote("code", $("#Description").val());
+        })
+
+        function res(li, inp, name, size, rsmleri) {
+            $(".yukle").removeClass("hidden");
+            var liler = li.replace("rsmleri", rsmleri).replace('target', inp).replace("namei", name).replace("size", size).replace("iSayi", $(".aiz-file-box").length + 1).replace("iSayi", $(".aiz-file-box").length + 1);
+            if ($(".aiz-file-box").length > 5) {
+                Swal.fire('6 Adetten Fazla Resim Ekleyemessiniz!' + $(".aiz-file-box").length);
+            }
+            else {
+                $("#resler").append(liler);
+            }
+            document.getElementById("imgInp").value = "";
+            var yy = 0;
+            $(".rsler").each(function () {
+                yy++;
+                $(this).attr("name", "rsmlerxx" + yy);
+                $(this).parent().parent().parent().addClass("rsmlerxx" + yy);
+            });
+
+        }
+
+        function silkres(a) {
+            $('.k-' + a).remove();
+            var yy = 0;
+            $(".rsler").each(function () {
+                yy++;
+                $(this).attr("name", "rsmlerxx" + yy);
+                $(this).parent().parent().parent().removeClass("rsmlerxx1").removeClass("rsmlerxx2").removeClass("rsmlerxx3").removeClass("rsmlerxx4").removeClass("rsmlerxx5").removeClass("rsmlerxx6");
+                $(this).parent().parent().parent().addClass("rsmlerxx" + yy);
+            });
+        }
+        function anasayfaYap(a) {
+
+            var ttt = $(a).parent().find(".rsler").attr("name");
+            $("#rvitrin").val(ttt);
+            if (ttt == "rsmlerxx1") {
+                $(".rsmlerxx1 .aYap").addClass("hidden");
+                $(".rsmlerxx1").addClass("aBorder");
+                $(".rsmlerxx2").removeClass("aBorder");
+                $(".rsmlerxx3").removeClass("aBorder");
+                $(".rsmlerxx4").removeClass("aBorder");
+                $(".rsmlerxx5").removeClass("aBorder");
+                $(".rsmlerxx6").removeClass("aBorder");
+                $(".rsmlerxx2 .aYap").removeClass("hidden");
+                $(".rsmlerxx3 .aYap").removeClass("hidden");
+                $(".rsmlerxx4 .aYap").removeClass("hidden");
+                $(".rsmlerxx5 .aYap").removeClass("hidden");
+                $(".rsmlerxx6 .aYap").removeClass("hidden");
+            }
+            if (ttt == "rsmlerxx2") {
+                $(".rsmlerxx2 .aYap").addClass("hidden");
+                $(".rsmlerxx2").addClass("aBorder");
+                $(".rsmlerxx1").removeClass("aBorder");
+                $(".rsmlerxx3").removeClass("aBorder");
+                $(".rsmlerxx4").removeClass("aBorder");
+                $(".rsmlerxx5").removeClass("aBorder");
+                $(".rsmlerxx6").removeClass("aBorder");
+                $(".rsmlerxx1 .aYap").removeClass("hidden");
+                $(".rsmlerxx3 .aYap").removeClass("hidden");
+                $(".rsmlerxx4 .aYap").removeClass("hidden");
+                $(".rsmlerxx5 .aYap").removeClass("hidden");
+                $(".rsmlerxx6 .aYap").removeClass("hidden");
+            }
+            if (ttt == "rsmlerxx3") {
+                $(".rsmlerxx3 .aYap").addClass("hidden");
+                $(".rsmlerxx3").addClass("aBorder");
+                $(".rsmlerxx2").removeClass("aBorder");
+                $(".rsmlerxx1").removeClass("aBorder");
+                $(".rsmlerxx4").removeClass("aBorder");
+                $(".rsmlerxx5").removeClass("aBorder");
+                $(".rsmlerxx6").removeClass("aBorder");
+                $(".rsmlerxx2 .aYap").removeClass("hidden");
+                $(".rsmlerxx1 .aYap").removeClass("hidden");
+                $(".rsmlerxx4 .aYap").removeClass("hidden");
+                $(".rsmlerxx5 .aYap").removeClass("hidden");
+                $(".rsmlerxx6 .aYap").removeClass("hidden");
+            }
+            if (ttt == "rsmlerxx4") {
+                $(".rsmlerxx4 .aYap").addClass("hidden");
+                $(".rsmlerxx4").addClass("aBorder");
+                $(".rsmlerxx2").removeClass("aBorder");
+                $(".rsmlerxx3").removeClass("aBorder");
+                $(".rsmlerxx1").removeClass("aBorder");
+                $(".rsmlerxx5").removeClass("aBorder");
+                $(".rsmlerxx6").removeClass("aBorder");
+                $(".rsmlerxx2 .aYap").removeClass("hidden");
+                $(".rsmlerxx3 .aYap").removeClass("hidden");
+                $(".rsmlerxx1 .aYap").removeClass("hidden");
+                $(".rsmlerxx5 .aYap").removeClass("hidden");
+                $(".rsmlerxx6 .aYap").removeClass("hidden");
+            }
+            if (ttt == "rsmlerxx5") {
+                $(".rsmlerxx5 .aYap").addClass("hidden");
+                $(".rsmlerxx5").addClass("aBorder");
+                $(".rsmlerxx2").removeClass("aBorder");
+                $(".rsmlerxx3").removeClass("aBorder");
+                $(".rsmlerxx4").removeClass("aBorder");
+                $(".rsmlerxx1").removeClass("aBorder");
+                $(".rsmlerxx6").removeClass("aBorder");
+                $(".rsmlerxx2 .aYap").removeClass("hidden");
+                $(".rsmlerxx3 .aYap").removeClass("hidden");
+                $(".rsmlerxx4 .aYap").removeClass("hidden");
+                $(".rsmlerxx1 .aYap").removeClass("hidden");
+                $(".rsmlerxx6 .aYap").removeClass("hidden");
+            }
+            if (ttt == "rsmlerxx6") {
+                $(".rsmlerxx6 .aYap").addClass("hidden");
+                $(".rsmlerxx6").addClass("aBorder");
+                $(".rsmlerxx2").removeClass("aBorder");
+                $(".rsmlerxx3").removeClass("aBorder");
+                $(".rsmlerxx4").removeClass("aBorder");
+                $(".rsmlerxx5").removeClass("aBorder");
+                $(".rsmlerxx1").removeClass("aBorder");
+                $(".rsmlerxx2 .aYap").removeClass("hidden");
+                $(".rsmlerxx3 .aYap").removeClass("hidden");
+                $(".rsmlerxx4 .aYap").removeClass("hidden");
+                $(".rsmlerxx5 .aYap").removeClass("hidden");
+                $(".rsmlerxx1 .aYap").removeClass("hidden");
+            }
+        }
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                if (input.files.length > 6) {
+                    document.getElementById("imgInp").value = "";
+                    Swal.fire('6 Adetten Fazla Resim Ekleyemessiniz!' + input.files.length);
+                }
+                else {
+                    for (var i = 0; i < input.files.length; i++) {
+                        //  var name = input.files[i].name;
+                        //  var size = input.files[i].size / 1024;
+                        //  size = size.toFixed(2);
+                        var liler =
+                            '<div class="aiz-file-box k-' + "iSayi" + '" style="position:relative">' +
+                            '<div onclick="silkres(iSayi)" style="line-height:10px;cursor:pointer;position: absolute;top: 0;right: 0;z-index: 1;color: white;background: red;padding: 5px;">X</div>' +
+                            '<div onclick="anasayfaYap($(this))" class="aYap" style="line-height:10px;cursor:pointer;position: absolute;top: 0;left: 0;z-index: 1;color: white;background: #3276b1;padding: 5px;">Kapak Yap</div>' +
+                            '<div class="card card-file aiz-uploader-select">' +
+                            '<div class="card-file-thumb">' +
+                            '<img src="' + "target" + '" class="img-fit">' +
+                            '<input type="hidden" name="rsmlerxx" class="rsler" value="' + "rsmleri" + '"/>' +
+                            '</div>' +
+                            '<div class="card-body" style="margin: 5px 0;">' +
+                            '<h6>' +
+                            '<div class="text-truncate title" style=" white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">' + "namei" + '</div>' +
+                            '</h6>' +
+                            '<p>' + "size" + ' KB</p>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                        var base64data = "";
+                        var name = "";
+                        var size = "";
+                        new Compressor(input.files[i], {
+                            quality: 0.85,
+                            success(result) {
+                                const formData = new FormData();
+                                // The third parameter is required for server
+                                // formData.append('file', result, result.name);
+                                var reader = new FileReader();
+                                reader.readAsDataURL(result);
+                                reader.onloadend = function () {
+                                    base64data = reader.result;
+                                    var image = new Image();
+                                    image.src = base64data;
+                                    image.onload = function () {
+                                        var base64String = base64data;
+                                        var stringLength = base64String.length - 'data:image/jpg;base64,'.length;
+                                        var sizeInBytes = 4 * Math.ceil((stringLength / 3)) * 0.5624896334383812;
+                                        var sizeInKb = sizeInBytes / 1000;
+                                        size = sizeInKb.toFixed(2);
+                                        name = result.name;
+                                        res(liler, base64data, name, size, base64data);
+                                        $(".yukle").addClass("hidden");
+                                        //if (this.width > 450 && this.height > 625) {
+                                           
+                                        //}
+                                        //else {
+                                        //    Swal.fire('Resimler minimum 450 piksel genişliğinde ve 625 piksel boyunda olmalıdır!');
+                                        //}
+                                    };
+                                  
+                                }
+
+                                // Send the compressed image file to server with XMLHttpRequest.
+                                //axios.post('/path/to/upload', formData).then(() => {
+                                //    console.log('Upload success');
+                                //});
+                            },
+                            error(err) {
+                                console.log(err.message);
+                            },
+                        });
+                    }
+                }
+            }
+        }
+        $(document).ready(function () {
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+        })
+    </script>
+    <script>
+        function readURLi(input) {
+            if (input.files && input.files[0]) {
+                new Compressor(input.files[0], {
+                    quality: 0.85,
+                    success(result) {
+                        var reader = new FileReader();
+                        reader.readAsDataURL(result);
+                        reader.onloadend = function () {
+                            base64data = reader.result;
+                            $(".resm").html("<img src='" + base64data + "' style='height:300px'/>");
+                            $("#kckrsm").val(base64data);
+
+                            $("#nma").html(result.name);
+                            $("#szi").html((result.size / 1024).toFixed(2) + " KB");
+                            $(".dBilgi").removeClass("hidden");
+                        }
+                    },
+                    error(err) {
+                        console.log(err.message);
+                    },
+                });
+            }
+        }
+        $("#imgInpK").change(function () {
+            readURLi(this);
+        });
+    </script>
+    @*<script>
+            $('#anaKategori').autocomplete({
+                search: function (event, ui) {
+                    $('.test ul').empty();
+                },
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/admin/products/getCategories",
+                        dataType: "json",
+                        data: {
+                            q: request.term
+                        },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return {
+                                    value: item.Value
+                                }
+                            }))
+
+
+                        }
+                    });
+                },
+                minLength: 2
+            }).data('ui-autocomplete')._renderItem = function (ul, item) {
+                return $('<li onclick="alert(\'fff\')"/>')
+                    .data('ui-autocomplete-item', item)
+                    .append(item.value)
+                    .appendTo($('.test ul'));
+            };
+        </script>*@
+}

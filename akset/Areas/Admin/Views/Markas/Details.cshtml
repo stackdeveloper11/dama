@@ -1,0 +1,42 @@
+﻿@model akset.data.Marka
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Marka</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MarkaAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarkaAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarkaResim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarkaResim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarkaAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarkaAciklama)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

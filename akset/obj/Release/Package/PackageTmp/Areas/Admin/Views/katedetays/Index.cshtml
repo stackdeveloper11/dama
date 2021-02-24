@@ -1,0 +1,196 @@
+﻿@model IEnumerable<akset.data.katedetay>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<style>
+    .form-control {
+        padding: 0 !important;
+    }
+</style>
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-picture-o fa-fw "></i>
+                Kategori Filitre
+                <span>
+                    >
+                    Kategoriye Detay Ekle/Listele
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/katefiloes" class="btn btn-success">Kategoriye Detay Ekle/Listele</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-picture-o"></i> </span>
+                        <h2>Kategoriye Detay Ekle/Listele</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <section class="panel default red_border horizontal_border_1 h2" style="position:relative;margin-bottom: 50px;">
+                                <div class="block-web">
+                                    <div class="porlets-content">
+                                        <section class="panel default red_border horizontal_border_1 h2" style="position:relative;margin-bottom: 50px;">
+                                            <div class="block-web">
+                                                <div class="porlets-content">
+                                                    <form action="/Admin/katedetays" class="form-horizontal" method="post">
+                                                        @Html.AntiForgeryToken()
+                                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                                        <div class="form-horizontal">
+                                                            <input type="hidden" name="nere" value="ekle" />
+                                                            <div class="form-group">
+                                                                <label class="col-xs-12 control-label text-left" for="kategori" style="text-align:left !important;font-size: 13px;line-height: 32px;">Kategori</label>
+                                                                <div class="col-xs-12">
+                                                                    @Html.DropDownList("datasix", null, htmlAttributes: new { @class = "form-control" })
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-xs-12 control-label text-left" for="filitre" style="text-align:left !important;font-size: 13px;line-height: 32px;">Detayı</label>
+                                                                <div class="col-xs-12">
+                                                                    @Html.DropDownList("filitresi", null, htmlAttributes: new { @class = "form-control" })
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label class="col-xs-12 control-label" for="kyt"></label>
+                                                                <div class="col-xs-12">
+                                                                    <input type="submit" class="btn btn-success" name="submit" value="Ekle" />
+                                                                    <input type="submit" class="btn btn-success" name="submit" value="TopluEkle" />
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                    </form>
+                                                    <table class="table table-striped table-hover table-condensed table-bordered">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    Detay Adı
+                                                                </th>
+                                                                <th>
+                                                                    Kategori Adı
+                                                                </th>
+                                                                <th>#</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach (var item in Model)
+                                                            {
+                                                                <tr>
+                                                                    <form action="/Admin/katedetays" method="post">
+                                                                        @Html.AntiForgeryToken()
+                                                                        <input type="hidden" name="Id" value="@item.Id" />
+                                                                        <input type="hidden" name="nere" value="duzenle" />
+                                                                        <td>
+                                                                            <select class="form-control gg" id="rr-@item.Id" name="filitresi">
+                                                                                <option value=""></option>
+                                                                                @foreach (var itemi in akset.data.aksetDB.Create().detays.ToList())
+                                                                                {
+                                                                                    if (itemi.Id != item.detayId)
+                                                                                    {
+                                                                                        <option value="@itemi.Id">@itemi.adi</option>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <option value="@itemi.Id" selected="selected">@itemi.adi</option>
+                                                                                    }
+                                                                                    //$('#ss-@item.Id').val($('#rr-@item.Id option:selected').val());
+                                                                                }
+                                                                            </select>
+
+                                                                        </td>
+                                                                        <td>
+                                                                            <select class="form-control gg" id="rr-@item.Id" name="datasix">
+                                                                                <option value=""></option>
+                                                                                @foreach (var itemi in ViewBag.datasi)
+                                                                                {
+                                                                                    if (itemi.Value != item.KategoriId)
+                                                                                    {
+                                                                                        <option value="@itemi.Value">@itemi.Text</option>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <option value="@itemi.Value" selected="selected">@itemi.Text</option>
+                                                                                    }
+                                                                                }
+                                                                            </select>
+
+                                                                        </td>
+                                                                        <input type="submit" name="name" id="mm-@item.Id" value="" class="hidden" />
+                                                                    </form>
+                                                                    <td>
+                                                                        <div class="btn-group">
+                                                                            <div class="btn btn-success" onclick="$('#mm-@item.Id').click()">Düzenle</div>
+                                                                            <a href="/Admin/katedetays/Delete/@item.Id" class="btn btn-danger" onclick="return confirm('Silmek İstediğinize Emin misiniz?')">Sil</a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+
+@section pagespecific{
+
+    <script>
+    $(document).ready(function () {
+        $("#datasix").select2({
+            language: "tr",
+            placeholder: "Kategori Seçiniz"
+        })
+        $("#datasix").val($("#datasix option:first").val());
+        $("#detayId").select2({
+            language: "tr",
+            placeholder: "Detay Seçiniz"
+        });
+        $("#detayId").val($("#detayId option:first").val());
+    })
+    </script>
+}

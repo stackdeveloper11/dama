@@ -1,0 +1,72 @@
+﻿@model akset.data.User
+<style>
+    .kkk li {
+        border-bottom: 2px solid #eee;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+
+        .kkk li a {
+            color: black !important;
+        }
+
+    .ddff {
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        padding: 20px;
+    }
+
+</style>
+<style>
+    @@media screen and (max-width: 991px) {
+        .logopng {
+            margin-left: -40px !important;
+        }
+    }
+</style>
+<div class="col-12">
+    <div class="row">
+        <div class="col-md-2 col-xs-12">
+            <h4>Hesabım</h4>
+            <ul class="list-unstyled kkk">
+                <li>
+                    <a href="/myaccounts">
+                       Hesabım
+                    </a>
+                </li>
+                <li>
+                    <a href="/myorders">
+                       Siparişlerim
+                    </a>
+                </li>
+                <li>
+                    <a href="/myaddress">
+                        <strong>Adresim</strong>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10 col-xs-12">
+            <div class="ddff">
+                <h5 style="margin-bottom:15px"><strong>Информация о моем адресе</strong></h5>
+                <div class="row">
+                    <div class="col-12" style="border-right: 1px solid #ddd;">
+                        <form action="/home/adresdeg" method="post">
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                <textarea class="form-control" name="adr">@Model.adres</textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="phn">Address Phone*</label>
+                                <input type="text" class="form-control" id="phn" name="phn" placeholder="Phone" value="@Model.PhoneNumber">
+                            </div>
+                            <div class="form-group text-right">
+                                <button type="submit" class="btn btn-outline-dark">OK</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

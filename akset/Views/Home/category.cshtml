@@ -1,0 +1,958 @@
+﻿@model List<akset.ViewModel.urunletable>
+@using System.Data.Entity;
+<style>
+    @@media screen and (min-width: 768px) {
+        .rrtt {
+            height: auto;
+        }
+    }
+</style>
+<style>
+    @@media screen and(max-width:768px) {
+        .favorite {
+            right: 3px;
+            top: 3px;
+            width: 30px;
+            height: 30px;
+        }
+
+            .favorite i {
+                width: 30px;
+                height: 30px;
+                background-size: 100%;
+            }
+    }
+
+    table {
+        table-layout: fixed;
+    }
+</style>
+@{
+    string bir = "";
+    string iki = "";
+    string uc = "";
+    string ktg = "";
+    string ack = "";
+    int idsim = 0;
+    akset.helper.Genel.str = "";
+
+    foreach (var item in aksetDB.Create().Kategoris.ToList())
+    {
+        if (akset.helper.Genel.URLFriendly(item.baslik) == ViewContext.RouteData.Values["ilk"].ToString())
+        {
+            bir = item.adi;
+            akset.helper.Genel.getparent(item);
+            iki = akset.helper.Genel.str;
+            ktg = item.icerik;
+            ack = item.aciklama;
+            idsim = item.Id;
+        }
+    }
+
+    iki = iki.Substring(0, iki.Length - 1);
+    List<KeyValuePair<int, string>> _items = new List<KeyValuePair<int, string>>();
+    if (iki.Contains(','))
+    {
+        int yy = 0;
+        string[] fff = iki.Split(',');
+        foreach (var item in fff)
+        {
+            if (item.Contains("["))
+            {
+                yy++;
+                _items.Add(new KeyValuePair<int, string>(yy, item));
+            }
+
+        }
+    }
+}
+@{
+    ViewBag.Title = Html.Raw(ktg);
+    ViewBag.Desc = Html.Raw(ack);
+}
+
+<style>
+    .ddff {
+        height: 64px;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        line-height: 64px;
+        font-size: 22px;
+    }
+
+    .ddff2 {
+        background-color: #fff;
+        color: #414040;
+        font-size: 12px;
+        height: 48px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 102;
+        border: 1px solid #eaeaea;
+        border-top: 0;
+    }
+
+    .cargo-stamp-box {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+        width: 72px;
+        min-height: 29px;
+        z-index: 5;
+    }
+
+    #example_info {
+        display: none;
+    }
+
+    .cargo-stamp-box .rush-delivery-green, .karg {
+        width: 72px;
+        height: 18px;
+        margin-bottom: 5px;
+        background-color: #3ec461;
+        padding: 5px 0;
+    }
+
+    .cargo-stamp-box span {
+        display: block;
+        font-size: 11px;
+        color: #fff;
+        line-height: 10px;
+        text-align: center;
+    }
+
+    .favorite {
+        position: absolute;
+        right: 16px;
+        top: 9px;
+        width: 36px;
+        height: 36px;
+        z-index: 1;
+    }
+
+        .favorite i {
+            float: left;
+            width: 43px;
+            height: 43px;
+            background: url(/img/favorite-heart.svg) no-repeat;
+        }
+
+
+
+    .lisst li {
+        margin-bottom: 9px;
+        overflow: hidden;
+    }
+
+    .list-inline-item img:hover {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0) scale(1,1);
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        transform: scale(1.04);
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        -ms-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    .info-box .brand {
+        max-width: 200px;
+    }
+
+    .product-info-container .brand {
+        font-size: 14px;
+        color: #333;
+        height: 18px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .product-info-container .name {
+        position: relative;
+        display: block;
+        line-height: normal;
+        font-size: 13px;
+        color: #666;
+        margin-top: 2px;
+        text-align: left;
+    }
+
+    .product-info-container .price-container {
+        height: 31px;
+        margin-top: -2px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        text-align: left;
+    }
+
+        .product-info-container .price-container .market-price {
+            height: 22px;
+            font-size: 15px;
+            line-height: normal;
+            color: #878787;
+            text-decoration: line-through;
+            margin-right: 5px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .product-info-container .price-container .sale-price {
+            height: 30px;
+            text-align: left;
+            line-height: 30px;
+            font-size: 18px;
+            color: #f27a1a;
+            display: inline-block;
+        }
+
+    .product-info-container {
+        float: left;
+        background-color: hsla(0,0%,100%,.9);
+        position: relative;
+        padding: 10px 10px 5px;
+    }
+</style>
+<div class="col-12">
+    <ul class="list-inline">
+        <li class="list-inline-item" style="font-size:14px">
+            <a href="/"><i class="fa fa-home"></i></a>
+        </li>
+        <li class="list-inline-item">
+            <img src="~/img/breadcrumb-right-arrow.png" />
+        </li>
+        @{ int hh = 0;}
+        @foreach (var item in _items.OrderByDescending(a => a.Key))
+        {
+            hh++;
+
+            <li class="list-inline-item" style="font-size:14px;">
+                <a href="/@akset.helper.Genel.URLFriendly(item.Value.Split('[')[0])" style="color:black">@item.Value.Split('[')[1].ToUpper()</a>
+            </li>
+            if (hh != _items.Count)
+            {
+                <li class="list-inline-item">
+                    <img src="~/img/breadcrumb-right-arrow.png" />
+                </li>
+            }
+        }
+    </ul>
+</div>
+
+<link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="~/content/js/aaJsRender.js"></script>
+<script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-pageLoadMore/1.0.0/js/dataTables.pageLoadMore.min.js"></script>
+<link href="~/css/loader/css-loader.css" rel="stylesheet" />
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script>
+    function seoya(text) {
+
+
+        var trMap = {
+            'Ç': 'C',
+            'Ğ': 'G',
+            'Ş': 'S',
+            'Ü': 'U',
+            'İ': 'I',
+            'Ö': 'O',
+            'ç': 'c',
+            'ğ': 'g',
+            'ş': 's',
+            'ü': 'u',
+            'ı': 'i',
+            'ö': 'o'
+        };
+        for (var key in trMap) {
+            text = text.replace(new RegExp('[' + key + ']', 'g'), trMap[key]);
+        }
+        return text.replace(/[^-a-zA-Z0-9\s]+/ig, '') // remove non-alphanumeric chars
+                    .replace(/\s/gi, "-") // convert spaces to dashes
+                    .replace(/[-]+/gi, "-") // trim repeated dashes
+        ;
+    }
+    var tablesi1;
+
+    //$(document).on('click', '.dropdown-menu', function (e) {
+    //    e.stopPropagation();
+    //});ÜRÜN BULUNMAMAKTADIR.
+    $(document).ready(function(){
+        tablesi1 = $('#example').DataTable({
+            searching: true,
+            order: [[11, "desc"]],
+            createdRow: function (row, data, dataIndex) {
+                $(row).addClass('git');
+            },
+            language: {
+                "sDecimal": ",",
+                "sEmptyTable": "<div style='padding-top: 18px !important;padding-bottom:18px'></div>",
+                "sInfo": "_TOTAL_ uçuşdan _START_ - _END_ arasındaki uçuşlar gösteriliyor",
+                "sInfoEmpty": "Uçuş yok",
+                "sInfoFiltered": "(_MAX_ kayıt içerisinden bulunan)",
+                "sInfoPostFix": "",
+                "sInfoThousands": ".",
+                "sLengthMenu": "Sayfada _MENU_ uçuş göster",
+                "sLoadingRecords": "Yükleniyor...",
+                "sProcessing": "İşleniyor...",
+                "sSearch": "Ara:",
+                "sZeroRecords": "Eşleşen uçuş bulunamadı",
+                "oPaginate": {
+                    "sFirst": "İlk",
+                    "sLast": "Son",
+                    "sNext": "Sonraki",
+                    "sPrevious": "Önceki"
+                },
+                "oAria": {
+                    "sSortAscending": ": artan sütun sıralamasını aktifleştir",
+                    "sSortDescending": ": azalan sütun sıralamasını aktifleştir"
+                },
+                "select": {
+                    "rows": {
+                        "_": "%d kayıt seçildi",
+                        "0": "",
+                        "1": "1 kayıt seçildi"
+                    }
+                }
+            },
+            bFilter: false,
+            orderClasses: false,
+            paging: true,
+            "dom": '<"top"i>rt<"bottom"flp><"clear">',
+            pageLength: 10,
+            lengthMenu: [[10, 25, 50, 100, -1], [10, 25, 50, 100, "Hepsi"]],
+            serverSide: false,
+            processing: false,
+            deferRender: true,
+            scrollCollapse: true,
+			deferLoading: 0,
+            fixedColumns: true,
+            drawCallback: function (settings) {
+                $('#btn-example-load-more1').toggle(this.api().page.hasMore());
+            },
+            autoWidth: true,
+            columnDefs: [
+              { targets: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], className: "d-none" }
+            ],
+            columns: [
+                {
+                    data: "Id",
+
+                },
+                {
+                    data: "adi"
+                },
+                {
+                    data: "baslik"
+                },
+                {
+                    data: "eskifiyat"
+                },
+                {
+                    data: "fiyat"
+                },
+                {
+                    data: "link"
+                },
+                {
+                    data: "satistami"
+                },
+                {
+                    data: "urunkodu"
+                },
+                {
+                    data: "urunlefiltres"
+                },
+                {
+                    data: "v1"
+                },
+                {
+                    data: "v2"
+                },
+                {
+                    data: "tarih"
+                },
+                {
+                    data: "resim"
+                }
+            ]
+        });
+        $('#example tfoot th').each(function () {
+            var title = $(this).text();
+            $(this).html('<input class="aradx tt-' + title + '" placeholder="Search ' + title + '" />');
+        });
+
+        tablesi1.columns().every(function () {
+            var that = this;
+            $('.aradx', this.footer()).on('keyup change', function () {
+                //   var val = $.fn.dataTable.util.escapeRegex(this.value)
+                if (that.search() !== this.value) {
+                    that.search(this.value, true, false).draw();
+                }
+            });
+        });
+
+        $('#btn-example-load-more1').on('click', function () {
+            tablesi1.page.loadMore();
+        });
+        setInterval(fgghh, 100);
+        fff();
+  })
+    var loadetsinmi = false;
+    function fgghh() {
+        if (loadetsinmi) {
+            try {
+                if ($(window).scrollTop() + $(window).height() >= $('#example tbody tr:nth-last-child(5)').offset().top + $('#example tbody tr:nth-last-child(5)').outerHeight()) {
+                    if ($('#btn-example-load-more1').is(':visible')) {
+                        $('#btn-example-load-more1').click();
+						if($(".fa-th-large").hasClass("active"))
+						{
+							$(".fa-th-large").click();
+						}
+						if($(".fa-th").hasClass("active"))
+						{
+							$(".fa-th").click();
+						}
+                    }
+                }
+            } catch (e) {
+
+            }
+        }
+
+    }
+    function fff() {
+      //  var dateToSent = { id: '@idsim' };
+      //  $.ajax({
+      //      url: "/Home/urungetir",
+      //      type: 'GET',
+      //      data: dateToSent,
+      //      cache: false,
+      //      dataType: 'json',
+      //      success: function (json) {
+      //          console.log(json);
+      //          tablesi1.rows.add(json);
+                tablesi1.draw();
+      //          $(".loader-default").removeClass("is-active");
+                loadetsinmi = true;
+      //      },
+      //      error: function (xmlHttpRequest, textStatus, errorThrown) {
+      //          console.log('some error occured', textStatus, errorThrown);
+      //          dutt = "hata";
+      //      },
+      //      always: function () {
+
+      //      },
+      //      complete: function (data) {
+
+      //      }
+      //  })
+    }
+
+</script>
+
+<style>
+    tr {
+        display: inline-block;
+    }
+
+    tbody {
+        text-align: center;
+    }
+
+    #example thead, #example_length, #example_filter, tfoot, #example_paginate, #example2 thead, #example2_length, #example2_filter, tfoot, #example2_paginate {
+        display: none;
+    }
+
+    table.dataTable tbody tr {
+        background-color: transparent;
+    }
+
+    td {
+        border: 0 !important;
+    }
+
+    .fa-th, .fa-th-large {
+        color: #c9c9c9;
+    }
+
+        .fa-th.active, .fa-th-large.active {
+            color: #ff671b !important;
+        }
+
+    /*
+      ##Device = Low Resolution Tablets, Mobiles (Landscape)
+      ##Screen = B/w 481px to 767px
+    */
+
+    @@media (min-width: 481px) and (max-width: 767px) {
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 8px 3px !important;
+        }
+
+        .ggtt {
+            padding: 0 !important;
+        }
+
+        .git {
+            width: 50% !important;
+        }
+
+        .menn {
+            display: none;
+        }
+
+        .rrtt {
+            width: 100% !important;
+        }
+
+        .sonth {
+            display: none;
+        }
+
+        .dgrth {
+            width: 48% !important;
+        }
+
+        .ggff {
+            display: none;
+        }
+    }
+
+    /*
+      ##Device = Most of the Smartphones Mobiles (Portrait)
+      ##Screen = B/w 320px to 479px
+    */
+
+    @@media (min-width: 320px) and (max-width: 480px) {
+        .git {
+            width: 50% !important;
+        }
+
+        .ggtt {
+            padding: 0 !important;
+        }
+
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 3px !important;
+            display: grid;
+        }
+
+        .rrtt, .product-info-container {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .sonth {
+            display: none;
+        }
+
+        .dgrth {
+            width: 44% !important;
+        }
+
+        .ggff {
+            display: none;
+        }
+
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 8px 3px !important;
+        }
+    }
+
+    /*
+      ##Device = Tablets, Ipads (portrait)
+      ##Screen = B/w 768px to 1024px
+    */
+
+    @@media (min-width: 768px) and (max-width: 1024px) {
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 8px 3px !important;
+        }
+
+        .rrtt {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .git {
+            width: 33% !important;
+        }
+
+        .ggff {
+            display: none;
+        }
+
+        .ggtt {
+            width: 100% !important;
+            max-width: 100% !important;
+            -ms-flex: 0 0 100% !important;
+            flex: 0 0 100% !important;
+        }
+
+        .sonth {
+            display: none !important;
+        }
+
+        .dgrth {
+            width: 49% !important;
+        }
+    }
+
+    /*
+      ##Device = Tablets, Ipads (landscape)
+      ##Screen = B/w 768px to 1024px
+    */
+
+    @@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 8px 3px !important;
+        }
+
+        .rrtt {
+            width: 100% !important;
+        }
+
+        .git {
+            width: 33% !important;
+        }
+
+        .ggff {
+            display: none;
+        }
+
+        .ggtt {
+            width: 100% !important;
+            max-width: 100% !important;
+            -ms-flex: 0 0 100% !important;
+            flex: 0 0 100% !important;
+        }
+
+        .sonth {
+            display: none !important;
+        }
+
+        .dgrth {
+            width: 49% !important;
+        }
+    }
+</style>
+
+<div class="row" style="padding: 15px 0 0 0;">
+    <div class="col-lg-2 ggff" style="padding:0">
+        <div style="border: 1px solid #adadad;">
+            <h6 style="background: #f5f5f5;padding: 7px;font-weight: bold;">Kategoriler</h6>
+            <h6 style="padding:9px;margin:0;cursor:pointer" onclick="$('.bbbccc').css('display','block')">@string.Concat(!string.IsNullOrEmpty(_items.FirstOrDefault().Value) ? _items.OrderByDescending(a => a.Key).FirstOrDefault().Value.Split('[')[1].ToUpper() : bir)</h6>
+
+            @{
+                string adil = string.Concat(!string.IsNullOrEmpty(_items.FirstOrDefault().Value) ? _items.OrderByDescending(a => a.Key).FirstOrDefault().Value.Split('[')[0].ToUpper() : bir);
+                int ktgd = 0;
+                foreach (var item in aksetDB.Create().Kategoris.ToList())
+                {
+                    if (item.baslik.ToLower() == adil.ToLower())
+                    {
+                        ktgd = item.Id;
+                    }
+                }
+            }
+
+
+            <script>
+                $(function () {
+                    $('.accr').click(function (event) {
+                        event.stopPropagation();
+                        $(this).children('ul').slideToggle();
+                    });
+                });
+            </script>
+
+            <ul class="list-unstyled bbbccc" style="padding:8px;padding-top: 0;display:none">
+                @foreach (var item in aksetDB.Create().Kategoris.Where(a => a.parentId == ktgd).ToList())
+                {
+
+                    <li class="accr" style="cursor:pointer">
+                        <a style="color:black">
+                            @item.adi
+                        </a>
+                        <span class="pull-right" style="cursor:pointer"><i class="fa fa-caret-down"></i></span>
+                        <ul class="list-unstyled bbb" style="display:none;padding-left: 10px;">
+                            @foreach (var itemi in aksetDB.Create().Kategoris.Where(a => a.parentId == item.Id).ToList())
+                            {
+                                <li class="accr">
+                                    <a style="color:black" href="/@akset.helper.Genel.URLFriendly(itemi.baslik)">
+                                        @itemi.adi
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+            </ul>
+        </div>
+
+
+
+        @{
+            aksetDB db = new aksetDB();
+            List<katefilo> _urun = db.katefilos.Include(a => a.filitre).Include(a => a.filitre.ozelliks).Where(a => a.KategoriId == idsim).ToList();
+            List<filadtli> flt = new List<filadtli>();
+            foreach (var item in _urun.ToList())
+            {
+                filadtli ddd = new filadtli();
+                ddd.adi = item.filitre.adi;
+                ddd.adetlimi = item.filitre.adetlimi;
+                ddd.Id = item.filitreId;
+                List<ozladtli> gg = new List<ozladtli>();
+                foreach (var itemi in item.filitre.ozelliks)
+                {
+                    ozladtli ff = new ozladtli();
+                    ff.Id = itemi.Id;
+                    ff.ozellik = itemi.adi;
+                    ff.adet = 0;
+                    ff.durum = "false";
+                    gg.Add(ff);
+                }
+                ddd.ozls = gg;
+                flt.Add(ddd);
+            }
+        }
+        <style>
+            .conlabel {
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+                /* Hide the browser's default checkbox */
+                .conlabel input {
+                    position: absolute;
+                    opacity: 0;
+                    cursor: pointer;
+                    height: 0;
+                    width: 0;
+                }
+
+            /* Create a custom checkbox */
+            .checkmark {
+                position: absolute;
+                top: 3px;
+                left: 0;
+                height: 20px;
+                width: 20px;
+                background-color: #eee;
+            }
+
+            /* On mouse-over, add a grey background color */
+            .conlabel:hover input ~ .checkmark {
+                background-color: #ccc;
+            }
+
+            /* When the checkbox is checked, add a blue background */
+            .conlabel input:checked ~ .checkmark {
+                background-color: #2196F3;
+            }
+
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+                content: "";
+                position: absolute;
+                display: none;
+            }
+
+            /* Show the checkmark when checked */
+            .conlabel input:checked ~ .checkmark:after {
+                display: block;
+            }
+
+            /* Style the checkmark/indicator */
+            .conlabel .checkmark:after {
+                left: 9px;
+                top: 5px;
+                width: 5px;
+                height: 10px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+
+            table.dataTable tbody tr {
+                vertical-align: top;
+            }
+
+            .accr {
+                position: relative;
+            }
+        </style>
+        @foreach (var item in flt)
+        {
+            <div style="border: 1px solid #adadad;margin-top:10px">
+                <h6 style="background: #f5f5f5;padding: 7px;font-weight: bold;">@item.adi</h6>
+                <ul class="list-unstyled bbbccc" style="padding:8px;padding-top: 0;max-height:200px;overflow-y:auto">
+                    @foreach (var itemin in item.ozls)
+                    {
+                        <li class="accr">
+                            <label class="conlabel">
+                                @itemin.ozellik
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </li>
+                    }
+                </ul>
+            </div>
+
+        }
+
+    </div>
+
+    <div class="col-lg-10 ggtt col-sm-12 col-xs-12">
+        <div style="width:100%;background: #eee;padding:10px">
+            <ul class="list-inline" style="margin:0">
+                <li class="list-inline-item dgrth" style="width:32%;text-align:center">
+                    <input type="checkbox" name="name" value="" /> Tükenen Ürünleri Gösterme
+                </li>
+                <li class="list-inline-item dgrth" style="width:33%;text-align:center">
+                    <div style="display: inline-block">Sırala:</div>
+                    <select class="form-control" style="width: 174px;padding: 4px;display: inline-block">
+                        <option value="value">text</option>
+                    </select>
+                </li>
+                <li class="list-inline-item sonth" style="width:33%;text-align:center">
+                    <i class="fa fa-th buy" onclick="$('.rrtt').css({'width': '230px','height':'350px'}); $('.buy').removeClass('active');$(this).addClass('active')" style="font-size:20px;cursor:pointer"></i>
+                    <i class="fa fa-th-large active buy" onclick="$('.rrtt').css({'width': '318px','height':'497px'}); $('.buy').removeClass('active'); $(this).addClass('active')" style="font-size:20px;cursor:pointer"></i>
+                </li>
+            </ul>
+        </div>
+        <table id="example" class="table exmtable no-wrap" cellspacing="0" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>adi</th>
+                    <th>baslik</th>
+                    <th>eskifiyat</th>
+                    <th>fiyat</th>
+                    <th>link</th>
+                    <th>satistami</th>
+                    <th>urunkodu</th>
+                    <th>urunlefiltres</th>
+                    <th>v1</th>
+                    <th>v2</th>
+                    <th>tarih</th>
+                    <th>resim</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Id</th>
+                    <th>adi</th>
+                    <th>baslik</th>
+                    <th>eskifiyat</th>
+                    <th>fiyat</th>
+                    <th>link</th>
+                    <th>satistami</th>
+                    <th>urunkodu</th>
+                    <th>urunlefiltres</th>
+                    <th>v1</th>
+                    <th>v2</th>
+                    <th>tarih</th>
+                    <th>resim</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="git odd" role="row">
+                        <td>
+                            <span style="display:none">@item.Id</span>
+                            <div style="position:relative;float: left;border: 1px solid #eee;overflow:hidden">
+                                <div class="favorite" onclick="addfavor()">
+                                    <i class="icon icon-favorite-heart"></i>
+                                </div>
+                                @{
+                                    string linli = "";
+                                    if (item.link == "" || item.link == null)
+                                    {
+                                        linli = akset.helper.Genel.URLFriendly(item.baslik) + "-" + "urunid" + "-" + item.Id;
+                                    }
+                                    else
+                                    {
+                                        linli = item.link;
+                                    }
+                                    string resim = "";
+                                    if (item.v2 == "")
+                                    {
+                                        resim = "<img class='rrtt' src='/urunresimleri/" + item.resim + "/" + item.v1 + "' alt='" + item.baslik + "' style='width:318px;height:497px' />";
+                                    }
+                                    else
+                                    {
+                                        resim = "<img class='rrtt' src='/urunresimleri/" + item.resim + "/" + item.v1 + "' alt='" + item.baslik + "' onmouseover='$(this).attr(\"src\",\"/urunresimleri/" + item.resim + "/" + item.v2 + "\")' onmouseout='$(this).attr(\"src\",\"/urunresimleri/" + item.resim + "/" + item.v1 + "\")' style='width:318px;height:497px' />";
+                                    }
+                                }
+
+                                <a href="@linli">
+                                    <div class="rrtt" style="overflow:hidden;width:318px;height:497px">
+                                        @Html.Raw(resim)
+                                    </div>
+                                    <div class="product-info-container" style="width:100%">
+                                        <div class="info-box" style="text-align:left">
+                                            <div class="brand" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">@item.baslik</div>
+                                            <div class="price-container" style="float:right">
+                                                @if (item.eskifiyat != "0")
+                                                {
+                                                    <div class='market-price' style='line-height:30px'>@item.eskifiyat  TL</div>
+                                                }
+                                                <div class="sale-price" style="font-weight: bolder;">@item.fiyat TL</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </td>
+                        <td class="d-none">@item.adi</td>
+                        <td class="d-none">@item.baslik</td>
+                        <td class="d-none">@item.eskifiyat</td>
+                        <td class="d-none">@item.fiyat</td>
+                        <td class="d-none">@item.link</td>
+                        <td class="d-none">@item.satistami</td>
+                        <td class="d-none">@item.urunkodu</td>
+                        <td class="d-none">
+                            @foreach (var itemi in item.urunlefiltres)
+                            {
+                                <div>
+                                    @itemi.adi
+                                </div>
+                                foreach (var itemde in itemi.ozls)
+                                {
+                                    <div>
+                                        @itemde.ozellik
+                                    </div>
+                                }
+                            }
+                        </td>
+                        <td class="d-none">@item.v1</td>
+                        <td class="d-none">@item.v2</td>
+                        <td class="d-none">@item.tarih</td>
+                        <td class="d-none">@item.resim</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div style="opacity:0">
+            <div class="dt-more-container">
+                <div id="btn-example-load-more1"></div>
+            </div>
+        </div>
+    </div>
+</div>

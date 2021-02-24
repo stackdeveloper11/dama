@@ -1,0 +1,2334 @@
+﻿@{
+    aksetDB db = new aksetDB();
+}
+@using akset.data.ViewModel
+@using System.Data.Entity
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+
+    <meta name="description" content="@ViewBag.Desc">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="shortcut icon" href="/favicon.ico?f=1" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+    <style>
+        .rrtt {
+            transition: ease-in-out .3s all;
+        }
+
+            .rrtt:hover {
+                transform: scale(1.05);
+            }
+    </style>
+
+    <style>
+        .bx-wrapper .bx-controls-direction a {
+            top: 40% !important;
+        }
+
+        .product-info-container .brand {
+            font-size: 14px;
+            color: #333;
+            height: 18px;
+            line-height: 18px;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .product-info-container .name {
+            position: relative;
+            display: block;
+            line-height: normal;
+            font-size: 13px;
+            color: #666;
+            margin-top: 2px;
+            text-align: left;
+        }
+
+        .product-info-container .price-container {
+            height: 31px;
+            margin-top: -2px;
+            display: -webkit-inline-box;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+            text-align: left;
+        }
+
+            .product-info-container .price-container .market-price {
+                height: 22px;
+                font-size: 15px;
+                line-height: normal;
+                color: #878787;
+                text-decoration: line-through;
+                margin-right: 5px;
+                display: inline-block;
+                text-align: left;
+            }
+
+            .product-info-container .price-container .sale-price {
+                height: 30px;
+                text-align: left;
+                line-height: 30px;
+                font-size: 18px;
+                color: #f27a1a;
+                display: inline-block;
+            }
+
+        .product-info-container {
+            float: left;
+            background-color: hsla(0,0%,100%,.9);
+            position: relative;
+            padding: 10px 10px 5px;
+        }
+
+        body {
+            font-family: 'Muli', sans-serif;
+        }
+
+        .row-eq-height {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
+        :root {
+            --blue: #007bff;
+            --indigo: #6610f2;
+            --purple: #6f42c1;
+            --pink: #e83e8c;
+            --red: #dc3545;
+            --orange: #fd7e14;
+            --yellow: #ffc107;
+            --green: #28a745;
+            --teal: #20c997;
+            --cyan: #17a2b8;
+            --white: #fff;
+            --gray: #6c757d;
+            --gray-dark: #343a40;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --success: #28a745;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --breakpoint-xs: 0;
+            --breakpoint-sm: 576px;
+            --breakpoint-md: 768px;
+            --breakpoint-lg: 992px;
+            --breakpoint-xl: 1200px;
+            --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+        }
+
+        .fa-15x {
+            font-size: 1.5em;
+            margin: 0 auto;
+        }
+
+        .utle li:hover .fa-15x .qqq, .utle li:hover a span {
+            fill: #d7412e;
+            color: #d7412e;
+        }
+
+        svg {
+            -webkit-transition: all 1s ease-out;
+            -moz-transition: all 1s ease-out;
+            -ms-transition: all 1s ease-out;
+            -o-transition: all 1s ease-out;
+            transition: all 1s ease-out;
+        }
+
+        .container-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            opacity: .3;
+            background-color: #000;
+        }
+
+        #arasi:focus {
+            background: white !important;
+        }
+
+        .wsmobileheader {
+            box-sizing: border-box;
+            -webkit-transition: top 0.6s;
+            -moz-transition: top 0.6s;
+            transition: top 0.6s;
+        }
+
+        .headerfull {
+            height: 42px !important;
+        }
+
+        @@media screen and (min-width:991px) {
+            .wsmenu > .wsmenu-list > li > .wsshoptabing {
+                top: 43px !important;
+            }
+
+                .wsmenu > .wsmenu-list > li > .wsshoptabing > .wsshopwp > .wstabitem > li > .wstitemright {
+                    width: 100% !important;
+                }
+        }
+
+
+        .wsmenu > .wsmenu-list > li > .navtext > span {
+            color: black !important;
+            font-family: titan !important;
+            font-size: 15px !important;
+            font-weight: bold !important;
+        }
+
+            .wsmenu > .wsmenu-list > li > .navtext > span:hover, .navtext:hover a {
+                color: white !important;
+            }
+
+        .wsmenu > .wsmenu-list > li:hover > a span {
+            color: white !important;
+        }
+
+        .wsmenu-click {
+            position: absolute !important;
+            width: 100% !important;
+        }
+
+        .wsmenu-click02 {
+            position: absolute !important;
+            width: 100% !important;
+            background: transparent !important;
+            right: 0;
+        }
+
+        .wsmenu-list li {
+            cursor: pointer !important;
+        }
+
+        @@media only screen and (max-width: 991px) {
+
+            .ffff {
+                padding-top: 70px !important;
+            }
+
+            .wsmobileheader {
+                height: 103px !important;
+            }
+
+            .wsmenu > .wsmenu-list > li > .wsshoptabing > .wsshopwp > .wstabitem > li > a {
+                padding: 14px 11px 7px 11px !important;
+            }
+
+
+
+            .wstheading.clearfix {
+                display: none !important;
+            }
+
+            .col-sm-8.offset-sm-2 {
+                padding-top: 45px;
+            }
+        }
+
+        .wsmenu > .wsmenu-list > li > .navtext {
+            padding: 13px 10px !important;
+        }
+
+        .social a {
+            margin: 0 5px;
+            text-decoration: none;
+            color: #fff;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            line-height: 28px;
+            border: 1px solid #fff;
+        }
+
+        .addcart {
+            cursor: pointer;
+        }
+    </style>
+    @Styles.Render("~/content/all")
+    <link href="~/css/all.min.css" rel="stylesheet" />
+    <style>
+        .wsmenu > .wsmenu-list > li {
+            display: inline-block;
+            float: none;
+        }
+    </style>
+    @Scripts.Render("~/scripts/all")
+    <script src="~/Scripts/siter.js"></script>
+    <script src="~/js/all.min.js"></script>
+    <script src="~/content/js/jquery.mycart.js"></script>
+    <script>
+        var prodt;
+        $(function () {
+
+            var goToCartIcon = function ($addTocartBtn) {
+                var $cartIcon = $(".my-cart-icon");
+                var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({ "position": "fixed", "z-index": "999" });
+                $addTocartBtn.prepend($image);
+                var position = $cartIcon.position();
+                $image.animate({
+                    top: position.top,
+                    left: position.left
+                }, 500, "linear", function () {
+                    $image.remove();
+                });
+            }
+
+            $('.my-cart-btn').myCart({
+                classCartIcon: 'my-cart-icon',
+                classCartBadge: 'my-cart-badge',
+                classProductQuantity: 'my-product-quantity',
+                classProductRemove: 'my-product-remove',
+                classCheckoutCart: 'my-cart-checkout',
+                affixCartIcon: true,
+                showCheckoutModal: true,
+                clickOnAddToCart: function ($addTocart) {
+                    goToCartIcon($addTocart);
+                },
+                clickOnCartIcon: function ($cartIcon, products, totalPrice, totalQuantity) {
+                    console.log("cart icon clicked", $cartIcon, products, totalPrice, totalQuantity);
+                },
+                checkoutCart: function (products, totalPrice, totalQuantity) {
+                    console.log("checking out", products, totalPrice, totalQuantity);
+                },
+                getDiscountPrice: function (products, totalPrice, totalQuantity) {
+
+                    prodt = products;
+                    console.log("calculating discount", products, totalPrice, totalQuantity);
+                    return totalPrice;
+                }
+            });
+
+        });
+
+    </script>
+    <style>
+        .wsmenu-click svg path {
+            fill: black;
+        }
+
+        .badge-notify {
+            background: red;
+            position: absolute;
+            top: 21px;
+            right: 41px;
+            color: white;
+        }
+
+        .wsmenu-click svg {
+            right: 8px;
+            position: absolute;
+            top: 12px !important;
+        }
+
+        ul.dropdown-cart {
+            min-width: 250px;
+        }
+
+            ul.dropdown-cart li .item {
+                display: block;
+                padding: 3px 10px;
+                margin: 3px 0;
+            }
+
+                ul.dropdown-cart li .item:hover {
+                    background-color: #f3f3f3;
+                }
+
+                ul.dropdown-cart li .item:after {
+                    visibility: hidden;
+                    display: block;
+                    font-size: 0;
+                    content: " ";
+                    clear: both;
+                    height: 0;
+                }
+
+            ul.dropdown-cart li .item-left {
+                float: left;
+            }
+
+                ul.dropdown-cart li .item-left img,
+                ul.dropdown-cart li .item-left span.item-info {
+                    float: left;
+                }
+
+                ul.dropdown-cart li .item-left span.item-info {
+                    margin-left: 10px;
+                }
+
+                    ul.dropdown-cart li .item-left span.item-info span {
+                        display: block;
+                    }
+
+            ul.dropdown-cart li .item-right {
+                float: right;
+            }
+
+                ul.dropdown-cart li .item-right button {
+                    margin-top: 14px;
+                }
+
+        .nav-up {
+            top: -40px;
+        }
+
+        @@media screen and (max-width:991px) {
+            .logopng {
+                margin-left: -36px !important;
+                width: 100%;
+            }
+        }
+
+        @@media screen and (min-width:991px) {
+            .mmenux {
+                display: none;
+            }
+
+            .wsmain {
+                padding: 0 10px !important;
+            }
+
+            .wsshopwp {
+                /*max-height:500px !important;*/
+            }
+        }
+
+        .gggdown::after {
+            display: none;
+        }
+
+        @@media only screen and (max-width: 991px) {
+            .wsmenu > .wsmenu-list > li > ul.sub-menu > li > a {
+                font-size: 18px;
+            }
+
+            .fftt {
+                margin-bottom: 10px !important;
+                border-bottom: 1px solid #dedede !important;
+                padding-bottom: 10px !important;
+            }
+
+            .yytt {
+                display: none !important;
+            }
+
+            .fftt a {
+                font-size: 14px !important;
+            }
+        }
+
+        .wsmenu > .wsmenu-list > li > ul.sub-menu {
+            top: 44px !important;
+        }
+
+        @@media only screen and (max-width: 991px) {
+            .wsmenu > .wsmenu-list > li > ul.sub-menu {
+                top: 0px !important;
+            }
+
+            .wsmenu-click .wsmenu-arrow {
+                top: 33px !important;
+            }
+
+            .wsmenu-click {
+                height: 80px !important;
+                border-color: #dedede !important;
+            }
+
+            .wsmenu > .wsmenu-list > li > .navtext {
+                padding: 9px 6px !important;
+            }
+        }
+
+        @@media only screen and (min-width: 991px) {
+            .wsshopwp.clearfix {
+                overflow: hidden !important;
+            }
+
+            .wsmenu > .wsmenu-list > li > .wsshoptabing > .wsshopwp > .wstabitem > li > .wstitemright {
+                left: 0;
+            }
+        }
+
+        /*@@media only screen and (max-width: 768px) {
+            .ffff {
+                margin-top: -40px !important;
+            }
+        }*/
+
+        .modal {
+            top: 100px;
+        }
+
+        .modal-body {
+            padding-bottom: 0 !important;
+        }
+
+        .modal-footer {
+            padding: 10px;
+        }
+
+        .wsshoptabing.wtsdepartmentmenu.clearfix {
+            z-index: 9999999999999999999999 !important;
+        }
+
+        .wsmenu > .wsmenu-list > li .wstbootslider {
+            float: none !important;
+        }
+
+        .wsmenu-click02 svg {
+            opacity: 1 !important;
+            position: absolute;
+            top: 16px;
+            right: 8px;
+        }
+
+        @@media only screen and (max-width: 991px) {
+            .wsmobileheader > .smllogo {
+                display: block;
+                width: 206px;
+                margin: 0 auto 0 auto;
+                float: left;
+                margin-left: 45px;
+                padding-left: 0;
+            }
+        }
+
+        @@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+            .bu1 {
+                width: 70px !important;
+            }
+
+            .bu2 {
+                width: 62px !important;
+            }
+
+            .bu3 {
+                width: 55px !important;
+            }
+        }
+
+        @@media screen and (max-width: 768px) and (orientation:portrait) {
+        }
+    </style>
+    <script type="text/javascript">
+        (function () {
+            var options = {
+                facebook: "376034936474501", // Facebook page ID
+                whatsapp: "+99999999999", // WhatsApp number
+                call_to_action: "Bize Ulaşın", // Call to action
+                button_color: "#129BF4", // Color of button
+                position: "left", // Position may be 'right' or 'left'
+                order: "facebook,whatsapp", // Order of buttons
+            };
+            var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <style>
+        .da-sh:before {
+            font-family: Arial;
+            font-weight: bold;
+            content: ' ';
+            color: white;
+            letter-spacing: -1px;
+            margin-right: 6px;
+            padding-right: 10px;
+            padding-left: 7px;
+            font-style: normal;
+            background: url(/img/sh.png) no-repeat;
+            background-position: left;
+            background-size: contain;
+        }
+    </style>
+    @RenderSection("scr", required: false)
+    <style>
+        @@media only screen and (max-width: 991px) {
+            .wsmobileheader > .smllogo {
+                margin-left: 61px !important;
+            }
+        }
+
+        #wsnavtogglei:before {
+            color: #000000;
+            content: 'Menü';
+            font-size: 12px;
+            position: absolute;
+            top: -8px;
+        }
+    </style>
+    <script>
+        function getir() {
+            $.ajax({
+                type: "Get",
+                url: "/home/aragetir",
+                dataType: "json",
+                success: function (response) {
+                    $("#arasi,#arasi2").val(response);
+
+                }
+            });
+        }
+
+        $(function () {
+            setTimeout(getir,4000);
+            var title = document.title;
+            //setInterval(function () {
+            //    var title = document.title;
+            //    document.title = (title == "Seni çok özledik!" ? title : "Seni çok özledik!");
+            //}, 1000);
+            var degis="yok";
+            var syc;
+            window.onblur = function () {
+              syc =  setInterval(function() {
+                    if (degis=="yok") {
+                        degis="tmm";
+                        document.title = 'Seni çok özledik!';
+                    }
+                    else {
+                        degis="yok";
+                        document.title = "@ViewBag.Title";
+                    }
+                },1000);
+            }
+
+            window.onfocus = function () {
+                document.title = "@ViewBag.Title";
+                clearInterval(syc);
+                degis="yok";
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row wsmain">
+            <div class="col-3">
+                <a href="tel:+99999999999" class="btn btn-outline-dark btn-sm" style="font-size: 13px;text-align: center;margin-bottom: 10px;margin-top:10px">
+                    <i class="fa fa-phone"></i> +9999999999
+                </a>
+            </div>
+            <div class="col-9">
+                <ul class="list-inline text-right" style="margin-bottom: 10px;margin-top:10px">
+
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-outline-dark btn-sm" style="font-size: 13px;text-align: center;" data-toggle="modal" data-target="#iletisim">
+                            İletişim
+                        </a>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <a class="btn btn-outline-dark btn-sm" href="#" style="font-size: 13px;text-align: center;" data-toggle="modal" data-target="#yazin">
+                            Bize Ulaşın
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row" style="margin-left: -15px;margin-right: -15px;">
+            <div class="col-12" style="padding:0">
+                <!-- The Modal -->
+                <div class="modal" id="yazin">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Bize Ulaşın</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <form action="/home/mailyolla" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <dl class="row">
+                                        <dt class="col-sm-4">İsim</dt>
+                                        <dd class="col-sm-8"><input type="text" class="form-control" name="name" value="" /></dd>
+                                        <dt class="col-sm-4">E-mail</dt>
+                                        <dd class="col-sm-8"><input type="text" class="form-control" name="maili" value="" /></dd>
+                                        <dt class="col-sm-4">Message</dt>
+                                        <dd class="col-sm-8"><textarea class="form-control" name="mesaj"></textarea></dd>
+                                    </dl>
+                                    <div class="col-12 text-right">
+                                        <input type="submit" id="msgxz" class="btn btn-success d-none" name="name" value="Gönder" />
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" onclick="$('#msgxz').click()" class="btn btn-success" data-dismiss="modal">Gönder</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- The Modal -->
+                <div class="modal" id="iletisim">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">İletişim</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <dl class="row">
+                                    <dt class="col-sm-4">İsim</dt>
+                                    <dd class="col-sm-8">:Ali Veli</dd>
+                                    <dt class="col-sm-4">IBAN</dt>
+                                    <dd class="col-sm-8">: 111111111111</dd>
+                                    <dt class="col-sm-4">Hesap</dt>
+                                    <dd class="col-sm-8">: 111111111111</dd>
+                                    <dt class="col-sm-4">V.D.</dt>
+                                    <dd class="col-sm-8">: 11111111111</dd>
+                                    <dt class="col-sm-4">Adres</dt>
+                                    <dd class="col-sm-8">: İstanbul</dd>
+                                    <dt class="col-sm-4">E-Mail</dt>
+                                    <dd class="col-sm-8">: iletisim@@mail.com</dd>
+                                </dl>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Kapat</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="wsmobileheader" class="wsmobileheader clearfix" style="z-index:12">
+                    <a id="wsnavtogglei" class="wsanimated-arrow"><span></span></a>
+                    <span class="smllogo" style="height: 50px;padding-top: 4px;"><a href="/"><img src="/img/gene.png" class="logopng" width="150" alt=""></a></span>
+                    <div class="wssearch clearfix" style="padding: 5px;">
+                        <ul class="list-inline text-right utle" style="margin: 8px;">
+                            @if (Request.IsAuthenticated)
+                            {
+                                <li class="list-inline-item dropdown gggdown" style="width: 30px;font-size:13px;">
+                                    <a href="#" class="dropdown-toggle" style="display: grid;color:black;text-decoration:none" data-toggle="dropdown">
+                                        <svg style="width:30px;height:30px" aria-hidden="true" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user fa-w-14 fa-fw fa-15x"><path fill="currentColor" d="M313.6 288ac-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zM416 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 56.5 0 102.4 45.9 102.4 102.4V464zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z" class="qqq"></path></svg>
+                                        <span class="d-none d-md-block" style="font-size:20px;text-align: center;">Hesabım</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                                        {
+                                            <li onclick="location.href = '/admin/home'">
+                                                <a class="dropdown-item" href="/admin/home">Admin Panel</a>
+                                            </li>
+                                        }
+                                        <li onclick="location.href='/home/profil'"><a class="dropdown-item" href="/home/profil" style="font-size:13px"><i class="fa fa-user"></i> Hesabım</a></li>
+                                        <li onclick="location.href = '/account/logoff'"><a class="dropdown-item" href="/account/logoff" style="font-size:13px"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <script>
+                                    function droxla() {
+                                        if ($('.ffgghhxx').hasClass("show")) {
+                                            $('.ffgghhxx').removeClass("show");
+                                        }
+                                        else {
+                                            $('.ffgghhxx').addClass("show");
+                                        }
+                                    }
+                                </script>
+                                <li class="list-inline-item gggdown bu1" style="width: 30px;font-size:13px;padding:0px 18px !important;margin-right:15px">
+                                    <a href="#" class="dropdown" style="display: grid;color:black;text-decoration:none" onclick="droxla()">
+                                        <svg style="width:30px;height:30px" aria-hidden="true" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user fa-w-14 fa-fw fa-15x"><path fill="currentColor" d="M313.6 288c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zM416 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 56.5 0 102.4 45.9 102.4 102.4V464zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z" class="qqq"></path></svg>
+                                        <span class="d-none d-md-block" style="font-size:13px;text-align: center;">Giriş Yap</span>
+                                    </a>
+                                    <div class="dropdown-menu ffgghhxx" style="top: 50px;left: -49px;">
+                                        <a class="dropdown-item" href="#" onclick="$('#exampleModal').modal('show'); $('.ffgghhxx').removeClass('show');"><span class="btn btn-primary btn-sm btn-block" style="color:white">Giriş</span></a>
+                                        <a class="dropdown-item" href="#" onclick="$('#exampleModal1').modal('show'); $('.ffgghhxx').removeClass('show');"><span class="btn btn-success btn-sm btn-block" style="color:white">Kayıt Ol</span></a>
+                                    </div>
+                                </li>
+                            }
+
+                            <li class="list-inline-item bu2" style="width: 30px;font-size:13px;">
+                                <a href="/myfavorites" style="display: grid;color:black;text-decoration:none">
+                                    <svg style="width:30px;height:30px" aria-hidden="true" data-prefix="fal" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-heart fa-w-16 fa-fw fa-15x">
+                                        <path fill="currentColor" d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z" class="qqq"></path>
+                                    </svg>
+                                    <span class="d-none d-md-block" style="font-size:13px">Favorilerim</span>
+                                </a>
+                            </li>
+
+                            <li class="list-inline-item bu3" style="width: 30px;font-size:13px;padding: 0;">
+                                <a href="#" style="display: grid;color:black;text-decoration:none;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 23 23" class="fa-15x"><path fill="#333" stroke="#FFF" class="qqq" stroke-width=".15" d="M19.73 16.653H6.949c-.358 0-.7-.324-.746-.708l-1.34-9.454-.758-4.381C3.966.98 2.975.095 1.846.095H.844a.75.75 0 0 0 0 1.5h1.002c.373 0 .728.335.777.732l.76 4.397 1.334 9.416c.136 1.129 1.116 2.013 2.231 2.013h12.783a.75.75 0 0 0 0-1.5zm1.775-13.5a2.011 2.011 0 0 0-1.527-.693H6.353a.75.75 0 0 0 0 1.5h13.625c.161 0 .298.063.406.186.162.183.244.484.21.766l-1.24 7.108c-.046.379-.407.691-.804.693l-10.673.789a.738.738 0 0 0-.51.257.751.751 0 0 0 .62 1.238l10.618-.787c1.117 0 2.095-.865 2.229-1.97l1.24-7.108c.09-.746-.117-1.468-.57-1.979zM7.152 22.095a1.539 1.539 0 0 0 0-3.076 1.539 1.539 0 0 0 0 3.076zm11.018 0a1.539 1.539 0 0 0 0-3.076 1.54 1.54 0 0 0 0 3.076z"></path></svg>
+                                    <span class="d-none d-md-block my-cart-icon" style="font-size:13px">Sepetim <span class="badge badge-notify my-cart-badge" style="top:19px;right:31px"></span></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="input-group input-group-sm" style="padding: 15px 10px 0 9px;">
+                        <input type="text" id="arasi" class="form-control" placeholder="Selmahanim.com' da Ara ...." aria-label="Recipient's username" aria-describedby="basic-addon2" style="padding-right: 39px;overflow:hidden;padding-left: 15px;background: #f9f9f9;">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary arax" type="button" style="border-color: #ced4da;margin-left: -57px;position: relative;z-index: 28;border: 0;">
+                                <i class="fa fa-search" style="margin-right:5px"></i> Ara
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="headtoppart clearfix d-none d-lg-block">
+                    <div class="headerwp clearfix ">
+                        <div class="row">
+                            <div class="col-3" style="padding-top:20px">
+                                <a href="/"><img src="~/img/gene.png" class="img-fluid" style="max-height:75px" /></a>
+                            </div>
+                            <div class="col-6" style="padding-top:19px;text-align:center">
+                                <input type="text" id="arasi2" class="form-control" placeholder="Selmahanim.com' da Ara ...." aria-label="Recipient's username" aria-describedby="basic-addon2" style="padding-right: 64px;border-radius: 20px;overflow:hidden;padding-left: 15px;background: #f9f9f9;" />
+                                <button class="btn btn-primary btn-xs arax2" type="button" style="border-color: #ced4da;position: relative;z-index: 28;border: 0;position: absolute;right: 28px;top: 28px;padding: 5px;font-size: 13px;">
+                                    <svg class="svg-inline--fa fa-search fa-w-16" style="margin-right: 5px;" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg><!-- <i class="fa fa-search" style="margin-right:5px"></i> --> Ara
+                                </button>
+                            </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $(".arax").click(function () {
+                                        location.href = "/ara/" + $("#arasi").val();
+                                    })
+                                    $(".arax2").click(function () {
+                                        location.href = "/ara/" + $("#arasi2").val();
+                                    })
+                                });
+                            </script>
+                            <div class="col-3" style="padding-top:5px">
+                                <ul class="list-inline text-right utle">
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        <li class="list-inline-item dropdown" style="width:66px;font-size:13px" data-toggle="dropdown">
+                                            <a href="/myaccounts" style="width:30px;height:30px;display: grid;color:black;text-decoration:none" class="dropdown-toggle gggdown">
+                                                <svg style="width:30px;height:30px" aria-hidden="true" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user fa-w-14 fa-fw fa-15x"><path fill="currentColor" d="M313.6 288c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zM416 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 56.5 0 102.4 45.9 102.4 102.4V464zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z" class="qqq"></path></svg>
+                                                <span class="d-none d-md-block" style="font-size:13px;text-align: center;">Hesabım</span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                                                {
+                                                    <li onclick="location.href = '/admin/home'">
+                                                        <a class="dropdown-item" href="/admin/home" style="font-size:13px"><i class="fa fa-send"></i> Admin Panel</a>
+                                                    </li>
+                                                }
+                                                <li onclick="location.href='/home/profil'"><a class="dropdown-item" href="/home/profil" style="font-size:13px"><i class="fa fa-user"></i> Hesabım</a></li>
+                                                <li onclick="location.href = '/account/logoff'"><a class="dropdown-item" href="/account/logoff" style="font-size:13px"><i class="fa fa-sign-out"></i> Çıkış</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <style>
+                                            .gghs {
+                                                left: -45px !important;
+                                            }
+                                        </style>
+                                        <li class="list-inline-item dropdown" style="width:66px;font-size:13px">
+                                            <a href="#" style="display: grid;color:black;text-decoration:none" class="dropdown-toggle gggdown" data-toggle="dropdown">
+                                                <svg style="width:30px;height:30px" aria-hidden="true" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-user fa-w-14 fa-fw fa-15x"><path fill="currentColor" d="M313.6 288c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4zM416 464c0 8.8-7.2 16-16 16H48c-8.8 0-16-7.2-16-16v-41.6C32 365.9 77.9 320 134.4 320c19.6 0 39.1 16 89.6 16 50.4 0 70-16 89.6-16 56.5 0 102.4 45.9 102.4 102.4V464zM224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm0-224c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z" class="qqq"></path></svg>
+                                                <span class="d-none d-md-block" style="font-size:13px;text-align: center;">Giriş Yap</span>
+                                            </a>
+                                            <div class="dropdown-menu gghs">
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal"><span class="btn btn-primary btn-sm btn-block" style="color:white">Giriş Yap</span></a>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#exampleModal1"><span class="btn btn-success btn-sm btn-block" style="color:white">Kayıt Ol</span></a>
+                                            </div>
+                                        </li>
+                                    }
+
+                                    <li class="list-inline-item" style="width:68px;font-size:13px">
+                                        <a href="/myfavorites" style="display: grid;color:black;text-decoration:none">
+                                            <svg style="width:30px;height:30px" aria-hidden="true" data-prefix="fal" data-icon="heart" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-heart fa-w-16 fa-fw fa-15x"><path fill="currentColor" d="M462.3 62.7c-54.5-46.4-136-38.7-186.6 13.5L256 96.6l-19.7-20.3C195.5 34.1 113.2 8.7 49.7 62.7c-62.8 53.6-66.1 149.8-9.9 207.8l193.5 199.8c6.2 6.4 14.4 9.7 22.6 9.7 8.2 0 16.4-3.2 22.6-9.7L472 270.5c56.4-58 53.1-154.2-9.7-207.8zm-13.1 185.6L256.4 448.1 62.8 248.3c-38.4-39.6-46.4-115.1 7.7-161.2 54.8-46.8 119.2-12.9 142.8 11.5l42.7 44.1 42.7-44.1c23.2-24 88.2-58 142.8-11.5 54 46 46.1 121.5 7.7 161.2z" class="qqq"></path></svg>
+                                            <span class="d-none d-md-block" style="font-size:13px">Favorilerim</span>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item" style="width: 68px;font-size:13px;padding: 10px 10px 0 10px">
+                                        <a href="#/myshopcart" style="display: grid;color:black;text-decoration:none;">
+                                            <svg style="width:30px;height:30px" xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 23 23' class="fa-15x"><path fill='#333' stroke='#FFF' class="qqq" stroke-width='.15' d='M19.73 16.653H6.949c-.358 0-.7-.324-.746-.708l-1.34-9.454-.758-4.381C3.966.98 2.975.095 1.846.095H.844a.75.75 0 0 0 0 1.5h1.002c.373 0 .728.335.777.732l.76 4.397 1.334 9.416c.136 1.129 1.116 2.013 2.231 2.013h12.783a.75.75 0 0 0 0-1.5zm1.775-13.5a2.011 2.011 0 0 0-1.527-.693H6.353a.75.75 0 0 0 0 1.5h13.625c.161 0 .298.063.406.186.162.183.244.484.21.766l-1.24 7.108c-.046.379-.407.691-.804.693l-10.673.789a.738.738 0 0 0-.51.257.751.751 0 0 0 .62 1.238l10.618-.787c1.117 0 2.095-.865 2.229-1.97l1.24-7.108c.09-.746-.117-1.468-.57-1.979zM7.152 22.095a1.539 1.539 0 0 0 0-3.076 1.539 1.539 0 0 0 0 3.076zm11.018 0a1.539 1.539 0 0 0 0-3.076 1.54 1.54 0 0 0 0 3.076z' /></svg>
+                                            <span class="d-none d-md-block my-cart-icon" style="font-size:13px">Sepetim <span class="badge badge-notify my-cart-badge"></span></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function () {
+                        $(".menuparcasi").click(function () {
+                            $(".menualti").addClass("d-none");
+                            $(this).parent().find(".menualti").removeClass("d-none");
+                            $("#container-background").addClass("container-background");
+                        });
+                        $(".navills").hover(function () {
+                            //  $(this).parent().find(".menualti").removeClass("d-none");
+                        }, function () {
+                            $(".menualti").addClass("d-none");
+                            $("#container-background").removeClass("container-background");
+                        });
+                    });
+                </script>
+                <style>
+                    .mnr a:hover {
+                        color: pink !important;
+                    }
+
+                    @@media screen and (max-width: 768px) and (orientation:portrait) {
+                        .menn {
+                            display: none;
+                        }
+                    }
+                </style>
+                <div class="menn" style="padding: 0; margin: 0 auto; border-bottom: 1px solid #eee; border-top: 1px solid #eee;">
+                    <div style="width:100%;background:#eee">
+                        <ul class="list-inline navills" style="position: relative;text-align: center;background: white;margin:0">
+                            @foreach (var item in db.ustmenus.OrderBy(a => a.sira).ToList())
+                            {
+                                <li class="list-inline-item" href="#" style="padding: 0px 18px !important;">
+                                    @if (string.IsNullOrEmpty(item.link))
+                                    {
+                                        <div class="menuparcasi mnr" onmouseover="$('#ust-@item.Id').attr('src','/MenuResimleri/@item.resimi')" style="color: #212121;font-size: 15px;line-height: 41px;position:          relative;transition: all 0.3s ease;background:white;cursor:pointer;font-weight:bolder;font-size:17px;">
+                                            @item.ustmenuadi
+                                        </div>
+                                        <div class="d-none menualti" style="position: absolute;left:0;z-index: 9999;background:white;width:100%;text-align: left;padding: 20px;">
+                                            <div style="width:80%;float:left">
+                                                @foreach (var itemi in db.ustunaltis.Include(a => a.Kategori).Where(a => a.ustmenuId == item.Id).OrderBy(a => a.sira).ToList())
+                                                {
+                                                    if (string.IsNullOrEmpty(itemi.katler))
+                                                    {
+                                                        <div style="display: inline-block; vertical-align: top;margin-right: 20px;margin-bottom:20px">
+                                                            @if (string.IsNullOrEmpty(itemi.ustunaltiadi))
+                                                            {
+
+                                                            }
+                                                            else
+                                                            {
+                            <img src="~/MenuResimleri/@itemi.resimi" alt="@itemi.ustunaltiadi" style="width:80px;height:80px;border-radius:100%;margin: 0 auto;display: block;margin-bottom: 10px;" />
+                                                                <h6 style="font-weight:bold;text-align:center">@itemi.ustunaltiadi</h6>
+                                                            }
+                                                            @{
+                                                                List<Kategori> kayit = db.Kategoris.Where(a => a.parentId == itemi.KategoriId).OrderBy(a => a.sira).ToList();
+                                                                int sayi1, sayi2, sonuc, sayac;
+                                                                sayi1 = kayit.Count();
+                                                                sayi2 = itemi.kacli;
+                                                                sonuc = sayi1;
+                                                                bool drm = false;
+                                                                if (sayi1 > sayi2 && sayi2 > 0)
+                                                                {
+                                                                    drm = true;
+                                                                }
+
+                                                            }
+                                                            @if (drm)
+                                                            {
+                                                                for (sayac = 0; sayi2 <= sonuc; sayac++)
+                                                                {
+                                                                    sonuc = sonuc - sayi2;
+                                                                }
+                                                                for (int i = 0; i < sayac; i++)
+                                                                {
+                                                                    <ul class="list-unstyled" style="display:inline-block;padding: 0 5px; vertical-align: top;">
+                                                                        @foreach (var itemc in kayit.Skip(i * itemi.kacli).Take(itemi.kacli))
+                                                                        {
+                                                                            <li class="mnr">
+                                                                                @if (!string.IsNullOrEmpty(itemc.link))
+                                                                                {
+                                                                                    <a href="@itemc.link" onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;">
+                                                                                        @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                        {
+                                                                                            <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        @itemc.adi
+                                                                                    </a>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <a onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" href="/@akset.helper.Genel.URLFriendly(itemc.baslik)">
+                                                                                        @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                        {
+                                                                                            <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        @itemc.adi
+                                                                                    </a>
+                                                                                }
+
+                                                                            </li>
+                                                                        }
+                                                                    </ul>
+                                                                }
+
+                                                                if (drm && sonuc > 0)
+                                                                {
+                                                                    <ul class="list-unstyled" style="display:inline-block;padding: 0 5px; vertical-align: top;">
+                                                                        @foreach (var itemc in kayit.Skip(sayac * itemi.kacli))
+                                                                        {
+                                                                            <li class="mnr">
+                                                                                @if (!string.IsNullOrEmpty(itemc.link))
+                                                                                {
+                                                                                    <a href="@itemc.link" onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;">
+                                                                                        @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                        {
+                                                                                            <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        @itemc.adi
+                                                                                    </a>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <a onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" href="/@akset.helper.Genel.URLFriendly(itemc.baslik)">
+                                                                                        @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                        {
+                                                                                            <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                        }
+                                                                                        @itemc.adi
+                                                                                    </a>
+                                                                                }
+
+                                                                            </li>
+                                                                        }
+                                                                    </ul>
+                                                                }
+                                                            }
+                                                            else
+                                                            {
+                                                                <ul class="list-unstyled" style="display:inline-block;padding: 0 5px; vertical-align: top;">
+                                                                    @foreach (var itemc in kayit.OrderBy(A => A.sira))
+                                                                    {
+                                                                        <li class="mnr">
+                                                                            @if (!string.IsNullOrEmpty(itemc.link))
+                                                                            {
+                                                                                <a style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" href="@itemc.link">
+                                                                                    @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                    {
+                                                                                        <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                    }
+                                                                                    @itemc.adi
+                                                                                </a>
+                                                                            }
+                                                                            else
+                                                                            {
+                                                                                <a onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" href="/@akset.helper.Genel.URLFriendly(itemc.baslik)">
+                                                                                    @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                    {
+                                                                                        <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                    }
+                                                                                    @itemc.adi
+                                                                                </a>
+                                                                            }
+
+                                                                        </li>
+                                                                    }
+                                                                </ul>
+                                                            }
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        <div style="display: inline-block; vertical-align: top;margin-right: 20px;margin-bottom:20px">
+
+                                                                        @if (string.IsNullOrEmpty(itemi.ustunaltiadi))
+                                                                        {
+
+                                                                        }
+                                                                        else
+                                                                        {
+                    <img src="~/MenuResimleri/@itemi.resimi" alt="@itemi.ustunaltiadi" style="width:80px;height:80px;border-radius:100%;margin: 0 auto;display: block;margin-bottom: 10px;" />
+                                                                            <h6 style="font-weight:bold;text-align:center">@itemi.ustunaltiadi</h6>
+                                                                        }
+
+                                                                        @{
+
+                                                                            List<Kategori> kayit = new List<Kategori>();
+                                                                            int iii = 0;
+
+                                                                            foreach (var itemk in itemi.katler.Split(','))
+                                                                            {
+                                                                                iii++;
+                                                                                int itemf = 0;
+                                                                                string ikn = "fa fa-angle-right";
+                                                                                if (itemk.Contains("-"))
+                                                                                {
+                                                                                    itemf = Convert.ToInt32(itemk.Split('-')[0]);
+                                                                                    ikn = itemk.Split('-')[1];
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    itemf = Convert.ToInt32(itemk);
+                                                                                }
+                                                                                Kategori kkk = aksetDB.Create().Kategoris.Where(a => a.Id == itemf).FirstOrDefault();
+                                                                                if (kkk!=null)
+                                                                                {
+                                                                                    kkk.sira = iii;
+                                                                                    kkk.faikon = ikn;
+                                                                                    kayit.Add(kkk);
+                                                                                }
+
+                                                                            }
+                                                                            int sayi1=0, sayi2=0, sonuc=0, sayac = 0;
+                                                                            bool drm = false;
+                                                                            if (kayit.FirstOrDefault()!=null)
+                                                                            {
+                                                                                kayit = kayit.OrderBy(a => a.sira).ToList();
+
+                                                                                sayi1 = kayit.Count();
+                                                                                sayi2 = itemi.kacli;
+                                                                                sonuc = sayi1;
+
+                                                                                if (sayi1 > sayi2 && sayi2 > 0)
+                                                                                {
+                                                                                    drm = true;
+                                                                                }
+                                                                            }
+
+
+                                                                        }
+                                                                        @if (drm)
+                                                                        {
+                                                                            for (sayac = 0; sayi2 <= sonuc; sayac++)
+                                                                            {
+                                                                                sonuc = sonuc - sayi2;
+                                                                            }
+                                                                            for (int i = 0; i < sayac; i++)
+                                                                            {
+                                                                                <ul class="list-unstyled" style="display:inline-block;padding: 0 5px; vertical-align: top;">
+                                                                                    @foreach (var itemc in kayit.Skip(i * itemi.kacli).Take(itemi.kacli))
+                                                                                    {
+                                                                                        <li class="mnr">
+                                                                                            @if (!string.IsNullOrEmpty(itemc.link))
+                                                                                            {
+                                <a href="@itemc.link" onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;">
+                                                                                                    @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                                    {
+                                                                                                        <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    @itemc.adi
+                                                                                                </a>
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                               <a onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" href="/@akset.helper.Genel.URLFriendly(itemc.baslik)">
+                                                                                                    @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                                    {
+                                                                                                        <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    @itemc.adi
+                                                                                                </a>
+                                                                                            }
+                                                                                        </li>
+                                                                                    }
+                                                                                </ul>
+                                                                            }
+
+                                                                            if (drm && sonuc > 0)
+                                                                            {
+                                                                                <ul class="list-unstyled" style="display:inline-block;padding: 0 5px; vertical-align: top;">
+                                                                                    @foreach (var itemc in kayit.Skip(sayac * itemi.kacli))
+                                                                                    {
+                                                                                        <li class="mnr">
+                                                                                            @if (!string.IsNullOrEmpty(itemc.link))
+                                                                                            {
+                                                                                                <a href="@itemc.link" onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;">
+                                                                                                    @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                                    {
+                                                                                                        <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    @itemc.adi
+                                                                                                </a>
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                <a onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" href="/@akset.helper.Genel.URLFriendly(itemc.baslik)">
+                                                                                                    @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                                    {
+                                                                                                        <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                                    }
+                                                                                                    @itemc.adi
+                                                                                                </a>
+                                                                                            }
+
+                                                                                        </li>
+                                                                                    }
+                                                                                </ul>
+                                                                            }
+                                                                        }
+                                                                        else
+                                                                        {
+                                                                            <ul class="list-unstyled" style="display:inline-block;padding: 0 5px; vertical-align: top;">
+                                                                                @foreach (var itemc in kayit.OrderBy(A => A.sira))
+                                                                                {
+                                                                                    <li class="mnr">
+                                                                                        @if (!string.IsNullOrEmpty(itemc.link))
+                                                                                        {
+                                                                                            <a style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" href="@itemc.link">
+                                                                                                @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                                {
+                                                                                                    <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                                }
+                                                                                                @itemc.adi
+                                                                                            </a>
+                                                                                        }
+                                                                                        else
+                                                                                        {
+                                                                                            <a onmouseover="$('#ust-@item.Id').attr('src','/KategoriResimleri/@itemc.resim')" style="color:black;text-decoration:none;color: #191919;font-size: 15px;line-height: 35px;transition: all 0.3s ease;" href="/@akset.helper.Genel.URLFriendly(itemc.baslik)">
+                                                                                                @if (string.IsNullOrEmpty(itemc.faikon))
+                                                                                                {
+                                                                                                    <i class="fa fa-angle-right" style="margin-right:10px"></i>
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    <i class="@itemc.faikon.Replace("_","-")" style="margin-right:10px"></i>
+                                                                                                }
+                                                                                                @itemc.adi
+                                                                                            </a>
+                                                                                        }
+
+                                                                                    </li>
+                                                                                }
+                                                                            </ul>
+                                                                        }
+                                                                    </div>
+                                                    }
+                                                }
+                                            </div>
+                                            <div style="width:20%;float:right">
+                                                <img id="ust-@item.Id" src="~/MenuResimleri/@item.resimi" style="width:100%" />
+                                            </div>
+                                        </div>
+                                        }
+                                        else
+                                        {
+                                              <a href="@item.link" class="menuparcasi mnr" style="color: #212121;font-size: 15px;line-height: 41px;position: relative;transition: all 0.3s ease;background:white;cursor:pointer;font-weight:bolder;font-size:17px;">
+                                                        @item.ustmenuadi
+                                              </a>
+                                        }
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+                @*<div class="headerfull d-none">
+                        <div class="wsmain clearfix">
+                            <nav class="wsmenu clearfix">
+                                <ul class="wsmenu-list text-center">
+                                    <li class="leftlogo d-lg-none">
+                                        <a href="#">
+                                            <img src="/img/gene.png" alt="" />
+                                        </a>
+                                    </li>
+
+                                    @foreach (var item in db.Kategoris.Where(a => a.parentId == null).OrderBy(a => a.sira))
+                                    {
+                                        int tt = 0;
+                                        int yy = 0;
+                                        <li aria-haspopup="true" class="@akset.helper.Genel.URLFriendly(item.adi)">
+                                            <a href="#" class="navtext">
+                                                <span class=""><img class="d-lg-none lazy" data-src="/KategoriResimleri/@item.resim" alt="@item.adi" style="border-radius:100%;width:60px;height:60px" /> @item.adi</span>
+                                            </a>
+                                            <div class="wsshoptabing wtsdepartmentmenu clearfix">
+                                                <div class="wsshopwp clearfix">
+                                                    <ul class="wstabitem clearfix">
+                                                        @foreach (var itemi in aksetDB.Create().Kategoris.Where(a => a.parentId == item.Id).OrderBy(a => a.sira))
+                                                        {
+                                                            tt++;
+                                                            <li class="@string.Concat(tt==1?"wsshoplink-active":"")">
+                                                                <a href="#" class="mnex d-block d-lg-none">
+                                                                    <i class="@string.Concat(string.IsNullOrEmpty(itemi.faikon)?"fas fa-home":itemi.faikon)" style="width:24px;font-size:20px"></i>
+                                                                    @itemi.adi
+                                                                </a>
+                                                                <div class="wstitemright clearfix wstitemrightactive">
+                                                                    <div class="container-fluid">
+                                                                        <div class="row">
+                                                                            <div class="col-12 clearfix" style="padding:0">
+                                                                                @foreach (var itemx in aksetDB.Create().Kategoris.Where(a => a.parentId == item.Id).OrderBy(a => a.sira))
+                                                                                {
+                                                                                    <div class="yytt" style="display:inline-block;width:20%;max-width:190px;margin-right:10px">
+                                                                                        <img data-src="/KategoriResimleri/@itemx.resim" class="lazy  d-none d-lg-block" style="width: 100%;border-radius: 100%;height: 100px;max-width: 100px;border: 2px solid #d9d9d9;margin: 0 auto;padding: 1px;" alt="@itemx.baslik" />
+                                                                                        <div class="wstheading clearfix d-none d-lg-block">
+                                                                                            <a href="#" style="color:black">
+                                                                                                <i class="@string.Concat(string.IsNullOrEmpty(itemx.faikon)?"fas fa-home":itemx.faikon)" style="width:24px;font-size:20px"></i> @itemx.adi
+                                                                                            </a>
+                                                                                        </div>
+                                                                                        <ul class="wstliststy01 clearfix d-none d-lg-block">
+                                                                                            @foreach (var itemiii in aksetDB.Create().Kategoris.Where(a => a.parentId == itemx.Id).OrderBy(a => a.sira))
+                                                                                            {
+                                                                                                <li style="padding-left:5px;padding-right:5px;width:100%;margin-bottom:5px" class="fftt">
+                                                                                                    @if (string.IsNullOrEmpty(itemiii.link))
+                                                                                                    {
+                                                                                                        <a href="/@string.Concat(akset.helper.Genel.URLFriendly(itemiii.baslik))">
+                                                                                                            <i class="fa fa-chevron-right d-none d-lg-block" style="float:left;margin-top:6px;margin-right:5px;"></i> @itemiii.adi <i style="float:right;margin-top:7px" class="fa fa-chevron-right d-block d-lg-none"></i>
+                                                                                                        </a>
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        <a href="@akset.helper.Genel.URLFriendly(itemiii.link)">
+                                                                                                            <i class="fa fa-chevron-right d-none d-lg-block" style="float:left;margin-top:6px;margin-right:5px;"></i> @itemiii.adi <i style="float:right;margin-top:7px" class="fa fa-chevron-right d-block d-lg-none"></i>
+                                                                                                        </a>
+                                                                                                    }
+                                                                                                </li>
+                                                                                            }
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                }
+                                                                                <div class="wstheading clearfix d-block d-lg-none">
+                                                                                    <i class="@string.Concat(string.IsNullOrEmpty(itemi.faikon)?"fas fa-home":itemi.faikon)" style="width:24px;font-size:20px"></i> @itemi.adi
+                                                                                </div>
+                                                                                <ul class="wstliststy01 clearfix d-block d-lg-none">
+                                                                                    @foreach (var itemiii in aksetDB.Create().Kategoris.Where(a => a.parentId == itemi.Id).OrderBy(a => a.sira))
+                                                                                    {
+                                                                                        <li style="padding-left:5px;padding-right:5px" class="fftt">
+                                                                                            @if (string.IsNullOrEmpty(itemiii.link))
+                                                                                            {
+                                                                                                <a href="/@string.Concat(akset.helper.Genel.URLFriendly(itemiii.baslik))/">
+                                                                                                    @itemiii.adi <i style="float:right;margin-top:7px" class="fa fa-chevron-right d-block d-sm-none"></i>
+                                                                                                </a>
+                                                                                            }
+                                                                                            else
+                                                                                            {
+                                                                                                <a href="@akset.helper.Genel.URLFriendly(itemiii.link)">
+                                                                                                    @itemiii.adi <i style="float:right;margin-top:7px" class="fa fa-chevron-right d-block d-sm-none"></i>
+                                                                                                </a>
+                                                                                            }
+                                                                                        </li>
+                                                                                    }
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>*@
+                <style>
+                    .lss li {
+                        text-align: left;
+                        border-bottom: 1px solid black;
+                        padding: 9px 0 14px 18px;
+                        letter-spacing: 2px;
+                        margin-bottom: -1px;
+                    }
+
+                    .hhn {
+                        position: absolute;
+                        top: 0;
+                        left: 6px;
+                        width: 100%;
+                        background: white;
+                        border: 1px solid black;
+                        position: absolute;
+                        top: 0;
+                        z-index: 1000;
+                        float: left;
+                        min-width: 10rem;
+                        padding: .5rem 0;
+                        margin: .125rem 0 0;
+                        font-size: 1rem;
+                        color: #212529;
+                        text-align: left;
+                        list-style: none;
+                        background-color: #fff;
+                        background-clip: padding-box;
+                        border: 1px solid rgba(0,0,0,.15);
+                        border-radius: .25rem;
+                    }
+
+                        .hhn li {
+                            padding: 5px;
+                        }
+
+                    .lss {
+                        margin: 0 !important;
+                    }
+
+                        .lss li a {
+                            color: black;
+                            font: inherit;
+                            font-size: 11px;
+                            touch-action: manipulation;
+                            letter-spacing: 2px;
+                            font-family: 'Open Sans', sans-serif !important;
+                        }
+
+                            .lss li a span {
+                                font-size: 13px !important;
+                                margin-right: 7px;
+                            }
+                </style>
+
+            </div>
+
+
+            <div class="col-12 ustter" style="position: relative;padding: 20px;padding-top: 15px;background-color: #faf9f9;min-height: 800px;">
+                <div class="col-sm-10 offset-sm-1 headerwp" style="padding:0;max-width:1230px">
+                    @RenderBody()
+
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+                    <style>
+                        .ddff {
+                            height: 64px;
+                            background-color: #fff;
+                            border: 1px solid #eaeaea;
+                            line-height: 64px;
+                            font-size: 22px;
+                            margin-top: 20px;
+                        }
+
+                        /*.bx-pager-item {
+                            display: none !important;
+                        }
+
+                        @@media screen and (min-width:768px) {
+                            .bx-wrapper .bx-prev {
+                                background: url(/img/reco-prev-icon.png) no-repeat center center !important;
+                                left: 0px !important;
+                            }
+
+                            .bx-wrapper .bx-next {
+                                background: url(/img/reco-next-icon.png) no-repeat center center !important;
+                                right: 0px !important;
+                            }
+
+                            .bx-wrapper .bx-controls-direction a {
+                                position: absolute;
+                                top: 35px;
+                                width: 50px;
+                                height: 309px;
+                                display: block;
+                                text-indent: -9999px;
+                                z-index: 890;
+                                cursor: pointer;
+                                -ms-opacity: .7;
+                                opacity: .7;
+                            }
+                        }
+
+                        .bx-wrapper {
+                            -moz-box-shadow: none !important;
+                            -webkit-box-shadow: none !important;
+                            box-shadow: none !important;
+                            border: 1px solid #eaeaea !important;
+                            padding:0;
+                            background: white !important;
+                        }*/
+                    </style>
+                    <script>
+                        $(document).ready(function () {
+                            var width = $(window).width();
+                            $('.slider').bxSlider({
+                                minSlides: 1,
+                                maxSlides: (width < 430) ? 1 : 4,
+                                auto: true,
+                                slideMargin: 5,
+                                slideWidth: 305,
+                                pager: false,
+                                response:true
+                            });
+                        });
+                    </script>
+
+                    @if (!Request.Url.ToString().Contains("urunid"))
+                    {
+                        <div class="" style="padding: 0 0 0 0;">
+                            <div class="col-12 ddff" style="margin-bottom:20px;text-align:center">
+                                Sizin için Önerdiklerimiz
+                            </div>
+                            <div class="slider">
+                                @foreach (var item in aksetDB.Create().uruns.Where(a => a.oneri == "Evet").ToList())
+                                {
+
+                                    if (Directory.Exists(Server.MapPath("~/urunresimleri/" + item.resim + "/")))
+                                    {
+                                        var files1 = Directory.GetFiles(Server.MapPath("~/urunresimleri/" + item.resim + "/"), "*.jpg");
+                                        string v1 = Path.GetFileName(files1.FirstOrDefault());
+                                        string v2 = "";// Path.GetFileName(files1.LastOrDefault());
+                                        foreach (var fil in files1)
+                                        {
+                                            if (Path.GetFileName(fil).Contains("v1-"))
+                                            {
+                                                v1 = Path.GetFileName(fil);
+                                            }
+                                            if (Path.GetFileName(fil).Contains("v2-"))
+                                            {
+                                                v2 = Path.GetFileName(fil);
+                                            }
+                                        }
+                                        // var files2 = Directory.GetFiles(Server.MapPath("~/urunresimleri/" + item.resim + "/"), "v2-*.jpg");
+                                        <div class="slide" style="position: relative;border: 1px solid #eaeaea !important;">
+                                            <div class="favorite">
+                                                <i class="icon icon-favorite-heart"></i>
+                                            </div>
+                                            @{
+                                                string linli = "";
+                                                if (string.IsNullOrEmpty(item.link))
+                                                {
+                                                    linli = string.Concat(akset.helper.Genel.URLFriendly(item.urunbaslik), "-", "urunid", "-", item.Id);
+                                                }
+                                                else
+                                                {
+                                                    linli = item.link;
+                                                }
+                                            }
+                                            <style>
+                                                .bbnn {
+                                                    transition: ease-in-out .3s all;
+                                                    transform: scale(1.0);
+                                                }
+
+                                                    .bbnn:hover {
+                                                        transform: scale(1.05);
+                                                    }
+                                            </style>
+                                            <a href="@linli">
+                                                <div style="overflow:hidden;">
+                                                    @if (string.IsNullOrEmpty(v2))
+                                                    {
+                                                        <img class="bbnn" src="~/urunresimleri/@item.resim/@v1" alt="@item.urunbaslik" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <img class="bbnn" src="~/urunresimleri/@item.resim/@v1" alt="@item.urunbaslik" onmouseover="$(this).attr('src','/urunresimleri/@string.Concat(item.resim,"/",v2)')" onmouseout="$(this).attr('src','/urunresimleri/@string.Concat(item.resim,"/",v1)')" />
+                                                    }
+                                                </div>
+                                                @*<div class="cargo-stamp-box">
+                                                        <div class="rush-delivery-green">
+                                                            <span>Hızlı</span>
+                                                            <span class="karg">Kargo</span>
+                                                        </div>
+                                                    </div>*@
+                                                <div class="product-info-container" style="">
+                                                    <div class="info-box" style="text-align:left">
+                                                        <div class="brand" style="text-overflow: ellipsis;white-space: nowrap;overflow: hidden;">@item.urunadi</div>
+                                                        <div class="name">@item.urunbaslik</div>
+                                                        <div class="price-container" style="float:right">
+                                                            @if (!string.IsNullOrEmpty(item.eskifiyat))
+                                                            {
+                                                                <div class="market-price" style="line-height:30px">@string.Concat(Convert.ToDecimal(item.fiyat) - Convert.ToDecimal(item.fiyat) * Convert.ToDecimal(item.eskifiyat) / 100) TL</div>
+                                                            }
+                                                            <div class="sale-price" style="font-weight: bolder;">@item.fiyat TL</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                                    }
+                                                }
+                            </div>
+                        </div>
+                        <style>
+                            .slide {
+                                min-width: 301px !important;
+                                width: 301px !important;
+                            }
+
+                            .bx-wrapper {
+                                margin: 0 auto !important;
+                            }
+                        </style>
+                                                }
+
+
+                </div>
+                <div id="container-background"></div>
+            </div>
+            <div class="col-12" style="background-color: black;">
+                <div class="wsmain" style="position:relative;padding: 0;">
+                    <div class="col-12" style="background:black;color:white;padding-top:10px;padding-bottom: 20px;">
+                        <div class="row">
+                            <div class="col-4">
+                                <h5>Güvenli Alış Veriş</h5>
+                                <img src="~/img/security-icon.png" class="w-100" style="max-width: 100px;" />
+                            </div>
+                            <div class="col-4">
+                                <h5>Mobil Uygulamalar</h5>
+                                <a href="#">
+                                    <img src="~/img/android.png" />
+                                </a>
+                                <a href="#">
+                                    <img src="~/img/apple.png" />
+                                </a>
+                            </div>
+                            <div class="col-4">
+                                <h5>Sosyal Medya</h5>
+                                <div class="social" style="padding-top:0">
+                                    <a rel="nofollow" href="https://www.facebook.com/damasutra.ru" style="background-color: #3b5998;color:white" title="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a rel="nofollow" style="background-color: #00aced;color:white" title="twitter" href="" target="_blank"><i class="fa fa-twitter"></i></a>
+                                    <a rel="nofollow" href="https://www.instagram.com/damasutra.ru" style="background-color: #bc2a8d;color:white" title="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
+                                    <a rel="nofollow" style="background-color: #bb0000;color:white" title="youtube" href="" target="_blank"><i class="fa fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12" style="float: left;width: 100%;height: 66px;background: #2d2d2d;">
+                <div class="wsmain" style="position:relative;padding: 0;">
+                    <div class="col-12" style="color:white;padding-top:20px;padding-bottom: 20px;">
+                        ©@DateTime.Now.ToString("yyyy") xxxx.com Copyright.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="topcontrol" title="Sayfa Başına Dön" style="display: none;">
+        <div class="backToTop" style="text-align: center;"><span>Yukarı Çık</span></div>
+    </div>
+    <style>
+        .backToTop {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 82px;
+            height: 31px;
+            line-height: 29px;
+            margin: 5px;
+            opacity: 1;
+            cursor: pointer;
+            z-index: 1000;
+            border: 1px solid #dcdcdc;
+            background-color: #fff;
+            border-bottom-width: 2px;
+            backface-visibility: hidden;
+            will-change: scroll-position;
+        }
+
+        .icon.icon-backtotop-arrow-iconset {
+            width: 12px;
+            height: 14px;
+        }
+
+        .backToTop i {
+            float: left;
+            width: 12px;
+            height: 12px;
+            display: block;
+            margin: 14px 0 0 15px;
+            opacity: .8;
+            transition-property: all;
+            -moz-transition-property: all;
+            -webkit-transition-property: all;
+            -o-transition-property: all;
+            transition-duration: .4s;
+            -webkit-transition-duration: .4s;
+            transition-timing-function: linear;
+            -webkit-transition-timing-function: linear;
+            overflow: hidden;
+        }
+    </style>
+    <script>
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("topcontrol").style.display = "block";
+            }
+            else {
+                document.getElementById("topcontrol").style.display = "none";
+            }
+        }
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+        $(document).ready(function () {
+            $(".backToTop").click(function () {
+                var $target = $('html,body');
+                $target.animate({ scrollTop: 0 }, 300);
+            })
+        });
+    </script>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">En iyi markaları en uygun fiyata yakalayın!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <style>
+                        .wrapper {
+                            margin-top: 80px;
+                            margin-bottom: 20px;
+                        }
+
+                        .form-signin {
+                            max-width: 420px;
+                            padding: 30px 38px 66px;
+                            margin: 0 auto;
+                            background-color: #eee;
+                            border: 3px dotted rgba(0,0,0,0.1);
+                        }
+
+                        .form-signin-heading {
+                            text-align: center;
+                            margin-bottom: 30px;
+                        }
+
+                        .form-control {
+                            position: relative;
+                            font-size: 16px;
+                            height: auto;
+                            padding: 10px;
+                        }
+
+                        input[type="text"] {
+                            margin-bottom: 0px;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+
+                        input[type="password"] {
+                            margin-bottom: 20px;
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                        }
+
+                        .colorgraph {
+                            height: 7px;
+                            border-top: 0;
+                            background: #c4e17f;
+                            border-radius: 5px;
+                            background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                            background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                            background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                            background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                        }
+
+                        .facebook {
+                            text-decoration: none;
+                            display: inline-block;
+                            color: #fff;
+                            width: 100%;
+                            padding: 16px 2%;
+                            text-align: center;
+                            background: url(/img/fb.png) no-repeat left 10px center;
+                            background-color: #3b5998;
+                            border: 1px solid #385693;
+                            cursor: pointer;
+                            font-size: 16px;
+                        }
+
+                        .ffd {
+                            position: absolute;
+                            z-index: 9999;
+                            top: 7px;
+                            right: 6px;
+                            color: #a79999;
+                        }
+
+                        .select2-hidden-accessible {
+                            display: none;
+                        }
+                    </style>
+                    <script src="~/js/phonemask.js"></script>
+                    <script>
+                        $(document).ready(function () {
+                            $('#Phone').mask('(0000) 000 0000', { placeholder: "(0544) 444 4444" });
+                        });
+                    </script>
+                    @{
+                        string hata = "";
+                    }
+                    <div class="container" data-bxyield="content" data-bxarea="">
+                        <div data-bxarea="content__area_645">
+                            <div class="panel panel-default ucus-bilgileri" data-bxarea="content__area_647">
+                                <div class="panel-heading">
+                                    @*<h3 class="panel-title"><i class="fa fa-info-circle fa-fw"></i>Giriş Yap</h3>*@
+                                </div>
+                                <div class="panel-body" style="padding:0">
+                                    <div class="col-xs-12" style="padding:0">
+                                        <div style="display:none">
+                                            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                                        </div>
+                                        <form action="/giris-yap" method="POST" id="login-form" class="no-ajaxy smart-form client-form form-signin" style="padding: 15px;margin-top:15px;margin-bottom:15px">
+                                            @Html.AntiForgeryToken()
+                                            @{
+                                                if (ViewData.ModelState.Count > 0)
+                                                {
+                                                    hata += ("<ul class=\"validation-summary-errors\">");
+                                                    foreach (KeyValuePair<string, ModelState> keyValuePair in ViewData.ModelState)
+                                                    {
+                                                        foreach (ModelError modelError in keyValuePair.Value.Errors)
+                                                        {
+                                                            hata += ("<li>" + modelError.ErrorMessage + "</li>");
+                                                        }
+                                                    }
+                                                    hata += ("</ul>");
+                                                }
+                                            }
+                                            @Html.Raw(hata)
+                                            <div class="center-block" style="position:relative">
+                                                <div onclick="$('#yolface').click()" href="#33" class="facebook" style="color:white;text-decoration:none">Facebook ile giriş yap</div>
+                                            </div>
+                                            <div class="center-block" style="position:relative">
+                                                <div onclick="$('#yolgoogle').click()" href="#33" class="facebook" style="color:white;text-decoration:none;background: url(/img/gl.png) no-repeat left 10px center;background-color: #e43007;border: 1px solid #e43007;">Google ile giriş yap</div>
+                                            </div>
+                                            <hr class="colorgraph" />
+                                            <div class="center-block" style="text-align: center;margin-top: -34px;margin-bottom: 13px;"><div style="margin:0 auto;width: 60px;background: #eeeeee;">veya</div></div>
+                                            <div class="center-block" style="position:relative;margin-bottom:5px">
+                                                <input type="text" class="form-control" id="Phone" name="Phone" placeholder="Telefon Numarası" autocomplete="off" required="" autofocus="" value="" />
+                                                <i class="fa fa-phone ffd fas fa-2x"></i>
+                                            </div>
+                                            <div class="center-block" style="position:relative">
+                                                <input type="password" class="form-control" name="Password" placeholder="Şifre" required="" value="" />
+                                                <i class="fa fa-key ffd fas fa-2x"></i>
+                                            </div>
+                                            <div class="center-block text-right" style="position:relative;margin-top: -10px;margin-bottom: 10px;">
+                                                <a href="/sifremi-unuttum" class="btn btn-link" style="padding: 0;float:left;">Şifremi Unuttum?</a>
+                                                <input type="checkbox" class="hidden" name="RememberMe" value="true" checked="checked" /> Beni Hatırla
+                                            </div>
+
+                                            <button class="btn btn-lg btn-success btn-block" name="Submit" value="Login" type="Submit" style="border-radius: 0;">Giriş Yap</button>
+                                            <a href="/uye-ol" class="btn btn-lg btn-warning btn-block" style="border-radius: 0;">Kayıt Ol</a>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Üye olun en iyi markaları en uygun fiyata yakalayın!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <style>
+                        .wrapper {
+                            margin-top: 80px;
+                            margin-bottom: 20px;
+                        }
+
+                        .form-signin {
+                            max-width: 520px;
+                            padding: 30px 38px 66px;
+                            margin: 0 auto;
+                            background-color: #eee;
+                            border: 3px dotted rgba(0,0,0,0.1);
+                        }
+
+                        .form-signin-heading {
+                            text-align: center;
+                            margin-bottom: 30px;
+                        }
+
+                        .form-control {
+                            position: relative;
+                            font-size: 16px;
+                            height: auto;
+                            padding: 10px;
+                        }
+
+                        input[type="text"] {
+                            margin-bottom: 0px;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                        }
+
+                        input[type="password"] {
+                            margin-bottom: 20px;
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                        }
+
+                        .colorgraph {
+                            height: 7px;
+                            border-top: 0;
+                            background: #c4e17f;
+                            border-radius: 5px;
+                            background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                            background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                            background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                            background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                        }
+
+                        .facebook {
+                            text-decoration: none;
+                            display: inline-block;
+                            color: #fff;
+                            width: 100%;
+                            padding: 16px 2%;
+                            text-align: center;
+                            background: url(/img/fb.png) no-repeat left 10px center;
+                            background-color: #3b5998;
+                            border: 1px solid #385693;
+                            cursor: pointer;
+                            font-size: 16px;
+                        }
+
+                        .fas {
+                            position: absolute;
+                            z-index: 9999;
+                            top: 7px;
+                            right: 6px;
+                            color: #a79999;
+                        }
+
+                        .select2-hidden-accessible {
+                            display: none;
+                        }
+                    </style>
+                    <script>
+                        function yokl() {
+                            if ($('input[type=checkbox]').prop('checked')) {
+                                $(".strartik").click();
+                            }
+                            else {
+                                alert("Üyelik Sözleşmesini İşaretlemediniz!");
+                            }
+                        }
+
+                    </script>
+
+                    <div class="container" data-bxyield="content" data-bxarea="">
+                        <div data-bxarea="content__area_645">
+                            <div class="panel panel-default ucus-bilgileri" data-bxarea="content__area_647">
+                                <div class="panel-heading">
+
+                                </div>
+                                <div class="panel-body" style="padding-top:15px">
+                                    <div class="col-xs-12">
+                                        <form action="/uye-ol" method="POST" id="login-form" class="no-ajaxy smart-form client-form form-signin" style="padding: 15px;margin-top:15px;margin-bottom:15px">
+                                            @Html.AntiForgeryToken()
+                                            <div class="validation-summary-valid text-danger" data-valmsg-summary="true">
+                                                <ul>
+                                                    <li style="display:none"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <h4 class="text-center">Yeni Kayıt</h4>
+                                                <hr>
+                                                <div class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <label class="col-12 control-label" for="Ad" style="text-align:left !important;">Adınız</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" data-val="true" data-val-required="Adınızı Yazmalısınız." id="Ad" name="Ad" placeholder="" type="text" value="">
+                                                            <span class="field-validation-valid text-danger" data-valmsg-for="Ad" data-valmsg-replace="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-12 control-label" for="Soyad" style="text-align:left !important;">Soyadınız</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" data-val="true" data-val-required="Soyadınızı Yazmalısınız." id="Soyad" name="Soyad" placeholder="" type="text" value="">
+                                                            <span class="field-validation-valid text-danger" data-valmsg-for="Soyad" data-valmsg-replace="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-12 control-label" for="Phone" style="text-align:left !important;">Cep Telefon</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" id="Phone" name="Phone" type="text" value="" placeholder="(0544) 444 4444" maxlength="15">
+                                                            <span class="field-validation-valid text-danger" data-valmsg-for="Phone" data-valmsg-replace="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group d-none">
+                                                        <label class="col-12 control-label" for="Email" style="text-align:left !important;">Email</label>
+                                                        <div class="col-12">
+                                                            <input value="@string.Concat(new Random().Next(10,99), new Random().Next(100, 999), new Random().Next(1000, 9999),"@site.com")" class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-regex="Lütfen geçerli bir email adresi yazınız!" data-val-regex-pattern="^([a-zA-Z0-9_\-\.]+)@@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" data-val-required="Email Adresi Yazmalısınız." id="Email" name="Email" placeholder="" type="text">
+                                                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-12 control-label" for="Password" style="text-align:left !important;">Şifreniz</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" data-val="true" data-val-length="Şifreniz en az 6 karakter olmalı." data-val-length-max="100" data-val-length-min="6" data-val-required="Şifre Yazmalısınız." id="Password" name="Password" placeholder="" type="password">
+                                                            <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-12 control-label" for="ConfirmPassword" style="text-align:left !important;">Şifre Tekrar</label>
+                                                        <div class="col-12">
+                                                            <input class="form-control" data-val="true" data-val-equalto="Şifre ve Şifre tekrar bilgileri uyuşmuyor." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" placeholder="" type="password">
+                                                            <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group text-right">
+                                                        <div class="col-12">
+                                                            <div class="checkbox" style="font-size: 14px;">
+                            <input type="checkbox" id="newTermsOfUse" class="MemberShipPolicy" name="uyelikKosullari"><a href="/home/terms" target="_blank">Üyelik Sözleşmesini Okudum. Kabul Ediyorum.</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group text-right">
+                                                        <div class="col-12">
+                                                            <div class="btn btn-success" onclick="yokl()">Kayıt Oluştur</div>
+                                                            <input type="submit" class="btn btn-success strartik d-none" value="Подписаться">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center" style="margin-top: 20px;">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-primary" onclick="location.href = '/Account/Login'" type="button">Giriş Yap</button>
+                                                    <button class="btn btn-info" onclick="location.href = '/sifremi-unuttum'" type="button">Şifremi Unuttum</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/lozad.min.js"></script>
+    <script>
+        var observer = lozad('.lazy', {
+            threshold: 0.1,
+            load: function (el) {
+                el.src = el.getAttribute("data-src");
+            }
+        })
+        observer.observe();
+        var ekrangenis = 0;
+        var zindx = 999999999;
+        $(document).ready(function () {
+            ekrangenis=$(window).width();
+            $("#mobilmenu,.mobilmenut").css({"left": "-" + ekrangenis + "px" });
+            $("#wsnavtogglei").click(function () {
+                $('.bslxc3').css("position", "fixed");
+                zindx++;
+                $("#mobilmenu").animate({
+                    left: 0,
+                    "z-index": zindx
+                }, 300, function () {
+                    // Animation complete.
+                });
+            })
+            $(".gapah").click(function () {
+                $('.bslxc3,.bslxc2').css("position", "absolute");
+                $("#mobilmenu,.mobilmenut").animate({
+                    left: "-"+ekrangenis+"px"
+                }, 300, function () {
+                    // Animation complete.
+                });
+            })
+        });
+        //$("a").on("click", function(e) {
+        //    e.preventDefault();
+        //    var $div = $('div.some');
+        //    $div.animate({
+        //        top: '100%',
+        //        marginTop: - $div.height() - 25
+        //    });
+        //});
+
+        function acmn(at) {
+            $('.bslxc3').css("position", "fixed");
+            zindx++;
+            $("#mobilmenu-"+at).animate({
+                left: 0,
+
+                "z-index": zindx
+            }, 300, function () {
+                // Animation complete.
+            });
+        }
+        function acmns(at) {
+            $('.bslxc2').css("position","fixed");
+            zindx++;
+            $("#mobilmenu2-"+at).animate({
+                left: 0,
+
+                "z-index": zindx
+            }, 300, function () {
+                // Animation complete.
+            });
+        }
+        function acmnt(at) {
+            $('.bslxc3').css("position", "fixed");
+            zindx++;
+            $("#mobilmenu23-"+at).animate({
+                left: 0,
+
+                "z-index": zindx
+            }, 300, function () {
+                // Animation complete.
+            });
+        }
+    </script>
+    <style>
+        .lii li:last-child {
+            border: 0 !important;
+        }
+
+        @@media only screen and (min-width:991px) {
+            .menures {
+                display: none !important;
+            }
+        }
+    </style>
+    <script>
+	    function gapahi(at)
+		{
+			 $("#"+at).animate({
+			     left: "-" + ekrangenis + "px"
+
+                }, 300, function () {
+                    // Animation complete.
+                });
+		}
+    </script>
+    <style>
+        .ggtthh {
+            float: left;
+            list-style-type: none;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            padding-top: 5px;
+        }
+
+            .ggtthh li {
+                float: left;
+                width: 25%;
+                text-align: center;
+            }
+
+                .ggtthh li a {
+                    font-size: 14px;
+                    color: #000;
+                }
+
+                    .ggtthh li a svg {
+                        display: block;
+                        margin: 0 auto;
+                        font-size: 17px;
+                        margin-bottom: 5px;
+                    }
+    </style>
+    <div id="mobilmenu" class="menures" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100%;z-index:99999999999;background: white;height: 100%;">
+        <h4 class="text-left" style="background: #ebeff2;padding: 22px 20px;font-size: 17px;position: absolute;top: 0px;right: 0;left: 0;width: 100%;margin: 0;">
+            TÜM KATEGORİLER
+            <span class="pull-right gapah" style="cursor:pointer"><i class="far fa-times" style="font-weight: 300 !important;font-size:22px"></i></span>
+        </h4>
+        <ul class="list-unstyled lii" style="margin-top: 65px;padding: 0 10px;overflow: auto;height: 100%;padding-bottom: 160px;">
+            @foreach (var item in db.ustmenus.OrderBy(a => a.sira))
+            {
+                <li style="border-bottom: 1px solid #eee; padding: 10px;">
+                    @if (string.IsNullOrEmpty(item.link))
+                    {
+                        <a href="#" style="color:black" onclick="acmn(@item.Id)">
+                            <img src="~/MenuResimleri/@item.resimi" alt="@item.ustmenuadi" style="display: inline-block;width: 70px;height: 70px;border-radius: 100%;border: 1px solid white;margin-right: 10px;" />    @item.ustmenuadi <span class="pull-right"><i class="fa fa-angle-right" style="margin-top: 30px;"></i></span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="@item.link" style="color:black">
+                            <img src="~/MenuResimleri/@item.resimi" alt="@item.ustmenuadi" style="display: inline-block;width: 70px;height: 70px;border-radius: 100%;border: 1px solid white;margin-right: 10px;" /> @item.ustmenuadi
+                        </a>
+                    }
+                </li>
+            }
+        </ul>
+        <div class="bslxc3" style="position:absolute;bottom:0px;right:0;left:0;width:100%;background: #ebeff2;">
+            <ul class="ggtthh">
+                <li><a class="" href="/"><i class="fal fa-home"></i>Anasayfa</a></li>
+                <li><a href="/"><i class="fal fa-heart"></i> Favorilerim</a></li>
+                <li><a href="/"><i class="fal fa-shopping-cart"></i>Sepetim</a></li>
+                <li class="hesabimAs"><a href="/"><i class="fal fa-user"></i><span>Üyelik</span></a></li>
+            </ul>
+        </div>
+    </div>
+    @foreach (var item in db.ustmenus.OrderBy(a => a.sira).ToList())
+    {
+        <div id="mobilmenu-@item.Id" class="mobilmenut menures" style="position:fixed;top:0;left:0;right:0;bottom:0;width:100%;z-index:99999999999;background: white;height: 100%;">
+            <h4 class="text-left" style="background: rgba(0,0,0,.5);color: white;padding: 22px 20px;font-size: 17px;position: absolute;top: 0px;right: 0;left: 0;width: 100%;margin: 0;">
+                <span onclick="gapahi('mobilmenu-@item.Id')" style="cursor:pointer;margin-right:15px">
+                    <i class="far fa-long-arrow-left" style="font-weight: 300 !important;"></i>
+                </span>
+                @item.ustmenuadi
+                <span class="pull-right gapah" style="cursor:pointer;">
+                    <i class="far fa-times" style="font-weight: 300 !important;color:white;font-size:22px"></i>
+                </span>
+            </h4>
+
+            <ul class="list-unstyled lii" style="margin-top: 65px;padding: 0 10px;overflow: auto;height: 100%;padding-bottom: 160px;">
+                @foreach (var itemi in db.ustunaltis.Include(a => a.Kategori).Where(a => a.ustmenuId == item.Id).OrderBy(a => a.sira).ToList())
+                {
+                    <li style="border-bottom: 1px solid #eee; padding: 10px;text-align:center">
+                        <h3 href="#e" style="color: black;font-size: 18px;">
+                            <img src="~/MenuResimleri/@itemi.resimi" alt="@item.ustmenuadi" style="display: block;width: 80px;height: 80px; border-radius: 100%;border: 1px solid white;margin: 0 auto;margin-bottom: 6px;" /> @itemi.ustunaltiadi
+                        </h3>
+                    </li>
+                    if (string.IsNullOrEmpty(itemi.katler))
+                    {
+                        foreach (var itemix in db.Kategoris.Where(a => a.parentId == itemi.KategoriId).OrderBy(a => a.sira).ToList())
+                        {
+                            <li style="border-bottom: 1px solid #eee; padding: 10px;">
+                                <a href="/@akset.helper.Genel.URLFriendly(itemix.baslik)" style="color:black">
+                                    <img src="~/KategoriResimleri/@itemix.resim" alt="@itemix.baslik" style="display: inline-block;width: 50px;height: 50px;border-radius: 100%;border: 1px solid white;margin-right: 10px;" />@*<i class="fal @itemix.faikon"></i>*@ @itemix.adi
+                                </a>
+                            </li>
+                        }
+                    }
+                    else
+                    {
+                        List<Kategori> kayit = new List<Kategori>();
+                        int iii = 0;
+                        foreach (var itemk in itemi.katler.Split(','))
+                        {
+                            iii++;
+                            int itemf = 0;
+                            string ikn = "fa fa-angle-right";
+                            if (itemk.Contains("-"))
+                            {
+                                itemf = Convert.ToInt32(itemk.Split('-')[0]);
+                                ikn = itemk.Split('-')[1];
+                            }
+                            else
+                            {
+                                itemf = Convert.ToInt32(itemk);
+                            }
+
+                            Kategori kkk = aksetDB.Create().Kategoris.Where(a => a.Id == itemf).FirstOrDefault();
+                            if (kkk != null)
+                            {
+                                kkk.sira = iii;
+                                kkk.faikon = ikn;
+                                kayit.Add(kkk);
+                            }
+
+                        }
+                        int sayi1, sayi2, sonuc, sayac;
+                        if (kayit.FirstOrDefault() != null)
+                        {
+                            sayi1 = kayit.Count();
+                            sayi2 = itemi.kacli;
+                            sonuc = sayi1;
+                            bool drm = false;
+                            if (sayi1 > sayi2 && sayi2 > 0)
+                            {
+                                drm = true;
+                            }
+                        }
+
+                        if (kayit.FirstOrDefault() != null)
+                        {
+                            foreach (var itemix in kayit)
+                            {
+                                <li style="border-bottom: 1px solid #eee; padding: 10px;">
+                                    <a href="/@akset.helper.Genel.URLFriendly(itemix.baslik)" style="color:black">
+                                        <img src="~/KategoriResimleri/@itemix.resim" alt="@itemix.baslik" style="display: inline-block;width: 50px;height: 50px;border-radius: 100%;border: 1px solid white;margin-right:   10px;" /> @itemix.adi
+                                    </a>
+                                </li>
+                            }
+                        }
+
+                    }
+                }
+            </ul>
+            <div class="bslxc3" style="position:absolute;bottom:0px;right:0;left:0;width:100%;background: #ebeff2;">
+                <ul class="ggtthh">
+                    <li><a class="" href="/"><i class="fal fa-home"></i>Anasayfa</a></li>
+                    <li><a href="/"><i class="fal fa-heart"></i> /Favorilerim</a></li>
+                    <li><a href="/"><i class="fal fa-shopping-cart"></i>Sepetim</a></li>
+                    <li class="hesabimAs"><a href="/"><i class="fal fa-user"></i><span>Üyelik</span></a></li>
+                </ul>
+            </div>
+        </div>
+    }
+</body>
+</html>

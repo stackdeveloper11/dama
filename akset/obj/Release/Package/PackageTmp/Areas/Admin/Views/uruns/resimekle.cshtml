@@ -1,0 +1,688 @@
+﻿@model akset.data.urun
+@using System.Data.Entity
+@{
+    ViewBag.Title = "Ürün Ekleme Sihirbazı";
+}
+<style>
+    .form-control {
+        padding: 0 5px !important;
+        border: 1px solid #ccc !important;
+    }
+
+    button.btn-default {
+        padding: 12px 15px !important;
+        background: #2b72bb !important;
+    }
+</style>
+<style>
+    .imge:hover {
+        /*opacity:.5 !important;*/
+        cursor: pointer;
+    }
+
+    .select2-container {
+        padding: 0 !important;
+    }
+
+    .stepwizard-step p {
+        margin-top: 10px;
+    }
+
+    .stepwizard-row {
+        display: table-row;
+    }
+
+    .stepwizard {
+        display: table;
+        width: 50%;
+        position: relative;
+    }
+
+    .stepwizard-step button[disabled] {
+        opacity: 1 !important;
+        filter: alpha(opacity=100) !important;
+    }
+
+    .stepwizard-row:before {
+        top: 14px;
+        bottom: 0;
+        position: absolute;
+        content: " ";
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        z-order: 0;
+    }
+
+    .thumbnail {
+        margin: 0 10px 10px 0 !important;
+        position: relative;
+    }
+
+    .stepwizard-step {
+        display: table-cell;
+        text-align: center;
+        position: relative;
+    }
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        padding: 6px 0;
+        font-size: 12px;
+        line-height: 1.428571429;
+        border-radius: 15px;
+    }
+
+    .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+        opacity: 1 !important;
+    }
+
+    .srk {
+        position: absolute;
+        bottom: -1px;
+        right: -1px;
+        border: 1px solid #adadad;
+        background: white;
+        cursor: move;
+        padding: 0px 3px 0px 3px;
+    }
+
+    .stepwizard {
+        width: 100% !important;
+    }
+
+    #result li {
+        counter-increment: mega-step;
+        height: 142px;
+        display: inline-table;
+        margin-left: 27px !important;
+    }
+
+        #result li:before {
+            /* Increment the value of section counter by 1 */
+            content: counter( mega-step);
+            border: 1px solid #ddd;
+            padding: 2px;
+            position: absolute;
+            background: white;
+            top: -1px;
+            left: -1px;
+            color: #adadad;
+            z-index: 999;
+        }
+
+    .thumbnail a {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        position: relative;
+    }
+
+    .imge {
+        max-height: 132px;
+    }
+
+    .btn-group-xs > .btn, .btn-xs {
+        padding: 1px !important;
+    }
+</style>
+
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Ürün Ekleme Sihirbazı</h2>
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            <div class="col-12">
+                                <form action="/admin/uruns/resimekle" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="file" id="imgInp" name="files" multiple accept="image/*,video/*" />
+                                    <div id="result"></div>
+                                </form>
+                                <script>
+                                    function readURL(input) {
+                                        if (window.File && window.FileList && window.FileReader) {
+                                            var files = event.target.files; //FileList object
+                                            var output = document.getElementById("result");
+                                            for (var i = 0; i < files.length; i++) {
+                                                var file = files[i];
+                                                if (file.type.match('image')) {
+                                                    var picReader = new FileReader();
+                                                    picReader.addEventListener("load", function (event) {
+                                                        var picFile = event.target;
+                                                        var div = document.createElement("li");
+                                                        div.style.width = "100px";
+                                                        div.style.verticalAlign = "top";
+                                                        div.className = "thumbnail";
+                                                        var sss = Math.floor(Math.random() * 600000) + 1;
+                                                        div.innerHTML = "<a href='#jj'><img style='width:100%' id='f-" + sss + "' class='imge' onclick='showimg(\"m-" + sss + "\")' class='thumbnail imgx' id='dsi-" + sss + "' src='" + picFile.result + "'" + "title='" + file.name + "'/><img style='width:100px;height:100px;display:none' id='m-" + sss + "' onclick='showimg(\"m-" + sss + "\");' class='thumbnail imgx' src='" + picFile.result + "'" + "title='" + file.name + "'/></a><div class='srk'><i class='fa fa-crosshairs'></i></div><div class='btn-group-xs btn-group btn-group-vertical' style='position: absolute;left: -25px;bottom: 0;'><div class='btn btn-default' onclick='$(\".ty-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(\".tv-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-success\")'><i class='fa fa-refresh'></i></div><div class='tv-" + sss + " btn btn-success v1' onclick='$(\".v1\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v1\").val(\"" + sss + "\")'>V1</div><div class='tv-" + sss + " btn btn-success v2' onclick='$(\".v2\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v2\").val(\"" + sss + "\")'>V2</div><div onclick='$(\".kpk\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(this).removeClass(\"btn-warning\").addClass(\"btn-primary\");$(\"#kpk\").val(\"" + sss + "\")' class='btn btn-warning kpk ty-" + sss + "'>Kpk</div><div class='btn btn-danger btn-xs' onclick='$(this).parent().parent().remove()'>Sil</div></div>";
+                                                        output.insertBefore(div, null);
+                                                    });
+                                                    picReader.readAsDataURL(file);
+                                                }
+                                                if (file.type.match('video')) {
+                                                    var reader = new FileReader();
+                                                    reader.addEventListener("load", function (event) {
+                                                        var picFile = event.target;
+                                                        var div = document.createElement("li");
+                                                        div.style.width = "100px";
+                                                        div.style.verticalAlign = "top";
+                                                        div.className = "thumbnail";
+                                                        var sss = Math.floor(Math.random() * 600000) + 1;
+                                                        div.innerHTML = "<a href='#jj'><video controls style='width:100%' id='f-" + sss + "' class='imge' onclick='showimg(\"m-" + sss + "\")' class='thumbnail imgx' id='dsi-" + sss + "' src='" + picFile.result + "'" + "title='" + file.name + "'/></video></a><div class='srk'><i class='fa fa-crosshairs'></i></div><div class='btn-group-xs btn-group btn-group-vertical' style='position: absolute;left: -25px;bottom: 0;'><div class='btn btn-default' onclick='$(\".ty-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(\".tv-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-success\")'><i class='fa fa-refresh'></i></div><div class='tv-" + sss + " btn btn-success v1' onclick='$(\".v1\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v1\").val(\"" + sss + "\")'>V1</div><div class='tv-" + sss + " btn btn-success v2' onclick='$(\".v2\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v2\").val(\"" + sss + "\")'>V2</div><div onclick='$(\".kpk\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(this).removeClass(\"btn-warning\").addClass(\"btn-primary\");$(\"#kpk\").val(\"" + sss + "\")' class='btn btn-warning kpk ty-" + sss + "'>Kpk</div><div class='btn btn-danger btn-xs' onclick='$(this).parent().parent().remove()'>Sil</div></div>";
+                                                        output.insertBefore(div, null);
+                                                    });
+                                                    reader.readAsDataURL(file);
+                                                }
+                                            }
+                                        }
+                                        else {
+                                            console.log("Your browser does not support File API");
+                                        }
+                                        $("#imgInp").replaceWith($("#imgInp").val('').clone(true));
+                                    }
+
+                                    $("#imgInp").change(function () {
+                                        readURL(this);
+                                    });
+                                </script>
+                            </div>
+                            <div style="margin-top: 20px;">
+                                <a href="/Admin/uruns/urun" class="btn btn-primary btn-sm">&larr; Ürün Listesine Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    <script src="~/js/Sortable.js"></script>
+    <link href="~/content/css/cropper.css" rel="stylesheet" />
+    <link href="~/content/css/main.css" rel="stylesheet" />
+    <script src="~/content/js/cropper.js"></script>
+    <script src="~/content/js/main.js"></script>
+    <script src="~/content/js/aaJsRender.js"></script>
+    <script src="/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        function kodkullan() {
+            $.ajax({
+                type: "GET",
+                url: "/uruns/urunkodukullan",
+                data: "kod=" + $("#UrunKodu").val(),
+                dataType: "json",
+                success: function (data) {
+                    if (data!="ok") {
+                        $("#kouyri").removeClass("hidden");
+                    }
+                    else {
+                        $("#kouyri").addClass("hidden");
+                    }
+                }
+            });
+        }
+        $(document).ready(function () {
+            setInterval(kodkullan,400);
+            $('form').each(function () {
+                if ($(this).data('validator'))
+                    $(this).data('validator').settings.ignore = ".note-editor *";
+            });
+            var SelectedValue = $("#KategoriId option:selected").text();
+            var vli = $("#KategoriId option:selected").val();
+            $.ajax({
+                type: "GET",
+                url: "/uruns/filitregetir",
+                data: "id=" + vli,
+                dataType: "json",
+                success: function (data) {
+                    var postsTemplate = $.templates("#odejsrender");
+                    var html = postsTemplate.render(data);
+                    $(".buraga").html(html);
+                }
+            });
+        })
+    </script>
+
+    <script>
+        var ttt;
+        function showimg(e) {
+            ttt = e;
+            $("#myModal").modal("show");
+        }
+
+        function readURL(input) {
+            if (window.File && window.FileList && window.FileReader) {
+                var files = event.target.files; //FileList object
+                var output = document.getElementById("result");
+                for (var i = 0; i < files.length; i++) {
+                    var file = files[i];
+                    if (file.type.match('image')) {
+                        var picReader = new FileReader();
+                        picReader.addEventListener("load", function (event) {
+                            var picFile = event.target;
+                            var div = document.createElement("li");
+                            div.style.width = "100px";
+                            div.style.verticalAlign = "top";
+                            div.className = "thumbnail";
+                            var sss = Math.floor(Math.random() * 600000) + 1;
+                            div.innerHTML = "<a href='#jj'><img style='width:100%' id='f-" + sss + "' class='imge' onclick='showimg(\"m-" + sss + "\")' class='thumbnail imgx' id='dsi-" + sss + "' src='" + picFile.result + "'" + "title='" + file.name + "'/><img style='width:100px;height:100px;display:none' id='m-" + sss + "' onclick='showimg(\"m-" + sss + "\");' class='thumbnail imgx' src='" + picFile.result + "'" + "title='" + file.name + "'/></a><div class='srk'><i class='fa fa-crosshairs'></i></div><div class='btn-group-xs btn-group btn-group-vertical' style='position: absolute;left: -25px;bottom: 0;'><div class='btn btn-default' onclick='$(\".ty-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(\".tv-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-success\")'><i class='fa fa-refresh'></i></div><div class='tv-" + sss + " btn btn-success v1' onclick='$(\".v1\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v1\").val(\"" + sss + "\")'>V1</div><div class='tv-" + sss + " btn btn-success v2' onclick='$(\".v2\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v2\").val(\"" + sss + "\")'>V2</div><div onclick='$(\".kpk\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(this).removeClass(\"btn-warning\").addClass(\"btn-primary\");$(\"#kpk\").val(\"" + sss + "\")' class='btn btn-warning kpk ty-" + sss + "'>Kpk</div><div class='btn btn-danger btn-xs' onclick='$(this).parent().parent().remove()'>Sil</div></div>";
+                            output.insertBefore(div, null);
+                        });
+                        picReader.readAsDataURL(file);
+                    }
+                    if (file.type.match('video')) {
+                        var reader = new FileReader();
+                        reader.addEventListener("load", function (event) {
+                            var picFile = event.target;
+                            var div = document.createElement("li");
+                            div.style.width = "100px";
+                            div.style.verticalAlign = "top";
+                            div.className = "thumbnail";
+                            var sss = Math.floor(Math.random() * 600000) + 1;
+                            div.innerHTML = "<a href='#jj'><video controls style='width:100%' id='f-" + sss + "' class='imge' onclick='showimg(\"m-" + sss + "\")' class='thumbnail imgx' id='dsi-" + sss + "' src='" + picFile.result + "'" + "title='" + file.name + "'/></video></a><div class='srk'><i class='fa fa-crosshairs'></i></div><div class='btn-group-xs btn-group btn-group-vertical' style='position: absolute;left: -25px;bottom: 0;'><div class='btn btn-default' onclick='$(\".ty-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(\".tv-" + sss + "\").removeClass(\"btn-primary\").addClass(\"btn-success\")'><i class='fa fa-refresh'></i></div><div class='tv-" + sss + " btn btn-success v1' onclick='$(\".v1\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v1\").val(\"" + sss + "\")'>V1</div><div class='tv-" + sss + " btn btn-success v2' onclick='$(\".v2\").removeClass(\"btn-primary\").addClass(\"btn-success\");$(this).removeClass(\"btn-success\").addClass(\"btn-primary\");$(\"#v2\").val(\"" + sss + "\")'>V2</div><div onclick='$(\".kpk\").removeClass(\"btn-primary\").addClass(\"btn-warning\");$(this).removeClass(\"btn-warning\").addClass(\"btn-primary\");$(\"#kpk\").val(\"" + sss + "\")' class='btn btn-warning kpk ty-" + sss + "'>Kpk</div><div class='btn btn-danger btn-xs' onclick='$(this).parent().parent().remove()'>Sil</div></div>";
+                            output.insertBefore(div, null);
+                        });
+                        reader.readAsDataURL(file);
+                    }
+                }
+            }
+            else {
+                console.log("Your browser does not support File API");
+            }
+            $("#imgInp").replaceWith($("#imgInp").val('').clone(true));
+        }
+
+        $("#imgInp").on("change", function (e) {
+            readURL(e.target.files);
+        });
+
+        $(document).ready(function () {
+            // Grid demo
+            new Sortable(document.getElementById('result'), {
+                animation: 150
+            });
+            $('#myModal').on('shown.bs.modal', function (e) {
+                $("#image").cropper("replace", $("#" + ttt).attr("src"));
+                $("#" + ttt.replace("s", "d")).val($("#image").cropper("getData"));
+                $('#image').cropper('setAspectRatio', 0.6666666666666666);
+            })
+            $('#KategoriId').change(function () {
+                var SelectedValue = $("#KategoriId option:selected").text();//
+                var vli = $(this).val();
+                $.ajax({
+                    type: "GET",
+                    url: "/uruns/filitregetir",
+                    data: "id=" + vli,
+                    dataType: "json",
+                    success: function (data) {
+                        var postsTemplate = $.templates("#odejsrender");
+                        var html = postsTemplate.render(data);
+                        $(".buraga").html(html);
+                        $(".ikide").click();
+                    }
+                });
+            });
+            var navListItems = $('div.setup-panel div a'),
+                    allWells = $('.setup-content'),
+                    allNextBtn = $('.nextBtn'),
+                    allPrevBtn = $('.prevBtn');
+
+            allWells.hide();
+            navListItems.click(function (e) {
+                e.preventDefault();
+                var $target = $($(this).attr('href')),
+                        $item = $(this);
+                if (!$item.hasClass('disabled')) {
+                    navListItems.removeClass('btn-primary').addClass('btn-default');
+                    $item.addClass('btn-primary');
+                    allWells.hide();
+                    $target.show();
+                    $target.find('input:eq(0)').focus();
+                }
+            });
+
+            allPrevBtn.click(function () {
+                var curStep = $(this).closest(".setup-content"),
+                    curStepBtn = curStep.attr("id"),
+                    prevStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().prev().children("a");
+
+                prevStepWizard.removeAttr('disabled').trigger('click');
+            });
+
+            allNextBtn.click(function () {
+                var curStep = $(this).closest(".setup-content"),
+                    curStepBtn = curStep.attr("id"),
+                    nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+                    curInputs = curStep.find("input[type='text'],input[type='url']"),
+                    isValid = true;
+
+                $(".form-group").removeClass("has-error");
+                for (var i = 0; i < curInputs.length; i++) {
+                    if (!curInputs[i].validity.valid) {
+                        isValid = false;
+                        $(curInputs[i]).closest(".form-group").addClass("has-error");
+                    }
+                }
+
+                if (isValid)
+                    nextStepWizard.removeAttr('disabled').trigger('click');
+            });
+
+            $('div.setup-panel div a.btn-primary').trigger('click');
+        });
+
+        $(document).ready(function () {
+
+            $("#KategoriId").select2({
+                language: "tr",
+                placeholder: "Kategori Seçiniz"
+            });
+            $("#FilitreId").select2({
+                language: "tr",
+                placeholder: "Filitre Seçiniz"
+            });
+
+        })
+    </script>
+    <script>
+        function sendFile(file, el) {
+            var form_data = new FormData();
+            form_data.append('file', file);
+            $.ajax({
+                data: form_data,
+                type: "POST",
+                url: "/Admin/Uruns/attachment_uploadurun",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (url) {
+                    $(el).summernote('editor.insertImage', "/UrunResimleri/" + url);
+                }
+            });
+        }
+        var $ccr;
+        $(document).ready(function () {
+            $('#summernote').summernote({
+                callbacks: {
+                    // Clear all formatting of the pasted text
+                    onPaste: function (e) {
+                        var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                        e.preventDefault();
+                        setTimeout(function () {
+                            document.execCommand('insertText', false, bufferText);
+                        }, 10); 9999999999
+                    },
+                    onImageUpload: function (files, editor, welEditable) {
+                        for (var i = files.length - 1; i >= 0; i--) {
+                            sendFile(files[i], this);
+                        }
+                    }
+                },
+                minHeight: 300,
+                maxHeight: null,
+                focus: true,
+                lang: 'tr-TR',
+                toolbar: [
+                    ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height', 'fullscreen', 'undo', 'redo', 'picture']]
+                ]
+            });
+            $("#summernote").summernote("code", $("#urundetayi").val());
+        })
+    </script>
+    <script type="text/javascript">
+        function yolla() {
+            var chkler = "";
+
+            $(".alljobhere").each(function (ind, arr) {
+                var status = $(this).find("label").find("input").prop("checked");
+                var adet = $(this).children("input").val();
+                var filitreid = $(this).parent().attr("class").replace("list-inline oxel1-", "");
+                var ozellikid = $(this).find("label").find("input").attr("id").replace("chk-", "");
+                if (adet != "" && status == true) {
+                    chkler += "," + status + "-" + filitreid + "-" + ozellikid + "-" + adet;
+                }
+            });
+
+            if (chkler != "") {
+                $("#chkler").val(chkler.substr(1));
+            }
+
+            var imgler = "";
+            if ($('.imge').length > 0) {
+                $('.imge').each(function (ind, arr) {
+                    var idsi = $(this).attr("id");
+                    imgler += "ayir[" + idsi + "]" + "{ahmet}" + $(this).attr("src");
+                });
+            }
+
+            $('#imgexz').val(imgler.substr(4));
+
+            $("#Icerik").val(escape($('#summernote').summernote('code')));
+            var atLeastOneIsChecked = $('input[name="aktifi"]:checked').length > 0;
+            if (atLeastOneIsChecked) {
+                $('input[name="aktif"]').prop('checked', true);
+                $('input[name="aktif"]').val("true");
+            }
+            else {
+                $('input[name="aktif"]').prop('checked', false);
+                $('input[name="aktif"]').val('false');
+            }
+            $("#urundetayi").val(escape($('#summernote').summernote('code')));
+            var drmd = true;
+            if ($(".v1").hasClass("btn-primary")) {
+
+            }
+            else {
+                alert("Vitrin 1 (v1) resmi seçiniz");
+                drmd = false;
+            }
+            if ($(".kpk").hasClass("btn-primary")) {
+
+            }
+            else {
+                alert("Kapak resmi seçiniz");
+                drmd = false;
+            }
+            if ($(".v2").hasClass("btn-primary")) {
+
+            }
+            else {
+                alert("Vitrin 2 (v2) resmi seçiniz");
+                drmd = false;
+            }
+            if (drmd) {
+                if ($("#kouyri").hasClass("hidden")) {
+                    $("#smt").click();
+                }
+                else {
+                    alert("Ürüm Kodu Benzeşmesi var");
+                }
+            }
+        }
+    </script>
+}
+<style>
+    .modal-open {
+        overflow: hidden;
+    }
+
+    .modal {
+        display: none;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+
+        .modal.fade .modal-dialog {
+            -webkit-transform: translate(0, -25%);
+            -ms-transform: translate(0, -25%);
+            -o-transform: translate(0, -25%);
+            transform: translate(0, -25%);
+            -webkit-transition: -webkit-transform 0.3s ease-out;
+            -o-transition: -o-transform 0.3s ease-out;
+            transition: transform 0.3s ease-out;
+        }
+
+        .modal.in .modal-dialog {
+            -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+            -o-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 10px;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: #ffffff;
+        border: 1px solid #999999;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        outline: 0;
+    }
+
+    .modal-dialog {
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0;
+        padding: 0;
+        margin-top: 0 !important;
+    }
+
+    .modal-content {
+        height: auto;
+        min-height: 100%;
+        border-radius: 0;
+    }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: #000000;
+    }
+
+        .modal-backdrop.fade {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        .modal-backdrop.in {
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+
+    .modal-header {
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        .modal-header .close {
+            margin-top: -2px;
+        }
+
+    .modal-title {
+        margin: 0;
+        line-height: 1.42857143;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 8px 30px;
+    }
+
+    .modal-footer {
+        padding: 15px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+
+        .modal-footer .btn + .btn {
+            margin-left: 5px;
+            margin-bottom: 0;
+        }
+
+        .modal-footer .btn-group .btn + .btn {
+            margin-left: -1px;
+        }
+
+        .modal-footer .btn-block + .btn-block {
+            margin-left: 0;
+        }
+
+    .modal-scrollbar-measure {
+        position: absolute;
+        top: -9999px;
+        width: 50px;
+        height: 50px;
+        overflow: scroll;
+    }
+
+    @@media (min-width: 768px) {
+        .modal-dialog {
+            width: 600px;
+            margin: 30px auto;
+        }
+
+        .modal-content {
+            -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-sm {
+            width: 300px;
+        }
+    }
+
+    .modal {
+        padding-right: 0 !important;
+    }
+
+    @@media (min-width: 992px) {
+        .modal-lg {
+            width: 900px;
+        }
+    }
+
+    button.btn-default {
+        background: white !important;
+    }
+</style>

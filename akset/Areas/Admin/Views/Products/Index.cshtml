@@ -1,0 +1,452 @@
+﻿@model IEnumerable<akset.data.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Ürünler
+                <span>
+                    >
+                    Ürün Listesi
+                </span>
+            </h1>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-commenting-o"></i> </span>
+                        <h2>Ürün Listesi</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <p class="text-right">
+                                <a href="/Admin/products/create" class="btn btn-success btn-xs">Yeni Ürün Ekle →</a>
+                            </p>
+
+                            <table id="myTable" class="table table-hover table-condensed table-bordered table-striped" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>
+                                            Id
+                                        </th>
+                                        <th>
+                                            İsim
+                                        </th>
+                                        <th>
+                                            Ekleyen
+                                        </th>
+                                        <th>
+                                            Satış Sayısı
+                                        </th>
+                                        <th>
+                                            Toplam Stok
+                                        </th>
+                                        <th>
+                                            Taban Fiyat
+                                        </th>
+                                        <th>
+                                            Bugünün Fırsatı
+                                        </th>
+                                        <th>
+                                            Değerlendirmeler
+                                        </th>
+                                        <th>
+                                            Yayındamı
+                                        </th>
+                                        <th>
+                                            Öne Çıkan
+                                        </th>
+                                        <th>
+                                            #
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    <script src="/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/fixedheader/3.1.7/css/fixedHeader.bootstrap.min.css" rel="stylesheet"
+          type="text/css" />
+    <link href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap.min.css" rel="stylesheet"
+          type="text/css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+            type="text/javascript"></script>
+
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/fixedheader/3.1.7/js/dataTables.fixedHeader.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.14.0/dist/sweetalert2.all.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <style>
+        table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc {
+            background: none;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+        }
+
+        label {
+            margin-bottom: 0px !important;
+        }
+
+        .switch-input {
+            display: none;
+        }
+
+        .switch-label {
+            display: block;
+            width: 48px;
+            height: 24px;
+            text-indent: -150%;
+            clip: rect(0 0 0 0);
+            color: transparent;
+            user-select: none;
+        }
+
+            .switch-label::before,
+            .switch-label::after {
+                content: "";
+                display: block;
+                position: absolute;
+                cursor: pointer;
+            }
+
+            .switch-label::before {
+                width: 100%;
+                height: 100%;
+                background-color: #dedede;
+                border-radius: 9999em;
+                -webkit-transition: background-color 0.25s ease;
+                transition: background-color 0.25s ease;
+            }
+
+            .switch-label::after {
+                top: 0;
+                left: 0;
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background-color: #fff;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+                -webkit-transition: left 0.25s ease;
+                transition: left 0.25s ease;
+            }
+
+        .switch-input:checked + .switch-label::before {
+            background-color: #89c12d;
+        }
+
+        .switch-input:checked + .switch-label::after {
+            left: 24px;
+        }
+
+        #myTable_processing {
+            background: white;
+            box-shadow: 0 0 18px black;
+            padding: 20px;
+            width: 320px;
+            height: 67px;
+            margin-left: -160px;
+        }
+    </style>
+    <script>
+        //$(document).ready(function () {
+        //    $('.foolu').dataTable({
+        //        responsive: {
+        //            details: {
+        //                type: 'column'
+        //            }
+        //        },
+        //        columnDefs: [{
+        //            className: 'control',
+        //            orderable: false,
+        //            targets: 0
+        //        }],
+        //        paging: false,
+        //        "bFilter": false,
+        //        "info": false
+        //    });
+        //})
+
+        var tablesi;
+        $(function () {
+
+            tablesi = $('#myTable').dataTable({
+                //"columnDefs": [
+                //    {
+                //        width: 84, targets: -1
+                //    },
+                //    {
+                //        className: "ortala", targets: '_all'
+                //    }
+                //],
+                order: [[0, "desc"]],
+                responsive: {
+                    details: {
+                        type: 'column'
+                    }
+                },
+                columnDefs: [{
+                    className: 'control',
+                    targets: 0
+                }],
+                "language":
+                {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
+                },
+                "processing": true,
+                "serverSide": true,
+                "ajax":
+                {
+                    "url": "/admin/products/GetProducts",
+                    "type": "POST",
+                    "dataType": "JSON"
+                },
+                "columns": [
+                    {
+                        "render": function (data, type, full) {
+                            return "<div class='hidden'>" + full.Date + "</div>";
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full.Id;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full.Name;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full.Added_By;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full.SoldCount;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full.TotalStock;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full.BaseAmount;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            var cek = "";
+                            if (full.TodayDeal == true) {
+                                cek = "<div class='switch'><input id='switch-" + full.Id + "' type='checkbox' onchange='islem(" + full.Id + ",\"TodayDeal\")' class='switch-input' checked/><label for='switch-" + full.Id + "' class='switch-label'>Switch</label></div>";
+                            }
+                            else {
+                                cek = "<div class='switch'><input id='switch-" + full.Id + "' onchange='islem(" + full.Id + ",\"TodayDeal\")' type='checkbox' class='switch-input'/><label for='switch-" + full.Id + "' class='switch-label'>Switch</label></div>";
+                            }
+                            return cek;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return full.Reviews;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            var cek = "";
+                            if (full.Publised == true) {
+                                cek = "<div class='switch'><input id='switchp-" + full.Id + "' type='checkbox'  onchange='islem(" + full.Id + ",\"Published\")' class='switch-input' checked/><label for='switchp-" + full.Id + "' class='switch-label'>Switch</label></div>";
+                            }
+                            else {
+                                cek = "<div class='switch'><input id='switchp-" + full.Id + "' type='checkbox'  onchange='islem(" + full.Id + ",\"Published\")' class='switch-input'/><label for='switchp-" + full.Id + "' class='switch-label'>Switch</label></div>";
+                            }
+                            return cek;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            var cek = "";
+                            if (full.Featured == true) {
+                                cek = "<div class='switch'><input id='switchk-" + full.Id + "' type='checkbox' onchange='islem(" + full.Id + ",\"Featured\")' class='switch-input' checked/><label for='switchk-" + full.Id + "' class='switch-label'>Switch</label></div>";
+                            }
+                            else {
+                                cek = "<div class='switch'><input id='switchk-" + full.Id + "' type='checkbox' onchange='islem(" + full.Id + ",\"Featured\")' class='switch-input'/><label for='switchk-" + full.Id + "' class='switch-label'>Switch</label></div>";
+                            }
+                            return cek;
+                        }
+                    },
+                    {
+                        "render": function (data, type, full) {
+                            return "<div class='btn-group'><a href='/admin/products/edit/"+full.Id+"' class='btn btn-success btn-xs' title='Düzenle'><i class='fa fa-edit'></i></a><div class='btn btn-info btn-xs' id='m-" + full.Id + "' onclick='islem(" + full.Id + ",\"Kopyala\")'  title='Kopyala'><i class='fa fa-copy'></i></div><div class='btn btn-danger btn-xs' onclick='islem(" + full.Id + ",\"Sil\")' title='Sil'><i class='fa fa-trash'></i></div></div>";
+                        }
+                    }
+                    //{
+                    //    "render": function (data, type, full) {
+                    //        return full.baslik;
+                    //    }
+                    //},
+                    //{
+                    //    "render": function (data, type, full) {
+                    //        var dtStart1 = new Date(parseInt(full.tarih.substr(6)));
+                    //        var dtStartWrapper1 = moment(dtStart1);
+                    //        return "<div style='width: 120px;white-space: pre-line;margin: 0 auto;'>" + dtStartWrapper1.format('DD/MM/YYYY HH:mm') + "</div>";
+                    //    }
+                    //},
+                    //{
+                    //    "render": function (data, type, full) {
+                    //        return full.wetransferlink;
+                    //    }
+                    //},
+                    //{
+                    //    "render": function (data, type, full) {
+                    //        return full.halkgorsunmu ? "Evet" : "Hayır";
+                    //    }
+                    //},
+                    //{
+                    //    "render": function (data, type, full) {
+                    //        return full.aktif ? "<a href='/admin/makales/durum/" + full.Id + "' class='md-btn-mini md-btn md-btn-danger'>Pasif Et</a>" : "<a href='/admin/makales/durum/" + full.Id + "' class='md-btn-mini md-btn md-btn-success'>Aktif Et</a>";
+                    //    }
+                    //},
+                    //{
+                    //    "render": function (data, type, full) {
+                    //        return "<a href='/admin/makales/edit/" + full.Id + "' class='md-btn-mini md-btn md-btn-primary'>Düzenle</a><a onclick='return confirm(\"Silmek İstediğinize Emin misiniz?\")' href='/admin/makales/delete/" + full.Id + "' class='md-btn-mini md-btn md-btn-danger'>Sil</a>";
+                    //    }
+                    //}
+                ]
+            });
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        });
+
+
+        function islem(id, nere) {
+            switch (nere) {
+                case "Sil":
+                    Swal.fire({
+                        title: 'Silmek İstediğinize Emin misiniz!',
+                        text: "Sildiğiniz Ürün Geri Getirilemez",
+                        icon: 'error',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Evet, Sil!',
+                        cancelButtonText: "İptal",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                url: "/admin/Products/delete/" + id,
+                                cache: false,
+                                success: function (html) {
+                                    $('#myTable').DataTable().ajax.reload();
+                                }
+                            });
+                        }
+                    })
+                    break;
+                case "Kopyala":
+                    Swal.fire({
+                        title: 'Aynı Ürün Eklenecektir!',
+                        text: "",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Evet, Kopyala!',
+                        cancelButtonText: "İptal",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                url: "/admin/Products/Copy/" + id,
+                                cache: false,
+                                success: function (html) {
+                                    $('#myTable').DataTable().ajax.reload();
+                                }
+                            });
+                        }
+                    })
+                    break;
+                case "TodayDeal":
+                    //  var drm = $('.frst-' + id + ':checked').length > 0;
+                    $.ajax({
+                        url: "/admin/Products/todaydeal/" + id,
+                        cache: false,
+                        success: function (html) {
+                            toastr["success"]("Seçiminiz Kayıt Edildi.!")
+                            $('#myTable').DataTable().ajax.reload();
+                        }
+                    });
+                    break;
+                case "Published":
+                    //   var drm = $('.pub-' + id + ':checked').length > 0;
+                    $.ajax({
+                        url: "/admin/Products/Published/" + id,
+                        cache: false,
+                        success: function (html) {
+                            toastr["success"]("Seçiminiz Kayıt Edildi.!")
+                            $('#myTable').DataTable().ajax.reload();
+                        }
+                    });
+                    break;
+                case "Featured":
+                    //   var drm = $('.fea-' + id + ':checked').length > 0;
+                    $.ajax({
+                        url: "/admin/Products/Featured/" + id,
+                        cache: false,
+                        success: function (html) {
+                            toastr["success"]("Seçiminiz  Kayıt Edildi.!")
+                            $('#myTable').DataTable().ajax.reload();
+                        }
+                    });
+                    break;
+                default:
+            }
+        }
+    </script>
+}

@@ -1,0 +1,151 @@
+﻿@model akset.data.User
+@using System.Data.Entity
+@{ 
+    int sa = 0;
+}
+<style>
+    @@media screen and (max-width: 991px) {
+        .logopng {
+            margin-left: -40px !important;
+        }
+    }
+</style>
+<style>
+    .kkk li {
+        border-bottom: 2px solid #eee;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+
+        .kkk li a {
+            color: black !important;
+        }
+
+    .ddff {
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        padding: 20px;
+    }
+</style>
+<div class="col-12">
+    <div class="row">
+        <div class="col-md-2 col-xs-12">
+            <h4>Hesabım</h4>
+            <ul class="list-unstyled kkk">
+                <li>
+                    <a href="/myaccounts">
+                        Hesabım
+                    </a>
+                </li>
+                <li>
+                    <a href="/myorders">
+                        <strong>Siparişlerim</strong>
+                    </a>
+                </li>
+                <li>
+                    <a href="/myaddress">
+                        Adres Bilgileri
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10 col-xs-12">
+            <div class="ddff">
+                <h5 style="margin-bottom:15px"><strong>Siparişlerim</strong></h5>
+                <div class="row">
+                    <div class="col-12" style="border-right: 1px solid #ddd;">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            #
+                                        </th>
+                                        <th>
+                                            Ürün
+                                        </th>
+                                        <th>
+                                            Geçmiş
+                                        </th>
+                                        <th>
+                                            #
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (aksetDB.Create().sipariss.Where(a => a.UserId == Model.Id).FirstOrDefault() != null)
+                                    {
+                                        foreach (var item in aksetDB.Create().sipariss.Where(a => a.UserId == Model.Id).ToList())
+                                        {
+                                            sa++;
+                                            <tr>
+                                                <td>@sa</td>
+                                                <td>
+                                                    @if (aksetDB.Create().siparisurunlers.Where(a => a.siparisId == item.Id).FirstOrDefault() != null)
+                                                    {
+                                                        int yy = 0;
+                                                        decimal fiy = 0;
+                                                        <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal-@item.Id">
+                                                            заказы
+                                                        </button>
+                                                        <div class="modal fade" id="myModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                        <h4 class="modal-title" id="myModalLabel">Siparişler</h4>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <table class="table table-bordered table-striped">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>#</th>
+                                                                                    <th>Ürün</th>
+                                                                                    <th>Numara</th>
+                                                                                    <th>Ödeme</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                @foreach (var itemi in aksetDB.Create().siparisurunlers.Include(a => a.urun).Where(a => a.siparisId == item.Id).ToList())
+                                                                                {
+                                                                                    yy++;
+                                                                                    fiy += Convert.ToInt32(itemi.adet) * Convert.ToDecimal(itemi.urun.fiyat);
+                                                                                    <tr>
+                                                                                        <td>@yy</td>
+                                                                                        <td>@itemi.urun.urunbaslik</td>
+                                                                                        <td>@itemi.adet</td>
+                                                                                        <td>@string.Concat(Convert.ToInt32(itemi.adet) * Convert.ToDecimal(itemi.urun.fiyat))</td>
+                                                                                    </tr>
+                                                                                }
+                                                                                <tr>
+                                                                                    <td colspan="4" style="text-align:right">
+                                                                                        <strong>Toplam: @fiy TL</strong>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    }
+                                                </td>
+                                                <td>@item.yenisiparistarih.ToString("dd.MM.yyyy hh:mm dddd")</td>
+                                                <td>
+                                                    @item.siparisdurum
+                                                </td>
+                                            </tr>
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

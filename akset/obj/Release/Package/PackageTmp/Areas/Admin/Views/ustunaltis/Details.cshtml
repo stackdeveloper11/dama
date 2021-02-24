@@ -1,0 +1,42 @@
+﻿@model akset.data.ustunalti
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ustunalti</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kategori.durumu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kategori.durumu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ustmenu.ustmenuadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ustmenu.ustmenuadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ustunaltiadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ustunaltiadi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

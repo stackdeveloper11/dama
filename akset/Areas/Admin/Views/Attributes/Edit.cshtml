@@ -1,0 +1,276 @@
+﻿@model akset.data.Attribute
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@section pagespecific{
+
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @*<link href="~/content/tagify.css" rel="stylesheet" />
+    <script src="~/content/jQuery.tagify.min.js"></script>
+    <script>
+        var inputElm = document.getElementById("tgf"),
+            tagify = new Tagify(inputElm);
+
+        inputElm.addEventListener('change', onChange)
+
+        function onChange(e) {
+            // outputs a String
+            var TagValues = JSON.parse(e.target.value);
+            var TagArray = [];
+            var fff = "";
+            for (let i = 0; i < TagValues.length; i++) {
+               // TagArray.push(TagValues[i].value)
+                fff += "," + TagValues[i].value;
+            }
+            alert(fff.substr(1));
+           // var obj = JSON.parse(e.target.value);
+          //  alert(obj.value);
+          
+        }
+    </script>*@
+
+
+    <script>
+        var liste = [];
+        $(document).ready(function () {
+
+            var ddd = "@Html.Raw(Model.AttributeValues!=null?string.Concat(string.Join(",",Model.AttributeValues.Select(a=>a.Value).ToArray())):"")";
+            if (ddd!="") {
+                if (ddd.indexOf(",") != -1) {
+                    for (var i = 0; i < ddd.split(",").length; i++) {
+                        liste.push(ddd.split(",")[i]);
+                    }
+                }
+                else {
+                    liste.push(ddd);
+                }
+            }
+
+
+        })
+        function findValueInArray(value, arr) {
+            var result = "yok";
+            for (var i = 0; i < arr.length; i++) {
+                var name = arr[i].toLowerCase();
+                if (name == value) {
+                    result = 'var';
+                    break;
+                }
+            }
+            return result;
+        }
+
+      
+        function ekle() {
+            var li = "";
+            // alert(findValueInArray($(".dgr").val().toLowerCase(), liste));
+            if (findValueInArray($(".dgr").val().toLowerCase(), liste) == "yok") {
+                liste.push($(".dgr").val());
+                li = "<li class='an-" + liste.length + "' style='margin-bottom:5px'><div class='row'><div class='col-xs-8'>" + liste.length + ". " + $(".dgr").val() + "</div><div class='col-xs-4 text-right'><div class='btn btn-xs btn-danger' onclick='sil(\"" + liste.length + "\",\"" + $(".dgr").val() + "\")'>Sil</div></div>" + "</div></li>";
+            }
+            else {
+                alert("Daha Önce Eklenmiş");
+            }
+
+            $(".dgrler").append(li);
+        }
+
+        function sil(a, b) {
+            $(".an-" + a).remove();
+            liste = $.grep(liste, function (value) {
+                return value != b;
+            });
+            $(".dgrler").html("");
+            var li = "";
+            for (var i = 0; i < liste.length; i++) {
+                var name = liste[i];
+                var d = i + 1;
+
+                li += "<li class='an-" + d + "' styModeAttributeValueToArrayoArrayayslmAttributeValuesargin-bottom:5px'><div class='row'><div class='col-xs-8'>" + d + ". " + name + "</div><div class='col-xs-4 text-right'><div class='btn btn-xs btn-danger' onclick='sil(\"" + d + "\",\"" + name + "\")'>Sil</div></div>" + "</div></li>";
+            }
+            $(".dgrler").append(li);
+        }
+        function yolla() {
+            var lst = "";
+            for (var i = 0; i < liste.length; i++) {
+                var name = liste[i];
+                var d = i + 1;
+
+                lst += "," + name;
+            }
+            $("#tagler").val(lst.substr(1));
+
+
+            if (document.getElementById("hhh").checked) {
+                $("#Insertable").val("true");
+            }
+            else {
+                $("#Insertable").val("false");
+            }
+            $(".kyt").click();
+        }
+    </script>
+}
+<style>
+   
+    .switch {
+        position: relative;
+        display: inline-block;
+    }
+
+    label {
+        margin-bottom: 0px !important;
+    }
+
+    .switch-input {
+        display: none;
+    }
+
+    .switch-label {
+        display: block;
+        width: 48px;
+        height: 24px;
+        text-indent: -150%;
+        clip: rect(0 0 0 0);
+        color: transparent;
+        user-select: none;
+    }
+
+        .switch-label::before,
+        .switch-label::after {
+            content: "";
+            display: block;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .switch-label::before {
+            width: 100%;
+            height: 100%;
+            background-color: #dedede;
+            border-radius: 9999em;
+            -webkit-transition: background-color 0.25s ease;
+            transition: background-color 0.25s ease;
+        }
+
+        .switch-label::after {
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+            -webkit-transition: left 0.25s ease;
+            transition: left 0.25s ease;
+        }
+
+    .switch-input:checked + .switch-label::before {
+        background-color: #89c12d;
+    }
+
+    .switch-input:checked + .switch-label::after {
+        left: 24px;
+    }
+</style>
+
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Öznitelik Düzenle </h2>
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.Id)
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" for="Name">Eklenebilir</label>
+                                    <div class="col-md-10">
+                                        <div class='switch'>
+                                            @if (Model.Insertable)
+                                            {
+                                                <input id='hhh' type='checkbox' name="hhh" checked class='switch-input' />
+                                            }
+                                            else
+                                            {
+                                                <input id='hhh' type='checkbox' name="hhh" class='switch-input' />
+                                            }
+                                            <label for='hhh' class='switch-label'>Switch</label>
+                                        </div>
+                                        @if (Model.Insertable)
+                                        {
+                                            <input type="hidden" id="Insertable" name="Insertable" value="true" />
+                                        }
+                                        else
+                                        {
+                                            <input type="hidden" id="Insertable" name="Insertable" value="false" />
+                                        }
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" for="Name">Değerler</label>
+                                    <div class="col-md-10">
+                                        <div class="input-group" style="width:200px">
+                                            <input type="text" class="form-control dgr" name="name" placeholder="Değer Ekle" />
+                                            <div class="input-group-btn">
+                                                <div class="btn btn-success edgr" onclick="ekle()">Ekle</div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-unstyled dgrler" style="width:200px;margin-top:10px">
+                                            @if (Model.AttributeValues != null)
+                                            {
+                                                int ii = 0;
+                                                foreach (var item in Model.AttributeValues)
+                                                {
+                                                    ii++;
+                                                    <li class='an-@ii' style='margin-bottom:5px'><div class='row'><div class='col-xs-8'>@ii. @item.Value</div><div class='col-xs-4 text-right'><div class='btn btn-xs btn-danger' onclick='sil("@ii", "@item.Value")'>Sil</div></div></div></li>
+                                                }
+                                            }
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="hidden" id="tagler" name="tagler" value="" />
+                                        <input type="submit" value="Kaydet" class="btn btn-default kyt hidden" />
+                                        <div class="btn btn-default" onclick="yolla()">Kaydet</div>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                            <div>
+                                <a href="/Admin/Attributes/Index" class="btn btn-primary btn-sm">&larr; Öznitelikler Listesine Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

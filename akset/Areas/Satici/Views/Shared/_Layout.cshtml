@@ -1,0 +1,901 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ASP.NET Uygulamam</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
+    <link href="~/content/bootstrap.css" rel="stylesheet" />
+    <link href="/content/css/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container-fluid border-bottom top-nav bg-white">
+        <div class="row">
+            <div class="col-12 text-right">
+                <ul class="list-inline  mb-0 py-3">
+                    <li class="list-item">
+                        <a href="#" style="color:none; text-decoration :none;">Panelim</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" style="color:none; text-decoration :none;"> Çıkış Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header border-bottom shadow">
+        <div class="container-fluid">
+            <div class="row py-3">
+                <div class="pt-3 resize-menu">
+                    <div class="d-flex justify-content-between ">
+                        <div class="back ">
+                            <i class="la la-undo  la-2x "></i>
+                            <span class="pl-3"> <i class="las la-bars la-2x"></i></span>
+
+                        </div>
+                        <div class="logo">
+                            <img src="https://esosyete.com/public/uploads/all/iULXZ4Ub3uSIXbxQcA0a5C29SI2ZtN73YX9pkQpy.png" alt="Esosyete Online Alışveriş sitesi Aradığınız herşey burada" class="mw-100 h-30px h-md-40px logo-img" height="40">
+                        </div>
+                        <div class="mobile-search ">
+                            <i class="las la-search la-flip-horizontal la-2x mobile-search"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 pt-2 top-search">
+                    <div class="row">
+                        <div class="col-lg-2  pl-5 category-toggle">
+                            <!--
+                            <div class="category- navbar-light bg-light pl-2 rounded border text-center pt-2 " style="width: 50px; height: 40px;">
+                                <span class="navbar-toggler-icon"></span>
+                            </div>
+                            <div class="dropdown-menu p-0 categories " aria-labelledby="allcategories">
+                                <div class="p-3 bg-soft-primary d-none d-lg-block w-100 all-category position-relative text-left" style="width:250px">
+                                    <span class="fw-600 fs-16 mr-3">Kategoriler</span>
+                                    <a href="#" class="text-reset">
+                                        <span class="d-none d-lg-inline-block">Hepsini gör &gt;</span>
+                                    </a>
+                                </div>
+
+
+                                                    <ul class="list-group position-relative list-unstyled">
+                                                        <li class="category-item border-0 sub-menu">
+                                                            <a href="https://esosyete.com/category/kadin" class="text-truncate text-reset py-2 px-3 d-block">
+                                                                <img class="cat-image mr-2 opacity-60 ls-is-cached lazyloaded" src="https://esosyete.com/public/uploads/categories/icon/iviARnPdPxLBpoot57nAPcjn4BrlRE2c2p5YGbtv.png" data-src="https://esosyete.com/public/uploads/categories/icon/iviARnPdPxLBpoot57nAPcjn4BrlRE2c2p5YGbtv.png" width="16" alt="KADIN" onerror="this.onerror=null;this.src='https://esosyete.com/public/assets/img/placeholder.jpg';">
+                                                                <span class="cat-name">KADIN</span>
+                                                            </a>
+                                                            <div class="sub-menu-item c-scrollbar-light">
+                                                                <div class="row p-5">
+                                                                    <div class="col-12">
+                                                                        <div class="col-lg-3">
+                                                                            <span class="text-reset fw-600">Giyim</span>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                                <li class="list-group-item border-0"><a href="#" class="text-reset">AAA</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">aasd</li>
+                                                                                <li class="list-group-item border-0">asd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">adsad</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">aasd</li>
+                                                                                <li class="list-group-item border-0">adsad</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">aasd</li>
+                                                                                <li class="list-group-item border-0">asd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="category-item sub-menu">
+                                                            <a href="https://esosyete.com/category/kadin" class="text-truncate text-reset py-2 px-3 d-block">
+                                                                <img class="cat-image mr-2 opacity-60 ls-is-cached lazyloaded" src="https://esosyete.com/public/uploads/categories/icon/iviARnPdPxLBpoot57nAPcjn4BrlRE2c2p5YGbtv.png" data-src="https://esosyete.com/public/uploads/categories/icon/iviARnPdPxLBpoot57nAPcjn4BrlRE2c2p5YGbtv.png" width="16" alt="KADIN" onerror="this.onerror=null;this.src='https://esosyete.com/public/assets/img/placeholder.jpg';">
+                                                                <span class="cat-name">KADIN</span>
+                                                            </a>
+                                                            <div class="sub-menu-item c-scrollbar-light">
+                                                                <div class="row p-5">
+                                                                    <div class="col-12">
+                                                                        <div class="col-lg-3">
+                                                                            <strong>TEST</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">aasd</li>
+                                                                                <li class="list-group-item border-0">asd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">aasd</li>
+                                                                                <li class="list-group-item border-0">asd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">adasd</li>
+                                                                                <li class="list-group-item border-0">adsad</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">aasd</li>
+                                                                                <li class="list-group-item border-0">adsad</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                            <strong>Giyim</strong>
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item border-0">aasd</li>
+                                                                                <li class="list-group-item border-0">asd</li>
+                                                                                <li class="list-group-item border-0">asdasd</li>
+                                                                                <li class="list-group-item border-0">asdsad</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                        -->
+                        </div>
+                        <div class="col-lg-10">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-src m-0" id="search" name="q" placeholder="Aradığınız ürün, kategori veya mağazayı yazınız" autocomplete="off">
+                                <button class="btn btn-search" type="submit">
+                                    <i class="la la-search la-flip-horizontal fs-18"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4  pt-3 text-center top-zone">
+                    <ul class="list-inline">
+                        <li class="list-inline-item badges">
+                            <i class="la la-refresh la-2x opacity-80"></i>
+                            <span class="badge nav-badge">0</span>
+                            <span>Karşılaştır</span>
+                        </li>
+                        <li class="list-inline-item badges">
+                            <i class="la la-heart-o la-2x opacity-80"></i>
+                            <span class="badge  nav-badge">0</span>
+                            <span>Favorilerim</span>
+                        </li>
+                        <li class="list-inline-item badges cart-icon">
+                            <i class="la la-shopping-cart la-2x opacity-80"></i>
+                            <span class="badge nav-badge">0</span>
+                            <span>Sepet</span>
+                            <div class="cart-list d-none">
+
+                                <div class="row">
+                                    <div class="col text-left">
+                                        <h5 class="fw-600 fs-16 pl-2 ">Sepetteki Urunler</h5>
+                                    </div>
+                                    <hr />
+                                </div>
+                                <div class="cart-detail c-scrollbar-light">
+                                    <div class="row mb-2">
+                                        <div class="col-2 ml-1">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" alt="" class="cart-img" />
+                                        </div>
+                                        <div class="col-8">
+                                            <span class="float-left pl-3 text-truncate fw-600 d-block">
+                                                <a href="#">Minie Mause  Kapuşonlu Takım </a>
+                                            </span>
+                                            <span class="float-left pl-3 fw-600 d-block">
+                                                <span>1 X</span><span>95.00</span>
+                                            </span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-2 ml-1">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" alt="" class="cart-img" />
+                                        </div>
+                                        <div class="col-8">
+                                            <span class="float-left pl-3 text-truncate fw-600 d-block">
+                                                <a href="#">Minie Mause  Kapuşonlu Takım </a>
+                                            </span>
+                                            <span class="float-left pl-3 fw-600 d-block">
+                                                <span>1 X</span><span>95.00</span>
+                                            </span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-2 ml-1">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" alt="" class="cart-img" />
+                                        </div>
+                                        <div class="col-8">
+                                            <span class="float-left pl-3 text-truncate fw-600 d-block">
+                                                <a href="#">Minie Mause  Kapuşonlu Takım </a>
+                                            </span>
+                                            <span class="float-left pl-3 fw-600 d-block">
+                                                <span>1 X</span><span>95.00</span>
+                                            </span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-2 ml-1">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" alt="" class="cart-img" />
+                                        </div>
+                                        <div class="col-8">
+                                            <span class="float-left pl-3 text-truncate fw-600 d-block">
+                                                <a href="#">Minie Mause  Kapuşonlu Takım </a>
+                                            </span>
+                                            <span class="float-left pl-3 fw-600 d-block">
+                                                <span>1 X</span><span>95.00</span>
+                                            </span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-2 ml-1">
+                                            <img src="https://www.esosyete.com/public/uploads/products/thumbnail/s2xYquqRzbmskssQnJMkZoiZKBTI2IIJag4ZPHJG.jpeg" alt="" class="cart-img" />
+                                        </div>
+                                        <div class="col-8">
+                                            <span class="float-left pl-3 text-truncate fw-600 d-block">
+                                                <a href="#">Minie Mause  Kapuşonlu Takım </a>
+                                            </span>
+                                            <span class="float-left pl-3 fw-600 d-block">
+                                                <span>1 X</span><span>95.00</span>
+                                            </span>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="px-3 py-2 fs-15 border-top d-flex justify-content-between">
+                                    <span class="text-muted">ara toplam</span>
+                                    <span class="fw-600">95.00₺</span>
+                                </div>
+                                <div class="d-flex justify-content-center p-3">
+                                    <a href="#" class="btn btn-soft btn-sm">
+                                        Sepeti görüntüle
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="header-menu ">
+                    <div class="mobile-close">
+                        <i class="las la-times la-2x"></i>
+                    </div>
+                    <ul class="list-group list-group-horizontal header-nav position-relative">
+                        <li class="list-group-item nav-li" data="kadin">
+                            <a href="#" class="nav-a">
+                                <span>KADIN</span>
+                            </a>
+                            <div class="sub-nav absolute c-scrollbar-light">
+                                <ul class="list-group-item">
+                                    <div class="row">
+                                        <div class="pl-3 pt-1 pb-3 sub-menu-wrap">
+                                            <li class="list-group sub-li"><a href="https://google.com">Bluz & Tunik & Büstiyer</a></li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-12  pt-3 pb-3 sub-menu-banner">
+                                            <div class="col mb-4">
+                                                <img src="https://cdn.dsmcdn.com/ty71/pimWidgetApi/1142576_mobile_20210219070853_Samsung180221mobil.jpg" alt="" width="267px" height="139px">
+                                            </div>
+                                            <div class="col">
+                                                <img src="https://cdn.dsmcdn.com/mnresize/500/247/ty72/campaign/banners/original/555622/1f50cb0e08_0_detay.jpg" alt="" width="267px" height="139px" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item nav-li" data="erkek">
+                            <a href="#" class="nav-a">
+                                <span>ERKEK</span>
+                            </a>
+                            <div class="sub-nav absolute c-scrollbar-light">
+                                <ul class="list-group-item">
+                                    <div class="row">
+                                        <div class="pl-3 pt-1 pb-3 sub-menu-wrap">
+                                            <li class="list-group sub-li"><a href="https://google.com">Bluz & Tunik & Büstiyer</a></li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                            <li class="list-group sub-li">Bluz & Tunik & Büstiyer</li>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-12  pt-3 pb-3 sub-menu-banner">
+                                            <div class="col mb-4">
+                                                <img src="https://cdn.dsmcdn.com/ty71/pimWidgetApi/1142576_mobile_20210219070853_Samsung180221mobil.jpg" alt="" width="267px" height="139px">
+                                            </div>
+                                            <div class="col">
+                                                <img src="https://cdn.dsmcdn.com/mnresize/500/247/ty72/campaign/banners/original/555622/1f50cb0e08_0_detay.jpg" alt="" width="267px" height="139px" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="list-group-item nav-li">
+                            <a href="#" class="nav-a">
+                                <span>ÇOCUK</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item nav-li">
+                            <a href="#" class="nav-a">
+                                <span>EV & YAŞAM</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item nav-li">
+                            <a href="#" class="nav-a">
+                                <span>KÖY PAZARIM</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item nav-li">
+                            <a href="#" class="nav-a">
+                                <span>KOZMETİK</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item nav-li">
+                            <a href="#" class="nav-a">
+                                <span>AYAKKABI & ÇANTA</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item nav-li">
+                            <a href="#" class="nav-a">
+                                <span>SAAT & ÇANTA</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item nav-li">
+                            <a href="#" class="nav-a">
+                                <span>ELEKTRONİK & ÇANTA</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar-wrapper d-none">
+        <div class="sidebar">
+            <div class="sidebar-top py-4 px-4">
+                <div class="sidebar-picture">
+                </div>
+                <div class="text-center pt-4">
+                    <h4 class="d-inline fw-600"><strong>İREM BUTİK</strong></h4>
+                    <span class="ml-2">
+                        <i class="las la-check-circle" style="color:green"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="sidebar-logout">
+                <i class="las la-sign-out-alt la-2x"></i>
+            </div>
+            <div class="sidebar-exit">
+                <i class="las la-times la-2x"></i>
+            </div>
+            <ul class="list-group sidebar-list">
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="las la-home"></i>
+                        <span class="fw-500">Gösterge Paneli</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="las la-file-alt"></i>
+                        <span>Satın alım geçmişi</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="la la-heart-o"></i>
+                        <span>Favorilerim</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="/Satici/Urunler">
+                        <i class="lab la-sketch"></i>
+                        <span>Ürünler</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="las la-money-bill"></i>
+                        <span>Siparişler</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="las la-backward"></i>
+                        <span>Alınan Geri Ödeme İstekleri</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="las la-star-half-alt aiz-side-nav-icon"></i>
+                        <span>Ürün İncelemeleri</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="las la-cog"></i>
+                        <span>Mağaza Ayarı</span>
+                    </a>
+                </li>
+                <li class="list-group-item border-0">
+                    <a href="#">
+                        <i class="las la-user"></i>
+                        <span>Profili Yönet</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center py-2">
+                        <h3><strong>Satılan Tutar</strong></h3>
+                        <span>Satılan miktarınız(cari ay)</span>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn sidebar-button">0.00</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 pt-5 pb-5">
+                <table class="table-borderles w-75">
+                    <tr>
+                        <td class="pl-3"><strong>Toplam Satılan :</strong></td>
+                        <td class="text-right"><strong>0.00₺</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="pl-3"><strong>Geçen Ay Satıldı :</strong></td>
+                        <td class="text-right"><strong>0.00₺</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="space"></div>
+    </div>
+
+
+    <div class="container">
+        <div class="py-5">
+            <div class="row">
+                <div class="col-lg-2 desktop-sidebar bg-white p-0">
+                    <div class="sidebar-top py-4 px-4">
+                        <div class="sidebar-picture">
+                        </div>
+                        <div class="text-center pt-4">
+                            <h4 class="d-inline fw-600"><strong>İREM BUTİK</strong></h4>
+                            <span class="ml-2">
+                                <i class="las la-check-circle" style="color:green"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <ul class="list-group sidebar-list">
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-home"></i>
+                                <span>Gösterge Paneli</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-file-alt"></i>
+                                <span>Satın alım geçmişi</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-download"></i>
+                                <span>İndirilenler</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="la la-heart-o"></i>
+                                <span>Favorilerim</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="lab la-sketch"></i>
+                                <span>Ürünler</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-money-bill"></i>
+                                <span>Siparişler</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-backward"></i>
+                                <span>Alınan Geri Ödeme İstekleri</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-star-half-alt aiz-side-nav-icon"></i>
+                                <span>Ürün İncelemeleri</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-cog"></i>
+                                <span>Mağaza Ayarı</span>
+                            </a>
+                        </li>
+                        <li class="list-group-item border-0">
+                            <a href="#">
+                                <i class="las la-user"></i>
+                                <span>Profili Yönet</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="row">
+                        <div class="col-12 ">
+                            <div class="text-center py-2">
+                                <h4><strong>Satılan Tutar</strong></h4>
+                                <span>Satılan miktarınız(cari ay)</span>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn sidebar-button">0.00</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 pt-5 pb-5">
+                        <table class="table-borderles w-100">
+                            <tr>
+                                <td>Toplam Satılan :</td>
+                                <td class="text-right"><strong>0.00₺</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Geçen Ay Satıldı :</td>
+                                <td class="text-right"><strong>0.00₺</strong></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-10 panel-content p-5">
+
+
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="privacy">
+        <div class="container">
+            <div class="d-flex justify-content-around align-items-center">
+                <a class="text-reset privacy-a  text-center p-4 d-block" href="#">
+                    <i class="la la-file-text la-2x mb-2 orange"></i>
+                    <h4 class="privacy-link">Kullanım Koşulları</h4>
+                </a>
+                <a class="text-reset privacy-a  text-center p-4 d-block" href="#">
+                    <i class="la la-mail-reply la-2x mb-2 orange"></i>
+                    <h4 class="privacy-link">İade politikasi</h4>
+                </a>
+                <a class="text-reset privacy-a text-center p-4 d-block" href="#">
+                    <i class="la la-support la-2x mb-2 orange"></i>
+                    <h4 class="privacy-link">Destek Politikası</h4>
+                </a>
+                <a class="text-reset privacy-a text-center p-4 d-block" href="#">
+                    <i class="las la-exclamation-circle la-2x mb-2 orange"></i>
+                    <h4 class="privacy-link">Gizlilik Politikası</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer bg-footer pt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-12 pt-5">
+                    <div class="footer-logo">
+                        <img src="https://esosyete.com/public/uploads/all/iULXZ4Ub3uSIXbxQcA0a5C29SI2ZtN73YX9pkQpy.png" alt="Alternate Text" />
+                    </div>
+                    <span class="mt-3 mb-3 d-block info-title">
+                        Esosyete Online alışveriş sitesi çok yak yakında sizlerle
+                    </span>
+                    <div class="footer-form">
+                        <input type="type" name="name" value="" class="form-control" /> <button class="btn btn-search" type="submit">Abone Ol</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pt-5 pl-5">
+                    <span class="info-title">İLETIŞIM BİLGİLERİ</span>
+                    <ul class="list-group footer-info">
+                        <li class="list-group-item">
+                            <span class="d-block info-top">Adres</span>
+                            <span class="info-alt">Köşk, Kışla Cd. No:52, 38030 Melikgazi/Kayseri</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="d-block  info-top">Telefon</span>
+                            <span class="info-alt">444 6 422</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="d-block  info-top">E-posta</span>
+                            <span class="info-alt">info@esosyete.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 pt-5">
+                    <span class="info-title pl-4">Hesabım</span>
+                    <ul class="list-group footer-info">
+                        <li class="list-group-item">
+                            <a class="info-alt " href="#">Çıkış Yap</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="info-alt" href="#">Sipariş Geçmişi</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="info-alt" href="#">Favorilerim</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="info-alt" href="#">Sipariş Takibi</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+
+
+                <div class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-lg-3 info-title pl-5">
+                        <span class="align-text-bottom">
+                            Toymedya Tüm Hakları Saklıdır
+                        </span>
+                    </div>
+                    <div class="col-lg-6 text-right"><img src="https://esosyete.com/public/uploads/all/nseWZ7zzszbHrBSq4QVr4vJYXkxhhqTO5EboPXlU.svg" alt="Alternate Text" /></div>
+                    <div class="col-lg-2"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="mobile-nav text-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3 bg-soft-primary mobile-nav-item">
+                    <a href="#">
+                        <i class="las la-home la-2x"></i>
+                    </a>
+                </div>
+                <div class="col-3  mobile-nav-item">
+                    <a href="#">
+                        <i class="las la-list-ul la-2x"></i>
+                    </a>
+                </div>
+                <div class="col-3  mobile-nav-item">
+                    <a href="#">
+                        <i class="las la-shopping-cart la-2x"></i>
+                    </a>
+                </div>
+                <div class="col-3  mobile-nav-item">
+                    <a href="#" class="sidebar-toggle">
+                        <i class="la la-user la-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/jquery-2.2.4.min.js"></script>
+    <script src="~/content/js/noui.js"></script>
+    <script src="~/content/js/custom.js"></script>
+    <script src="~/content/js/cc.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/3.4.0/imask.min.js"></script>
+
+</body>
+</html>

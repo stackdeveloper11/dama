@@ -1,0 +1,157 @@
+﻿
+@model akset.data.sagtaraf
+
+@{
+    ViewBag.Title = "Create";
+}
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-picture-o fa-fw "></i>
+                Spotlar
+                <span>
+                    >
+                    Spot Ekle
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/spots/spot" class="btn btn-success">Spot Listesine Dön</a>
+            </div>
+        </div>
+    </div>
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false" style="margin:0">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-picture-o"></i> </span>
+                        <h2>Spot Ekle</h2>
+                    </header>
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        @using (Html.BeginForm("Create", "Spots", FormMethod.Post, new { enctype = "multipart/form-data", @class = "smart-form" }))
+                        {
+                            //baslik,KategoriId,buyukresim,kucukresim,vitrinmi,sira,aktifmi
+                            @Html.AntiForgeryToken()
+                            <div class="widget-body">
+                                <table class="model-state">
+                                    @foreach (var item in ViewContext.ViewData.ModelState)
+                                    {
+                                        if (item.Value.Errors.Any())
+                                        {
+                                            <tr>
+                                                <td><b>@item.Key</b></td>
+                                                <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                                <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+                                <style>
+                                    table.model-state {
+                                        border-color: #600;
+                                        border-width: 0 0 1px 1px;
+                                        border-style: solid;
+                                        border-collapse: collapse;
+                                        font-size: .8em;
+                                        font-family: arial;
+                                    }
+
+                                    table.model-state td {
+                                        border-color: #600;
+                                        border-width: 1px 1px 0 0;
+                                        border-style: solid;
+                                        margin: 0;
+                                        padding: .25em .75em;
+                                        background-color: #FFC;
+                                    }
+                                </style>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <fieldset style="padding: 0 14px 5px;">
+                                    <section>
+                                        <label class="label">Başlık</label>
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.baslik, new { htmlAttributes = new { @maxlength = "300" } })
+                                            @Html.ValidationMessageFor(model => model.baslik, "", new { @class = "text-danger" })
+                                        </label>
+                                        <div class="note">
+                                            <strong>Maksimum</strong> 300 Karakter.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Resim (310x304)</label>
+                                        <div class="input input-file">
+                                            <span class="button">
+                                              <input type="file" id="file" name="resim" accept="image/jpeg" />Resim Seç
+                                            </span>
+                                            <input type="text" placeholder="Büyük Resim Ekle" readonly="">
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Sıra</label>
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.sira, new { htmlAttributes = new { @maxlength = "300" } })
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Adres</label>
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.adres, new { htmlAttributes = new { @maxlength = "300" } })
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Aktif mi</label>
+                                        <label class="input">
+                                            <select name="aktifmi" class="form-control">
+                                                <option value="Evet">Evet</option>
+                                                <option value="Hayir">Hayır</option>
+                                            </select>
+                                        </label>
+                                    </section>
+                                </fieldset>
+                                <footer>
+                                    <div class="btn btn-success" onclick="yolla()">Kaydet</div>
+                                    <input type="submit" id="smt" class="btn btn-success hidden" name="submit" value="Kaydet" />
+                                </footer>
+                            </div>
+                            <input type="checkbox" name="aktif" class="hidden">
+                        }
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate-vsdoc.js"></script>
+    <script type="text/javascript">
+        function yolla() {
+            var atLeastOneIsChecked = $('input[name="aktifi"]:checked').length > 0;
+            if (atLeastOneIsChecked) {
+                $('input[name="aktif"]').prop('checked', true);
+                $('input[name="aktif"]').val("true");
+            }
+            else {
+                $('input[name="aktif"]').prop('checked', false);
+                $('input[name="aktif"]').val('false');
+            }
+            $("#smt").click();
+        }
+    </script>
+}

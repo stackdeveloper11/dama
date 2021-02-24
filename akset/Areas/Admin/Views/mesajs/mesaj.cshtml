@@ -1,0 +1,150 @@
+﻿
+@model ICollection<akset.data.mesaj>
+@{ 
+    int say = 0;
+}
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Mesajlar
+                <span>
+                    >
+                    Mesaj Listesi
+                </span>
+            </h1>
+        </div>
+     
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-commenting-o"></i> </span>
+                        <h2>Mesaj Listesi</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            <div class="table-responsive" >
+                                <table class="table table-bordered" id="dt_basic">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Adı Soyadı</th>
+                                            <th>Tel No</th>
+                                            <th>Mail</th>
+                                            <th>Ip</th>
+                                            <th>Mesaj</th>
+                                            <th>Okundumu</th>
+                                            <th>#</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            say++;
+                                            <tr>
+                                                <td>
+                                                    @say
+                                                </td>
+                                                <td>
+                                                    @item.adisoyadi
+                                                </td>
+                                                <td>
+                                                    @item.telno
+                                                </td>
+                                                <td>
+                                                    @item.mail
+                                                </td>
+                                                <td>
+                                                    @item.ip
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/mesajs/mesajoku/@item.Id" class="btn btn-primary btn-xs">Oku</a>
+                                                </td>
+                                                <td>
+                                                    @string.Concat(item.okundumu ? "Aktif" : "Pasif")
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/mesajs/delete/@item.Id" onclick="return confirm('Silmek İstediğinize Emin misiniz?')" class="btn btn-danger btn-xs">Sil</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+
+
+@section pagespecific {
+    <script>
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+        })
+
+    </script>
+}

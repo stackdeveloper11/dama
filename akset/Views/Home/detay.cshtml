@@ -1,0 +1,1012 @@
+﻿@model akset.data.urun
+@using System.Linq;
+@using System.Data.Entity
+@{
+    ViewBag.Title = Html.Raw(Model.urunbaslik);
+    ViewBag.Desc = Html.Raw(Model.urunkisaaciklama);
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.15.0/lazyload.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        var myLazyLoad = new LazyLoad();
+        myLazyLoad.update();
+        $('#upox').click(function () {
+            scrolldown();
+            console.log("up");
+        });
+        $('#downox').click(function () {
+            scrollup();
+            console.log("down");
+        });
+    });
+
+    function scrolldown() {
+        document.getElementById('slider-nav-thumbnails').scrollTop -= 50;
+    }
+
+    function scrollup() {
+        document.getElementById('slider-nav-thumbnails').scrollTop += 50;
+    }
+
+    (function ($) {
+        $.fn.hasScrollBar = function () {
+            return this.get(0).scrollHeight > this.height();
+        }
+    })(jQuery);
+
+</script>
+<style>
+    @@media screen and (max-width:768px) {
+        .bastg, .gizlecepte {
+            display: none !important;
+        }
+
+        .ffgghh {
+            background: white;
+        }
+    }
+
+    @@media screen and (min-width:768px) {
+        .ddttyyrr {
+            float: left !important;
+        }
+    }
+</style>
+<ul class="list-inline bastg">
+    <li class="list-inline-item" style="font-size:14px">
+        <a href="/"><i class="fa fa-home"></i></a>
+    </li>
+    <li class="list-inline-item">
+        <img src="~/img/breadcrumb-right-arrow.png" />
+    </li>
+    <li class="list-inline-item" style="font-size:14px">
+        @Model.urunadi
+    </li>
+
+</ul>
+
+<style>
+    .lg-outer #lg-share:after {
+        content: "\e80d";
+        display: none;
+    }
+
+    h1 {
+        width: 100%;
+        color: #333;
+        line-height: 26px;
+    }
+
+    .listesi li {
+        width: 73px;
+    }
+
+        .listesi li a img:hover {
+            border: 1px solid #f27a1a !important;
+        }
+
+    .ddff {
+        height: 64px;
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        line-height: 64px;
+        font-size: 22px;
+    }
+
+    .ddff2 {
+        background-color: #fff;
+        color: #414040;
+        font-size: 12px;
+        height: 48px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 102;
+        border: 1px solid #eaeaea;
+        border-top: 0;
+    }
+
+    .cargo-stamp-box {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: block;
+        width: 72px;
+        min-height: 29px;
+        z-index: 5;
+    }
+
+        .cargo-stamp-box .rush-delivery-green, .karg {
+            width: 72px;
+            height: 18px;
+            margin-bottom: 5px;
+            background-color: #3ec461;
+            padding: 5px 0;
+        }
+
+        .cargo-stamp-box span {
+            display: block;
+            font-size: 11px;
+            color: #fff;
+            line-height: 10px;
+            text-align: center;
+        }
+
+    .favorite {
+        position: absolute;
+        right: 16px;
+        top: 9px;
+        width: 36px;
+        height: 36px;
+        z-index: 1;
+    }
+
+        .favorite i {
+            float: left;
+            width: 43px;
+            height: 43px;
+            background: url(/img/favorite-heart.svg) no-repeat;
+        }
+
+
+    .lisst li {
+        margin-bottom: 9px;
+        overflow: hidden;
+    }
+
+    .list-inline-item img:hover {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0) scale(1,1);
+        -webkit-transform: scale(1.04);
+        -moz-transform: scale(1.04);
+        -ms-transform: scale(1.04);
+        -o-transform: scale(1.04);
+        transform: scale(1.04);
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .4s ease;
+        -o-transition: all .4s ease;
+        -ms-transition: all .4s ease;
+        transition: all .4s ease;
+    }
+
+    .product-info-container .brand {
+        font-size: 14px;
+        color: #333;
+        height: 18px;
+        line-height: 18px;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .product-info-container .name {
+        position: relative;
+        display: block;
+        line-height: normal;
+        font-size: 13px;
+        color: #666;
+        margin-top: 2px;
+        text-align: left;
+    }
+
+    .product-info-container .price-container {
+        height: 31px;
+        margin-top: -2px;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        text-align: left;
+    }
+
+        .product-info-container .price-container .market-price {
+            height: 22px;
+            font-size: 15px;
+            line-height: normal;
+            color: #878787;
+            text-decoration: line-through;
+            margin-right: 5px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .product-info-container .price-container .sale-price {
+            height: 30px;
+            text-align: left;
+            line-height: 30px;
+            font-size: 18px;
+            color: #f27a1a;
+            display: inline-block;
+        }
+
+    .product-info-container {
+        float: left;
+        background-color: hsla(0,0%,100%,.9);
+        position: relative;
+        padding: 10px 10px 5px;
+    }
+
+    .carousel-indicators {
+        bottom: -35px;
+        text-align: center;
+    }
+
+        .carousel-indicators li {
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background: black;
+            display: inline-block;
+        }
+
+            .carousel-indicators li:active {
+                background: red !important;
+            }
+    /*.carousel-item img:hover
+                {
+                    transform: scale(1.5);
+                }*/
+</style>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.single-item').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            dots: true,
+
+            prevArrow: false,
+            nextArrow: false,
+            adaptiveHeight: false
+        });
+
+    });
+    $('.single-item').on('afterChange', function (event, slick, currentSlide, nextSlide) {
+
+        //$('.slick-current .zoom-img').elevateZoom({
+        //    zoomWindowWidth: 600,
+        //    zoomWindowHeight: 900
+        //});
+    });
+    $(document).ready(function () {
+        $(".slider-nav-thumbnails").css("height", $(".single-item").height() - 48 + "px");
+        setTimeout(function () {
+            if ($('.slider-nav-thumbnails').hasScrollBar()) {
+                $(".btn-link").removeClass("d-none");
+            }
+        }, 500);
+
+    })
+
+</script>
+<style>
+    .slick-prev {
+        float: none;
+        display: block !important;
+        width: 100%;
+        width: 100%;
+    }
+
+    .slick-next {
+        float: none;
+        display: block !important;
+        width: 100%;
+    }
+
+    /*
+    .slick-next:before {
+      content: "\02C5";
+      color: red;
+      font-size: 30px;
+    }*/
+    .slider-nav-thumbnails .slick-list .slick-track .slick-current img {
+        border-right: 3px solid black;
+        opacity: .6;
+    }
+
+    .zoomWindowContainer div {
+        border: 1px solid black !important;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.40);
+    }
+</style>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/3.0.8/jquery.elevatezoom.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        var isMobile = false; //initiate as false
+        // device detection
+        if (/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent)
+            || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(navigator.userAgent.substr(0, 4))) {
+            isMobile = true;
+        }
+        if (isMobile == false) {
+            $('.single-item').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+                var img = $(slick.$slides[nextSlide]).find("img");
+                $('.zoomWindowContainer,.zoomContainer').remove();
+                $(img).elevateZoom({
+                    easing: true,
+                    zoomWindowFadeIn: 500,
+                    zoomWindowFadeOut: 500,
+                    lensFadeIn: 500,
+                    lensFadeOut: 500,
+                    zoomWindowOffetx: 10,
+                    cursor: 'crosshair',
+                    zoomWindowWidth: 450,
+                    zoomWindowHeight: 626
+                });
+            });
+            $('.single-item .slick-current img').elevateZoom({
+                easing: true,
+                zoomWindowFadeIn: 500,
+                zoomWindowFadeOut: 500,
+                lensFadeIn: 500,
+                lensFadeOut: 500,
+                zoomWindowOffetx: 10,
+                cursor: 'crosshair',
+                zoomWindowWidth: 450,
+                zoomWindowHeight: 626
+            });
+        }
+    });
+</script>
+<style>
+    body {
+        overflow-x: hidden !important;
+    }
+
+    @@media screen and (min-width:768px) {
+        .lmtds {
+            display: none;
+        }
+
+        .slick-dots {
+            display: none !important;
+        }
+    }
+
+    @@media screen and (min-width:768px) {
+        .btn-link {
+            display: none;
+        }
+    }
+
+    @@media screen and (max-width:768px) {
+        .ddttyyrr {
+            width: 65px;
+            float: right;
+            margin-left: 5px !important;
+            margin-right: 0 !important;
+            position: relative;
+            z-index: 9;
+            margin-top: 7px;
+        }
+
+        .slick-dots {
+            display: none !important;
+        }
+
+        .zmnsi {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .zoom-img {
+            width: 100% !important;
+            height: auto !important;
+        }
+
+        .slider-nav-thumbnails {
+            overflow-y: auto;
+        }
+
+        .altlerde {
+            width: 74% !important;
+        }
+
+        .wsmobileheader {
+            height: 52px !important;
+        }
+
+
+        #wsmobileheader .input-group-sm {
+            display: none;
+        }
+
+        .ffgghh {
+            padding: 0;
+        }
+
+        .ustter {
+            padding-top: 0 !important;
+        }
+
+        .slick-dots {
+            display: flex;
+            z-index: 1;
+            position: relative;
+            justify-content: center;
+            margin: 0;
+            padding: 5px 5px;
+            list-style-type: none;
+            z-index: 1;
+            justify-content: center;
+            padding: 5px 5px;
+            list-style-type: none;
+            position: absolute;
+            bottom: 75px;
+            background: #888;
+            border-radius: 20px;
+        }
+
+            .slick-dots li {
+                margin: 0 0.25rem;
+            }
+
+            .slick-dots button {
+                display: block;
+                width: 5px !important;
+                height: 5px !important;
+                padding: 0;
+                border: none;
+                border-radius: 100%;
+                background-color: black;
+                text-indent: -9999px;
+            }
+
+            .slick-dots li.slick-active button {
+                background-color: #fff;
+            }
+    }
+
+    .fancybox-opened {
+        border-top: 4px solid #ff671b !important;
+    }
+
+    .fancybox-close {
+        position: absolute;
+        top: 0 !important;
+        right: 0 !important;
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        z-index: 8040;
+        background: none #000;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.74) !important;
+    }
+
+    .fancybox-skin {
+        padding: 0 !important;
+    }
+
+    .fancybox-close:after {
+        content: "x";
+        font-size: 21px;
+        font-weight: 600;
+        display: inline-block;
+        line-height: 34px;
+        color: black;
+    }
+
+    .lg-outer #lg-share-whatsApp .lg-icon {
+        color: #30f123;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        var genslc = $(".slick-dots").width() + 10;
+        var ekrngen = ($(window).width() / 2) - (genslc / 2);
+        $(".slick-dots").css("left", ekrngen + "px");
+    })
+</script>
+<div class="row">
+    <div class="col-md-5 col-xs-12 ffgghh" style="float: left;">
+        <div class="ddttyyrr" id="ddttyyrr" style="width:78px;float: right; margin-right: 10px;position: relative; z-index: 9;margin-top:7px">
+            <div class="btn btn-link d-none" style="padding: 0;width: 100%;padding:0" id="upox">
+                <i class="fa fa-arrow-up"></i>
+            </div>
+            <div class="slider-nav-thumbnails" id="slider-nav-thumbnails">
+                @{ int ii = 0; }
+                @foreach (var files in Directory.GetFiles(Server.MapPath("~/urunresimleri/" + Model.resim)).OrderByDescending(line => System.Text.RegularExpressions.Regex.Matches(line, "kpk").Count).ToList())
+                {
+                    ii++;
+                    FileInfo info = new FileInfo(files);
+                    var fileName = Path.GetFileName(info.FullName);
+
+
+                    if (fileName.Contains("mp4"))
+                    {
+                        <div id="d-@ii" style="margin-bottom:0;cursor:pointer" class="sldff" onclick="$('@string.Concat("#slick-slide-control0",ii-1)').click();$('.sldff').removeClass('active');$(this).addClass('active')">
+                            <video style="width:100%">
+                                <source src="/urunresimleri/@Model.resim/@string.Concat(fileName)" type="video/mp4">
+                            </video>
+                        </div>
+                    }
+                    else
+                    {
+                        <div id="d-@ii" style="margin-bottom:5px;cursor:pointer" class="sldff" onclick="$('@string.Concat("#slick-slide-control0",ii-1)').click();$('.sldff').removeClass('active');$(this).addClass('active')">
+                            <img src="/home/get?kod=@Model.UrunKodu&yol=/urunresimleri/@Model.resim/@string.Concat(fileName)" style="width:100%" />
+                        </div>
+                    }
+
+                }
+            </div>
+            <div class="btn btn-link d-none" style="padding: 0;width: 100%;padding:0" id="downox">
+                <i class="fa fa-arrow-down"></i>
+            </div>
+        </div>
+
+
+        <script>
+            var $container = $(".conta");
+            var $video = $container.children("video"), video = $video[0];
+            $(document).ready(function () {
+                $video.on("click", toggle);
+            })
+            function toggle() {
+                video[video.paused ? "play" : "pause"]();
+            }
+        </script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.min.js"></script>
+        <script type="text/javascript" src="/js/lg-zoom.js"></script>
+        <script type="text/javascript" src="/js/lg-share.js?id=999"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/css/jquery.fancybox.min.css" />
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                if ($(window).width() < 768) {
+                    $('.single-item').lightGallery({ selector: ".item" });
+                }
+                else {
+                    $('.zmnsi').fancybox();
+                }
+            });
+            $(function () {
+                $("#btnform").fancybox();
+            });
+        </script>
+        <style>
+            #paylasModal.product-social-icon-wrapper {
+                float: left;
+                text-align: center;
+                width: 280px;
+                padding: 6px;
+            }
+
+                #paylasModal.product-social-icon-wrapper .pcon {
+                    float: left;
+                    width: 100%;
+                    border: 1px solid #c4c4c4;
+                    padding: 10px 0;
+                }
+
+                #paylasModal.product-social-icon-wrapper .paylasTitle {
+                    float: left;
+                    width: 100%;
+                    color: #222222;
+                }
+
+                #paylasModal.product-social-icon-wrapper ul {
+                    display: inline-block;
+                    vertical-align: top;
+                    margin-top: 10px;
+                }
+
+                #paylasModal.product-social-icon-wrapper li {
+                    float: left;
+                    margin-right: 8px;
+                }
+
+                    #paylasModal.product-social-icon-wrapper li a {
+                        float: left;
+                        color: #414753;
+                        border: 1px solid #414753;
+                        text-align: center;
+                        border-radius: 5px;
+                        width: 40px;
+                        height: 34px;
+                        font-size: 20px;
+                    }
+
+                        #paylasModal.product-social-icon-wrapper li a i {
+                            line-height: 38px;
+                            background: transparent;
+                        }
+
+            .fancybox-close {
+                top: -36px !important;
+            }
+
+            #paylasModal.product-social-icon-wrapper ul {
+                display: inline-block;
+                vertical-align: top;
+                margin-top: 10px;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            #paylasModal.product-social-icon-wrapper .paylasTitle span {
+                font-size: 10px;
+            }
+
+            #paylasModal.product-social-icon-wrapper .paylasTitle p {
+                font-size: 15px;
+                margin: 0;
+            }
+
+            .lg-outer #lg-share-whatsapp .lg-icon:after {
+                content: "";
+            }
+
+            #lg-share-facebook .lg-icon {
+                display: none;
+            }
+        </style>
+        <div class="altlerde" style="position:relative;width:100%;display:block;margin-top:7px">
+            <div class="single-item">
+                @{
+                    string kpki = "";
+                    foreach (var files in Directory.GetFiles(Server.MapPath("~/urunresimleri/" + Model.resim)).OrderByDescending(line => System.Text.RegularExpressions.Regex.Matches(line, "kpk").Count).ToList())
+                    {
+                        FileInfo info = new FileInfo(files);
+                        var fileName = Path.GetFileName(info.FullName);
+
+                        if (fileName.Contains("kpk-"))
+                        {
+                            kpki = fileName;
+                        }
+                    }
+                }
+                @{
+                    int iid = 0;
+                    var liste = new List<KeyValuePair<int, string>>();
+                    foreach (var files in Directory.GetFiles(Server.MapPath("~/urunresimleri/" + Model.resim)).OrderByDescending(line => System.Text.RegularExpressions.Regex.Matches(line, "kpk").Count).ToList())
+                    {
+                        FileInfo info = new FileInfo(files);
+                        var fileName = Path.GetFileName(info.FullName);
+                        int kacta = 99;
+                        if (fileName.Contains("kpk"))
+                        {
+                            kacta = 1;
+                        }
+                        if (fileName.Contains("v1"))
+                        {
+                            kacta = 2;
+                        }
+                        if (fileName.Contains("v2"))
+                        {
+                            kacta = 3;
+                        }
+
+                        liste.Add(new KeyValuePair<int, string>(kacta, fileName));
+                    }
+                }
+
+                @foreach (var files in liste.OrderBy(a => a.Key))
+                {
+                    ii++;
+
+                    <div id="d-@iid" class="conta">
+                        @if (files.Value.Contains("mp4"))
+                        {
+                            <video muted autoplay loop style="width:100%">
+                                <source src="/urunresimleri/@Model.resim/@string.Concat(files.Value)" type="video/mp4">
+                            </video>
+                        }
+                        else
+                        {
+                            <a class="item zmnsi fancybox" rel="group" href="/home/get?kod=@Model.UrunKodu&yol=/urunresimleri/@Model.resim/@string.Concat(files.Value)">
+                                <img src="/home/get?kod=@Model.UrunKodu&yol=/urunresimleri/@Model.resim/@string.Concat(files.Value)" data-zoom-image="/home/get?kod=@Model.UrunKodu&yol=/urunresimleri/@Model.resim/@string.Concat(files.Value)" class="zoom-img" style="height:626px" />
+                            </a>
+                        }
+                    </div>
+                }
+            </div>
+            <div class="lmtds" style="bottom:0px;left:0;right:0;text-align:center;background: rgba(255, 255, 255, 0.7490196078431373);">
+                <div class="urunadi" style="padding: 0 5px;text-align: left;width: 100% !important;height: 30px;line-height: 30px;font-size: 11px;">
+                    @Model.urunbaslik
+                </div>
+                <div class="urunadi" style="width: 100% !important;background: rgba(255, 255, 255, 0.7490196078431373);padding: 0 5px;text-align: left;">
+                    <span style="color: #ff671b;font: normal normal 600 normal 22px / 35px 'Open Sans', sans-serif;">₺ @Model.fiyat</span>
+
+                    @if (!string.IsNullOrEmpty(Model.eskifiyat))
+                    {
+                        <span style="display: inline-block;color: #838383;text-decoration: line-through;font: normal normal 100 normal 17px 'Open Sans', sans-serif;">₺ @string.Concat(Convert.ToDecimal(Model.fiyat) - Convert.ToDecimal(Model.fiyat) * Convert.ToDecimal(Model.eskifiyat) / 100)</span>
+                        <div style="float:right;border: 1px solid #ff6600;color:#ff6600;transform: scale(1);transition: ease-in-out 1s all;
+                             width: 60px;font-size: 13px;line-height: 16px;text-align: center;">
+                            %@Model.eskifiyat İNDİRİM
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="lmtds" style="position:absolute;top:12px;left:13px;right:19px">
+                <div style="float:left">
+                    <a href="/"><i class="fa fa-long-arrow-left" style="color:white;font-size:25px"></i></a>
+                </div>
+                <div style="float:right">
+                    <a href="#paylasModal" id="btnform"><i class="fal fa-share-alt" style="color:white;font-size:25px;margin-right:10px"></i></a>
+                    <a href=""><i class="far fa-heart" style="color:white;font-size:25px"></i></a>
+                </div>
+            </div>
+        </div>
+        <style>
+            @@media screen and (max-width:768px) {
+                .lsts {
+                    display: none;
+                }
+            }
+        </style>
+        <div class="lsts" style="float:left;width:417px;margin-left: 70px;margin-top:15px">
+            <ul class="list-inline" style="text-align:center">
+                <li class="list-inline-item" style="text-align: center;border: 1px solid #eee;background: #fff;padding: 10px;width:50%">
+                    <a href="https://api.whatsapp.com/send?text=@Request.Url" style="color:black">
+                        <i class='fab fa-whatsapp' style="color:green"></i> Whatsapp ile Sipariş Ver
+                    </a>
+                </li>
+                <li class="list-inline-item" style="text-align: center;border: 1px solid #eee;background: #fff;padding: 10px;width:49%">
+                    <a href="tel:0553 740 11 11" style="color:black">
+                        <i class='fa fa-phone' style="color:#ff671b"></i> Telefon ile Sipariş Ver
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <style>
+        h1 .product-brand-text {
+            width: 100%;
+            display: block;
+            font-size: 27px;
+        }
+
+        h1 .product-name-text {
+            width: 100%;
+            display: block;
+            font-size: 16px;
+            margin-top: 5px;
+            overflow: hidden;
+            position: relative;
+            max-height: 36px;
+            line-height: 18px;
+        }
+
+
+        .ffg {
+            border: 1px solid #ededed;
+            background: #fff;
+            padding: 10px 20px;
+        }
+
+        .sale-price {
+            font-size: 24px;
+            color: #f27a1a;
+        }
+
+        .add-to-favorite {
+            position: relative;
+            float: right;
+            width: 10%;
+            background-color: #fcfbfa;
+            border: 1px solid #dcdcdc;
+            border-radius: 3px;
+            height: 50px;
+            margin-top: 8px;
+            margin-right: 20px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+            .add-to-favorite svg {
+                display: inline-block;
+                float: none;
+                height: 100%;
+                width: 100%;
+            }
+
+        .itmxkutu {
+            font-size: 12px;
+            float: left;
+            width: 51px;
+            height: 43px;
+            border: 1px solid #d8d8d8;
+            border-radius: 2px;
+            line-height: 41px;
+            text-align: center;
+            margin-right: 4px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            color: black;
+            text-decoration: none !important;
+        }
+
+            .itmxkutu:hover {
+                border: 2px solid #ff671b !important;
+            }
+    </style>
+    <div class="col-md-7 col-xs-12" style="padding:0;position:relative;">
+        <div class="col-12 ffg">
+            <h1 class="gizlecepte">
+                <div class="product-brand-text" style="border-bottom: 1px solid #ddd;padding-bottom: 10px;">
+                    @Model.urunbaslik <span style="float:right;color:#ea1b23">@Model.fiyat TL</span>
+                    @if (!string.IsNullOrEmpty(Model.eskifiyat))
+                    {
+                        <span class="market-price" style="color: #878787;text-decoration: line-through;float: right;font-size: 19px;margin-right: 15px;">@string.Concat(Convert.ToDecimal(Model.fiyat) - Convert.ToDecimal(Model.fiyat) * Convert.ToDecimal(Model.eskifiyat) / 100) TL</span>
+                    }
+                </div>
+                <span class="product-name-text gizlecepte" style="text-align:right;color:#9c9c9c">Ürün Kodu: @Model.UrunKodu</span>
+                @if (!string.IsNullOrEmpty(Model.eskifiyat))
+                {
+                    <div class="gizlecepte" style="float:right; margin-top: 20px;border: 1px solid #ff6600;
+                         color:#ff6600; transform: scale(1); transition: ease-in-out 1s all;
+                         width: 60px;
+                         font-size: 13px;
+                         line-height: 16px;
+                         text-align: center;
+                         ">
+                        %@Model.eskifiyat İNDİRİM
+                    </div>
+                }
+            </h1>
+            <style>
+                .disabledbutton {
+                    pointer-events: none;
+                    opacity: 0.4;
+                }
+            </style>
+            <div style="display:block;width:100%">
+                @{
+                    List<katefilo> _urun = aksetDB.Create().katefilos.Include(a => a.filitre).Include(a => a.filitre.ozelliks).Where(a => a.KategoriId == Model.KategoriId).ToList();
+                    List<filadtli> flt = new List<filadtli>();
+                    foreach (var item in _urun.ToList())
+                    {
+                        filadtli ddd = new filadtli();
+                        ddd.adi = item.filitre.adi;
+                        ddd.adetlimi = item.filitre.adetlimi;
+                        ddd.Id = item.filitreId;
+                        List<ozladtli> gg = new List<ozladtli>();
+                        foreach (var itemi in item.filitre.ozelliks)
+                        {
+                            ozladtli ff = new ozladtli();
+                            ff.Id = itemi.Id;
+                            ff.ozellik = itemi.adi;
+                            ff.adet = aksetDB.Create().urunadetozelliks.Where(a => a.ozellikId == itemi.Id && a.urunId == Model.Id).FirstOrDefault() != null ? aksetDB.Create().urunadetozelliks.Where(a => a.ozellikId == itemi.Id && a.urunId == Model.Id).FirstOrDefault().adet : 0;
+                            ff.durum = aksetDB.Create().urunadetozelliks.Where(a => a.ozellikId == itemi.Id && a.urunId == Model.Id).FirstOrDefault() != null ? aksetDB.Create().urunadetozelliks.Where(a => a.ozellikId == itemi.Id && a.urunId == Model.Id).FirstOrDefault().durum : "false";
+                            gg.Add(ff);
+                        }
+                        ddd.ozls = gg;
+                        flt.Add(ddd);
+                    }
+                }
+                <style>
+                    .fltson:last-child {
+                        border: 0 !important;
+                    }
+                </style>
+                <div style="display:block;width:100%;border-bottom:1px solid #ddd;padding-bottom: 15px;">
+                    @foreach (var item in flt)
+                    {
+                        if (item.ozls.Where(a => a.durum == "true").FirstOrDefault() != null)
+                        {
+                            <div class="fltson" style="border-right: 1px solid #ddd;display:inline-block;margin-right: 13px;padding-right: 10px;padding-bottom: 15px;">
+                                <strong>@item.adi</strong>
+                                <ul class="list-inline" style="margin:0">
+                                    @foreach (var itemi in item.ozls)
+                                    {
+                                        if (itemi.durum == "true")
+                                        {
+                                            <li class="list-inline-item">
+                                                <a href="#33" class="itmxkutu" style="border-color:black">@itemi.ozellik</a>
+                                            </li>
+                                        }
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            <div style="display:block;width:100%;padding-top: 15px;">
+                @Html.Raw(Model.urundetayi)
+            </div>
+            <div class="product-info-priceBox" style="text-align: right;">
+                @if (!string.IsNullOrEmpty(Model.eskifiyat))
+                {
+                    <span class="market-price" style="color: #878787;text-decoration: line-through;font-size:19px;margin-right: 15px;">@string.Concat(Convert.ToDecimal(Model.fiyat) - Convert.ToDecimal(Model.fiyat) * Convert.ToDecimal(Model.eskifiyat) / 100) TL</span>
+                }
+
+                <span class="sale-price" data-sale-price="" style="font-size:27px;color: #ea1b23;">@Model.fiyat TL</span>
+            </div>
+
+            <div style="width:100%;margin-top:10px;margin-bottom:15px;float:left;border-top: 1px solid #ddd;padding-top: 15px;">
+                <div class="btn btn-danger btn-lg btn-block  my-cart-btn" style="margin-right:5px;float:left;width: 40%;border-radius:0 !important" data-id="@Model.Id" data-name="@Model.urunadi" data-summary="@Model.urunbaslik" data-image="/urunresimleri/@Model.resim/@kpki" data-price="@Model.fiyat" data-quantity="1" title="@Model.urunbaslik">
+                    Sepete Ekle
+                </div>
+                <div class="btn btn-danger btn-lg btn-block  my-cart-btn" style="margin-right:5px;margin:0;float:left;width: 40%;border-radius:0 !important" data-id="@Model.Id" data-name="@Model.urunadi" data-summary="@Model.urunbaslik" data-image="/urunresimleri/@Model.resim/@kpki" data-price="@Model.fiyat" data-quantity="1" title="@Model.urunbaslik">
+                    Hemen Al
+                </div>
+                <div class="add-to-favorite" productcontentid="@Model.Id" saleprice="@Model.fiyat" boutiqueenddate="1549605600000" productmainid="2900924" productcolorid="69" style="float:right;width: 17%;margin-top:0;margin-right:0;border-radius:0 !important">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="18" viewBox="0 -15 22 50">
+                        <path fill="none" fill-rule="evenodd" stroke="#8C8C8C" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3" d="M22 6.461c0-6.464-9.428-7.299-10.5-.837C10.43-.838 1-.498 1 6.461 1 13.42 11.5 19 11.5 19S22 12.922 22 6.461z"></path>
+                    </svg>
+                </div>
+            </div>
+            <style>
+
+                @@media (min-width: 481px) and (max-width: 767px) {
+
+                    .mnm {
+                        width: 100% !important;
+                    }
+
+                        .mnm a {
+                            font-size: 18px !important;
+                        }
+                }
+
+                @@media (min-width: 320px) and (max-width: 480px) {
+
+                    .mnm {
+                        width: 100% !important;
+                    }
+
+                        .mnm a {
+                            font-size: 18px !important;
+                        }
+                }
+            </style>
+            <ul class="list-inline">
+                <li class="list-inline-item mnm" style="width:49%">
+                    <a href="#44" class="btn btn-outline-danger" style="width:100%;font-size:22px">
+                        <i class="fal fa-shipping-timed"></i> AYNI GÜN ÜCRETSİZ KARGO
+                    </a>
+                </li>
+                <li class="list-inline-item mnm" style="width:50%">
+                    <a href="#44" class="btn btn-outline-danger" style="width:100%;font-size:22px">
+                        <i class="fal fa-sync"></i> ÜCRETSİZ İADE & DEĞİŞİM
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="product-social-icon-wrapper" id="paylasModal" style="display: none;">
+    <div class="pcon">
+        <div class="paylasTitle">
+            <p>SOSYAL MEDYA</p>
+            <span>BU ÜRÜN HESAPLARINDA PAYLAŞABİLİRSİN</span>
+        </div>
+        <ul>
+            <li>
+                <a class="product-social-icons" href="javascript:;" content="facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a class="product-social-icons" href="javascript:;" content="twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a class="product-social-icons" href="javascript:;" content="pinterest">
+                    <i class="fab fa-pinterest"></i>
+                </a>
+            </li>
+            <li>
+                <a class="product-social-icons" href="javascript:;" content="googleplus">
+                    <i class="fab fa-google-plus"></i>
+                </a>
+            </li>
+            <li class="whatsapp-in">
+                <div class="UWhatsApp ng-scope" id="divwhatsap" ng-click="ShareWhatsapp()" ng-if="UrunDetayModel.isMobileDevice &amp;&amp; !(UrunDetayModel.isAndroidDevice || UrunDetayModel.isiosDevice)">
+                    <a href="javascript:void(0)" class="whatsApp">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

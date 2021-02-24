@@ -1,0 +1,117 @@
+﻿@model akset.data.katedetay
+
+@{
+    ViewBag.Title = "Create";
+}
+<style>
+    .form-control {
+     
+        padding: 0 !important;
+    }
+</style>
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-picture-o fa-fw "></i>
+                Kategori Detay
+                <span>
+                    >
+                    Kategori Detay Ekle
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/katefiloes/filto" class="btn btn-success">Kategori Detay Listesi</a>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-picture-o"></i> </span>
+                        <h2>Kategori Detay Ekle</h2>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="KategoriId">KategoriId</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("KategoriId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.KategoriId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="detayId">DetayId</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("detayId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.detayId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Oluştur" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <!-- end widget content -->
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+            </article>
+            <!-- WIDGET END -->
+        </div>
+        <!-- end row -->
+    </section>
+    <!-- end widget grid -->
+</div>
+<!-- END MAIN CONTENT -->
+
+
+
+@section pagespecific{
+
+    <script>
+    $(document).ready(function () {
+        $("#KategoriId").select2({
+            language: "tr",
+            placeholder: "Kategori Seçiniz"
+        });
+        $("#KategoriId").val(0).change();
+        $("#KategoriId").val($("#KategoriId option:first").val());
+        $("#filitreId").select2({
+            language: "tr",
+            placeholder: "Filitre Seçiniz"
+        });
+        $("#filitreId").val(0).change();
+        $("#filitreId").val($("#filitreId option:first").val());
+    })
+    </script>
+}

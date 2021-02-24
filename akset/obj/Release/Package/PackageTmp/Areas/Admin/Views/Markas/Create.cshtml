@@ -1,0 +1,165 @@
+﻿@model akset.data.Marka
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<style>
+    .sekle {
+        height: 100%;
+        width: auto;
+        display: inline-block;
+        font-size: 14px;
+        position: relative;
+        margin: 0;
+        line-height: 34px;
+        font-weight: 400;
+        letter-spacing: 0;
+        margin-left: 8px;
+    }
+</style>
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-picture-o fa-fw "></i>
+                MArka
+                <span>
+                    >
+                    Yeni Marka Ekle
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/Markas/Marka" class="btn btn-success">Marka Listesi</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+        <div class="row">
+
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                          data-widget-colorbutton="false"
+                           data-widget-editbutton="false"
+                         data-widget-togglebutton="false"
+                         data-widget-deletebutton="false"
+                     data-widget-fullscreenbutton="false"
+                         data-widget-custombutton="false"
+                             data-widget-collapsed="true"
+                             data-widget-sortable="false"
+
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-pagelines"></i> </span>
+                        <h3 class="sekle">Marka Ekle</h3>
+                    </header>
+                    <!-- widget div-->
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget Adi,Baslik,Aciklama,Icerik,Durum,tarih content -->
+                        @using (Html.BeginForm("Create", "Markas", FormMethod.Post, new { enctype = "multipart/form-data",@class = "smart-form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="widget-body">
+                                <table class="model-state">
+                                    @foreach (var item in ViewContext.ViewData.ModelState)
+                                    {
+                                        if (item.Value.Errors.Any())
+                                        {
+                                            <tr>
+                                                <td><b>@item.Key</b></td>
+                                                <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                                <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+
+                                <style>
+                                    table.model-state {
+                                        border-color: #600;
+                                        border-width: 0 0 1px 1px;
+                                        border-style: solid;
+                                        border-collapse: collapse;
+                                        font-size: .8em;
+                                        font-family: arial;
+                                    }
+
+                                        table.model-state td {
+                                            border-color: #600;
+                                            border-width: 1px 1px 0 0;
+                                            border-style: solid;
+                                            margin: 0;
+                                            padding: .25em .75em;
+                                            background-color: #FFC;
+                                        }
+                                </style>
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <fieldset>
+                                    <section>
+                                        <label class="label">Marka Adı</label>
+                                        @Html.ValidationMessageFor(model => model.MarkaAdi, "", new { @class = "text-danger" })
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.MarkaAdi, new { htmlAttributes = new { @maxlength = "300" } })
+                                        </label>
+                                        <div class="note">
+                                            <strong>Maksimum</strong> 300 Karakter.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Marka Açıklama</label>
+                                        @Html.ValidationMessageFor(model => model.MarkaAciklama, "", new { @class = "text-danger" })
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.MarkaAciklama, new { htmlAttributes = new { @maxlength = "1000" } })
+                                        </label>
+                                        <div class="note">
+                                            <strong>Maksimum</strong> 1000 Karakter.
+                                        </div>
+                                    </section>
+                                    <section>
+                                        <label class="label">Marka Resmi</label>
+                                        @Html.ValidationMessageFor(model => model.MarkaAdi, "", new { @class = "text-danger" })
+                                        <label class="input">
+                                            <input type="file" name="resim" value="" />
+                                        </label>
+                                       
+                                    </section>
+                                </fieldset>
+                                <footer>
+
+                                    <input type="submit" id="smt" class="btn btn-success" name="submit" value="Kaydet" />
+                                </footer>
+                                
+                            </div>
+                        }
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+
+@section pagespecific {
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+

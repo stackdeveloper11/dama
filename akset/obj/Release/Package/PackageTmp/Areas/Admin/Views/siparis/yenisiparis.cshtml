@@ -1,0 +1,471 @@
+﻿@model IEnumerable<akset.data.siparis>
+
+@{
+    ViewBag.Title = "Index";
+    int say = 0;
+}
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-commenting-o fa-fw "></i>
+                Siparişler
+                <span>
+                    >
+                    Sipariş Listesi
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-togglebutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-commenting-o"></i> </span>
+                        <h2>Siparişler Listesi (YENİ SİPARİŞLER)</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+                        <h1 class="text-center">
+                            SİPARİŞ LİSTESİ YENİ SİPARİŞLER
+                        </h1>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <ul class="list-inline text-center kkk">
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li>
+                                    <a href="/Admin/siparis/siparisi" class="btn btn-default" >
+                                        Hepsi (@aksetDB.Create().sipariss.Count())
+                                    </a>
+                                </li>
+                            }
+                           
+                            <li>
+                                <a href="/Admin/siparis/yenisiparis" class="btn btn-primary" style="box-shadow: 0 0 23px black;">
+                                    Yeni Siparişler  (@aksetDB.Create().sipariss.Where(a => a.siparisdurum == "Yeni Sipariş").Count())
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/siparis/ulasilamayansiparisler" class="btn btn-danger">
+                                    Ulaşılamayanlar (@aksetDB.Create().sipariss.Where(a => a.ulasildimi == false && a.siparisdurum == "Ulaşılamadı").Count())
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/siparis/onaylanansiparis" class="btn btn-success" >
+                                    Onaylananlar  (@aksetDB.Create().sipariss.Where(a => a.onaylanditarih != null && a.siparisdurum == "Onaylandı").Count())
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="/Admin/siparis/faturakesilensiparis" class="btn btn-info">
+                                    Faturası Kesilenler (@aksetDB.Create().sipariss.Where(a => a.faturatarih != null && a.siparisdurum == "Fatura Kesildi").Count())
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/siparis/kargoyaverilensiparis" class="btn btn-warning">
+                                    Kargoya Verilenler (@aksetDB.Create().sipariss.Where(a => a.kargotarih != null && a.siparisdurum == "Kargoya Verildi").Count())
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/siparis/iptalsiparis" class="btn btn-danger">
+                                    İptaller (@aksetDB.Create().sipariss.Where(a => a.iptalarih != null).Count())
+                                </a>
+                            </li>
+
+                        </ul>
+                        <style>
+                            .beyaz {
+                                background-color: white rgba(128,128,128,.25);
+                            }
+
+                            .red {
+                                background-color: rgba(255,0,0,.25);
+                            }
+
+                            .blue {
+                                background-color: rgba(0,0,255,.25);
+                            }
+                        </style>
+                        <div class="widget-body">
+                            <div class="table-responsive">
+
+                                <table class="table table-bordered" id="dt_basic">
+                                    <colgroup>
+                                        <col class="beyaz" />
+                                        <col class="beyaz" />
+                                        <col class="beyaz" />
+                                        <col class="beyaz" />
+                                        <col class="beyaz" />
+                                        <col class="beyaz" />
+                                        <col class="beyaz" />
+                                        <col class="beyaz" />
+                                     
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <col class="beyaz" />
+                                        }
+                                        <col class="red" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Seç</th>
+                                          
+                                            <th>Müşteri Adı</th>
+                                            <th>Müşteri Tel.</th>
+                                            <th>Müşteri Adresi</th>
+                                            <th>Ödeme Şekli</th>
+                                            <th>Sipariş Durumu</th>
+                                            <th>Açıklama</th>
+                                           
+                                                <th>Mail</th>
+
+                                            <th>#</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            say++;
+                                            <tr>
+                                                <td>
+                                                    @say
+                                                </td>
+                                                <td>
+                                                    <input type="checkbox" class="chk" name="name" value="@item.Id" /> <div class="btn btn-primary btn-xs" onclick="modaliac('@item.Id')">@item.satissiparisno</div> 
+                                                </td>
+                                                <td>
+                                                    @item.adi @item.soyadi
+                                                </td>
+                                                <td>
+                                                    @item.telefon
+                                                </td>
+                                                <td>
+                                                    @item.adres
+                                                </td>
+                                                <td>
+                                                    @item.odemesekli
+                                                </td>
+                                                <td>
+                                                    @item.siparisdurum <br />@Convert.ToDateTime(item.yenisiparistarih).ToString("dd/MM/yyyy, dddd HH:mm")
+                                                </td>
+                                                <td>
+                                                    @item.siparisnotu
+                                                    <br />
+                                                    @item.siparisdurumaciklama
+                                                </td>
+                                              
+                                                    <td>
+                                                        @item.email
+                                                    </td>
+                                            
+
+                                                <td>
+                                                    <div class="btn-group btn-group-vertical">
+                                                        <a href="/admin/siparis/edit/@item.Id" class="btn btn-primary btn-sm">Düzenle</a>
+                                                        <a href="/admin/siparis/onaylayenisiparis/@item.Id" class="btn btn-success btn-sm">Onayla</a>
+                                                        <a href="/admin/siparis/ulasilmadi/@item.Id" class="btn btn-danger btn-sm">Ulaşılamadı</a>
+                                                        
+                                                        @if (User.IsInRole("Admin"))
+                                                        {
+                                                            <a href="/admin/siparis/delete/@item.Id" onclick="return confirm('Silmek İstediğinize Emin misiniz?')" class="btn btn-danger btn-sm">Sil</a>
+                                                            <div  class="btn btn-danger btn-sm" data-toggle="modal" data-target="#mymodal-@item.Id">İptal Et</div>
+                                                        }
+                                                        else
+                                                        {
+
+                                                            <div class="btn btn-danger btn-sm" data-toggle="modal" data-target="#mymodal-@item.Id">İptal Et</div>
+                                                        }
+                                                        <div class="modal fade" tabindex="-1" role="dialog" id="mymodal-@item.Id">
+                                                            <div class="modal-dialog" role="document">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                        <h4 class="modal-title">Şipariş İptal</h4>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <p>
+                                                                            <textarea class="form-control ack-@item.Id" style="height:150px;width: 100%;"value="" >
+
+                                                                            </textarea>
+                                                                            @*<a href="/admin/siparis/iptalolansiparis/@item.Id" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#mymodal-@item.Id" onclick="return confirm('İptal etmek İstediğinize Emin misiniz?')">İptal Et</a>*@
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                                                                        <button type="button" class="btn btn-danger" onclick="yolla('@item.Id')">İptal Et</button>
+                                                                    </div>
+                                                                </div><!-- /.modal-content -->
+                                                            </div><!-- /.modal-dialog -->
+                                                        </div><!-- /.modal -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                            @if (Model.FirstOrDefault() != null)
+                            {
+                                <ul class="list-inline">
+
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            <div class="btn btn-danger" onclick="yoll('sil')">SEÇİLENLERİ SİL</div>
+                                            <input type="hidden" id="siller" name="siller" value="" />
+                                        </li>
+                                    }
+                                    <li>
+                                        <div class="btn btn-success" onclick="yoll('onayla')">SEÇİLENLERİ ONAYLA</div>
+
+                                    </li>
+                                    <li>
+                                        <div class="btn btn-danger" onclick="yoll('ulasilamadi')">SEÇİLENLERİ ULAŞILAMADI YAP</div>
+
+                                    </li>
+                                    <li>
+                                        <div class="btn btn-info" data-toggle="modal" data-target="#mymodalii">SEÇİLENLERİ İPTAL ET</div>
+
+                                        <input type="hidden" id="iptaller" name="iptaller" value="" />
+                                    </li>
+                                </ul>
+                            }
+                           
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="mymodalii">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">SEÇİLENLERİ İPTAL AÇIKLAMA MESAJI YAZ</h4>
+            </div>
+            <div class="modal-body">
+                <textarea id="accx" class="form-control" style="height:150px;width: 100%;" value=""></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-danger" onclick="yoll('iptal')">İPTAL ET</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="siparis">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">SİPARİŞLER</h4>
+            </div>
+            <div class="modal-body jjkk">
+
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ürün</th>
+                            <th>Adet</th>
+                            <th>Fiyat</th>
+                            <th>Toplam</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="urunleri">
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td style="text-align:right"><b>GENEL TOPLAM: </b></td>
+                            <td id="son"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+
+                <style>
+                    .jjkk table caption {
+                        display: none;
+                    }
+                </style>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<form action="/admin/siparis/iptalolansiparis" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" id="idsi" name="id" value="" />
+    <input type="hidden" id="aciklamasi" name="aciklama" value="" />
+    <input type="submit" id="sutla" name="submit" value="" class="hidden" />
+</form>
+<form action="/admin/siparis/topluiptalolansiparis" method="post">
+    @Html.AntiForgeryToken()
+    <input type="hidden" id="idsiler" name="idler" value="" />
+    <input type="hidden" id="neresi" name="neresi" value="" />
+    <input type="hidden" id="aciklamasix" name="aciklama" value="" />
+    <input type="submit" id="sutlax" name="submit" value="" class="hidden" />
+</form>
+
+@section pagespecific {
+  <link href="~/Areas/Admin/Scripts/dist/css/tableexport.min.css" rel="stylesheet" />
+<script src="~/Areas/Admin/Scripts/dist/js/FileSaver.min.js"></script>
+<script src="~/Areas/Admin/Scripts/dist/js/xlsx.core.min.js"></script>
+<script src="~/Areas/Admin/Scripts/dist/js/Blob.min.js"></script>
+<script src="~/Areas/Admin/Scripts/dist/js/tableexport.min.js?t=9"></script>
+
+<script>
+    function modaliac(a) {
+        $("#son").html("");
+        $("#urunleri").html("");
+        $.ajax({
+            type: 'GET',
+            url: "/admin/siparis/siparisurunleri?nosu=" + a,
+            success: function (data) {
+                console.log(data);
+                var ee = "";
+                var ff = 0;
+                $.each(data, function (x, y) {
+                    ee += "<tr><td>" + (x + 1) + "</td>" + "<td>" + y.urun + "</td>" + "<td>" + y.adet + "</td>" + "<td>" + y.fiyat + "</td><td>" + y.adet * y.fiyat + "</td></tr>";
+                    ff += y.adet * y.fiyat;
+                });
+                $("#son").html(ff);
+                $("#urunleri").html(ee);
+                $('#siparis').modal('show');
+            }
+        });
+
+    }
+
+        function yoll(a) {
+            var vb = "";
+            $(".chk").each(function () {
+                if ($(this).is(':checked')) {
+                    vb +=","+($(this).val());
+                }
+            })
+            vb = vb.substr(1);
+            $("#idsiler").val(vb);
+            $("#neresi").val(a);
+            $("#aciklamasix").val($("#accx").val());
+            $("#sutlax").click();
+        }
+
+        function yolla(a) {
+            $("#idsi").val(a);
+            $("#aciklamasi").val($(".ack-" + a).val());
+            $("#sutla").click();
+        }
+
+
+</script>
+
+
+
+
+
+
+
+<script>
+
+        function yolla(a) {
+            $("#idsi").val(a);
+            $("#aciklamasi").val($(".ack-" + a).val());
+            $("#sutla").click();
+        }
+        $(document).ready(function () {
+
+            $("table").tableExport({
+                bootstrap: true, formats: ["xlsx", "xls", "csv", "txt"], ignoreCols: [1, 9], trimWhitespace: true, fileName:"Rapor-"+new Date().toLocaleString()
+
+            });
+
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            });
+
+        })
+
+</script>
+}
+
+
+
+

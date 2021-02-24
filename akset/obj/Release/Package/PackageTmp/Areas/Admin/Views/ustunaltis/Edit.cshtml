@@ -1,0 +1,367 @@
+﻿@model akset.data.ustunalti
+
+@{
+    ViewBag.Title = "Edit";
+}
+<style>
+    #log li {
+    padding: 4px 9px;
+}
+</style>
+<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <h1 class="page-title txt-color-blueDark">
+                <i class="fa fa-picture-o fa-fw "></i>
+                Üst Menü
+                <span>
+                    >
+                    Üst Menü Düzenle
+                </span>
+            </h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 text-align-right">
+            <div class="page-title">
+                <a href="/admin/ustmenus/ustmenu" class="btn btn-success">Üstmenü Listesine Dön</a>
+            </div>
+        </div>
+    </div>
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-blueDark" id="wid-id-0" data-widget-editbutton="false" style="margin:0">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-picture-o"></i> </span>
+                        <h2>Üstmenü Düzenle</h2>
+                    </header>
+                    <div>
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        @using (Html.BeginForm("Edit", "ustunaltis", FormMethod.Post, new { enctype = "multipart/form-data", @class = "smart-form" }))
+                        {
+                            //baslik,KategoriId,buyukresim,kucukresim,vitrinmi,sira,aktifmi
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="@Model.Id" value="" />
+                            <div class="widget-body">
+                                <table class="model-state">
+                                    @foreach (var item in ViewContext.ViewData.ModelState)
+                                    {
+                                        if (item.Value.Errors.Any())
+                                        {
+                                            <tr>
+                                                <td><b>@item.Key</b></td>
+                                                <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                                <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                            </tr>
+                                        }
+                                    }
+                                </table>
+                                <style>
+                                    table.model-state {
+                                        border-color: #600;
+                                        border-width: 0 0 1px 1px;
+                                        border-style: solid;
+                                        border-collapse: collapse;
+                                        font-size: .8em;
+                                        font-family: arial;
+                                    }
+
+                                        table.model-state td {
+                                            border-color: #600;
+                                            border-width: 1px 1px 0 0;
+                                            border-style: solid;
+                                            margin: 0;
+                                            padding: .25em .75em;
+                                            background-color: #FFC;
+                                        }
+                                </style>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <input type="hidden" name="ustmenuId" value="@Model.ustmenuId" />
+                                <fieldset style="padding: 0 14px 5px;">
+                                    <section>
+                                        <label class="label">Adı</label>
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.ustunaltiadi, new { htmlAttributes = new { @maxlength = "300" } })
+                                            @Html.ValidationMessageFor(model => model.ustunaltiadi, "", new { @class = "text-danger" })
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Üst Menüsü</label>
+                                        <label class="input">
+                                            @Html.DropDownList("ustmenuId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.ustmenuId, "", new { @class = "text-danger" })
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Seçmeli Kategoriler</label>
+                                        <label class="input">
+                                            <input class="form-control" id="katler" maxlength="3000" name="katler" type="text" value="" autocomplete="off">
+                                            @Html.ValidationMessageFor(model => model.katler, "", new { @class = "text-danger" })
+                                        </label>
+                                        <ol id="log" style="margin-top: 15px;width:350px">
+                                            @if (!string.IsNullOrEmpty(Model.katler))
+                                            {
+                                                if (Model.katler.Contains(","))
+                                                {
+                                                    foreach (var item in Model.katler.Split(','))
+                                                    {
+                                                        string ikn = "";
+                                                        string ids = "";
+                                                        string idsii = "";
+                                                        if (item.Contains('-'))
+                                                        {
+                                                            ikn = item.Split('-')[1];
+                                                            ids = item.Split('-')[0];
+                                                            idsii = ids + "-" + ikn;
+                                                        }
+                                                        else
+                                                        {
+                                                            ids = item;
+                                                            idsii = item;
+                                                        }
+                                                        if (aksetDB.Create().Kategoris.Where(a => a.Id.ToString() == ids).FirstOrDefault() != null)
+                                                        {
+                                                            <li class="ui-state-default" id="@idsii" style="padding: 3px 6px;">
+                                                                <i class="fa fa-times fa-2x pull-right" onclick="$(this).parent().remove();" style="font-size:20px;color:red;cursor:pointer;"></i>
+                                                                <input type='text' value="@ikn" class='form-control hepsi hidden' style='width: 140px;display: inline-block;margin-right: 10px;padding: 0 5px;' />
+                                                                @aksetDB.Create().Kategoris.Where(a => a.Id.ToString() == ids).FirstOrDefault().adi
+                                                            </li>
+                                                        }
+
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    string ikn = "";
+                                                    string ids = "";
+                                                    string idsii = "";
+                                                    if (Model.katler.Contains('-'))
+                                                    {
+                                                        ikn = Model.katler.Split('-')[1];
+                                                        ids = Model.katler.Split('-')[0];
+                                                        idsii = ids + "-" + ikn;
+                                                    }
+                                                    else
+                                                    {
+                                                        ids = Model.katler;
+                                                        idsii = Model.katler;
+                                                    }
+                                                    if (aksetDB.Create().Kategoris.Where(a => a.Id.ToString() == ids).FirstOrDefault() != null)
+                                                    {
+                                                        <li class="ui-state-default" id="@idsii" style="padding: 3px 6px;">
+                                                            <i class="fa fa-times fa-2x pull-right" onclick="$(this).parent().remove();" style="font-size:20px;color:red;cursor:pointer;"></i>
+                                                            <input type='text' class='form-control hepsi hidden' value="@ikn" style='width: 140px;display: inline-block;margin-right: 10px;padding: 0 5px;' />
+                                                            @aksetDB.Create().Kategoris.Where(a => a.Id.ToString() == ids).FirstOrDefault().adi
+                                                        </li>
+                                                    }
+                                                }
+                                            }
+                                        </ol>
+                                    </section>
+                                    <section>
+                                        <label class="label">Kategori</label>
+                                        <label class="input">
+                                            @Html.DropDownList("KategoriId", null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.KategoriId, "", new { @class = "text-danger" })
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <div>
+                                            <div class="btn btn-success btn-lg" onclick="$('.ggh').removeClass('hidden');$(this).addClass('hidden')">İkonlar</div>
+                                            <br />
+                                            <div class="hidden ggh">
+                                                <table id="dt_basic" class="table table-hover table-bordered table-striped table-condensed">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>
+                                                                #
+                                                            </th>
+                                                            <th>
+                                                                ikon
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (var item in aksetDB.Create().ikonlars)
+                                                        {
+                                                            <tr>
+                                                                <td>@item.Id</td>
+                                                                <td>
+                                                           <div class="btn btn-success btn-xs" onclick="$('td').removeClass('sari');$(this).parent().addClass('sari');idle('@item.ikon.Replace("-","_")')">Ayarla</div> 
+                                                           <i class="@item.ikon fa-2x" style="cursor:pointer"></i> @item.ikon.Replace("-", "_")
+                                                                </td>
+                                                            </tr>
+                                                        }
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <style>
+                                        .sari {
+                                            background: yellow;
+                                        }
+                                    </style>
+                                    <section>
+                                        <label class="label">Kaçlı</label>
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.kacli, new { htmlAttributes = new { @maxlength = "300" } })
+                                            @Html.ValidationMessageFor(model => model.kacli, "", new { @class = "text-danger" })
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Sıra</label>
+                                        <label class="input">
+                                            @Html.EditorFor(model => model.sira, new { htmlAttributes = new { @maxlength = "300" } })
+                                            @Html.ValidationMessageFor(model => model.sira, "", new { @class = "text-danger" })
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Resim</label>
+                                        <label class="input">
+                                            <img src="~/MenuResimleri/@Model.resimi" />
+                                            <input type="file" name="file" value="" />
+                                            <input type="hidden" name="resimi" value="@Model.resimi" />
+                                            @Html.ValidationMessageFor(model => model.resimi, "", new { @class = "text-danger" })
+                                        </label>
+                                    </section>
+                                </fieldset>
+                                <input type="hidden" name="kati" id="kati" value="" />
+                                <footer>
+                                    <div class="btn btn-success" onclick="yolla()">Kaydet</div>
+                                    <input type="submit" id="smt" class="btn btn-success hidden" name="submit" value="Kaydet" />
+                                </footer>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate-vsdoc.js"></script>
+<link href="~/css/all.min.css" rel="stylesheet" />
+<script src="~/js/all.min.js"></script>
+<script>
+        function idle(an) {
+            $(".hepsi").each(function (a, b) {
+                var dis = $(this).parent().attr('id');
+            
+                if (dis.indexOf("-")) {
+                    dis =dis.split("-")[0];
+                }
+                $(this).parent().attr('id', dis + '-' + an);
+                $(this).val(an);
+            })
+        }
+        $(document).ready(function () {
+            var responsiveHelper_dt_basic = undefined;
+            var responsiveHelper_datatable_fixed_column = undefined;
+            var responsiveHelper_datatable_col_reorder = undefined;
+            var responsiveHelper_datatable_tabletools = undefined;
+
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            $('#dt_basic').dataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Turkish.json"
+                },
+                "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                    "t" +
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                "autoWidth": true,
+
+                "preDrawCallback": function () {
+                    // Initialize the responsive datatables helper once.
+                    if (!responsiveHelper_dt_basic) {
+                        responsiveHelper_dt_basic = new ResponsiveDatatablesHelper($('#dt_basic'), breakpointDefinition);
+                    }
+                },
+                "rowCallback": function (nRow) {
+                    responsiveHelper_dt_basic.createExpandIcon(nRow);
+                },
+                "drawCallback": function (oSettings) {
+                    responsiveHelper_dt_basic.respond();
+                }
+            })
+        })
+</script>
+    <script type="text/javascript">
+        function yolla() {
+            $("#kati").val($("#log").sortable("toArray").join(","));
+            $("#smt").click();
+        }
+        $(document).ready(function () {
+            $("#KategoriId").select2({
+                language: "tr",
+                placeholder: "Kategori Seçiniz"
+            });
+            $("#log").sortable();
+            $("#log").disableSelection();
+        });
+        function log(a, message) {
+            $("<li class='ui-state-default' id='" + a + "'>").html("<i class='fa fa-times fa-2x pull-right' onclick='$(this).parent().remove()' style='font-size:20px;color:red;cursor:pointer'></i><input  type='text' class='form-control hepsi hidden' style='width: 140px;display: inline-block;margin-right: 10px;padding: 0 5px;'/>" + message).prependTo("#log");
+            $("#log").scrollTop(0);
+        }
+        $(document).ready(function () {
+            $("#katler").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/admin/ustmenus/katler",
+                        dataType: "json",
+                        data: {
+                            searchText: request.term
+                        },
+                        success: function (data) {
+
+                            response($.map(data, function (item) {
+
+                                return {
+                                    label: item.name,
+                                    value: item.value
+                                };
+                            }));
+                        },
+
+                        error: function (xhr, textStatus, errorThrown) {
+                            alert("error: " + errorThrown);
+                        }
+                    });
+                },
+                minLength: 3,
+                select: function (event, ui) {
+                    log(ui.item.value, ui.item.label);
+                    this.value = "";
+                    return false;
+                },
+                open: function () {
+                    $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+                },
+                close: function () {
+                    $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+                }
+            });
+        });
+    </script>
+}
+<style>
+    #log li {
+    padding: 4px 9px !important;
+}
+</style>

@@ -1,0 +1,157 @@
+﻿
+@{
+    ViewBag.Title = "Odeme";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="mb-4"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-xl-8 mx-auto">
+            <div class="row steps arrow-divider mt-4">
+                <div class="col active">
+                    <div class="text-center text-success">
+                        <i class="la-2x mb-2 las la-shopping-cart"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block">1. Sepetim</h3>
+                    </div>
+                </div>
+                <div class="col active">
+                    <div class="text-center text-orange">
+                        <i class="la-2x mb-2 las la-map"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block">2. Kargo bilgileri</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <i class="la-2x  mb-2 opacity-50 las la-truck"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block opacity-50">Satın Alınan Ürünler</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <i class="la-2x  mb-2 opacity-50 las la-credit-card"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block opacity-50 ">4. Ödeme</h3>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="text-center">
+                        <i class="la-2x  mb-2 opacity-50 las la-check-circle"></i>
+                        <h3 class="fs-13 fw-600 d-none d-lg-block opacity-50 ">5. Onay</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xxl-8 col-xl-10 mx-auto">
+            <div class="shadow-sm bg-white p-4 rounded mb-4">
+                <div class="row gutters-5">
+                    <div class="col-md-6 mb-3">
+                        <label class="megabox d-block bg-white mb-0">
+                            <input type="radio" checked="" required="">
+                            <span class="d-flex p-3 megabox-elem">
+                                <span class="rounded-check flex-shrink-0 mt-1"></span>
+                                <span class="flex-grow-1 pl-3 text-left">
+                                    <div>
+                                        <span class="opacity-60">Adres:</span>
+                                        <span class="fw-600 ml-2">Argıncık</span>
+                                    </div>
+                                    <div>
+                                        <span class="opacity-60">posta kodu:</span>
+                                        <span class="fw-600 ml-2">38070</span>
+                                    </div>
+                                    <div>
+                                        <span class="opacity-60">Şehir:</span>
+                                        <span class="fw-600 ml-2">kayseri</span>
+                                    </div>
+                                    <div>
+                                        <span class="opacity-60">İlçe:</span>
+                                        <span class="fw-600 ml-2">Kocasinan</span>
+                                    </div>
+                                    <div>
+                                        <span class="opacity-60">Ülke:</span>
+                                        <span class="fw-600 ml-2">Türkiye</span>
+                                    </div>
+                                    <div>
+                                        <span class="opacity-60">Telefon:</span>
+                                        <span class="fw-600 ml-2">5055055555</span>
+                                    </div>
+                                </span>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-md-6 mx-auto mb-3">
+                        <div class="border p-3 rounded mb-3  text-center bg-white d-flex flex-column justify-content-center">
+                            <i class="las la-plus la-2x mb-3"></i>
+                            <div><button class="btn" data-toggle="modal" data-target="#addressModal">Yeni Adres Ekle</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-left order-1 order-md-0">
+                    <a href="#" class="btn btn-soft">
+                        <i class="las la-arrow-left"></i>
+                        Mağazaya Dön
+                    </a>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <button class="btn btn-orange fw-600">
+                        Teslimat Bilgisine Devam Et
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal " id="addressModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Yeni Adres Ekleyin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body p-5">
+                <div class="form-group row">
+                    <label class="form-label fw-500">Adres</label>
+                    <textarea class="form-control textarea"></textarea>
+                </div>
+                <div class="form-group row">
+                    <label class="form-label fw-500">Ülke</label>
+                    <select class="form-control form-new">
+                        <option value="tr">Türkiye</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <label class="form-label fw-500">Şehir</label>
+                    <input class="form-control form-new" placeholder="Şehir">
+                </div>
+                <div class="form-group row">
+                    <label class="form-label fw-500">İlçe</label>
+                    <input class="form-control form-new" placeholder="İlçe">
+                </div>
+                <div class="form-group row">
+                    <label class="form-label fw-500">Posta Kodu</label>
+                    <input class="form-control form-new" placeholder="Posta Kodunuz">
+                </div>
+                <div class="form-group row">
+                    <label class="form-label fw-500">Telefon</label>
+                    <input class="form-control form-new " placeholder="+90">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-orange">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>

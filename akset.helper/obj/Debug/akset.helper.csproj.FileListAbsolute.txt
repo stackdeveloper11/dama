@@ -1,0 +1,207 @@
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Debug\akset.helper.csprojAssemblyReference.cache
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Debug\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\akset.helper.dll.config
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\akset.helper.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\akset.helper.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\akset.data.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\EntityFramework.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.Helpers.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.Mvc.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.Razor.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.WebPages.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\akset.data.pdb
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\akset.data.dll.config
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\EntityFramework.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.Helpers.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.Mvc.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.Razor.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.WebPages.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\bin\Debug\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Debug\akset.helper.csproj.CopyComplete
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Debug\akset.helper.dll
+C:\Users\Stack Developer\Desktop\damasutra\akset.helper\obj\Debug\akset.helper.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\akset.helper.dll.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\akset.helper.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\akset.helper.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\akset.data.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\EntityFramework.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Owin.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.Helpers.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.Mvc.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.Razor.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.Google.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.Facebook.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Newtonsoft.Json.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\akset.data.pdb
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\akset.data.dll.config
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\EntityFramework.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.Helpers.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.Mvc.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.Razor.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.Google.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Security.Facebook.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\Newtonsoft.Json.xml
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\bin\Debug\tr\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\obj\Debug\akset.helper.csprojAssemblyReference.cache
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\obj\Debug\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\obj\Debug\akset.helper.csproj.CopyComplete
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\obj\Debug\akset.helper.dll
+C:\Users\stack\OneDrive\Masaüstü\damalar\damasutra5\akset.helper\obj\Debug\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\obj\Debug\akset.helper.csprojAssemblyReference.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\obj\Debug\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\obj\Debug\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\obj\Debug\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\akset.helper.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.Helpers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.Mvc.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.Helpers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.Mvc.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\bin\Debug\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5\akset.helper\obj\Debug\akset.helper.csproj.CopyComplete
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\akset.helper.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.Helpers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.Mvc.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.WebPages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.Helpers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.Mvc.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.WebPages.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\bin\Debug\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\obj\Debug\akset.helper.csprojAssemblyReference.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\obj\Debug\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\obj\Debug\akset.helper.csproj.CopyComplete
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\obj\Debug\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (2)\akset.helper\obj\Debug\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\akset.helper.dll.config
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\akset.helper.pdb
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Owin.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.Helpers.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.Mvc.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.WebPages.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.Owin.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.Helpers.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.Mvc.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.WebPages.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\bin\Debug\tr\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.csprojAssemblyReference.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.csproj.CoreCompileInputs.cache
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.csproj.CopyComplete
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.dll
+C:\Users\Toyar\OneDrive\Masaüstü\damasutra5 - Kopya (3) - Kopya\akset.helper\obj\Debug\akset.helper.pdb

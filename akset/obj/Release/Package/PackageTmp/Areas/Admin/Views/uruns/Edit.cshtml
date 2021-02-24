@@ -1,0 +1,742 @@
+﻿@model akset.data.urun
+@using System.Data.Entity
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    .form-control {
+        padding: 0 5px !important;
+        border: 1px solid #ccc !important;
+    }
+
+    button.btn-default {
+        padding: 12px 15px !important;
+        background: #2b72bb !important;
+    }
+</style>
+<style>
+    .select2-container {
+        padding: 0 !important;
+    }
+</style>
+
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Ürün Düzenle </h2>
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            @using (Html.BeginForm("Edit", "uruns", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" id="resim" name="resim" value="@Model.resim" />
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.Id)
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Resim (530X455)</label>
+                                        <div class="col-md-10">
+                                            <img src="~/urunresimleri/@string.Concat(Model.resim,".jpg","?d=",new Random().Next(1,100000))" alt="Alternate Text" style="float:left"/>
+                                            <div class="bir" style="float:left">
+                                                <input type="file" id="my-cropper" />
+                                            </div>
+                                        </div>
+                                        <input type="text" name="resimi" id="resimi" class="hidden" value="" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Ürün Kodu</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.UrunKodu, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.UrunKodu, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.urunbaslik, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.urunbaslik, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.urunbaslik, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Etiketler</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.etiketler, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.etiketler, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <style>
+                                        .select2-container{
+                                            padding:0 !important;
+                                        }
+                                    </style>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Önerilen</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="oneri">
+                                                @if (Model.oneri == "Evet")
+                                                {
+                                                    <option value="Evet" selected="selected">Evet</option>
+                                                    <option value="Hayır">Hayır</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="Evet">Evet</option>
+                                                    <option value="Hayır" selected="selected">Hayır</option>
+                                                }
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.oneri, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="durum">Durum</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="anasayfa">
+                                                <option value="standart" selected>Standart</option>
+                                                <option value="yeni">Yeni</option>
+                                                <option value="coksatan">Çok Satan</option>
+                                                <option value="populer">Popülar</option>
+                                                <option value="indirimli">İndirimli</option>
+                                            </select>
+
+                                            @Html.ValidationMessageFor(model => model.anasayfa, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Slider Altında Olsun mu</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="anasayfa">
+                                                @if (Model.oneri == "Evet")
+                                                {
+                                                    <option value="Evet" selected="selected">Evet</option>
+                                                    <option value="Hayır">Hayır</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="Evet">Evet</option>
+                                                    <option value="Hayır" selected="selected">Hayır</option>
+                                                }
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.anasayfa, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Resimler</label>
+                                        <div class="col-md-10">
+                                            <input type="file" name="files" class="form-control" multiple="multiple" />
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                        function del(a) {
+                                            if (confirm("Eminmisiniz?")) {
+                                                var dateToSent = { name: a };
+                                                $.ajax({
+                                                    url: "/admin/uruns/resimsil",
+                                                    type: 'GET',
+                                                    data: dateToSent,
+                                                    cache: false,
+                                                    dataType: 'json',
+                                                    success: function (json) {
+
+                                                    },
+                                                    error: function (xmlHttpRequest, textStatus, errorThrown) {
+                                                        console.log('some error occured', textStatus, errorThrown);
+                                                    },
+                                                    always: function () {
+                                                    }
+                                                });
+                                            }
+                                        }
+                                    </script>
+
+                                    <ul class="list-inline text-center">
+                                        @if (!string.IsNullOrEmpty(Model.resim))
+                                        {
+                                            if (Directory.Exists(Server.MapPath("~/urunresimleri")))
+                                            {
+                                                int ii = 0;
+                                                foreach (var files in Directory.GetFiles(Server.MapPath("~/urunresimleri/" + Model.resim)))
+                                                {
+                                                    ii++;
+                                                    FileInfo info = new FileInfo(files);
+                                                    var fileName = Path.GetFileName(info.FullName);
+                                                    <li style="width:100px" id="d-@ii">
+                                                        <a href="#33">
+                                                            <img src="~/urunresimleri/@Model.resim/@string.Concat(fileName,"?d=",new Random().Next(1,99999))" class="img-responsive" />
+                                                            <div class="btn btn-danger btn-xs" onclick="del('@fileName');$('#d-@ii').remove()">X</div>
+                                                        </a>
+                                                    </li>
+                                                }
+                                            }
+                                        }
+                                    </ul>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.urunadi, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.urunadi, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.urunadi, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.urunkisaaciklama, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.urunkisaaciklama, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.urunkisaaciklama, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.fiyat, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.fiyat, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.fiyat, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.urunozellikleri, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.urunozellikleri, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.urunozellikleri, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Kategoriler</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("KategoriId", null, htmlAttributes: new { @class = "form-control" })
+                                            <input type="hidden" id="katler" name="katler" value="" />
+                                            <ul class="list-inline" id="kati" style="margin-top:5px"></ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Filitreler</label>
+                                        <div class="col-md-10">
+                                            @foreach (var item in aksetDB.Create().katefilos.Include(a => a.filitre).Include(a => a.filitre.ozelliks).Where(a => a.KategoriId == Model.KategoriId).ToList())
+                                            {
+                                                <h6 class="oxel-@item.Id">@aksetDB.Create().filitres.Where(a => a.Id == item.filitreId).FirstOrDefault().adi</h6>
+                                                <ul class="list-inline oxel1-@item.Id">
+                                                    @foreach (var itemi in item.filitre.ozelliks)
+                                                    {
+                                                        if (Model.urunfilitreozelliks.Where(a => a.ozellikId == itemi.Id).FirstOrDefault() != null)
+                                                        {
+                                                            <li>
+                                                                <label class="conlab" for="chk-@itemi.Id">
+                                                                    <input type="checkbox" checked="checked" onclick="che(this,'@itemi.filitreId','@itemi.Id','@Model.Id')" id="chk-@itemi.Id" /> @itemi.adi <span class="checkmark"></span>
+                                                                </label>
+                                                            </li>
+                                                        }
+                                                        else
+                                                        {
+                                                            <li>
+                                                                <label class="conlab" for="chk-@itemi.Id">
+                                                                    <input type="checkbox" onclick="che(this,'@itemi.filitreId','@itemi.Id','@Model.Id')" id="chk-@itemi.Id" /> @itemi.adi <span class="checkmark"></span>
+                                                                </label>
+                                                            </li>
+                                                        }
+                                                    }
+                                                </ul>
+                                            }
+                                        </div>
+                                    </div>
+
+                                    <script>
+                                       
+                                        function che(x, a, b, c) {
+                                           
+                                            var dateToSent = {drm:x.checked, fil: a, ozl:b, urn: c };
+                                            $.ajax({
+                                                url: "/admin/uruns/ozlayar",
+                                                type: 'GET',
+                                                data: dateToSent,
+                                                cache: false,
+                                                dataType: 'json',
+                                                success: function (json) {
+                                                    console.log(json);
+                                                },
+                                                error: function (xmlHttpRequest, textStatus, errorThrown) {
+                                                    console.log('some error occured', textStatus, errorThrown);
+                                                },
+                                                always: function () {
+                                                }
+                                            });
+                                        }
+
+                                    </script>
+
+                                    <div class="form-group hidden">
+                                        <label class="control-label col-md-2">Filitre Ekle</label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownList("FilitreId", null, htmlAttributes: new { @class = "form-control" })
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ozl hidden ozl">
+                                        <label class="control-label col-md-2">Özellikler</label>
+                                        <div class="col-md-10">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.urundurumu, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <select id="urunddd" class="form-control">
+                                                @if (Model.urundurumu == "var")
+                                                {
+                                                    <option value="var" selected="selected">Stokta Var</option>
+                                                    <option value="Tükendi">Tükendi</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="var">Stokta Var</option>
+                                                    <option value="Tükendi" selected="selected">Tükendi</option>
+                                                }
+                                            </select>
+                                            @Html.EditorFor(model => model.urundurumu, new { htmlAttributes = new { @class = "form-control hidden" } })
+                                            @Html.ValidationMessageFor(model => model.urundurumu, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Adet</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.adet, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.adet, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Satıştamı</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" name="satistami">
+                                                @if (Model.satistami == "Evet")
+                                                {
+                                                    <option value="Evet" selected="selected">Evet</option>
+                                                    <option value="Hayır">Hayır</option>
+                                                }
+                                                else
+                                                {
+                                                    <option value="Evet">Evet</option>
+                                                    <option value="Hayır" selected="selected">Hayır</option>
+                                                }
+                                            </select>
+                                            @Html.ValidationMessageFor(model => model.satistami, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Admin Açıklama</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.adminaciklama, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.adminaciklama, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Eski Fiyat</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.eskifiyat, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.eskifiyat, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Alış Fiyatı</label>
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.alisfiyati, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.alisfiyati, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.urundetayi, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            <div Id="summernote"></div>
+                                            @Html.EditorFor(model => model.urundetayi, new { htmlAttributes = new { @class = "form-control hidden" } })
+                                            @Html.ValidationMessageFor(model => model.urundetayi, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.sira, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.sira, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.sira, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group hidden">
+                                        @Html.LabelFor(model => model.tarih, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.tarih, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.tarih, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <div class="btn btn-success" onclick="yolla()">Kaydet</div>
+                                            <input type="submit" id="smt" class="btn btn-success hidden" name="submit" value="Kaydet" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <div>
+                                <a href="/Admin/uruns/urun" class="btn btn-primary btn-sm">&larr; Ürün Listesine Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>
+
+@section pagespecific {
+    @*<script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>*@
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.4/summernote.js"></script>
+    <script src="~/Areas/Admin/Content/summernote-tr-TR.js"></script>
+    <link href="/Areas/Admin/Content/slim2/slim.min.css" rel="stylesheet" />
+    <script src="/Areas/Admin/Content/slim2/slim.jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('form').each(function () {
+                if ($(this).data('validator'))
+                    $(this).data('validator').settings.ignore = ".note-editor *";
+            });
+            $("#KategoriId").select2({
+                language: "tr",
+                placeholder: "Kategori Seçiniz"
+            });
+            $("#FilitreId").select2({
+                language: "tr",
+                placeholder: "Filitre Seçiniz"
+            });
+        })
+    </script>
+    <script>
+        var $ccr;
+        //function sil() {
+        //    var son = "";
+        //    $("#kati li").each(function (e) {
+        //        son += "," + ($(this).attr("data-idsi").replace("m-", ""));
+        //    });
+        //    $("#katler").val(son.substr(1));
+        //}
+        $(document).ready(function () {
+            $('#KategoriId').change(function () {
+                var SelectedValue = $("#KategoriId option:selected").text();//
+                var vli = $(this).val();
+                $.ajax({
+                    type: "GET",
+                    url: "/uruns/filitregetir",
+                    data: "id=" + vli,
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        var output = "";
+                        output += '<option disabled selected="selected">' + "Seçim Yapınız." + '</option>';
+                        $.each(data, function (key, val) {
+                            output += '<option value="' + val.Value + '">' + val.Text + '</option>';
+                        });
+                        $("#FilitreId").html(output);
+                        // $(".oxel").html("");
+                        //  dropdown.append('<option disabled>Filitre Seçiniz</option>');
+                        //    $('#FilitreId').select2().on("change", function (e) {
+                        // mostly used event, fired to the original element when the value changes
+
+                        //
+                        //         })
+                        //   dropdown.prop('selectedIndex', 0);
+                        //$("#FilitreId").val(0);
+                    }
+                });
+
+            });
+
+            $('#FilitreId').change(function (e) {
+                var vli = e.val;
+                $.ajax({
+                    type: "GET",
+                    url: "/uruns/ozellikgetir",
+                    data: "id=" + vli,
+                    dataType: "json",
+                    success: function (response) {
+                        //   $(".oxel").html("");
+                        var sss = "";
+                        $.each(response, function (a, b) {
+                            sss += ('<li><label for="chk-' + b.id + '"><input type="checkbox" name="chk-' + b.id + '" id="chk-' + b.id + '">' + b.adi + '</label></li>');
+                        })
+
+                        //     $(".oxel").html(sss);
+                    }
+                });
+                //     console.log(SelectedValue);
+                //$("#kati").append("<li data-idsi='m-" + vli + "'><div class='btn btn-xs btn-success'>" + SelectedValue + "<span class='pull-right badge' style='margin-left: 6px;margin-top: 2px;' onclick='$(this).parent().parent().remove();sil()'>X</span></div></li>");
+                //var dd = $("#katler").val();
+
+                ////console.log($("#katler").val());
+                //var son = "";
+                //$("#kati li").each(function (e) {
+                //    son += "," + ($(this).attr("data-idsi").replace("m-", ""));
+                //});
+                //$("#katler").val(son.substr(1));
+                //console.log(son.substr(1));
+            });
+
+            $ccr = $("#my-cropper").slim({
+                instantEdit: true,
+
+                rotateButton: true,
+                download: false,
+                label: 'Yeni Resim Yükle',
+                buttonConfirmLabel: 'Ok'
+            });
+
+            $('#summernote').summernote({
+                callbacks: {
+                    // Clear all formatting of the pasted text
+                    onPaste: function (e) {
+                        var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                        e.preventDefault();
+                        setTimeout(function () {
+                            document.execCommand('insertText', false, bufferText);
+                        }, 10);
+                    },
+                    onImageUpload: function (files, editor, welEditable) {
+
+                        for (var i = files.length - 1; i >= 0; i--) {
+                            sendFile(files[i], this);
+                        }
+                    }
+                },
+                minHeight: 300,
+                maxHeight: null,
+                focus: true,
+                lang: 'tr-TR',
+                toolbar: [
+                    ['style', ['style', 'bold', 'italic', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['height', ['height', 'fullscreen', 'undo', 'redo', 'picture']]
+                ]
+            });
+            $("#summernote").summernote("code", $("#urundetayi").val());
+        })
+    </script>
+    <!-- PAGE RELATED PLUGIN(S) -->
+    <script type="text/javascript">
+        // DO NOT REMOVE : GLOBAL FUNCTIONS!
+        function sendFile(file, el) {
+            var form_data = new FormData();
+            form_data.append('file', file);
+            $.ajax({
+                data: form_data,
+                type: "POST",
+                url: "/Admin/uruns/attachment_uploadurun",
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (url) {
+                    $(el).summernote('editor.insertImage', "/urunresimleri/" + url);
+                }
+            });
+        }
+        function yolla() {
+            console.log("qq");
+            var e = document.getElementById("urunddd");
+            var strUser = e.options[e.selectedIndex].value;
+            $("#urundurumu").val(strUser);
+            $(".bir .slim .slim-btn-group .slim-btn-remove").click(function () {
+                $('.bir .slim .slim-area .slim-result img.out').attr('src', '');
+                $('.bir .slim .slim-area .slim-result img.in').attr('src', '');
+            })
+            if (typeof $(".bir .slim-area .slim-result img.in").attr("src") === "undefined") {
+
+            }
+            else {
+                $("#resimi").val($(".bir .slim-area .slim-result img.in").attr("src"));
+            }
+            $("#urundetayi").val(escape($('#summernote').summernote('code')));
+            $("#smt").click();
+        }
+    </script>
+}
+<style>
+    .modal-open {
+        overflow: hidden;
+    }
+
+    .modal {
+        display: none;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1050;
+        -webkit-overflow-scrolling: touch;
+        outline: 0;
+    }
+
+        .modal.fade .modal-dialog {
+            -webkit-transform: translate(0, -25%);
+            -ms-transform: translate(0, -25%);
+            -o-transform: translate(0, -25%);
+            transform: translate(0, -25%);
+            -webkit-transition: -webkit-transform 0.3s ease-out;
+            -o-transition: -o-transform 0.3s ease-out;
+            transition: transform 0.3s ease-out;
+        }
+
+        .modal.in .modal-dialog {
+            -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+            -o-transform: translate(0, 0);
+            transform: translate(0, 0);
+        }
+
+    .modal-open .modal {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .modal-dialog {
+        position: relative;
+        width: auto;
+        margin: 10px;
+    }
+
+    .modal-content {
+        position: relative;
+        background-color: #ffffff;
+        border: 1px solid #999999;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        outline: 0;
+    }
+
+    .modal-backdrop {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1040;
+        background-color: #000000;
+    }
+
+        .modal-backdrop.fade {
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        .modal-backdrop.in {
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+        }
+
+    .modal-header {
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+        .modal-header .close {
+            margin-top: -2px;
+        }
+
+    .modal-title {
+        margin: 0;
+        line-height: 1.42857143;
+    }
+
+    .modal-body {
+        position: relative;
+        padding: 8px 30px;
+    }
+
+    .modal-footer {
+        padding: 15px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+
+        .modal-footer .btn + .btn {
+            margin-left: 5px;
+            margin-bottom: 0;
+        }
+
+        .modal-footer .btn-group .btn + .btn {
+            margin-left: -1px;
+        }
+
+        .modal-footer .btn-block + .btn-block {
+            margin-left: 0;
+        }
+
+    .modal-scrollbar-measure {
+        position: absolute;
+        top: -9999px;
+        width: 50px;
+        height: 50px;
+        overflow: scroll;
+    }
+
+    @@media (min-width: 768px) {
+        .modal-dialog {
+            width: 600px;
+            margin: 30px auto;
+        }
+
+        .modal-content {
+            -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-sm {
+            width: 300px;
+        }
+    }
+
+    @@media (min-width: 992px) {
+        .modal-lg {
+            width: 900px;
+        }
+    }
+
+    button.btn-default {
+        background: white !important;
+    }
+</style>

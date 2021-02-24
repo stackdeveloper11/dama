@@ -1,0 +1,258 @@
+﻿@model akset.data.Attribute
+@{
+    ViewBag.Title = "Create";
+}
+@section pagespecific{
+    <script src="~/Areas/Admin/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Areas/Admin/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        function findValueInArray(value, arr) {
+            var result = "yok";
+            for (var i = 0; i < arr.length; i++) {
+                var name = arr[i].toLowerCase();
+                if (name == value) {
+                    result = 'var';
+                    break;
+                }
+            }
+            return result;
+        }
+
+        var liste = [];
+        function ekle() {
+            var li = "";
+            // alert(findValueInArray($(".dgr").val().toLowerCase(), liste));
+            if (findValueInArray($(".dgr").val().toLowerCase(), liste) == "yok") {
+                liste.push($(".dgr").val());
+                li = "<li class='an-" + liste.length + "' style='margin-bottom:5px'><div class='row'><div class='col-xs-8'>" + liste.length + ". " + $(".dgr").val() + "</div><div class='col-xs-4 text-right'><div class='btn btn-xs btn-danger' onclick='sil(\"" + liste.length + "\",\"" + $(".dgr").val() + "\")'>Sil</div></div>" + "</div></li>";
+            }
+            else {
+                alert("Daha Önce Eklenmiş");
+            }
+
+            $(".dgrler").append(li);
+            $(".dgr").val(' ');
+
+        }
+
+        function sil(a, b) {
+            $(".an-" + a).remove();
+            liste = $.grep(liste, function (value) {
+                return value != b;
+            });
+            $(".dgrler").html("");
+            var li = "";
+            for (var i = 0; i < liste.length; i++) {
+                var name = liste[i];
+                var d = i + 1;
+
+                li += "<li class='an-" + d + "' style='margin-bottom:5px'><div class='row'><div class='col-xs-8'>" + d + ". " + name + "</div><div class='col-xs-4 text-right'><div class='btn btn-xs btn-danger' onclick='sil(\"" + d + "\",\"" + name + "\")'>Sil</div></div>" + "</div></li>";
+            }
+            $(".dgrler").append(li);
+        }
+        function yolla() {
+            var lst = "";
+            for (var i = 0; i < liste.length; i++) {
+                var name = liste[i];
+                var d = i + 1;
+
+                lst += ","+ name;
+            }
+            if ($('#Inserta').is(':checked')) {
+                $("#Insertable").val(true);
+            }
+            else {
+                $("#Insertable").val(false);
+            }
+            $("#tagler").val(lst.substr(1));
+            $(".kyt").click();
+        }
+    </script>
+}
+<style>
+    #cropContainerModal {
+        width: 260px;
+        height: 335px;
+        position: relative;
+        border: 1px solid #ccc;
+    }
+
+    .form-control {
+        padding: 0 5px !important;
+        border: 1px solid #ccc !important;
+    }
+
+    button.btn-default {
+        padding: 12px 15px !important;
+        background: #2b72bb !important;
+    }
+</style>
+<style>
+    .select2-container {
+        padding: 0 !important;
+    }
+
+    select2-hidden-accessible {
+        display: none;
+    }
+</style>
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+    }
+
+    label {
+        margin-bottom: 0px !important;
+    }
+
+    .switch-input {
+        display: none;
+    }
+
+    .switch-label {
+        display: block;
+        width: 48px;
+        height: 24px;
+        text-indent: -150%;
+        clip: rect(0 0 0 0);
+        color: transparent;
+        user-select: none;
+    }
+
+        .switch-label::before,
+        .switch-label::after {
+            content: "";
+            display: block;
+            position: absolute;
+            cursor: pointer;
+        }
+
+        .switch-label::before {
+            width: 100%;
+            height: 100%;
+            background-color: #dedede;
+            border-radius: 9999em;
+            -webkit-transition: background-color 0.25s ease;
+            transition: background-color 0.25s ease;
+        }
+
+        .switch-label::after {
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+            -webkit-transition: left 0.25s ease;
+            transition: left 0.25s ease;
+        }
+
+    .switch-input:checked + .switch-label::before {
+        background-color: #89c12d;
+    }
+
+    .switch-input:checked + .switch-label::after {
+        left: 24px;
+    }
+</style>
+<div id="content">
+    <section id="widget-grid" class="" style="padding:0">
+        <!-- row -->
+        <div class="row">
+            <!-- NEW WIDGET START -->
+            <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-editbutton="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                        <h2>Öznitelik Ekle </h2>
+                    </header>
+                    <div>
+                        <div class="widget-body" style="padding: 10px;">
+                            <table class="model-state">
+                                @foreach (var item in ViewContext.ViewData.ModelState)
+                                {
+                                    if (item.Value.Errors.Any())
+                                    {
+                                        <tr>
+                                            <td><b>@item.Key</b></td>
+                                            <td>@((item.Value == null || item.Value.Value == null) ? "<null>" : item.Value.Value.RawValue)</td>
+                                            <td>@(string.Join("; ", item.Value.Errors.Select(x => x.ErrorMessage)))</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                            <style>
+                                table.model-state {
+                                    border-color: #600;
+                                    border-width: 0 0 1px 1px;
+                                    border-style: solid;
+                                    border-collapse: collapse;
+                                    font-size: .8em;
+                                    font-family: arial;
+                                }
+                                table.model-state td {
+                                    border-color: #600;
+                                    border-width: 1px 1px 0 0;
+                                    border-style: solid;
+                                    margin: 0;
+                                    padding: .25em .75em;
+                                    background-color: #FFC;
+                                }
+                            </style>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <div class="form-horizontal">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="Name">Eklenebilir</label>
+                                        <div class="col-md-10">
+                                            <div class='switch'>
+                                                <input id='Insertable' type='hidden' name="Insertable" value="false" />
+                                                <input id='Inserta' type='checkbox' class='switch-input' />
+                                                <label for='Inserta' class='switch-label'>Switch</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2" for="Name">Değerler</label>
+                                        <div class="col-md-10">
+                                            <div class="input-group" style="width:200px">
+                                                <input type="text" class="form-control dgr" name="name" placeholder="Değer Ekle" />
+                                                <div class="input-group-btn">
+                                                    <div class="btn btn-success edgr" onclick="ekle()">Ekle</div>
+                                                </div>
+                                            </div>
+                                            <ul class="list-unstyled dgrler" style="width:200px;margin-top:10px">
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="hidden" id="tagler" name="tagler" value="" />
+                                            <input type="submit" value="Kaydet" class="btn btn-default kyt hidden" />
+                                            <div class="btn btn-default" onclick="yolla()">Kaydet</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                            <div>
+                                <a href="/Admin/Attributes/Index" class="btn btn-primary btn-sm">&larr; Öznitelikler Listesine Dön</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+</div>

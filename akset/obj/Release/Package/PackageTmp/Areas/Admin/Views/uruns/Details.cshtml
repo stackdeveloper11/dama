@@ -1,0 +1,74 @@
+﻿@model akset.data.urun
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>urun</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.urunbaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunbaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urunadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urunkisaaciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunkisaaciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fiyat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fiyat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urunozellikleri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urunozellikleri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.urundetayi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.urundetayi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarih)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

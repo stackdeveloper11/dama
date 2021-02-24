@@ -1,0 +1,54 @@
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="38" height="34" viewBox="0 0 38 34">
+  <defs>
+    <rect id="empty_seat-b" width="25.6" height="30" x="3.2" rx="8"/>
+    <filter id="empty_seat-a" width="146.9%" height="140%" x="-23.4%" y="-20%" filterUnits="objectBoundingBox">
+      <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0"/>
+    </filter>
+    <rect id="empty_seat-d" width="7.2" height="17.368" y="8.684" rx="3.6"/>
+    <filter id="empty_seat-c" width="308.3%" height="186.4%" x="-62.5%" y="-37.4%" filterUnits="objectBoundingBox">
+      <feOffset dx="3" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0"/>
+    </filter>
+    <rect id="empty_seat-f" width="7.2" height="17.368" x="24.8" y="8.684" rx="3.6"/>
+    <filter id="empty_seat-e" width="308.3%" height="186.4%" x="-145.8%" y="-37.4%" filterUnits="objectBoundingBox">
+      <feOffset dx="-3" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0"/>
+    </filter>
+    <rect id="empty_seat-h" width="25.6" height="6.316" x="3.2" y="23.684" rx="3.158"/>
+    <filter id="empty_seat-g" width="158.6%" height="337.5%" x="-29.3%" y="-166.3%" filterUnits="objectBoundingBox">
+      <feOffset dy="-3" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+      <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.05 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="rotate(0 18.5 14.5)">
+    <use fill="#000" filter="url(#empty_seat-a)" xlink:href="#empty_seat-b"/>
+    <use fill="#FFF" xlink:href="#empty_seat-b"/>
+    <rect width="24.6" height="29" x="3.7" y=".5" stroke="#ABABAB" rx="8"/>
+    <g opacity=".99">
+      <use fill="#000" filter="url(#empty_seat-c)" xlink:href="#empty_seat-d"/>
+      <use fill="#FFF" xlink:href="#empty_seat-d"/>
+      <rect width="6.2" height="16.368" x=".5" y="9.184" stroke="#ABABAB" rx="3.1"/>
+    </g>
+    <g opacity=".99">
+      <use fill="#000" filter="url(#empty_seat-e)" xlink:href="#empty_seat-f"/>
+      <use fill="#FFF" xlink:href="#empty_seat-f"/>
+      <rect width="6.2" height="16.368" x="25.3" y="9.184" stroke="#ABABAB" rx="3.1"/>
+    </g>
+    <g>
+      <use fill="#000" filter="url(#empty_seat-g)" xlink:href="#empty_seat-h"/>
+      <use fill="#FFF" xlink:href="#empty_seat-h"/>
+      <rect width="24.6" height="5.316" x="3.7" y="24.184" stroke="#ABABAB" rx="2.658"/>
+    </g>
+  </g>
+</svg>
